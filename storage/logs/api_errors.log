@@ -601,3 +601,608 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /var/www/html/VILASECA/CMDB/public/item_detail.php on line 32
+[12-Feb-2026 19:13:21 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[12-Feb-2026 19:13:21 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 161 filas.
+[12-Feb-2026 19:20:54 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_servers_virtuales
+[12-Feb-2026 19:20:54 America/Santiago] Consultando tabla 'sheet_servers_virtuales': Se encontraron 61 filas.
+[12-Feb-2026 19:25:59 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[12-Feb-2026 19:25:59 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[12-Feb-2026 19:25:59 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/index.php on line 14
+[12-Feb-2026 19:25:59 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/index.php on line 14
+[12-Feb-2026 19:25:59 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[12-Feb-2026 19:25:59 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[12-Feb-2026 19:25:59 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[12-Feb-2026 19:25:59 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[12-Feb-2026 19:26:10 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[12-Feb-2026 19:26:10 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[12-Feb-2026 19:26:10 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[12-Feb-2026 19:26:10 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[12-Feb-2026 19:26:10 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[12-Feb-2026 19:26:10 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[12-Feb-2026 19:26:10 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[12-Feb-2026 19:26:10 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[12-Feb-2026 19:26:10 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[12-Feb-2026 19:26:10 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[12-Feb-2026 19:26:20 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[12-Feb-2026 19:26:20 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[12-Feb-2026 19:26:20 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[12-Feb-2026 19:26:20 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[12-Feb-2026 19:26:20 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[12-Feb-2026 19:26:20 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[12-Feb-2026 19:26:20 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[12-Feb-2026 19:26:20 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[12-Feb-2026 19:26:20 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[12-Feb-2026 19:26:20 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[12-Feb-2026 19:26:53 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[12-Feb-2026 19:26:53 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 161 filas.
+[12-Feb-2026 19:30:13 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_servers_virtuales
+[12-Feb-2026 19:30:13 America/Santiago] Consultando tabla 'sheet_servers_virtuales': Se encontraron 61 filas.
+[12-Feb-2026 19:30:13 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_servers_virtuales': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[12-Feb-2026 19:32:51 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_servers_virtuales
+[12-Feb-2026 19:32:52 America/Santiago] Consultando tabla 'sheet_servers_virtuales': Se encontraron 61 filas.
+[12-Feb-2026 19:32:52 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_servers_virtuales': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[12-Feb-2026 19:33:01 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_servers_virtuales
+[12-Feb-2026 19:33:01 America/Santiago] Consultando tabla 'sheet_servers_virtuales': Se encontraron 61 filas.
+[12-Feb-2026 19:33:01 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_servers_virtuales': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[12-Feb-2026 19:33:06 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[12-Feb-2026 19:33:06 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 161 filas.
+[12-Feb-2026 19:33:07 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_ap
+[12-Feb-2026 19:33:07 America/Santiago] Consultando tabla 'sheet_ap': Se encontraron 140 filas.
+[12-Feb-2026 19:33:09 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_ups
+[12-Feb-2026 19:33:09 America/Santiago] Consultando tabla 'sheet_ups': Se encontraron 36 filas.
+[12-Feb-2026 19:33:11 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_servers_virtuales
+[12-Feb-2026 19:33:11 America/Santiago] Consultando tabla 'sheet_servers_virtuales': Se encontraron 61 filas.
+[12-Feb-2026 19:33:11 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_servers_virtuales': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[19-Feb-2026 11:51:22 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:22 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:22 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/index.php on line 14
+[19-Feb-2026 11:51:22 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/index.php on line 14
+[19-Feb-2026 11:51:22 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:22 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:22 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:22 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:30 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:30 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:30 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:30 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:30 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:30 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:30 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:30 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:30 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:30 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:43 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:43 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:43 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:43 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:43 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:43 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:43 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:43 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:43 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:43 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:45 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:45 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:45 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:45 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:46 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:46 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:46 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:46 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:47 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:47 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:47 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:47 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:47 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:47 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:47 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:47 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:48 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:48 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:48 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:48 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:48 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:48 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[19-Feb-2026 11:51:48 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:51:48 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[19-Feb-2026 11:54:49 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[19-Feb-2026 11:54:49 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 161 filas.
+[19-Feb-2026 11:55:02 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[19-Feb-2026 11:55:02 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 161 filas.
+[19-Feb-2026 18:28:24 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/VILASECA/CMDB/public/partials/sidebar.php:53) in /var/www/html/VILASECA/CMDB/src/auth.php on line 33
+[19-Feb-2026 18:28:28 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/VILASECA/CMDB/public/partials/sidebar.php:53) in /var/www/html/VILASECA/CMDB/src/auth.php on line 33
+[19-Feb-2026 18:28:31 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/VILASECA/CMDB/public/partials/sidebar.php:53) in /var/www/html/VILASECA/CMDB/src/auth.php on line 33
+[19-Feb-2026 18:28:37 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/VILASECA/CMDB/public/partials/sidebar.php:53) in /var/www/html/VILASECA/CMDB/src/auth.php on line 33
+[20-Feb-2026 19:55:20 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[20-Feb-2026 19:55:20 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 161 filas.
+[20-Feb-2026 19:55:29 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[20-Feb-2026 19:55:29 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 161 filas.
+[25-Feb-2026 11:24:39 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[25-Feb-2026 11:24:39 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[25-Feb-2026 11:24:39 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[25-Feb-2026 11:24:39 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[25-Feb-2026 11:24:48 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[25-Feb-2026 11:24:48 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[25-Feb-2026 11:24:48 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[25-Feb-2026 11:24:48 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[25-Feb-2026 11:24:48 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[25-Feb-2026 11:24:48 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[25-Feb-2026 11:24:48 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[25-Feb-2026 11:24:48 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/src/auth.php on line 7
+[25-Feb-2026 11:24:48 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[25-Feb-2026 11:24:48 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDB/public/login.php on line 5
+[25-Feb-2026 11:30:19 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[25-Feb-2026 11:30:19 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[25-Feb-2026 11:30:19 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/index.php on line 14
+[25-Feb-2026 11:30:19 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/index.php on line 14
+[25-Feb-2026 11:30:19 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[25-Feb-2026 11:30:19 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[25-Feb-2026 11:30:19 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/login.php on line 5
+[25-Feb-2026 11:30:19 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/login.php on line 5
+[25-Feb-2026 11:30:28 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[25-Feb-2026 11:30:28 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[25-Feb-2026 11:30:28 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/login.php on line 5
+[25-Feb-2026 11:30:28 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/login.php on line 5
+[25-Feb-2026 11:30:28 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[25-Feb-2026 11:30:28 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[25-Feb-2026 11:30:28 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[25-Feb-2026 11:30:28 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[25-Feb-2026 11:30:28 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/login.php on line 5
+[25-Feb-2026 11:30:28 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/login.php on line 5
+[26-Feb-2026 00:01:03 America/Santiago] PHP Fatal error:  Uncaught Error: Undefined constant "UPLOAD_DIR" in /var/www/html/VILASECA/CMDBPR/public/import.php:67
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/VILASECA/CMDBPR/public/import.php on line 67
+[26-Feb-2026 00:06:04 America/Santiago] PHP Fatal error:  Uncaught Error: Undefined constant "UPLOAD_DIR" in /var/www/html/VILASECA/CMDBPR/public/import.php:60
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/VILASECA/CMDBPR/public/import.php on line 60
+[26-Feb-2026 00:06:14 America/Santiago] PHP Fatal error:  Uncaught Error: Undefined constant "UPLOAD_DIR" in /var/www/html/VILASECA/CMDBPR/public/import.php:60
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/VILASECA/CMDBPR/public/import.php on line 60
+[26-Feb-2026 00:10:01 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:13) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 00:10:03 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:13) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 00:10:10 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:13) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 00:10:20 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:13) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 00:11:28 America/Santiago] PHP Fatal error:  Uncaught Error: Undefined constant "UPLOAD_DIR" in /var/www/html/VILASECA/CMDBPR/public/import.php:60
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/VILASECA/CMDBPR/public/import.php on line 60
+[26-Feb-2026 00:17:12 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:13) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 00:17:15 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:13) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 00:17:31 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:13) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 00:18:26 America/Santiago] Import Error: La constante UPLOAD_DIR no está definida en config.php
+[26-Feb-2026 00:21:36 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined function getNextAssetCode() in /var/www/html/VILASECA/CMDBPR/src/importer.php:226
+Stack trace:
+#0 /var/www/html/VILASECA/CMDBPR/public/import.php(74): Importer::importExcelFile()
+#1 {main}
+  thrown in /var/www/html/VILASECA/CMDBPR/src/importer.php on line 226
+[26-Feb-2026 00:29:20 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:11) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 00:29:22 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:11) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 00:29:27 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:11) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 00:29:29 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:11) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 00:29:51 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined function getNextAssetCode() in /var/www/html/VILASECA/CMDBPR/src/importer.php:226
+Stack trace:
+#0 /var/www/html/VILASECA/CMDBPR/public/import.php(77): Importer::importExcelFile()
+#1 {main}
+  thrown in /var/www/html/VILASECA/CMDBPR/src/importer.php on line 226
+[26-Feb-2026 00:30:31 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined function getNextAssetCode() in /var/www/html/VILASECA/CMDBPR/src/importer.php:226
+Stack trace:
+#0 /var/www/html/VILASECA/CMDBPR/public/import.php(77): Importer::importExcelFile()
+#1 {main}
+  thrown in /var/www/html/VILASECA/CMDBPR/src/importer.php on line 226
+[26-Feb-2026 00:34:10 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:16) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 00:34:14 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:16) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 00:39:50 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:19) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 00:39:55 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:19) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 00:45:22 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:23) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 00:47:44 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined function getNextAssetCode() in /var/www/html/VILASECA/CMDBPR/src/importer.php:233
+Stack trace:
+#0 /var/www/html/VILASECA/CMDBPR/public/import.php(80): Importer::importExcelFile()
+#1 {main}
+  thrown in /var/www/html/VILASECA/CMDBPR/src/importer.php on line 233
+[26-Feb-2026 01:10:32 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:21) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 01:10:33 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:21) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 01:10:34 America/Santiago] PHP Fatal error:  Cannot redeclare function getNextAssetCode() (previously declared in /var/www/html/VILASECA/CMDBPR/src/importer.php:21) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 100
+[26-Feb-2026 11:32:10 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[26-Feb-2026 11:32:10 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 2 filas.
+[26-Feb-2026 11:32:10 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_equipos': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[06-Mar-2026 17:54:02 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[06-Mar-2026 17:54:02 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[06-Mar-2026 17:54:02 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/index.php on line 14
+[06-Mar-2026 17:54:02 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/index.php on line 14
+[06-Mar-2026 17:54:02 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[06-Mar-2026 17:54:02 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[06-Mar-2026 17:54:02 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/login.php on line 5
+[06-Mar-2026 17:54:02 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/login.php on line 5
+[06-Mar-2026 17:54:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[06-Mar-2026 17:54:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[06-Mar-2026 17:54:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/login.php on line 5
+[06-Mar-2026 17:54:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/login.php on line 5
+[06-Mar-2026 17:54:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[06-Mar-2026 17:54:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[06-Mar-2026 17:54:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[06-Mar-2026 17:54:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[06-Mar-2026 17:54:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/login.php on line 5
+[06-Mar-2026 17:54:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/login.php on line 5
+[06-Mar-2026 18:01:09 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[06-Mar-2026 18:01:09 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 2 filas.
+[06-Mar-2026 18:01:09 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_equipos': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[06-Mar-2026 18:01:20 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[06-Mar-2026 18:01:20 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 2 filas.
+[06-Mar-2026 18:01:20 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_equipos': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[06-Mar-2026 18:01:24 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[06-Mar-2026 18:01:24 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 2 filas.
+[06-Mar-2026 18:01:24 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_equipos': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[06-Mar-2026 18:01:29 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_servers_virtuales
+[06-Mar-2026 18:01:29 America/Santiago] Consultando tabla 'sheet_servers_virtuales': Se encontraron 1 filas.
+[06-Mar-2026 18:01:29 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_servers_virtuales': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[06-Mar-2026 18:25:45 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[06-Mar-2026 18:25:45 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 2 filas.
+[06-Mar-2026 18:25:45 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_equipos': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[06-Mar-2026 18:27:43 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[06-Mar-2026 18:27:43 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 161 filas.
+[06-Mar-2026 18:27:49 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[06-Mar-2026 18:27:49 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 161 filas.
+[06-Mar-2026 18:36:12 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[06-Mar-2026 18:36:12 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 161 filas.
+[06-Mar-2026 19:20:54 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[06-Mar-2026 19:20:54 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 161 filas.
+[06-Mar-2026 19:21:03 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[06-Mar-2026 19:21:04 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[06-Mar-2026 19:21:04 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 161 filas.
+[06-Mar-2026 19:21:17 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[06-Mar-2026 19:21:17 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 161 filas.
+[09-Mar-2026 13:00:05 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /var/www/html/VILASECA/CMDBPR/public/upload_image.php:17
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/VILASECA/CMDBPR/public/upload_image.php on line 17
+[09-Mar-2026 13:00:38 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /var/www/html/VILASECA/CMDBPR/public/upload_image.php:17
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/VILASECA/CMDBPR/public/upload_image.php on line 17
+[09-Mar-2026 13:18:36 America/Santiago] UPLOAD ERROR: Formato no permitido. Use JPG, PNG, WEBP o GIF.
+[09-Mar-2026 16:10:39 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/VILASECA/CMDBPR/public/partials/sidebar.php:53) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 33
+[09-Mar-2026 17:10:38 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[09-Mar-2026 17:10:38 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 161 filas.
+[09-Mar-2026 17:48:50 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/VILASECA/CMDBPR/public/partials/sidebar.php:53) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 33
+[09-Mar-2026 17:48:52 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/VILASECA/CMDBPR/public/partials/sidebar.php:53) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 33
+[09-Mar-2026 18:12:36 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[09-Mar-2026 18:12:36 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[09-Mar-2026 18:12:36 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_equipos': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[09-Mar-2026 18:13:04 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_ap
+[09-Mar-2026 18:13:04 America/Santiago] Consultando tabla 'sheet_ap': Se encontraron 140 filas.
+[09-Mar-2026 18:13:06 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_ap, sheet_equipos
+[09-Mar-2026 18:13:06 America/Santiago] Consultando tabla 'sheet_ap': Se encontraron 140 filas.
+[09-Mar-2026 18:13:06 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[09-Mar-2026 18:13:06 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_equipos': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[09-Mar-2026 18:59:36 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[09-Mar-2026 18:59:36 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[09-Mar-2026 18:59:36 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_equipos': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[09-Mar-2026 18:59:40 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[09-Mar-2026 18:59:40 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[09-Mar-2026 18:59:40 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_equipos': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[09-Mar-2026 19:18:07 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[09-Mar-2026 19:18:07 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[09-Mar-2026 19:24:02 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[09-Mar-2026 19:24:02 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[09-Mar-2026 19:28:18 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:28:18 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[09-Mar-2026 19:28:18 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[09-Mar-2026 19:28:18 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_equipos': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[09-Mar-2026 19:28:30 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[09-Mar-2026 19:28:30 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[09-Mar-2026 19:28:30 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_equipos': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[09-Mar-2026 19:28:41 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[09-Mar-2026 19:28:41 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[09-Mar-2026 19:28:41 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_equipos': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[09-Mar-2026 19:29:25 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_ap
+[09-Mar-2026 19:29:25 America/Santiago] Consultando tabla 'sheet_ap': Se encontraron 140 filas.
+[09-Mar-2026 19:29:29 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[09-Mar-2026 19:29:29 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[09-Mar-2026 19:29:29 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_equipos': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[09-Mar-2026 19:29:39 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[09-Mar-2026 19:29:39 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[09-Mar-2026 19:29:39 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_equipos': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[09-Mar-2026 19:31:31 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[09-Mar-2026 19:31:31 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[09-Mar-2026 19:31:31 America/Santiago] ERROR de base de datos al consultar la tabla 'sheet_equipos': SQLSTATE[42S22]: Column not found: 1054 Unknown column 'zabbix_host_id' in 'SET'
+[09-Mar-2026 19:34:59 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[09-Mar-2026 19:34:59 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[09-Mar-2026 19:35:12 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:35:12 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[09-Mar-2026 19:35:12 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[09-Mar-2026 19:35:27 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:35:28 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:35:33 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[09-Mar-2026 19:35:33 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[09-Mar-2026 19:35:55 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:35:57 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:35:58 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:36:03 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:36:03 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:36:03 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:36:05 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:36:05 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:36:06 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:36:06 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:36:06 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:36:07 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:36:07 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:36:07 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:36:07 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:36:07 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:36:07 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:36:08 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[09-Mar-2026 19:36:10 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[09-Mar-2026 19:36:10 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[09-Mar-2026 19:37:17 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 10:51:35 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[10-Mar-2026 10:51:35 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[10-Mar-2026 10:51:43 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 10:51:46 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[10-Mar-2026 10:51:46 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[10-Mar-2026 14:52:54 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_servers_virtuales
+[10-Mar-2026 14:52:54 America/Santiago] Consultando tabla 'sheet_servers_virtuales': Se encontraron 61 filas.
+[10-Mar-2026 14:53:32 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_servers_virtuales
+[10-Mar-2026 14:53:32 America/Santiago] Consultando tabla 'sheet_servers_virtuales': Se encontraron 61 filas.
+[10-Mar-2026 14:54:28 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_servers_virtuales
+[10-Mar-2026 14:54:28 America/Santiago] Consultando tabla 'sheet_servers_virtuales': Se encontraron 61 filas.
+[10-Mar-2026 14:54:35 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:35 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:35 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:36 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:36 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:36 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:36 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:36 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:36 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:36 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:36 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:36 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:36 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:37 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:37 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:37 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:37 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:37 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:37 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:37 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:37 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:37 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:37 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:37 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:38 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:38 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:38 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:38 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:38 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:38 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:38 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:38 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:38 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:38 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:38 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:39 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:39 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:39 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:39 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:39 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:39 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:39 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:39 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:39 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:39 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:39 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:39 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:40 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:40 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:40 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:40 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:40 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:40 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:40 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:40 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:40 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:40 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:41 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:54:42 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_servers_virtuales
+[10-Mar-2026 14:54:42 America/Santiago] Consultando tabla 'sheet_servers_virtuales': Se encontraron 61 filas.
+[10-Mar-2026 14:54:52 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_servers_virtuales
+[10-Mar-2026 14:54:52 America/Santiago] Consultando tabla 'sheet_servers_virtuales': Se encontraron 61 filas.
+[10-Mar-2026 14:55:49 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:55:52 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_servers_virtuales
+[10-Mar-2026 14:55:52 America/Santiago] Consultando tabla 'sheet_servers_virtuales': Se encontraron 61 filas.
+[10-Mar-2026 14:56:21 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[10-Mar-2026 14:56:25 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_servers_virtuales
+[10-Mar-2026 14:56:25 America/Santiago] Consultando tabla 'sheet_servers_virtuales': Se encontraron 61 filas.
+[10-Mar-2026 17:28:05 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[10-Mar-2026 17:28:05 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[11-Mar-2026 16:23:56 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[11-Mar-2026 16:23:56 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[11-Mar-2026 16:24:29 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[11-Mar-2026 16:24:29 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[11-Mar-2026 16:28:42 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[11-Mar-2026 16:28:42 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[11-Mar-2026 16:30:02 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[11-Mar-2026 16:30:02 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[17-Mar-2026 12:48:55 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[17-Mar-2026 12:48:55 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[17-Mar-2026 12:49:00 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[17-Mar-2026 12:49:00 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[17-Mar-2026 12:49:10 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[17-Mar-2026 12:54:38 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[17-Mar-2026 12:54:38 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[17-Mar-2026 12:55:06 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[17-Mar-2026 12:55:06 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[17-Mar-2026 12:55:11 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[17-Mar-2026 12:55:11 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[17-Mar-2026 12:56:18 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[17-Mar-2026 12:56:18 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[17-Mar-2026 12:57:31 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[17-Mar-2026 12:57:31 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[17-Mar-2026 12:58:26 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[17-Mar-2026 12:58:26 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[17-Mar-2026 18:32:27 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[17-Mar-2026 18:32:27 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[17-Mar-2026 18:32:46 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[17-Mar-2026 18:32:46 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[17-Mar-2026 18:32:56 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[17-Mar-2026 18:32:56 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[17-Mar-2026 18:33:12 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[17-Mar-2026 18:33:12 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[17-Mar-2026 18:33:27 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[17-Mar-2026 18:33:27 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[23-Mar-2026 14:26:51 UTC] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 14:26:51 UTC] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 11:26:51 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:26:51 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:26:51 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/index.php on line 14
+[23-Mar-2026 11:26:51 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/index.php on line 14
+[23-Mar-2026 14:26:51 UTC] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 14:26:51 UTC] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 11:26:51 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:26:51 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:26:51 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[23-Mar-2026 11:26:51 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[23-Mar-2026 11:26:51 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[23-Mar-2026 11:26:51 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[23-Mar-2026 14:26:59 UTC] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 14:26:59 UTC] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 11:26:59 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:26:59 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:26:59 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[23-Mar-2026 11:26:59 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[23-Mar-2026 11:26:59 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 157
+[23-Mar-2026 11:26:59 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 157
+[23-Mar-2026 11:26:59 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[23-Mar-2026 11:26:59 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[23-Mar-2026 14:27:09 UTC] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 14:27:09 UTC] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 11:27:09 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:27:09 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:27:09 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[23-Mar-2026 11:27:09 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[23-Mar-2026 11:27:09 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 157
+[23-Mar-2026 11:27:09 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 157
+[23-Mar-2026 11:27:09 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[23-Mar-2026 11:27:09 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[23-Mar-2026 14:27:10 UTC] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 14:27:10 UTC] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 11:27:10 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:27:10 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:27:10 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[23-Mar-2026 11:27:10 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[23-Mar-2026 11:27:10 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 157
+[23-Mar-2026 11:27:10 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 157
+[23-Mar-2026 11:27:10 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[23-Mar-2026 11:27:10 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[23-Mar-2026 14:27:11 UTC] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 14:27:11 UTC] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 157
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 157
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[23-Mar-2026 14:27:11 UTC] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 14:27:11 UTC] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 157
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 157
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[23-Mar-2026 14:27:11 UTC] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 14:27:11 UTC] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 157
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 157
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[23-Mar-2026 14:27:11 UTC] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 14:27:11 UTC] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 157
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 157
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[23-Mar-2026 11:27:11 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[23-Mar-2026 11:27:57 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[23-Mar-2026 11:27:57 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[23-Mar-2026 11:52:18 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[23-Mar-2026 11:52:18 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[23-Mar-2026 11:52:47 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[23-Mar-2026 11:52:47 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[23-Mar-2026 11:53:04 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[23-Mar-2026 11:53:04 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[23-Mar-2026 12:11:58 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[23-Mar-2026 12:11:58 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[23-Mar-2026 12:14:34 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:34 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:34 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:34 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:36 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:36 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:36 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:36 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:36 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:36 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:36 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:40 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:42 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:43 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:48 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:48 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:48 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:48 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:48 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:14:49 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[23-Mar-2026 12:14:49 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[23-Mar-2026 12:15:12 America/Santiago] Uncaught Exception: Cannot access offset of type string on string
+[23-Mar-2026 12:15:17 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[23-Mar-2026 12:15:17 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[23-Mar-2026 13:07:58 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[23-Mar-2026 13:07:58 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[23-Mar-2026 13:08:04 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[23-Mar-2026 13:08:04 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[23-Mar-2026 13:24:30 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[23-Mar-2026 13:24:30 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[23-Mar-2026 13:24:34 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[23-Mar-2026 13:24:34 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 154 filas.
+[23-Mar-2026 13:24:37 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_firewall
+[23-Mar-2026 13:24:37 America/Santiago] Consultando tabla 'sheet_firewall': Se encontraron 35 filas.
+[06-Apr-2026 21:17:54 UTC] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[06-Apr-2026 21:17:54 UTC] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[06-Apr-2026 17:17:54 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[06-Apr-2026 17:17:54 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[06-Apr-2026 17:17:54 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/index.php on line 14
+[06-Apr-2026 17:17:54 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/index.php on line 14
+[06-Apr-2026 21:17:54 UTC] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[06-Apr-2026 21:17:54 UTC] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[06-Apr-2026 17:17:54 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[06-Apr-2026 17:17:54 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[06-Apr-2026 17:17:54 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[06-Apr-2026 17:17:54 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[06-Apr-2026 17:17:54 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[06-Apr-2026 17:17:54 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[06-Apr-2026 21:18:04 UTC] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[06-Apr-2026 21:18:04 UTC] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/config.php on line 55
+[06-Apr-2026 17:18:04 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[06-Apr-2026 17:18:04 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/auth.php on line 7
+[06-Apr-2026 17:18:04 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[06-Apr-2026 17:18:04 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/public/login.php on line 6
+[06-Apr-2026 17:18:04 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 157
+[06-Apr-2026 17:18:04 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 157
+[06-Apr-2026 17:18:04 America/Santiago] PHP Warning:  session_start(): Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139
+[06-Apr-2026 17:18:04 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/lib/php/sessions) in /var/www/html/VILASECA/CMDBPR/src/helpers.php on line 139

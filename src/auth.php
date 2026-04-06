@@ -33,6 +33,15 @@ function require_login()
         header('Location: login.php');
         exit();
     }
+
+    // Validación CSRF global para peticiones POST
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $token = $_POST['csrf_token'] ?? '';
+        if (function_exists('validate_csrf_token') && !validate_csrf_token($token)) {
+            http_response_code(403);
+            exit('Error: Token CSRF inválido o ausente.');
+        }
+    }
 }
 
 function has_role($roles)

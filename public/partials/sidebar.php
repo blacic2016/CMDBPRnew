@@ -70,7 +70,7 @@ $current_sheet = $_GET['name'] ?? '';
           </a>
         </li>
         <?php
-          $is_monitoreo_page = in_array($cur, ['monitoreo.php', 'crear_monitoreo.php', 'problems.php']);
+          $is_monitoreo_page = in_array($cur, ['monitoreo.php', 'crear_monitoreo.php', 'actualizar_monitoreo.php', 'problems.php']);
         ?>
         <li class="nav-item <?php echo $is_monitoreo_page ? 'menu-is-opening menu-open' : ''; ?>">
           <a href="#" class="nav-link <?php echo $is_monitoreo_page ? 'active' : ''; ?>">
@@ -91,6 +91,12 @@ $current_sheet = $_GET['name'] ?? '';
               <a href="<?php echo PUBLIC_URL_PREFIX; ?>/crear_monitoreo.php" class="nav-link <?php echo $cur === 'crear_monitoreo.php' ? 'active' : ''; ?>">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Crear Monitoreo</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/actualizar_monitoreo.php" class="nav-link <?php echo $cur === 'actualizar_monitoreo.php' ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Actualizar Monitoreo</p>
               </a>
             </li>
           </ul>

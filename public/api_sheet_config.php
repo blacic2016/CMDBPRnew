@@ -19,6 +19,8 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 // Validar que la respuesta sea JSON y que el usuario sea Super Admin
 header('Content-Type: application/json');
 
+require_login();
+
 if (!has_role(['SUPER_ADMIN'])) {
     http_response_code(403);
     exit(json_encode([

@@ -18,11 +18,10 @@ if (!isValidTableName($table) || $row_id <= 0) {
 
 $pdo = getPDO();
 $stmt = $pdo->prepare(
-    "SELECT h.*, u.username 
+    "SELECT h.* 
      FROM sheet_history h
-     LEFT JOIN users u ON h.changed_by_user_id = u.id
-     WHERE h.sheet_table_name = :table AND h.sheet_row_id = :id
-     ORDER BY h.changed_at DESC"
+     WHERE h.table_name = :table AND h.row_id = :id
+     ORDER BY h.created_at DESC"
 );
 $stmt->execute([':table' => $table, ':id' => $row_id]);
 $history = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -40,13 +39,13 @@ $history = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="post">
                     <div class="user-block">
                         <span class="username">
-                            <a href="#"><?php echo htmlspecialchars($entry['username'] ?? 'Usuario desconocido'); ?></a>
+                            <a href="#"><?php echo htmlspecialchars($entry['changed_by'] ?? 'Usuario desconocido'); ?></a>
                         </span>
-                        <span class="description">Realizó un cambio - <?php echo htmlspecialchars($entry['changed_at']); ?></span>
+                        <span class="description">Realizó un cambio - <?php echo htmlspecialchars($entry['created_at']); ?></span>
                     </div>
                     <?php
-                        $old_values = json_decode($entry['old_values'], true);
-                        $new_values = json_decode($entry['new_values'], true);
+                        $old_values = json_decode($entry['old_data'] ?? '{}', true);
+                        $new_values = json_decode($entry['new_data'] ?? '{}', true);
                     ?>
                     <div class="mt-2">
                         <table class="table table-sm table-bordered">

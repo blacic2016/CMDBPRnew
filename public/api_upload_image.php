@@ -12,17 +12,18 @@ header('Content-Type: application/json');
 if (session_status() === PHP_SESSION_NONE) session_start();
 
 try {
+    require_login();
     // 1. Validar permisos
-    if (!is_logged_in()) {
+    if (!current_user_id()) {
         throw new Exception("Sesión expirada. Por favor inicie sesión nuevamente.");
     }
 
-    // 2. Validar parámetros
-    $table = $_POST['table'] ?? '';
-    $id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
+    // 2. Validar parámetros (Soporta múltiples nombres de parámetros para compatibilidad)
+    $table = $_POST['table'] ?? $_POST['entity_type'] ?? '';
+    $id = isset($_POST['id']) ? (int)$_POST['id'] : (isset($_POST['entity_id']) ? (int)$_POST['entity_id'] : 0);
 
     if (empty($table) || $id <= 0) {
-        throw new Exception("Datos del activo incompletos (Tabla: $table, ID: $id).");
+        throw new Exception("Datos del activo incompletos (Tabla/Tipo: $table, ID: $id).");
     }
 
     // 3. Validar el archivo recibido
@@ -32,12 +33,11 @@ try {
     }
 
     // 4. Configurar y validar la carpeta de destino
-    // Usamos una ruta absoluta para evitar confusiones
-    $base_dir = dirname(__DIR__); // Sube un nivel desde public/
+    $base_dir = dirname(__DIR__); 
     $upload_path = $base_dir . '/storage/uploads/';
 
     if (!is_dir($upload_path)) {
-        if (!mkdir($upload_path, 0755, true)) {
+        if (!mkdir($upload_path, 0777, true)) {
             throw new Exception("No se pudo crear la carpeta de subidas en: " . $upload_path);
         }
     }
@@ -45,7 +45,7 @@ try {
     // 5. Validar extensión
     $filename = $_FILES['image']['name'];
     $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
-    $allowed = ['jpg', 'jpeg', 'png', 'webp'];
+    $allowed = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
 
     if (!in_array($ext, $allowed)) {
         throw new Exception("Formato no permitido. Use JPG, PNG o WEBP.");

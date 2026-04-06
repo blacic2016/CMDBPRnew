@@ -68,9 +68,14 @@ if ($name && isValidTableName($name)) {
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
                             <h3 class="card-title">Inventario: <strong><?php echo htmlspecialchars($sheet_name_clean); ?></strong></h3>
-                            <a href="item_create.php?table=<?php echo urlencode($name); ?>" class="btn btn-sm btn-success">
-                                <i class="fas fa-plus"></i> Nuevo Activo
-                            </a>
+                            <div class="card-tools">
+                                <a href="import.php?table=<?php echo urlencode($name); ?>" class="btn btn-sm btn-primary mr-1">
+                                    <i class="fas fa-file-import"></i> Importar Excel
+                                </a>
+                                <a href="item_create.php?table=<?php echo urlencode($name); ?>" class="btn btn-sm btn-success">
+                                    <i class="fas fa-plus"></i> Nuevo Activo
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="card-body">

@@ -47,9 +47,7 @@ set_exception_handler(function($exception) {
 require_once __DIR__ . '/../src/helpers.php';
 require_once __DIR__ . '/../src/auth.php';
 require_once __DIR__ . '/../src/zabbix_api.php';
-
-
-
+require_once __DIR__ . '/../src/importer.php';
 
 if (session_status() === PHP_SESSION_NONE) session_start();
 require_login();
@@ -58,12 +56,62 @@ header('Content-Type: application/json');
 $action = $_REQUEST['action'] ?? '';
 $user = current_user();
 
+// --- NUEVAS ACCIONES PARA IMPORTACIÓN GRANULAR ---
+
+if ($action === 'get_excel_metadata') {
+    if (!has_role(['ADMIN', 'SUPER_ADMIN'])) exit(json_encode(['success' => false, 'error' => 'Permiso denegado.']));
+    try {
+        if (!isset($_FILES['file'])) throw new Exception("No se subió ningún archivo.");
+        $tmpPath = $_FILES['file']['tmp_name'];
+        $metadata = Importer::getExcelMetadata($tmpPath);
+        
+        $sessionStorage = __DIR__ . '/../storage/temp_imports/';
+        if (!is_dir($sessionStorage)) mkdir($sessionStorage, 0777, true);
+        
+        $newFileName = 'import_' . time() . '_' . session_id() . '.xlsx';
+        move_uploaded_file($tmpPath, $sessionStorage . $newFileName);
+        
+        echo json_encode(['success' => true, 'metadata' => $metadata, 'tempFile' => $newFileName]);
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    }
+    exit;
+}
+
+if ($action === 'execute_mapped_import') {
+    if (!has_role(['SUPER_ADMIN'])) exit(json_encode(['success' => false, 'error' => 'Permiso denegado.']));
+    try {
+        $tempFile = $_POST['tempFile'] ?? '';
+        $tableName = $_POST['tableName'] ?? '';
+        $sheetName = $_POST['sheetName'] ?? '';
+        $mapping = $_POST['mapping'] ?? []; 
+
+        if (empty($tempFile) || empty($tableName) || empty($sheetName) || empty($mapping)) {
+            throw new Exception("Faltan parámetros para la importación.");
+        }
+
+        $fullPath = __DIR__ . '/../storage/temp_imports/' . basename($tempFile);
+        if (!is_file($fullPath)) throw new Exception("Archivo temporal no encontrado.");
+
+        $result = Importer::executeMappedImport($tableName, $fullPath, $sheetName, $mapping);
+        @unlink($fullPath);
+        
+        echo json_encode($result);
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    }
+    exit;
+}
+
 if ($action === 'save_zabbix_cmdb_config') {
     if (!has_role(['SUPER_ADMIN'])) {
         exit(json_encode(['success' => false, 'error' => 'Permiso denegado.']));
     }
 
     $selected_tables = $_POST['tables'] ?? [];
+    $zabbix_ip = $_POST['zabbix_ip'] ?? '';
+    $zabbix_api_key = $_POST['zabbix_api_key'] ?? '';
+
     if (!is_array($selected_tables)) {
         exit(json_encode(['success' => false, 'error' => 'Datos inválidos.']));
     }
@@ -72,11 +120,10 @@ if ($action === 'save_zabbix_cmdb_config') {
     try {
         $pdo->beginTransaction();
 
-        // First, disable all tables
+        // 1. Actualizar visibilidad de tablas
         $stmt_disable = $pdo->prepare("UPDATE zabbix_cmdb_config SET is_enabled = 0");
         $stmt_disable->execute();
 
-        // Then, insert or update the selected tables to be enabled
         $stmt_upsert = $pdo->prepare(
             "INSERT INTO zabbix_cmdb_config (table_name, is_enabled) 
              VALUES (:table_name, 1) 
@@ -84,8 +131,38 @@ if ($action === 'save_zabbix_cmdb_config') {
         );
 
         foreach ($selected_tables as $table) {
-            if (isValidTableName($table)) { // Security check
+            if (isValidTableName($table)) {
                 $stmt_upsert->execute([':table_name' => $table]);
+            }
+        }
+
+        // 2. Actualizar archivo de configuración (config.php) si se enviaron los datos
+        if (!empty($zabbix_ip) && !empty($zabbix_api_key)) {
+            $config_file = __DIR__ . '/../config.php';
+            if (is_writable($config_file)) {
+                $config_content = file_get_contents($config_file);
+                
+                // Construir nueva URL
+                $new_url = "http://" . trim($zabbix_ip) . "/zabbix/api_jsonrpc.php";
+                
+                // Reemplazos con regex
+                $config_content = preg_replace(
+                    "/define\('ZABBIX_API_URL',\s*'[^']*'\);/",
+                    "define('ZABBIX_API_URL', '$new_url');",
+                    $config_content
+                );
+                
+                $config_content = preg_replace(
+                    "/define\('ZABBIX_API_TOKEN',\s*'[^']*'\);/",
+                    "define('ZABBIX_API_TOKEN', '$zabbix_api_key');",
+                    $config_content
+                );
+                
+                if (file_put_contents($config_file, $config_content) === false) {
+                    throw new Exception("No se pudo escribir en config.php. Verifica los permisos.");
+                }
+            } else {
+                throw new Exception("El archivo config.php no tiene permisos de escritura.");
             }
         }
 
@@ -96,13 +173,77 @@ if ($action === 'save_zabbix_cmdb_config') {
         if ($pdo->inTransaction()) {
             $pdo->rollBack();
         }
-        exit(json_encode(['success' => false, 'error' => 'Error de base de datos: ' . $e->getMessage()]));
+        exit(json_encode(['success' => false, 'error' => 'Error: ' . $e->getMessage()]));
     }
 }
 
 
 
 
+
+if ($action === 'test_zabbix_connection') {
+    header('Content-Type: application/json');
+    try {
+        $ip = $_POST['zabbix_ip'] ?? '';
+        $token = $_POST['zabbix_api_key'] ?? '';
+
+        if (empty($ip) || empty($token)) {
+            throw new Exception("IP y Token son requeridos para la prueba.");
+        }
+
+        $url = "http://" . trim($ip) . "/zabbix/api_jsonrpc.php";
+        
+        $ch = curl_init($url);
+        if ($ch === false) throw new Exception("Error al inicializar cURL");
+
+        $payload = json_encode([
+            'jsonrpc' => '2.0',
+            'method' => 'apiinfo.version',
+            'params' => [],
+            'id' => 1
+        ]);
+
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Content-Type: application/json'
+        ]);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10); // 10 seconds timeout
+
+        $response = curl_exec($ch);
+        $error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($error) {
+            throw new Exception("Error de conexión: " . $error);
+        }
+
+        if ($http_code >= 400) {
+            throw new Exception("Error HTTP: " . $http_code);
+        }
+
+        $decoded = json_decode($response, true);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            throw new Exception("Respuesta no válida del servidor (No es JSON).");
+        }
+
+        if (isset($decoded['error'])) {
+            throw new Exception("Zabbix API Error: " . ($decoded['error']['data'] ?? $decoded['error']['message']));
+        }
+
+        if (!isset($decoded['result'])) {
+            throw new Exception("Respuesta inesperada de Zabbix.");
+        }
+
+        echo json_encode(['success' => true, 'version' => $decoded['result']]);
+
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    }
+    exit;
+}
 
 if ($action === 'save_zabbix_mapping') {
     try {
@@ -385,8 +526,14 @@ if ($action === 'get_cmdb_data_for_zabbix') {
             }
 
             try {
-                $stmt = $pdo->prepare("SELECT * FROM `$table` ");
-		$stmt->execute();
+                $allCols = getTableColumns($table);
+                if (in_array('sucursal', $allCols)) {
+                    $sql = "SELECT e.*, l.latitud, l.longitud FROM `$table` AS e LEFT JOIN sheet_localidades AS l ON e.sucursal = l.localidades";
+                } else {
+                    $sql = "SELECT * FROM `$table` ";
+                }
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute();
                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $rowCount = count($rows);
                 // --- LOGGING POINT ---
@@ -400,9 +547,14 @@ if ($action === 'get_cmdb_data_for_zabbix') {
                 $columns = array_keys($rows[0]); // Get columns from the first row
                 $processed_rows = [];
 
-                // Define which CMDB columns to check for hostnames and IPs. This should be configurable later.
+                // Define which CMDB columns to check for hostnames and IPs as fallback
                 $name_candidates = ['nombre', 'hostname', 'device_name', 'name', 'ap'];
                 $ip_candidates = ['ip', 'ip_address', 'direccion_ip'];
+
+                // Fetch mapping for this table to use dynamic discovery
+                $stmt_map = $pdo->prepare("SELECT hostname_template, visible_name_template, ip_field FROM zabbix_mappings WHERE cmdb_table_name = ?");
+                $stmt_map->execute([$table]);
+                $mapping = $stmt_map->fetch(PDO::FETCH_ASSOC);
 
                 foreach ($rows as $row) {
                     $status = 'No Monitoreado';
@@ -414,15 +566,42 @@ if ($action === 'get_cmdb_data_for_zabbix') {
                         $status = 'Monitoreado (ID)';
                     } else {
                         // 2. If no ID, check by name/hostname and IP
-                        $cmdb_name = '';
-                        foreach($name_candidates as $key) { if(!empty($row[$key])) { $cmdb_name = strtolower($row[$key]); break; } }
-
+                        $cmdb_names = [];
                         $cmdb_ip = '';
-                        foreach($ip_candidates as $key) { if(!empty($row[$key])) { $cmdb_ip = $row[$key]; break; } }
+
+                        if ($mapping) {
+                            $h_temp = $mapping['hostname_template'] ?? '';
+                            $v_temp = $mapping['visible_name_template'] ?? '';
+                            $ip_f = $mapping['ip_field'] ?? '';
+
+                            // Identify columns from templates
+                            if ($h_temp) {
+                                $val = preg_replace_callback('/\{(\w+)\}/', function($m) use ($row) { return $row[$m[1]] ?? ''; }, $h_temp);
+                                if (!empty($val)) $cmdb_names[] = strtolower($val);
+                            }
+                            if ($v_temp) {
+                                $val = preg_replace_callback('/\{(\w+)\}/', function($m) use ($row) { return $row[$m[1]] ?? ''; }, $v_temp);
+                                if (!empty($val)) $cmdb_names[] = strtolower($val);
+                            }
+                            if ($ip_f && !empty($row[$ip_f])) {
+                                $cmdb_ip = $row[$ip_f];
+                            }
+                        } else {
+                            // Fallback to old hardcoded candidates
+                            foreach($name_candidates as $key) { if(!empty($row[$key])) { $cmdb_names[] = strtolower($row[$key]); break; } }
+                            foreach($ip_candidates as $key) { if(!empty($row[$key])) { $cmdb_ip = $row[$key]; break; } }
+                        }
                         
-                        if (isset($zabbix_host_map_by_name[$cmdb_name])) {
-                            $found_host = $zabbix_host_map_by_name[$cmdb_name];
-                        } elseif (isset($zabbix_host_map_by_ip[$cmdb_ip]) && !empty($cmdb_ip)) {
+                        // Try matching by name
+                        foreach ($cmdb_names as $n) {
+                            if (isset($zabbix_host_map_by_name[$n])) {
+                                $found_host = $zabbix_host_map_by_name[$n];
+                                break;
+                            }
+                        }
+
+                        // Try matching by IP if name failed
+                        if (!$found_host && !empty($cmdb_ip) && isset($zabbix_host_map_by_ip[$cmdb_ip])) {
                             $found_host = $zabbix_host_map_by_ip[$cmdb_ip];
                         }
 
@@ -547,13 +726,13 @@ if ($action === 'update') {
     if (!empty($new_values)) {
         try {
             $stmt_history = $pdo->prepare(
-                "INSERT INTO sheet_history (sheet_table_name, sheet_row_id, changed_by_user_id, old_values, new_values) 
-                 VALUES (:table_name, :row_id, :user_id, :old, :new)"
+                "INSERT INTO sheet_history (table_name, row_id, action, changed_by, old_data, new_data) 
+                 VALUES (:table_name, :row_id, 'update', :user, :old, :new)"
             );
             $stmt_history->execute([
                 ':table_name' => $table,
                 ':row_id' => $id,
-                ':user_id' => current_user_id(),
+                ':user' => current_user()['username'] ?? 'unknown',
                 ':old' => json_encode($old_values, JSON_UNESCAPED_UNICODE),
                 ':new' => json_encode($new_values, JSON_UNESCAPED_UNICODE)
             ]);
@@ -640,6 +819,12 @@ if ($action === 'get_mapping_form') {
         exit(json_encode(['success' => false, 'error' => 'La tabla está vacía.']));
     }
 
+    // Inyectar columnas lógicas de coordenadas si existe la columna sucursal
+    if (in_array('sucursal', $columns)) {
+        if (!in_array('latitud', $columns)) $columns[] = 'latitud';
+        if (!in_array('longitud', $columns)) $columns[] = 'longitud';
+    }
+
     header('Content-Type: text/html; charset=utf-8');
 
     // Recuperar mapeo previo
@@ -651,8 +836,18 @@ if ($action === 'get_mapping_form') {
     $saved_tags = json_decode($saved['tags_json'] ?? '[]', true);
 
     $zabbix_inventory = [
-        'type' => 'Tipo (Type)', 'os' => 'S.O / Firmware', 'hardware' => 'Hardware',
-        'serialno_a' => 'S/N Principal', 'location' => 'Ubicación', 'vendor' => 'Fabricante'
+        'type' => 'Tipo (Type)',
+        'os' => 'S.O / Firmware',
+        'hardware' => 'Hardware',
+        'serialno_a' => 'S/N Principal',
+        'location' => 'Ubicación',
+        'location_lat' => 'Latitud (Latitude)',
+        'location_lon' => 'Longitud (Longitude)',
+        'vendor' => 'Fabricante',
+        'model' => 'Modelo',
+        'tag' => 'Asset Tag',
+        'macaddress_a' => 'MAC Address A',
+        'notes' => 'Notas (Notes)'
     ];
     ?>
     <form id="mapping-form">
@@ -815,6 +1010,140 @@ if ($action === 'get_mapping_form') {
         $('.select2-mapping').select2({ width: '100%', dropdownParent: $('#zabbixMappingModal') });
     </script>
     <?php
+    exit;
+}
+
+if ($action === 'update_zabbix_host') {
+    header('Content-Type: application/json');
+    try {
+        $pdo = getPDO();
+        $table_name = $_POST['table_name'] ?? '';
+        $row_id = filter_input(INPUT_POST, 'row_id', FILTER_VALIDATE_INT);
+        $zabbix_host_id = $_POST['zabbix_host_id'] ?? '';
+
+        if (!$table_name || !$row_id || !$zabbix_host_id) throw new Exception("Faltan parámetros básicos.");
+
+        // 1. OBTENER MAPEO
+        $stmt_map = $pdo->prepare("SELECT * FROM zabbix_mappings WHERE cmdb_table_name = :tbl LIMIT 1");
+        $stmt_map->execute([':tbl' => $table_name]);
+        $mapping = $stmt_map->fetch(PDO::FETCH_ASSOC);
+
+        if (!is_array($mapping)) {
+            throw new Exception("Configuración de mapeo no encontrada para '$table_name'.");
+        }
+
+        // 2. OBTENER FILA DEL EQUIPO + DATA DE LOCALIDAD (JOIN)
+        $sql_row = "
+            SELECT e.*, l.latitud, l.longitud 
+            FROM `$table_name` AS e
+            LEFT JOIN sheet_localidades AS l ON e.sucursal = l.localidades
+            WHERE e.id = :id
+        ";
+        $stmt_row = $pdo->prepare($sql_row);
+        $stmt_row->execute([':id' => $row_id]);
+        $row = $stmt_row->fetch(PDO::FETCH_ASSOC);
+
+        if (!$row) throw new Exception("Equipo ID $row_id no encontrado.");
+
+        // --- HELPER: PARSER ---
+        $parser = function($text, $data) {
+            return preg_replace_callback('/\{([^}]+)\}/', function($m) use ($data) {
+                return (isset($data[$m[1]])) ? (string)$data[$m[1]] : '';
+            }, (string)$text);
+        };
+
+        // 3. PROCESAR NOMBRES Y LIMPIEZA
+        $h_raw = $parser($mapping['hostname_template'], $row);
+        $v_raw = $parser($mapping['visible_name_template'], $row) ?: $h_raw;
+        $visible_name = trim(str_replace(["\xc2\xa0", "\xa0"], ' ', $v_raw));
+        $hostname = preg_replace('/[\s\x{00a0}]+/u', '_', $h_raw);
+        $hostname = preg_replace('/[^A-Za-z0-9\.\-_]/', '', $hostname);
+        $hostname = trim($hostname, '_');
+
+        if (empty($hostname)) throw new Exception("Nombre técnico vacío tras limpieza.");
+
+        // 4. DATOS DE RED Y GRUPO
+        $hostgroup_name = $parser($mapping['hostgroup_template'], $row);
+        $ip_final = $row[$mapping['ip_field']] ?? '';
+        $community = $row[$mapping['snmp_community_field']] ?? 'public';
+
+        if (empty($ip_final)) throw new Exception("IP no encontrada.");
+
+        // 5. GESTIÓN DE GRUPO
+        $group_res = call_zabbix_api('hostgroup.get', ['filter' => ['name' => $hostgroup_name]]);
+        if (empty($group_res['result'])) {
+            $g_create = call_zabbix_api('hostgroup.create', ['name' => $hostgroup_name]);
+            $group_id = $g_create['result']['groupids'][0] ?? null;
+        } else {
+            $group_id = $group_res['result'][0]['groupid'];
+        }
+
+        // 6. GESTIÓN DE TEMPLATES
+        $template_names = array_map('trim', explode(',', $mapping['template_name']));
+        $tpl_res = call_zabbix_api('template.get', ['output' => ['templateid'], 'filter' => ['host' => $template_names]]);
+        if (empty($tpl_res['result'])) throw new Exception("Templates no encontrados en Zabbix.");
+        
+        $template_ids_payload = array_map(function($t) { return ['templateid' => $t['templateid']]; }, $tpl_res['result']);
+
+        // 7. PREPARAR INVENTARIO
+        $inventory_data = [];
+        $saved_inv_mapping = json_decode($mapping['inventory_fields_json'] ?? '[]', true);
+        foreach ($saved_inv_mapping as $z_field => $cmdb_col) {
+            if (!empty($cmdb_col) && isset($row[$cmdb_col]) && $row[$cmdb_col] !== '') {
+                $inventory_data[$z_field] = (string)$row[$cmdb_col];
+            } else {
+                $inventory_data[$z_field] = ''; // Limpiar campos vacíos
+            }
+        }
+
+        // Tags Dinámicos
+        $tags_data = [];
+        $saved_tags_mapping = json_decode($mapping['tags_json'] ?? '[]', true);
+        foreach ($saved_tags_mapping as $tag_n => $cmdb_c) {
+            if (!empty($row[$cmdb_c])) {
+                $tags_data[] = ['tag' => (string)$tag_n, 'value' => (string)$row[$cmdb_c]];
+            }
+        }
+
+        // 8. OBTENER INTERFACES ACTUALES PARA ACTUALIZAR
+        $host_get = call_zabbix_api('host.get', [
+            'hostids' => $zabbix_host_id,
+            'selectInterfaces' => 'extend'
+        ]);
+        if (empty($host_get['result'])) throw new Exception("No se encontró el host en Zabbix con ID $zabbix_host_id");
+        $interface_id = $host_get['result'][0]['interfaces'][0]['interfaceid'];
+
+        // 9. CONSTRUCCIÓN DEL PAYLOAD FINAL (host.update)
+        // Se enfoca en: Grupos, Templates, Macros, Inventario y Tags.
+        $params = [
+            'hostid'   => $zabbix_host_id,
+            'groups'   => [['groupid' => $group_id]],
+            'templates'=> $template_ids_payload,
+            'macros'   => [[
+                'macro' => '{$SNMP_COMMUNITY}',
+                'value' => $community
+            ]],
+            'inventory_mode' => 1,
+            'inventory'      => $inventory_data,
+            'tags'           => $tags_data
+        ];
+
+        // Opcional: Si deseas mantener el nombre sincronizado descomenta estas líneas
+        // $params['host'] = $hostname;
+        // $params['name'] = $visible_name;
+
+        $response = call_zabbix_api('host.update', $params);
+
+        if (isset($response['error'])) {
+            $err_msg = $response['error']['data'] ?? $response['error']['message'];
+            throw new Exception("API Zabbix: " . $err_msg);
+        }
+
+        echo json_encode(['success' => true, 'log' => "Éxito: Actualizado '$hostname' (ID: $zabbix_host_id)"]);
+
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'log' => "ERROR: " . $e->getMessage()]);
+    }
     exit;
 }
 

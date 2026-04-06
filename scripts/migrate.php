@@ -63,14 +63,13 @@ $sqls = [
     // sheet history for row changes
     "CREATE TABLE IF NOT EXISTS sheet_history (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        sheet_table_name VARCHAR(255) NOT NULL,
-        sheet_row_id INT NOT NULL,
-        changed_by_user_id INT,
-        changed_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-        old_values TEXT,
-        new_values TEXT,
-        KEY idx_sheet_row (sheet_table_name, sheet_row_id),
-        FOREIGN KEY (changed_by_user_id) REFERENCES users(id) ON DELETE SET NULL
+        table_name VARCHAR(255) NOT NULL,
+        row_id INT NOT NULL,
+        action VARCHAR(20) NOT NULL,
+        changed_by VARCHAR(255) DEFAULT NULL,
+        old_data JSON DEFAULT NULL,
+        new_data JSON DEFAULT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4",
 
     // Sequence for unique asset codes

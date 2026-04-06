@@ -126,6 +126,7 @@ $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <div class="modal-dialog">
     <div class="modal-content">
       <form id="uploadForm" enctype="multipart/form-data">
+        <?php echo csrf_field(); ?>
         <div class="modal-header">
           <h5 class="modal-title">Subir Nueva Imagen</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -157,6 +158,7 @@ $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <script>
 document.addEventListener('DOMContentLoaded', function(){
+  const csrfToken = '<?php echo get_csrf_token(); ?>';
   // Eliminar Imagen
   document.querySelectorAll('.btnDeleteImage').forEach(function(b){
     b.addEventListener('click', function(){
@@ -165,6 +167,7 @@ document.addEventListener('DOMContentLoaded', function(){
       const formData = new URLSearchParams();
       formData.append('id', id);
       formData.append('action', 'delete_image');
+      formData.append('csrf_token', csrfToken);
 
       fetch('api_action.php', { 
           method: 'POST', 

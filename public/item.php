@@ -21,6 +21,7 @@ if (isset($_GET['form']) && $_GET['form'] == '1') {
     </div>
     <div class="modal-body">
         <form id="editFormInModal">
+            <?php echo csrf_field(); ?>
             <?php foreach ($cols as $c): ?>
                 <?php if (in_array($c, ['id', '_row_hash', 'created_at', 'updated_at'])) continue; ?>
                 <div class="mb-3">
@@ -52,6 +53,7 @@ if (isset($_GET['form']) && $_GET['form'] == '1') {
             fd.append('action', 'update');
             fd.append('table', '<?php echo addslashes($table); ?>');
             fd.append('id', '<?php echo $id; ?>');
+            fd.append('csrf_token', '<?php echo get_csrf_token(); ?>');
 
             saveBtn.disabled = true;
             saveBtn.textContent = 'Guardando...';
@@ -88,6 +90,7 @@ if ($new) {
     if ($inline) {
       echo '<div><h5>Crear nuevo en ' . htmlspecialchars($table) . '</h5>';
       echo '<form id="formCreate">';
+      echo csrf_field();
       foreach ($cols as $c) { if ($c=='id' || $c=='_row_hash' || $c=='created_at' || $c=='updated_at') continue;
         echo '<div class="mb-2"><label class="form-label">' . htmlspecialchars($c) . '</label>';
         echo '<input class="form-control" name="' . htmlspecialchars($c) . '"></div>';
@@ -100,6 +103,7 @@ if ($new) {
       <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
       <div class="modal-body">
         <form id="formCreate">
+          <?php echo csrf_field(); ?>
           <?php foreach ($cols as $c): if ($c=='id' || $c=='_row_hash' || $c=='created_at' || $c=='updated_at') continue; ?>
             <div class="mb-2">
               <label class="form-label"><?php echo htmlspecialchars($c); ?></label>
@@ -125,6 +129,7 @@ if ($new) {
       const form = document.getElementById('formCreate');
       const data = new FormData(form);
       data.append('action','create'); data.append('table','<?php echo addslashes($table); ?>');
+      data.append('csrf_token', '<?php echo get_csrf_token(); ?>');
       fetch('api_action.php', { method:'POST', body: data })
         .then(r => r.json()).then(js => { if (js.success) { if (<?php echo $inline ? 'true' : 'false'; ?>) { window.refreshSheet(); document.getElementById('detailPane').innerHTML = '<div class="empty-note">Registro creado. Selecciona fila para ver detalles.</div>'; } else { var modalEl = document.getElementById('itemModal'); var bsModal = bootstrap.Modal.getOrCreateInstance(modalEl); bsModal.hide(); if (window.refreshSheet) window.refreshSheet(); } } else alert(js.error || 'Error'); });
     });
@@ -202,6 +207,7 @@ if ($inline) {
 
 <script>
 function fetchImages(){
+  const csrfToken = '<?php echo get_csrf_token(); ?>';
   fetch('api_action.php?action=list_images&table=' + encodeURIComponent('<?php echo addslashes($table); ?>') + '&id=' + <?php echo $row['id']; ?>)
     .then(r => r.json()).then(js => {
       const el = document.getElementById('imagesList'); if (!el) return; el.innerHTML = '';
@@ -227,6 +233,7 @@ function attachItemHandlers(root){
     if (t.closest && t.closest('#delBtn')){
       if (!confirm('Eliminar este registro?')) return;
       const fd = new FormData(); fd.append('action','delete'); fd.append('table','<?php echo addslashes($table); ?>'); fd.append('id','<?php echo $row['id']; ?>');
+      fd.append('csrf_token', csrfToken);
       fetch('api_action.php', { method:'POST', body: fd }).then(r => r.json()).then(js => { if (js.success) { var modalEl = document.getElementById('itemModal'); var bsModal = bootstrap.Modal.getOrCreateInstance(modalEl); bsModal.hide(); if (window.refreshSheet) window.refreshSheet(); } else alert(js.error); });
       return;
     }
@@ -234,6 +241,7 @@ function attachItemHandlers(root){
     if (t.closest && t.closest('#delBtnInline')){
       if (!confirm('Eliminar este registro?')) return;
       const fd = new FormData(); fd.append('action','delete'); fd.append('table','<?php echo addslashes($table); ?>'); fd.append('id','<?php echo $row['id']; ?>');
+      fd.append('csrf_token', csrfToken);
       fetch('api_action.php', { method:'POST', body: fd }).then(r => r.json()).then(js => { if (js.success) { if (window.refreshSheet) window.refreshSheet(); document.getElementById('detailPane').innerHTML = '<div class="empty-note">Registro eliminado.</div>'; } else alert(js.error); });
       return;
     }
@@ -242,6 +250,7 @@ function attachItemHandlers(root){
     if (t.closest && t.closest('#deactBtn')){
       if (!confirm('Desactivar este registro?')) return;
       const fd = new FormData(); fd.append('action','deactivate'); fd.append('table','<?php echo addslashes($table); ?>'); fd.append('id','<?php echo $row['id']; ?>');
+      fd.append('csrf_token', csrfToken);
       fetch('api_action.php', { method:'POST', body: fd }).then(r => r.json()).then(js => { if (js.success) { var modalEl = document.getElementById('itemModal'); var bsModal = bootstrap.Modal.getOrCreateInstance(modalEl); bsModal.hide(); if (window.refreshSheet) window.refreshSheet(); } else alert(js.error); });
       return;
     }
@@ -250,6 +259,7 @@ function attachItemHandlers(root){
     if (t.closest && t.closest('#deactBtnInline')){
       if (!confirm('Desactivar este registro?')) return;
       const fd = new FormData(); fd.append('action','deactivate'); fd.append('table','<?php echo addslashes($table); ?>'); fd.append('id','<?php echo $row['id']; ?>');
+      fd.append('csrf_token', csrfToken);
       fetch('api_action.php', { method:'POST', body: fd }).then(r => r.json()).then(js => { if (js.success) { if (window.refreshSheet) window.refreshSheet(); document.getElementById('detailPane').innerHTML = '<div class="empty-note">Registro desactivado.</div>'; } else alert(js.error); });
       return;
     }
@@ -291,6 +301,7 @@ function attachItemHandlers(root){
       fd.append('action', 'update');
       fd.append('table', '<?php echo addslashes($table); ?>');
       fd.append('id', '<?php echo $row['id']; ?>');
+      fd.append('csrf_token', csrfToken);
       
       fetch('api_action.php', { method: 'POST', body: fd })
         .then(r => r.json())
@@ -320,6 +331,7 @@ function attachItemHandlers(root){
       const fd = new FormData(form);
       fd.append('table', '<?php echo addslashes($table); ?>');
       fd.append('id', '<?php echo $row['id']; ?>');
+      fd.append('csrf_token', csrfToken);
       
       console.log('Uploading file:', fileInput.files[0].name);
       

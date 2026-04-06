@@ -105,8 +105,15 @@ function getNextAssetCode()
         $stmt = $pdo->query("SELECT last_id, prefix FROM asset_sequence WHERE id = 1 FOR UPDATE");
         $seq = $stmt->fetch(PDO::FETCH_ASSOC);
         
-        $next_id = $seq['last_id'] + 1;
-        $prefix = $seq['prefix'];
+        if (!$seq) {
+            // If row 1 doesn't exist, initialize it
+            $pdo->exec("INSERT IGNORE INTO asset_sequence (id, prefix, last_id) VALUES (1, 'AE', 0)");
+            $stmt = $pdo->query("SELECT last_id, prefix FROM asset_sequence WHERE id = 1 FOR UPDATE");
+            $seq = $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+        
+        $next_id = ($seq['last_id'] ?? 0) + 1;
+        $prefix = $seq['prefix'] ?? 'AE';
 
         $update_stmt = $pdo->prepare("UPDATE asset_sequence SET last_id = :next_id WHERE id = 1");
         $update_stmt->execute([':next_id' => $next_id]);
@@ -120,7 +127,43 @@ function getNextAssetCode()
         if ($pdo->inTransaction()) {
             $pdo->rollBack();
         }
-        // Fallback in case of error, though this should be rare
-        return 'ERR-' . time();
+        // Fallback with microtime to increase uniqueness during batch processing
+        return 'ERR-' . str_replace('.', '', microtime(true));
     }
+}
+
+/**
+ * Genera un token CSRF si no existe en la sesión.
+ */
+function generate_csrf_token() {
+    if (session_status() === PHP_SESSION_NONE) session_start();
+    if (empty($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+    return $_SESSION['csrf_token'];
+}
+
+/**
+ * Retorna el token CSRF actual.
+ */
+function get_csrf_token() {
+    return $_SESSION['csrf_token'] ?? generate_csrf_token();
+}
+
+/**
+ * Valida un token CSRF.
+ */
+function validate_csrf_token($token) {
+    if (session_status() === PHP_SESSION_NONE) session_start();
+    $sessionToken = $_SESSION['csrf_token'] ?? '';
+    if (empty($sessionToken) || empty($token)) return false;
+    return hash_equals($sessionToken, $token);
+}
+
+/**
+ * Genera el campo input oculto para el token CSRF.
+ */
+function csrf_field() {
+    $token = get_csrf_token();
+    return '<input type="hidden" name="csrf_token" value="' . $token . '">';
 }

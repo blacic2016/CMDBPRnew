@@ -1,6 +1,7 @@
 <?php
-require_once __DIR__ . '/../config.php'; // Agregado para cargar constantes
+require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../src/auth.php';
+require_once __DIR__ . '/../src/helpers.php';
 
 if (session_status() === PHP_SESSION_NONE) session_start();
 
@@ -8,8 +9,11 @@ $err = null;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $u = isset($_POST['username']) ? trim($_POST['username']) : '';
     $p = isset($_POST['password']) ? $_POST['password'] : '';
+    $token = $_POST['csrf_token'] ?? '';
 
-    if (login_user($u, $p)) {
+    if (!validate_csrf_token($token)) {
+        $err = 'Error: Token CSRF inválido.';
+    } else if (login_user($u, $p)) {
         // Redirigir al dashboard.php que está en la misma carpeta
         header('Location: dashboard.php');
         exit();
@@ -32,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="alert alert-danger"><?php echo htmlspecialchars($err); ?></div>
     <?php endif; ?>
     <form method="post">
+      <?php echo csrf_field(); ?>
       <div class="mb-3">
         <label class="form-label">Usuario</label>
         <input class="form-control" name="username" required>

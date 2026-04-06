@@ -152,6 +152,7 @@ require_once __DIR__ . '/partials/header.php';
                 <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body" id="modal-form-content">
+                <?php echo csrf_field(); ?>
                 <div class="text-center p-5"><div class="spinner-border text-primary"></div></div>
             </div>
             <div class="modal-footer justify-content-between">
@@ -171,6 +172,7 @@ require_once __DIR__ . '/partials/header.php';
 
 <script>
 $(function() {
+    const csrfToken = '<?php echo get_csrf_token(); ?>';
     // 1. Inicializar Select2
     $('#cmdbTableSelector').select2({ 
         placeholder: "Selecciona tablas...", 
@@ -244,6 +246,7 @@ $(document).on('click', '[data-toggle="buttons"] .btn', function() {
 
     const formData = new FormData();
     formData.append('action', 'get_cmdb_data_for_zabbix');
+    formData.append('csrf_token', csrfToken);
     selectedTables.forEach(t => formData.append('tables[]', t));
 
     fetch('api_action.php', { method: 'POST', body: formData })
@@ -390,7 +393,8 @@ $(document).on('click', '[data-toggle="buttons"] .btn', function() {
         const btn = $(this);
         btn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin"></i> Guardando...');
 
-        $.post('api_action.php?action=save_zabbix_mapping', form.serialize(), function(res) {
+        const formData = form.serialize() + '&csrf_token=' + csrfToken;
+        $.post('api_action.php?action=save_zabbix_mapping', formData, function(res) {
             if (res.success) {
                 Swal.fire('Guardado', 'Mapeo actualizado con éxito', 'success');
                 $('#zabbixMappingModal').modal('hide');
@@ -432,7 +436,8 @@ $(document).on('click', '[data-toggle="buttons"] .btn', function() {
                 const res = await $.post('api_action.php', { 
                     action: 'create_zabbix_host', 
                     table_name: tableName, 
-                    row_id: rowId 
+                    row_id: rowId,
+                    csrf_token: csrfToken
                 });
 
                 if (res.success) {
@@ -486,7 +491,8 @@ $(document).on('click', '.delete-zabbix-host', function() {
                 action: 'delete_zabbix_host',
                 table_name: tableName,
                 row_id: rowId,
-                zabbix_host_id: zabbixId
+                zabbix_host_id: zabbixId,
+                csrf_token: csrfToken
             }, function(res) {
                 if (res.success) {
                     Swal.fire('Eliminado', 'El host ha sido removido de Zabbix correctamente.', 'success');
@@ -552,7 +558,8 @@ $('#run-bulk-delete').on('click', async function() {
                 action: 'delete_zabbix_host', 
                 table_name: tableName, 
                 row_id: item.rowId,
-                zabbix_host_id: item.zabbixId
+                zabbix_host_id: item.zabbixId,
+                csrf_token: csrfToken
             });
 
             if (res.success) {

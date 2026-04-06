@@ -19,7 +19,7 @@ define('DB_CONFIG', [
     'host'     => 'localhost',
     'user'     => 'root',
     'password' => 'zabbix',
-    'database' => 'CMDBVilaseca'
+    'database' => 'CMDBVilaseca2'
 ]);
 
 // 4. Configuración de Zabbix API
@@ -42,6 +42,37 @@ if (!defined('PUBLIC_URL_PREFIX')) {
 // URL para acceder a los archivos subidos
 define('UPLOAD_URL_PUBLIC', PUBLIC_URL_PREFIX . '/uploads');
 
-// 6. Configuraciones Adicionales
+// 6. Configuración de Seguridad y Sesión
+if (session_status() === PHP_SESSION_NONE) {
+    session_set_cookie_params([
+        'lifetime' => 0,
+        'path' => '/',
+        'domain' => '',
+        'secure' => false, // Cambiar a true si se usa HTTPS
+        'httponly' => true,
+        'samesite' => 'Lax'
+    ]);
+    session_start();
+}
+
+// Global Security Headers
+header("X-Frame-Options: SAMEORIGIN");
+header("X-Content-Type-Options: nosniff");
+header("Referrer-Policy: strict-origin-when-cross-origin");
+header("X-XSS-Protection: 1; mode=block");
+
+// CSP ajustada para AdminLTE/CDNs
+$csp = "default-src 'self'; " .
+       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; " .
+       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; " .
+       "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; " .
+       "img-src 'self' data:; " .
+       "frame-ancestors 'self';";
+header("Content-Security-Policy: " . $csp);
+
+// Eliminar cabecera de versión de PHP si está habilitada
+header_remove("X-Powered-By");
+
+// 7. Configuraciones Adicionales
 define('IMAGE_MAX_BYTES', 32 * 1024 * 1024);
 date_default_timezone_set('America/Santiago');

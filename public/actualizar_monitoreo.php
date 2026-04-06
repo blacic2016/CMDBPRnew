@@ -1,0 +1,413 @@
+<?php
+/**
+ * CMDB VILASECA - Actualizar Monitoreo en Zabbix
+ * Ubicación: /var/www/html/Sonda/public/actualizar_monitoreo.php
+ */
+
+require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../src/auth.php';
+require_once __DIR__ . '/../src/db.php';
+
+// Protección de sesión
+require_login(); 
+
+$page_title = 'Actualizar Monitoreo';
+
+// 1. Obtener tablas habilitadas
+try {
+    $pdo = getPDO();
+    if (!$pdo) throw new Exception("No se pudo establecer conexión con la base de datos.");
+    
+    $stmt = $pdo->query("SELECT table_name FROM zabbix_cmdb_config WHERE is_enabled = 1 ORDER BY table_name ASC");
+    $enabled_tables = $stmt->fetchAll(PDO::FETCH_COLUMN);
+} catch (Exception $e) {
+    error_log("Error en Monitoreo: " . $e->getMessage());
+    $enabled_tables = [];
+    $error_db = "Error de conexión: " . $e->getMessage();
+}
+
+require_once __DIR__ . '/partials/header.php'; 
+?>
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<style>
+    .select2-container--default .select2-selection--multiple { border-color: #ced4da; }
+    .select2-container .select2-selection--multiple { min-height: 38px; }
+    .table-head-fixed th { position: sticky; top: 0; background: #eee; z-index: 10; }
+    #action-bar { display: none; position: sticky; top: 20px; z-index: 1020; border-left: 5px solid #28a745; }
+</style>
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <h1>Actualizar Monitoreo en Zabbix</h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card card-success card-outline">
+                <div class="card-header">
+                    <h3 class="card-title"><i class="fas fa-sync-alt mr-1"></i> Sincronización Masiva</h3>
+                </div>
+                <div class="card-body">
+                    <?php if (isset($error_db)): ?>
+                        <div class="alert alert-danger"><?php echo $error_db; ?></div>
+                    <?php elseif (empty($enabled_tables)): ?>
+                        <div class="alert alert-warning">
+                            <h5><i class="icon fas fa-exclamation-triangle"></i> No hay tablas configuradas</h5>
+                            Habilita las tablas en la configuración de la CMDB.
+                        </div>
+                    <?php else: ?>
+                        <div class="form-group">
+                            <label>Selecciona tablas de la CMDB para actualizar:</label>
+                            <select class="form-control" id="cmdbTableSelector" multiple="multiple">
+                                <?php foreach ($enabled_tables as $table): ?>
+                                    <option value="<?php echo htmlspecialchars($table); ?>">
+                                        <?php echo htmlspecialchars(ucfirst(str_replace('sheet_', '', $table))); ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+  
+<div id="monitoring-dashboard" style="display: none;">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="small-box bg-success shadow-sm">
+                <div class="inner">
+                    <h3 id="stat-monitored">0</h3>
+                    <p>Monitoreados</p>
+                </div>
+                <div class="icon"><i class="fas fa-check-circle"></i></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="small-box bg-secondary shadow-sm">
+                <div class="inner">
+                    <h3 id="stat-unmonitored">0</h3>
+                    <p>No Monitoreados</p>
+                </div>
+                <div class="icon"><i class="fas fa-times-circle"></i></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h3 class="card-title text-sm"><i class="fas fa-filter mr-1"></i> Filtrar Vista</h3>
+                </div>
+                <div class="card-body p-2">
+                    <div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
+                        <label class="btn btn-outline-primary">
+                            <input type="radio" name="status-filter" value="all"> Todos
+                        </label>
+                        <label class="btn btn-outline-success active">
+                            <input type="radio" name="status-filter" value="Monitoreado" checked> Solo Monitoreados
+                        </label>
+                        <label class="btn btn-outline-secondary">
+                            <input type="radio" name="status-filter" value="No Monitoreado"> No Monitoreados
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="card card-body shadow-sm" id="action-bar">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong id="selected-count">0</strong> equipos seleccionados.
+                    </div>
+                    <div>
+                        <button class="btn btn-primary" id="manage-monitoring-btn">
+                            <i class="fas fa-cogs mr-1"></i> Configurar Mapeo
+                        </button>
+                        <button class="btn btn-success ml-2" id="run-bulk-update">
+                            <i class="fas fa-sync mr-1"></i> Actualizar en Zabbix
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="results-container" class="mt-4"></div>
+        </div>
+    </section>
+</div>
+
+<div class="modal fade" id="zabbixMappingModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title">Configuración de Mapeo: <span id="modal-cmdb-table-name"></span></h5>
+                <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-form-content">
+                <div class="text-center p-5"><div class="spinner-border text-primary"></div></div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-success" id="save-mapping-btn">
+                    <i class="fas fa-save mr-1"></i> Guardar Configuración
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php require_once __DIR__ . '/partials/footer.php'; ?>
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+$(function() {
+    const csrfToken = '<?php echo get_csrf_token(); ?>';
+    // 1. Inicializar Select2
+    $('#cmdbTableSelector').select2({ 
+        placeholder: "Selecciona tablas...", 
+        allowClear: true,
+        width: '100%'
+    });
+
+    // 2. Cargar datos de las tablas al seleccionar
+    $('#cmdbTableSelector').on('change', function() {
+        const selectedTables = $(this).val();
+        const container = $('#results-container');
+        const dashboard = $('#monitoring-dashboard');
+        
+        if (!selectedTables || selectedTables.length === 0) {
+            container.html('');
+            dashboard.fadeOut();
+            $('#action-bar').fadeOut();
+            return;
+        }
+
+        container.html(`
+            <div class="text-center p-5">
+                <div class="spinner-border text-success"></div>
+                <p class="mt-2">Sincronizando con Zabbix y cargando datos...</p>
+            </div>
+        `);
+
+        const formData = new FormData();
+        formData.append('action', 'get_cmdb_data_for_zabbix');
+        formData.append('csrf_token', csrfToken);
+        selectedTables.forEach(t => formData.append('tables[]', t));
+
+        fetch('api_action.php', { method: 'POST', body: formData })
+            .then(res => res.json())
+            .then(data => {
+                container.html('');
+
+                if (data.success) {
+                    for (const tableName in data.data) {
+                        renderCmdbTable(tableName, data.data[tableName], container);
+                    }
+
+                    const totalMonitored = $('.badge-success, .badge-info').length;
+                    const totalUnmonitored = $('.badge-secondary').length;
+
+                    $('#stat-monitored').text(totalMonitored);
+                    $('#stat-unmonitored').text(totalUnmonitored);
+                    
+                    dashboard.fadeIn();
+                    
+                    // Aplicar filtro por defecto: Solo Monitoreados
+                    applyStatusFilter('Monitoreado');
+                    $('input[name="status-filter"][value="Monitoreado"]').parent().addClass('active').siblings().removeClass('active');
+                    
+                } else {
+                    container.html('<div class="alert alert-danger"><i class="fas fa-exclamation-triangle mr-2"></i>' + data.error + '</div>');
+                    dashboard.fadeOut();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                container.html('<div class="alert alert-danger">Error crítico al conectar con el servidor.</div>');
+            });
+    });
+
+    function applyStatusFilter(filter) {
+        $('.table tbody tr').each(function() {
+            const rowStatus = $(this).find('.badge').text().trim();
+            if (filter === 'all') {
+                $(this).show();
+            } else if (filter === 'Monitoreado') {
+                rowStatus.includes('Monitoreado') ? $(this).show() : $(this).hide();
+            } else {
+                rowStatus === 'No Monitoreado' ? $(this).show() : $(this).hide();
+            }
+        });
+        // Deseleccionar lo que quedó oculto para evitar errores
+        $('.select-row:hidden').prop('checked', false).trigger('change');
+    }
+
+    $(document).on('change', 'input[name="status-filter"]', function() {
+        applyStatusFilter($(this).val());
+    });
+
+    function renderCmdbTable(name, info, container) {
+        const visibleColumns = info.columns.filter(c => !c.startsWith('_'));
+        
+        let html = `
+            <div class="card card-outline card-success mt-3 shadow">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-table mr-1"></i>
+                        <b>${name.replace('sheet_', '').toUpperCase()}</b>
+                    </h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body table-responsive p-0" style="max-height: 450px;">
+                    <table class="table table-sm table-head-fixed table-hover" id="table-${name}">
+                        <thead>
+                            <tr>
+                                <th style="width: 40px" class="text-center">
+                                    <input type="checkbox" class="select-all" data-target="table-${name}">
+                                </th>
+                                <th style="width: 200px">Estado en Zabbix</th>
+                                ${visibleColumns.map(col => `<th>${col.toUpperCase()}</th>`).join('')}
+                            </tr>
+                        </thead>
+                        <tbody>`;
+        
+        if (info.rows.length === 0) {
+            html += `<tr><td colspan="${visibleColumns.length + 2}" class="text-center p-3 text-muted">No hay datos disponibles</td></tr>`;
+        }
+
+        info.rows.forEach(row => {
+            const status = row._zabbix_status || 'No Monitoreado';
+            const zabbixId = row.zabbix_host_id;
+            
+            let badgeClass = 'secondary';
+            if (status === 'Monitoreado') badgeClass = 'success';
+            if (status.includes('ID')) badgeClass = 'info';
+
+            html += `
+                <tr>
+                    <td class="text-center">
+                        <input type="checkbox" class="select-row" data-id="${row.id}" data-zabbix-id="${zabbixId}">
+                    </td>
+                    <td class="align-middle">
+                        <span class="badge badge-${badgeClass}">${status}</span>
+                    </td>
+                    ${visibleColumns.map(col => `<td>${row[col] || '<span class="text-muted">-</span>'}</td>`).join('')}
+                </tr>`;
+        });
+
+        html += `</tbody></table></div></div>`;
+        container.append(html);
+    }
+
+    $(document).on('change', '.select-all', function() {
+        const target = $(this).data('target');
+        $(`#${target} tbody tr:visible .select-row`).prop('checked', this.checked).trigger('change');
+    });
+
+    $(document).on('change', '.select-row', function() {
+        const count = $('.select-row:checked').length;
+        $('#selected-count').text(count);
+        count > 0 ? $('#action-bar').fadeIn() : $('#action-bar').fadeOut();
+    });
+
+    $(document).on('click', '#manage-monitoring-btn', function() {
+        const tableName = $('#cmdbTableSelector').val()[0];
+        if (!tableName) return;
+        $('#modal-cmdb-table-name').text(tableName.toUpperCase());
+        $('#zabbixMappingModal').modal('show');
+        $('#modal-form-content').html('<div class="text-center p-5"><div class="spinner-border text-success"></div></div>');
+        $.get('api_action.php', { action: 'get_mapping_form', table: tableName }, function(html) {
+            $('#modal-form-content').html(html);
+        });
+    });
+
+    $('#save-mapping-btn').on('click', function() {
+        const form = $('#mapping-form');
+        const btn = $(this);
+        btn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin"></i> Guardando...');
+        const formData = form.serialize() + '&csrf_token=' + csrfToken;
+        $.post('api_action.php?action=save_zabbix_mapping', formData, function(res) {
+            if (res.success) {
+                Swal.fire('Guardado', 'Mapeo actualizado con éxito', 'success');
+                $('#zabbixMappingModal').modal('hide');
+            } else {
+                Swal.fire('Error', res.error, 'error');
+            }
+        }, 'json').always(() => btn.prop('disabled', false).text('Guardar Configuración'));
+    });
+
+    // 7. ACTUALIZACIÓN MASIVA (BULK UPDATE)
+    $('#run-bulk-update').on('click', async function() {
+        const selectedRows = $('.select-row:checked');
+        const total = selectedRows.length;
+        const tableName = $('#cmdbTableSelector').val()[0];
+
+        // Validar que todos tengan ID de Zabbix
+        let hostsToUpdate = [];
+        selectedRows.each(function() {
+            const zId = $(this).data('zabbix-id');
+            if (zId && zId !== 'null') {
+                hostsToUpdate.push({ id: $(this).data('id'), zId: zId });
+            }
+        });
+
+        if (hostsToUpdate.length === 0) {
+            Swal.fire('Atención', 'Selecciona al menos un equipo que ya esté monitoreado.', 'warning');
+            return;
+        }
+
+        const confirm = await Swal.fire({
+            title: '¿Actualizar hosts en Zabbix?',
+            text: `Se resincronizarán ${hostsToUpdate.length} equipos con Zabbix.`,
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, actualizar'
+        });
+
+        if (!confirm.isConfirmed) return;
+
+        Swal.fire({
+            title: 'Actualizando Zabbix...',
+            html: 'Progreso: <b>0</b> de ' + hostsToUpdate.length + '<br><small id="bulk-log">Iniciando...</small>',
+            allowOutsideClick: false,
+            didOpen: () => { Swal.showLoading(); }
+        });
+
+        let ok = 0; let err = 0;
+
+        for (let i = 0; i < hostsToUpdate.length; i++) {
+            const item = hostsToUpdate[i];
+            try {
+                const res = await $.post('api_action.php', { 
+                    action: 'update_zabbix_host', 
+                    table_name: tableName, 
+                    row_id: item.id,
+                    zabbix_host_id: item.zId,
+                    csrf_token: csrfToken
+                });
+
+                if (res.success) {
+                    ok++;
+                } else {
+                    err++;
+                    console.error("Fallo ID " + item.id + ":", res.log);
+                }
+                $('#bulk-log').text('Último: ' + (res.log || 'Procesado'));
+            } catch (e) {
+                err++;
+            }
+            Swal.getHtmlContainer().querySelector('b').textContent = (ok + err);
+        }
+
+        Swal.fire('Finalizado', `Actualizados: ${ok} | Errores: ${err}`, err > 0 ? 'warning' : 'success');
+        $('#cmdbTableSelector').trigger('change');
+    });
+});
+</script>

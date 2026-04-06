@@ -1,115 +1,130 @@
 <?php
+/**
+ * CMDB VILASECA - Motor de Importación Excel (Versión Completa 283+ líneas)
+ * Ubicación: /var/www/html/Sonda/src/importer.php
+ */
+
+// 1. Reporte total de errores para diagnóstico
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// 2. Límites de recursos máximos para procesar las 9 hojas del archivo EQUIPOS.xlsx
+ini_set('memory_limit', '1024M');
+set_time_limit(900);
+
 require_once __DIR__ . '/db.php';
+if (file_exists(__DIR__ . '/helpers.php')) {
+    require_once __DIR__ . '/helpers.php';
+}
 require_once __DIR__ . '/../vendor/autoload.php';
+
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
+
+/**
+ * Seguro: Evita el Fatal Error de re-declaración si ya existe en helpers.php
+ */
+if (!function_exists('getNextAssetCode')) {
+    function getNextAssetCode() {
+        return 'AST-' . strtoupper(bin2hex(random_bytes(4)));
+    }
+}
 
 class Importer
 {
-    // mode: 'add' or 'update'
+    /**
+     * Motor principal: Procesa múltiples hojas, crea/reemplaza tablas y gestiona auditoría visual.
+     */
     public static function importExcelFile(string $filePath, string $mode = 'add')
     {
         $pdo = getPDO();
-        $spreadsheet = IOFactory::load($filePath);
+        
+        // Cargamos el Reader configurado para leer solo datos y evitar bloqueos por fórmulas rotas
+        $reader = IOFactory::createReaderForFile($filePath);
+        $reader->setReadDataOnly(true); 
+        $spreadsheet = $reader->load($filePath);
         $summary = [];
 
-        // If mode is 'replace' we will truncate only the tables that are present in the uploaded spreadsheet
-        $truncatedTables = [];
-        if ($mode === 'replace') {
-            $sheetNames = $spreadsheet->getSheetNames();
-            foreach ($sheetNames as $sheetName) {
-                $tableName = 'sheet_' . preg_replace('/[^a-z0-9]+/i', '_', strtolower($sheetName));
-                $tableName = preg_replace('/_+/', '_', $tableName);
-                try {
-                    // check table exists
-                    $stmt = $pdo->prepare("SELECT COUNT(*) FROM information_schema.TABLES WHERE TABLE_SCHEMA = :db AND TABLE_NAME = :tbl");
-                    $stmt->execute([':db' => DB_CONFIG['database'], ':tbl' => $tableName]);
-                    if ($stmt->fetchColumn() > 0) {
-                        try { $pdo->exec("TRUNCATE TABLE `{$tableName}`"); $truncatedTables[$tableName] = true; } catch (Exception $e) { /* ignore truncate errors */ }
-                    }
-                } catch (Exception $e) {
-                    // ignore
-                }
-            }
-        }
+        $sheetNames = $spreadsheet->getSheetNames();
+        $processedTables = [];
 
-        foreach ($spreadsheet->getSheetNames() as $index => $sheetName) {
+        // --- PROCESAMIENTO DE TODAS LAS HOJAS ---
+        foreach ($sheetNames as $index => $sheetName) {
             $sheet = $spreadsheet->getSheet($index);
+            $highestRow = $sheet->getHighestRow();
+            $highestColumn = $sheet->getHighestColumn();
+            $highestColumnIndex = Coordinate::columnIndexFromString($highestColumn);
+
+            // Convertimos la hoja a array para procesar cabeceras y datos
             $rows = $sheet->toArray(null, true, true, true);
             if (count($rows) < 1) continue;
-            // Make trimming null-safe to avoid PHP deprecated warnings
-            $headers = array_map(function($h){ return $h === null ? '' : trim($h); }, $rows[1]);
-            // sanitize headers and ensure unique column names; avoid using 'id' (reserved primary key)
-            $cols = [];
-            $seen = [];
+
+            // --- LÓGICA DE SANITIZACIÓN DE CABECERAS ---
+            $headers = array_map(function($h){ return $h === null ? '' : trim((string)$h); }, $rows[1]);
+            $cols = []; $seen = [];
             foreach ($headers as $h) {
+                if ($h === '') continue; // Ignorar columnas vacías
                 $base = strtolower(preg_replace('/[^a-z0-9_]+/i', '_', $h));
                 $base = preg_replace('/_+/', '_', $base);
                 $base = trim($base, '_');
                 if ($base === '') $base = 'col';
-                if ($base === 'id') $base = 'excel_id'; // prevent collision with PK 'id'
-                $col = $base;
-                $i = 1;
-                while (in_array($col, $seen, true)) {
-                    $col = $base . '_' . $i;
+                if ($base === 'id' || $base === 'excel_id') $base = 'item_id'; 
+                
+                $colName = $base; $i = 1;
+                while (in_array($colName, $seen, true) || in_array($colName, ['id', '_row_hash', 'estado_actual', 'asset_code', 'created_at', 'updated_at'])) {
+                    $colName = $base . '_' . $i;
                     $i++;
                 }
-                $seen[] = $col;
-                $cols[] = $col;
+                $seen[] = $colName; $cols[] = $colName;
             }
+
             $tableName = 'sheet_' . preg_replace('/[^a-z0-9]+/i', '_', strtolower($sheetName));
             $tableName = preg_replace('/_+/', '_', $tableName);
+            $processedTables[] = $tableName;
 
-            // create table if not exists
+            // --- REEMPLAZO O CREACIÓN DE TABLA ---
+            if ($mode === 'replace') {
+                $pdo->exec("DROP TABLE IF EXISTS `{$tableName}`");
+            }
+
             $createSql = "CREATE TABLE IF NOT EXISTS `{$tableName}` (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 _row_hash VARCHAR(64) NOT NULL,
                 estado_actual ENUM('USADO','ENTREGADO','NO_APARECE','DANADO') DEFAULT 'USADO',
+                asset_code VARCHAR(50) NULL UNIQUE,
                 created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
                 updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
             $pdo->exec($createSql);
 
-            // add columns if not exist
-            $all_cols_in_db = [];
+            // Sincronización de columnas dinámicas
             $col_check_stmt = $pdo->prepare("SHOW COLUMNS FROM `{$tableName}`");
             $col_check_stmt->execute();
-            while($c = $col_check_stmt->fetch(PDO::FETCH_ASSOC)) {
-                $all_cols_in_db[] = $c['Field'];
-            }
-
-            // Ensure asset_code column exists
-            if (!in_array('asset_code', $all_cols_in_db)) {
-                 try {
-                    $pdo->exec("ALTER TABLE `{$tableName}` ADD COLUMN `asset_code` VARCHAR(50) NULL UNIQUE AFTER `id`");
-                } catch (Exception $e) { /* ignore */ }
-            }
+            $all_cols_in_db = $col_check_stmt->fetchAll(PDO::FETCH_COLUMN);
 
             foreach ($cols as $col) {
-                if ($col === 'id' || in_array($col, $all_cols_in_db)) continue;
+                if (in_array($col, $all_cols_in_db)) continue;
                 try {
-                    $pdo->exec("ALTER TABLE `{$tableName}` ADD COLUMN `{$col}` VARCHAR(255) NULL");
-                } catch (Exception $e) {
-                    // MySQL < 8 doesn't support ADD COLUMN IF NOT EXISTS in older versions; try to check first
-                    try {
-                        $stmt = $pdo->prepare("SHOW COLUMNS FROM `{$tableName}` LIKE :col");
-                        $stmt->execute([':col' => $col]);
-                        if ($stmt->rowCount() == 0) {
-                            $pdo->exec("ALTER TABLE `{$tableName}` ADD COLUMN `{$col}` VARCHAR(255) NULL");
-                        }
-                    } catch (Exception $e2) {
-                        // ignore
-                    }
-                }
+                    $pdo->exec("ALTER TABLE `{$tableName}` ADD COLUMN `{$col}` TEXT NULL");
+                } catch (Exception $e) { }
             }
 
-            // add unique index on _row_hash if not exists
+            // --- AUTO-REGISTRO EN SHEET_CONFIGS ---
             try {
-                $pdo->exec("ALTER TABLE `{$tableName}` ADD UNIQUE INDEX idx_{$tableName}_rowhash (_row_hash)");
-            } catch (Exception $e) {
-                // ignore if exists
-            }
+                $stmtCfg = $pdo->prepare("SELECT COUNT(*) FROM sheet_configs WHERE table_name = ?");
+                $stmtCfg->execute([$tableName]);
+                if ($stmtCfg->fetchColumn() == 0) {
+                    $insCfg = $pdo->prepare("INSERT INTO sheet_configs (sheet_name, table_name) VALUES (?, ?)");
+                    $insCfg->execute([$sheetName, $tableName]);
+                } else {
+                    // Actualizar nombre de la hoja si cambió pero la tabla es la misma
+                    $updCfg = $pdo->prepare("UPDATE sheet_configs SET sheet_name = ? WHERE table_name = ?");
+                    $updCfg->execute([$sheetName, $tableName]);
+                }
+            } catch (Exception $e) { }
 
-            // fetch configured unique columns for this sheet (if any)
+            // --- CARGA DE CONFIGURACIÓN DE COLUMNAS ÚNICAS ---
             $uniqueCols = [];
             try {
                 $stmtUc = $pdo->prepare("SELECT unique_columns FROM sheet_configs WHERE table_name = :t LIMIT 1");
@@ -118,153 +133,220 @@ class Importer
                 if ($ucJson) {
                     $ucArr = json_decode($ucJson, true);
                     if (is_array($ucArr)) {
-                        // ensure columns exist
-                        foreach ($ucArr as $uc) {
-                            if (in_array($uc, $cols, true)) $uniqueCols[] = $uc;
-                        }
+                        foreach ($ucArr as $uc) { if (in_array($uc, $cols, true)) $uniqueCols[] = $uc; }
                     }
                 }
-            } catch (Exception $e) {
-                // ignore
-            }
+            } catch (Exception $e) { }
 
-            // if unique columns configured, add a non-unique index to help lookups (ignore errors)
-            if (!empty($uniqueCols)) {
-                try {
-                    $idxName = 'idx_' . $tableName . '_unique_cols';
-                    $colsList = implode('`,`', $uniqueCols);
-                    $pdo->exec("ALTER TABLE `{$tableName}` ADD INDEX {$idxName} (`{$colsList}`)");
-                } catch (Exception $e) {
-                    // ignore index creation errors
-                }
-            }
-
-            // if mode is 'replace' clear the table before inserting rows
-            if ($mode === 'replace') {
-                try { $pdo->exec("TRUNCATE TABLE `{$tableName}`"); } catch (Exception $e) { /* ignore */ }
-            }
-
-            // insert rows
+            // --- PROCESAMIENTO FILA POR FILA CON AUDITORÍA ---
             $added = 0; $skipped = 0; $updated = 0; $errors = [];
-            $headerKeys = array_keys($rows[1]); // e.g. A,B,C...
-            for ($r = 2; $r <= count($rows); $r++) {
-                $row = $rows[$r];
-                // build associative mapping using headerKeys to handle columns beyond Z and null-safe trimming
-                $data = [];
-                foreach ($headerKeys as $i => $letter) {
-                    if (!isset($cols[$i])) continue; // no header defined
-                    $col = $cols[$i];
-                    if ($col === '') continue;
-                    $value = array_key_exists($letter, $row) ? ($row[$letter] === null ? null : trim($row[$letter])) : null;
-                    $data[$col] = $value;
+            $audit_rows = []; 
+            $headerKeys = array_keys($rows[1]); 
+
+            for ($r = 2; $r <= $highestRow; $r++) {
+                $data = []; $rowHasData = false;
+                $row_audit = ["row" => $r, "status" => "Omitida", "detail" => "Fila vacía"];
+
+                $col_count = 0;
+                foreach ($headerKeys as $letter) {
+                    if (!isset($cols[$col_count])) { $col_count++; continue; }
+                    $colName = $cols[$col_count];
+                    
+                    $val = $sheet->getCellByColumnAndRow($col_count + 1, $r)->getValue();
+                    $cleanVal = ($val === null) ? null : trim((string)$val);
+                    
+                    if ($cleanVal !== '' && $cleanVal !== null) $rowHasData = true;
+                    $data[$colName] = $cleanVal;
+                    $col_count++;
                 }
+                
+                if (!$rowHasData) continue; 
+
+                // Generar Hash de integridad
                 $rowHash = hash('md5', json_encode(array_values($data)));
                 $data['_row_hash'] = $rowHash;
-
-                // determine existence using configured unique columns when possible, otherwise fall back to _row_hash
-                $exists = false;
                 $existsId = null;
-                $usedMethod = 'row_hash';
-                $useUnique = false;
+
+                // 1. Prioridad: Columnas Únicas
                 if (!empty($uniqueCols)) {
-                    $hasNonEmpty = false;
+                    $where = []; $paramsU = [];
                     foreach ($uniqueCols as $uc) {
-                        if (isset($data[$uc]) && $data[$uc] !== null && $data[$uc] !== '') { $hasNonEmpty = true; break; }
+                        $pName = ":u_" . $uc;
+                        if ($data[$uc] === null) {
+                            $where[] = "`$uc` IS NULL";
+                        } else {
+                            $where[] = "`$uc` = $pName";
+                            $paramsU[$pName] = $data[$uc];
+                        }
                     }
-                    if ($hasNonEmpty) $useUnique = true;
-                }
-
-                if ($useUnique) {
-                    // build WHERE with null-safe comparisons
-                    $where = []; $paramsWhere = [];
-                    foreach ($uniqueCols as $uc) {
-                        $param = ':uniq_' . $uc;
-                        $where[] = "((`$uc` IS NULL AND $param IS NULL) OR (`$uc` = $param))";
-                        $paramsWhere[$param] = array_key_exists($uc, $data) ? $data[$uc] : null;
-                    }
-                    $sql = "SELECT id FROM `{$tableName}` WHERE " . implode(' AND ', $where) . " LIMIT 1";
-                    $stmtU = $pdo->prepare($sql);
-                    $stmtU->execute($paramsWhere);
+                    $sqlU = "SELECT id FROM `{$tableName}` WHERE " . implode(' AND ', $where) . " LIMIT 1";
+                    $stmtU = $pdo->prepare($sqlU);
+                    $stmtU->execute($paramsU);
                     $existsId = $stmtU->fetchColumn();
-                    if ($existsId) { $exists = true; $usedMethod = 'unique_cols'; }
                 }
 
-                if (!$exists) {
-                    $stmt = $pdo->prepare("SELECT id FROM `{$tableName}` WHERE _row_hash = :h LIMIT 1");
-                    $stmt->execute([':h' => $rowHash]);
-                    $existsId = $stmt->fetchColumn();
-                    if ($existsId) { $exists = true; $usedMethod = 'row_hash'; }
+                // 2. Backup: Por Hash si no hay únicas
+                if (!$existsId) {
+                    $stmtH = $pdo->prepare("SELECT id FROM `{$tableName}` WHERE _row_hash = :h LIMIT 1");
+                    $stmtH->execute([':h' => $rowHash]);
+                    $existsId = $stmtH->fetchColumn();
                 }
 
-                if ($exists) {
+                // --- DETERMINAR ACCIÓN ---
+                if ($existsId) {
                     if ($mode === 'update') {
-                        // update all columns except PK 'id'
-                        $sets = [];
-                        $params = [];
-                        foreach ($data as $k => $v) { if ($k === '_row_hash' || $k === 'id') continue; $sets[] = "`$k` = :$k"; $params[":$k"] = $v; }
-                        // always update _row_hash as well
-                        $params[':_row_hash'] = $rowHash;
-                        $sets[] = "`_row_hash` = :_row_hash";
-                        $params[':id'] = $existsId;
-                        $sql = "UPDATE `{$tableName}` SET " . implode(', ', $sets) . " WHERE id = :id";
-                        $pdo->prepare($sql)->execute($params);
+                        $sets = []; $pUpd = [];
+                        foreach ($data as $k => $v) { 
+                            if ($k !== 'id') { $sets[] = "`$k` = :$k"; $pUpd[":$k"] = $v; } 
+                        }
+                        $pUpd[':id'] = $existsId;
+                        $pdo->prepare("UPDATE `{$tableName}` SET " . implode(', ', $sets) . " WHERE id = :id")->execute($pUpd);
                         $updated++;
+                        $row_audit = ["row" => $r, "status" => "Actualizado", "detail" => "ID: $existsId"];
                     } else {
                         $skipped++;
+                        $row_audit = ["row" => $r, "status" => "Omitido", "detail" => "Registro ya existe."];
                     }
                 } else {
-                    // insert, but avoid inserting into PK 'id' if present
-                    if (isset($data['id'])) unset($data['id']);
-                    $colsInsert = array_keys($data);
-                    $placeholders = array_map(function ($c) { return ':' . $c; }, $colsInsert);
-                    $sql = "INSERT INTO `{$tableName}` (`" . implode('`,`', $colsInsert) . "`) VALUES (" . implode(', ', $placeholders) . ")";
-                    $params = [];
-                    foreach ($data as $k => $v) $params[':' . $k] = $v;
-                    
-                    // Assign a new asset code if one isn't provided
-                    if (!isset($data['asset_code']) || empty($data['asset_code'])) {
-                        $params[':asset_code'] = getNextAssetCode();
+                    // Generación de asset_code si no viene o es inválido
+                    $valAsset = isset($data['asset_code']) ? (string)$data['asset_code'] : '';
+                    if ($valAsset === '' || stripos($valAsset, 'ERR-') !== false || stripos($valAsset, '#') !== false) {
+                        $data['asset_code'] = getNextAssetCode();
                     }
 
+                    $keys = array_keys($data);
+                    $fields = "`" . implode("`,`", $keys) . "`";
+                    $places = ":" . implode(", :", $keys);
                     try {
-                        $pdo->prepare($sql)->execute($params);
+                        $pdo->prepare("INSERT INTO `{$tableName}` ($fields) VALUES ($places)")->execute($data);
                         $added++;
-                    } catch (Exception $e) {
-                        $errors[] = "Fila $r: " . $e->getMessage();
+                        $row_audit = ["row" => $r, "status" => "Agregado", "detail" => "Nuevo registro creado"];
+                    } catch (Exception $e) { 
+                        $errors[] = "Fila $r: " . $e->getMessage(); 
+                        $row_audit = ["row" => $r, "status" => "Error", "detail" => $e->getMessage()];
                     }
                 }
+                $audit_rows[] = $row_audit;
             }
 
-            // save import log
-            // ensure updated_count column exists (for older DBs)
+            // --- REGISTRO EN IMPORT_LOGS ---
+            $errorStr = substr(implode("\n", $errors), 0, 60000); 
             try {
-                $colStmt = $pdo->prepare("SELECT COUNT(*) FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = :db AND TABLE_NAME = 'import_logs' AND COLUMN_NAME = 'updated_count'");
-                $colStmt->execute([':db' => DB_CONFIG['database']]);
-                if ($colStmt->fetchColumn() == 0) {
-                    try {
-                        $pdo->exec("ALTER TABLE import_logs ADD COLUMN updated_count INT DEFAULT 0");
-                    } catch (Exception $e) {
-                        // ignore alter errors
-                    }
-                }
-            } catch (Exception $e) {
-                // ignore if information_schema not accessible
-            }
+                $ins = $pdo->prepare("INSERT INTO import_logs (filename, sheet_name, mode, added_count, skipped_count, updated_count, errors) VALUES (:f, :s, :m, :a, :sk, :u, :e)");
+                $ins->execute([':f'=>basename($filePath),':s'=>$sheetName,':m'=>$mode,':a'=>$added,':sk'=>$skipped,':u'=>$updated,':e'=>$errorStr]);
+            } catch (Exception $e) { }
 
-            $ins = $pdo->prepare("INSERT INTO import_logs (filename, sheet_name, mode, added_count, skipped_count, updated_count, errors) VALUES (:f, :s, :m, :a, :sk, :u, :e)");
-            $ins->execute([
-                ':f' => basename($filePath),
-                ':s' => $sheetName,
-                ':m' => $mode,
-                ':a' => $added,
-                ':sk' => $skipped,
-                ':u' => $updated,
-                ':e' => implode("\n", $errors)
-            ]);
-
-            $summary[$sheetName] = ['added' => $added, 'skipped' => $skipped, 'updated' => $updated, 'errors' => $errors, 'unique_columns' => $uniqueCols, 'truncated' => (!empty($truncatedTables) && isset($truncatedTables[$tableName]))];
+            $summary[$sheetName] = [
+                'added' => $added, 'skipped' => $skipped, 'updated' => $updated, 
+                'errors' => $errors, 'audit' => $audit_rows
+            ];
         }
 
         return $summary;
+    }
+
+    /**
+     * Obtiene metadatos de un archivo Excel (Hojas y sus primeras filas para previsualizar columnas)
+     */
+    public static function getExcelMetadata(string $filePath)
+    {
+        $reader = IOFactory::createReaderForFile($filePath);
+        $reader->setReadDataOnly(true);
+        $spreadsheet = $reader->load($filePath);
+        $metadata = [];
+
+        foreach ($spreadsheet->getSheetNames() as $index => $sheetName) {
+            $sheet = $spreadsheet->getSheet($index);
+            $highestColumn = $sheet->getHighestColumn();
+            $highestColumnIndex = Coordinate::columnIndexFromString($highestColumn);
+
+            // Obtener solo las primeras 2 filas para detectar cabeceras y ejemplo
+            $rows = [];
+            for ($r = 1; $r <= 2; $r++) {
+                $rowData = [];
+                for ($c = 1; $c <= $highestColumnIndex; $c++) {
+                    $val = $sheet->getCellByColumnAndRow($c, $r)->getValue();
+                    $rowData[] = ($val === null) ? '' : trim((string)$val);
+                }
+                if (array_filter($rowData)) $rows[] = $rowData;
+            }
+
+            $metadata[] = [
+                'sheetName' => $sheetName,
+                'columns' => $rows[0] ?? [],
+                'sample' => $rows[1] ?? []
+            ];
+        }
+        return $metadata;
+    }
+
+    /**
+     * Ejecuta una importación mapeada para una sola tabla
+     */
+    public static function executeMappedImport(string $tableName, string $filePath, string $sheetName, array $mapping)
+    {
+        $pdo = getPDO();
+        $reader = IOFactory::createReaderForFile($filePath);
+        $reader->setReadDataOnly(true);
+        $spreadsheet = $reader->load($filePath);
+        $sheet = $spreadsheet->getSheetByName($sheetName);
+
+        if (!$sheet) throw new Exception("La hoja '$sheetName' no existe en el archivo.");
+
+        // 1. Recrear la tabla
+        $pdo->exec("DROP TABLE IF EXISTS `{$tableName}`");
+        $pdo->exec("CREATE TABLE `{$tableName}` (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            _row_hash VARCHAR(64) NOT NULL,
+            estado_actual ENUM('USADO','ENTREGADO','NO_APARECE','DANADO') DEFAULT 'USADO',
+            asset_code VARCHAR(50) NULL UNIQUE,
+            zabbix_host_id VARCHAR(100) NULL,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
+
+        $dbCols = [];
+        foreach ($mapping as $excelIdx => $dbCol) {
+            $dbCol = preg_replace('/[^a-z0-9_]+/i', '_', strtolower($dbCol));
+            if (in_array($dbCol, ['id', '_row_hash', 'estado_actual', 'asset_code', 'zabbix_host_id', 'created_at', 'updated_at'])) continue;
+            $pdo->exec("ALTER TABLE `{$tableName}` ADD COLUMN `{$dbCol}` TEXT NULL");
+            $dbCols[$excelIdx] = $dbCol;
+        }
+
+        // 2. Importar
+        $highestRow = $sheet->getHighestRow();
+        $added = 0; $errors = [];
+        for ($r = 2; $r <= $highestRow; $r++) {
+            $data = []; $rowHasData = false;
+            foreach ($dbCols as $excelIdx => $dbCol) {
+                $val = $sheet->getCellByColumnAndRow($excelIdx + 1, $r)->getValue();
+                $cleanVal = ($val === null) ? null : trim((string)$val);
+                if ($cleanVal !== '' && $cleanVal !== null) $rowHasData = true;
+                $data[$dbCol] = $cleanVal;
+            }
+            if (!$rowHasData) continue;
+
+            $data['_row_hash'] = hash('md5', json_encode(array_values($data)));
+            $data['asset_code'] = getNextAssetCode();
+
+            $keys = array_keys($data);
+            $fields = "`" . implode("`,`", $keys) . "`";
+            $places = ":" . implode(", :", $keys);
+            try {
+                $pdo->prepare("INSERT INTO `{$tableName}` ($fields) VALUES ($places)")->execute($data);
+                $added++;
+            } catch (Exception $e) { $errors[] = "Fila $r: " . $e->getMessage(); }
+        }
+
+        // 3. Registrar en sheet_configs si no existe
+        $stmt_check = $pdo->prepare("SELECT COUNT(*) FROM sheet_configs WHERE table_name = ?");
+        $stmt_check->execute([$tableName]);
+        if ($stmt_check->fetchColumn() == 0) {
+            $displayName = ucfirst(str_replace(['sheet_', '_'], ['', ' '], $tableName));
+            $pdo->prepare("INSERT INTO sheet_configs (table_name, sheet_name) VALUES (?, ?)")
+                ->execute([$tableName, $displayName]);
+        }
+
+        return ['success' => true, 'added' => $added, 'errors' => $errors];
     }
 }

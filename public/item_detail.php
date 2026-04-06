@@ -73,6 +73,7 @@ $images = $stmt_images->fetchAll(PDO::FETCH_ASSOC);
                             <?php if (has_role(['ADMIN', 'SUPER_ADMIN'])): ?>
                                 <hr>
                                 <form id="image-upload-form" enctype="multipart/form-data">
+                                    <?php echo csrf_field(); ?>
                                     <input type="file" class="form-control-file mb-2" name="image" accept="image/*" required>
                                     <button type="submit" class="btn btn-info btn-block btn-sm">Añadir Imagen</button>
                                 </form>
@@ -106,6 +107,7 @@ $images = $stmt_images->fetchAll(PDO::FETCH_ASSOC);
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    const csrfToken = '<?php echo get_csrf_token(); ?>';
     const mainContentColumn = document.getElementById('main-content-column');
     const actionButtonsContainer = document.getElementById('action-buttons-container');
     let isEditMode = false;
@@ -224,6 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fd.append('action', 'delete');
             fd.append('table', '<?= addslashes($table) ?>');
             fd.append('id', '<?= $id ?>');
+            fd.append('csrf_token', csrfToken);
             fetch('api_action.php', { method: 'POST', body: fd })
                 .then(r => r.json())
                 .then(js => js.success ? window.location.href = 'db.php?name=<?= urlencode($table) ?>' : alert(js.error));
@@ -238,6 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fd.append('action', 'update');
             fd.append('table', '<?= addslashes($table) ?>');
             fd.append('id', '<?= $id ?>');
+            fd.append('csrf_token', csrfToken);
             fetch('api_action.php', { method: 'POST', body: fd })
                 .then(r => r.json())
                 .then(js => js.success ? location.reload() : alert(js.error));
@@ -252,6 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const fd = new FormData(this);
         fd.append('table', '<?= addslashes($table) ?>');
         fd.append('id', '<?= $id ?>');
+        fd.append('csrf_token', csrfToken);
         fetch('api_upload_image.php', { method: 'POST', body: fd })
             .then(r => r.json())
             .then(data => data.success ? location.reload() : alert(data.error));
@@ -263,6 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const fd = new FormData();
             fd.append('action', 'delete_image');
             fd.append('id', e.target.dataset.imageId);
+            fd.append('csrf_token', csrfToken);
             fetch('api_action.php', { method: 'POST', body: fd })
                 .then(r => r.json())
                 .then(js => js.success ? location.reload() : alert(js.error));
