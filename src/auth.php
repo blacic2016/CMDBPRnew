@@ -64,6 +64,10 @@ function login_user($username, $password)
 {
     try {
         $pdo = getPDO();
+        if (!$pdo) {
+            error_log("Login fallido: No se pudo conectar a la base de datos.");
+            return false;
+        }
         $stmt = $pdo->prepare('SELECT id, password FROM users WHERE username = :u LIMIT 1');
         $stmt->execute([':u' => $username]);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -74,7 +78,7 @@ function login_user($username, $password)
             return true;
         }
     } catch (Exception $e) {
-        // Log del error de conexión si es necesario
+        error_log("Excepción en login_user: " . $e->getMessage());
         return false;
     }
     return false;

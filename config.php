@@ -10,7 +10,7 @@ define('STORAGE_DIR', ROOT_PATH . '/storage');
 define('UPLOAD_DIR_PUBLIC', ROOT_PATH . '/public/uploads');
 
 // 2. Configuración de Errores (Ahora ya existe STORAGE_DIR)
-ini_set('display_errors', 0); // Cambiar a 1 para debugear el NS_ERROR si persiste
+ini_set('display_errors', 1); // Cambiar a 1 para debugear el NS_ERROR si persiste
 ini_set('log_errors', 1);
 ini_set('error_log', STORAGE_DIR . '/logs/api_errors.log');
 
