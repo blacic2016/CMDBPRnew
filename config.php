@@ -26,11 +26,13 @@ define('DB_CONFIG', [
 require_once __DIR__ . '/src/db.php';
 try {
     $pdo_cfg = getPDO();
-    $stmt_cfg = $pdo_cfg->query("SELECT url, token FROM zabbix_api_config LIMIT 1");
-    $db_cfg = $stmt_cfg->fetch(PDO::FETCH_ASSOC);
-    if ($db_cfg) {
-        define('ZABBIX_API_URL', $db_cfg['url']);
-        define('ZABBIX_API_TOKEN', $db_cfg['token']);
+    if ($pdo_cfg) {
+        $stmt_cfg = $pdo_cfg->query("SELECT url, token FROM zabbix_api_config LIMIT 1");
+        $db_cfg = $stmt_cfg->fetch(PDO::FETCH_ASSOC);
+        if ($db_cfg) {
+            define('ZABBIX_API_URL', $db_cfg['url']);
+            define('ZABBIX_API_TOKEN', $db_cfg['token']);
+        }
     }
 } catch (Exception $e) { /* Error en carga, se usan fallbacks abajo */ }
 
@@ -44,11 +46,14 @@ if (!defined('ZABBIX_API_TOKEN')) {
 
 // 5. Detección Dinámica de la URL (Web Paths)
 if (!defined('PUBLIC_URL_PREFIX')) {
-    $docRoot = str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']);
+    $docRoot = isset($_SERVER['DOCUMENT_ROOT']) ? str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']) : '';
     $currentDir = str_replace('\\', '/', __DIR__);
     
-    // Extraemos la subcarpeta (ej: /Sonda)
-    $baseUrl = str_replace($docRoot, '', $currentDir);
+    if (!empty($docRoot)) {
+        $baseUrl = str_replace($docRoot, '', $currentDir);
+    } else {
+        $baseUrl = '/'; // Fallback para CLI
+    }
     
     // Definimos el prefijo público para la web
     $public_prefix = rtrim($baseUrl, '/') . '/public';
