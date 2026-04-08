@@ -109,6 +109,12 @@ $current_sheet = $_GET['name'] ?? '';
             <p>Config. Claves</p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="<?php echo PUBLIC_URL_PREFIX; ?>/snmp_management.php" class="nav-link <?php echo $cur === 'snmp_management.php' ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-network-wired"></i>
+            <p>Gestión SNMP</p>
+          </a>
+        </li>
         <?php endif; ?>
       </ul>
     </nav>

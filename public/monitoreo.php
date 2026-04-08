@@ -84,10 +84,15 @@ require_once __DIR__ . '/partials/header.php';
     <section class="content">
         <div class="container-fluid">
 
-            <?php if ($api_error): ?>
+            <?php if ($api_error): 
+                $display_ip = 'Zabbix';
+                if (defined('ZABBIX_API_URL') && preg_match('/http:\/\/([^\/]+)\//', ZABBIX_API_URL, $m)) {
+                    $display_ip = $m[1];
+                }
+            ?>
                 <div class="alert alert-danger shadow">
                     <h5><i class="icon fas fa-ban"></i> Error de Comunicación (Zabbix API)</h5>
-                    El servidor <strong>172.32.1.50</strong> no respondió correctamente: <?php echo htmlspecialchars($api_error); ?>
+                    El servidor <strong><?php echo htmlspecialchars($display_ip); ?></strong> no respondió correctamente: <?php echo htmlspecialchars($api_error); ?>
                 </div>
             <?php endif; ?>
 

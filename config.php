@@ -22,9 +22,25 @@ define('DB_CONFIG', [
     'database' => 'CMDBVilaseca2'
 ]);
 
-// 4. Configuración de Zabbix API
-define('ZABBIX_API_URL', 'http://172.32.1.50/zabbix/api_jsonrpc.php');
-define('ZABBIX_API_TOKEN', '23c5e835efd1c26742b6848ee63b2547ce5349efb88b4ecefee83fa27683cb9a');
+// 4. Configuración de Zabbix API (Carga Dinámica desde BBDD)
+require_once __DIR__ . '/src/db.php';
+try {
+    $pdo_cfg = getPDO();
+    $stmt_cfg = $pdo_cfg->query("SELECT url, token FROM zabbix_api_config LIMIT 1");
+    $db_cfg = $stmt_cfg->fetch(PDO::FETCH_ASSOC);
+    if ($db_cfg) {
+        define('ZABBIX_API_URL', $db_cfg['url']);
+        define('ZABBIX_API_TOKEN', $db_cfg['token']);
+    }
+} catch (Exception $e) { /* Error en carga, se usan fallbacks abajo */ }
+
+// Fallbacks de seguridad si la tabla no existe o está vacía
+if (!defined('ZABBIX_API_URL')) {
+    define('ZABBIX_API_URL', 'http://172.32.1.50/zabbix/api_jsonrpc.php');
+}
+if (!defined('ZABBIX_API_TOKEN')) {
+    define('ZABBIX_API_TOKEN', '23c5e835efd1c26742b6848ee63b2547ce5349efb88b4ecefee83fa27683cb9a');
+}
 
 // 5. Detección Dinámica de la URL (Web Paths)
 if (!defined('PUBLIC_URL_PREFIX')) {

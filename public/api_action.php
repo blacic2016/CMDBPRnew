@@ -44,10 +44,14 @@ set_exception_handler(function($exception) {
     exit();
 });
 
+require_once __DIR__ . '/../src/db.php';
 require_once __DIR__ . '/../src/helpers.php';
 require_once __DIR__ . '/../src/auth.php';
 require_once __DIR__ . '/../src/zabbix_api.php';
 require_once __DIR__ . '/../src/importer.php';
+
+// Iniciar almacenamiento en búfer para evitar que advertencias rompan el JSON
+ob_start();
 
 if (session_status() === PHP_SESSION_NONE) session_start();
 require_login();
@@ -118,11 +122,13 @@ if ($action === 'save_zabbix_cmdb_config') {
 
     $pdo = getPDO();
     try {
+        error_log("Iniciando guardado de configuración Zabbix...");
         $pdo->beginTransaction();
 
         // 1. Actualizar visibilidad de tablas
         $stmt_disable = $pdo->prepare("UPDATE zabbix_cmdb_config SET is_enabled = 0");
         $stmt_disable->execute();
+        error_log("Tablas deshabilitadas temporalmente.");
 
         $stmt_upsert = $pdo->prepare(
             "INSERT INTO zabbix_cmdb_config (table_name, is_enabled) 
@@ -133,40 +139,24 @@ if ($action === 'save_zabbix_cmdb_config') {
         foreach ($selected_tables as $table) {
             if (isValidTableName($table)) {
                 $stmt_upsert->execute([':table_name' => $table]);
+                error_log("Tabla habilitada: $table");
             }
         }
 
-        // 2. Actualizar archivo de configuración (config.php) si se enviaron los datos
+        // 2. Actualizar configuración técnica en la base de datos (Zabbix API)
         if (!empty($zabbix_ip) && !empty($zabbix_api_key)) {
-            $config_file = __DIR__ . '/../config.php';
-            if (is_writable($config_file)) {
-                $config_content = file_get_contents($config_file);
-                
-                // Construir nueva URL
-                $new_url = "http://" . trim($zabbix_ip) . "/zabbix/api_jsonrpc.php";
-                
-                // Reemplazos con regex
-                $config_content = preg_replace(
-                    "/define\('ZABBIX_API_URL',\s*'[^']*'\);/",
-                    "define('ZABBIX_API_URL', '$new_url');",
-                    $config_content
-                );
-                
-                $config_content = preg_replace(
-                    "/define\('ZABBIX_API_TOKEN',\s*'[^']*'\);/",
-                    "define('ZABBIX_API_TOKEN', '$zabbix_api_key');",
-                    $config_content
-                );
-                
-                if (file_put_contents($config_file, $config_content) === false) {
-                    throw new Exception("No se pudo escribir en config.php. Verifica los permisos.");
-                }
-            } else {
-                throw new Exception("El archivo config.php no tiene permisos de escritura.");
-            }
+            $protocol = (strpos($zabbix_ip, 'https') === 0) ? '' : 'http://';
+            if (strpos($zabbix_ip, '://') !== false) $protocol = '';
+            $new_url = (strpos($zabbix_ip, '.php') === false) ? $protocol . trim($zabbix_ip) . "/zabbix/api_jsonrpc.php" : $protocol . trim($zabbix_ip);
+
+            error_log("Actualizando Zabbix API Config: URL=$new_url");
+            $stmt_cfg = $pdo->prepare("INSERT INTO zabbix_api_config (id, url, token) VALUES (1, :u, :t) ON DUPLICATE KEY UPDATE url = :u, token = :t");
+            $stmt_cfg->execute([':u' => $new_url, ':t' => $zabbix_api_key]);
         }
 
         $pdo->commit();
+        error_log("Transacción de configuración completada con éxito.");
+        if (ob_get_level() > 0) ob_clean(); // Limpiar cualquier salida accidental de forma segura
         exit(json_encode(['success' => true]));
 
     } catch (Exception $e) {
@@ -191,12 +181,23 @@ if ($action === 'test_zabbix_connection') {
             throw new Exception("IP y Token son requeridos para la prueba.");
         }
 
-        $url = "http://" . trim($ip) . "/zabbix/api_jsonrpc.php";
+        // Determinar protocolo y URL
+        $protocol = (strpos($ip, 'https') === 0) ? '' : 'http://';
+        if (strpos($ip, '://') !== false) $protocol = ''; // Ya tiene protocolo
         
+        $clean_ip = trim($ip);
+        // Si no termina en .php, asumimos la ruta estándar
+        if (strpos($clean_ip, '.php') === false) {
+            $url = $protocol . $clean_ip . "/zabbix/api_jsonrpc.php";
+        } else {
+            $url = $protocol . $clean_ip;
+        }
+        
+        // --- PASO 1: OBTENER VERSIÓN (Prueba de conectividad básica) ---
         $ch = curl_init($url);
         if ($ch === false) throw new Exception("Error al inicializar cURL");
 
-        $payload = json_encode([
+        $payload_version = json_encode([
             'jsonrpc' => '2.0',
             'method' => 'apiinfo.version',
             'params' => [],
@@ -204,40 +205,77 @@ if ($action === 'test_zabbix_connection') {
         ]);
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            'Content-Type: application/json'
-        ]);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
         curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 10); // 10 seconds timeout
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload_version);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        // Ignorar SSL para pruebas si es necesario (comentado por seguridad, pero útil si falla)
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 
-        $response = curl_exec($ch);
-        $error = curl_error($ch);
-        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $response_v = curl_exec($ch);
+        $error_v = curl_error($ch);
+        $http_code_v = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        
+        if ($error_v) {
+            curl_close($ch);
+            throw new Exception("Error de conexión (Timeout o Red): " . $error_v);
+        }
+
+        if ($http_code_v >= 400) {
+            curl_close($ch);
+            throw new Exception("Error HTTP " . $http_code_v . ". Verifica que la URL sea correcta: $url");
+        }
+
+        $decoded_v = json_decode($response_v, true);
+        if (json_last_error() !== JSON_ERROR_NONE || !isset($decoded_v['result'])) {
+            curl_close($ch);
+            throw new Exception("Respuesta no válida de Zabbix en apiinfo.version. ¿Es correcta la URL?");
+        }
+
+        $zabbix_version = $decoded_v['result'];
+
+        // --- PASO 2: VALIDAR TOKEN (Prueba de autenticación) ---
+        // Zabbix 5.4+ prefiere Authorization: Bearer. 
+        // Verificamos si podemos obtener info del usuario actual.
+        
+        $payload_auth = json_encode([
+            'jsonrpc' => '2.0',
+            'method' => 'user.get',
+            'params' => ['output' => ['alias', 'name', 'surname'], 'get_access' => true],
+            'id' => 2
+        ]);
+
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload_auth);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Content-Type: application/json',
+            'Authorization: Bearer ' . trim($token)
+        ]);
+
+        $response_a = curl_exec($ch);
+        $error_a = curl_error($ch);
         curl_close($ch);
 
-        if ($error) {
-            throw new Exception("Error de conexión: " . $error);
+        if ($error_a) {
+            throw new Exception("Error al validar token: " . $error_a);
         }
 
-        if ($http_code >= 400) {
-            throw new Exception("Error HTTP: " . $http_code);
+        $decoded_a = json_decode($response_a, true);
+        
+        if (isset($decoded_a['error'])) {
+            $err_detail = $decoded_a['error']['data'] ?? $decoded_a['error']['message'];
+            throw new Exception("Error de Autenticación (Token): " . $err_detail);
         }
 
-        $decoded = json_decode($response, true);
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new Exception("Respuesta no válida del servidor (No es JSON).");
+        if (!isset($decoded_a['result'])) {
+            throw new Exception("Error inesperado al validar el token de Zabbix.");
         }
 
-        if (isset($decoded['error'])) {
-            throw new Exception("Zabbix API Error: " . ($decoded['error']['data'] ?? $decoded['error']['message']));
-        }
-
-        if (!isset($decoded['result'])) {
-            throw new Exception("Respuesta inesperada de Zabbix.");
-        }
-
-        echo json_encode(['success' => true, 'version' => $decoded['result']]);
+        echo json_encode([
+            'success' => true, 
+            'version' => $zabbix_version,
+            'message' => 'Conexión exitosa y token validado.'
+        ]);
 
     } catch (Exception $e) {
         echo json_encode(['success' => false, 'error' => $e->getMessage()]);
@@ -1177,6 +1215,170 @@ if ($action === 'delete_zabbix_host') {
         echo json_encode(['success' => false, 'error' => $e->getMessage()]);
     }
     exit;
+}
+
+if ($action === 'list_snmp_communities') {
+    try {
+        $pdo = getPDO();
+        $stmt = $pdo->query("SELECT * FROM snmp_communities ORDER BY community ASC");
+        echo json_encode(['success' => true, 'data' => $stmt->fetchAll()]);
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    }
+    exit;
+}
+
+if ($action === 'save_snmp_community') {
+    try {
+        $pdo = getPDO();
+        $id = (int)($_POST['id'] ?? 0);
+        $comm = trim($_POST['community'] ?? '');
+        $desc = trim($_POST['description'] ?? '');
+        
+        if (empty($comm)) throw new Exception("La comunidad es obligatoria.");
+        
+        if ($id > 0) {
+            $stmt = $pdo->prepare("UPDATE snmp_communities SET community = ?, description = ? WHERE id = ?");
+            $stmt->execute([$comm, $desc, $id]);
+        } else {
+            $stmt = $pdo->prepare("INSERT INTO snmp_communities (community, description) VALUES (?, ?)");
+            $stmt->execute([$comm, $desc]);
+        }
+        echo json_encode(['success' => true]);
+    } catch (Exception $e) {
+         echo json_encode(['success' => false, 'error' => 'Error: ' . $e->getMessage()]);
+    }
+    exit;
+}
+
+if ($action === 'delete_snmp_community') {
+    try {
+        $pdo = getPDO();
+        $id = (int)($_POST['id'] ?? 0);
+        $pdo->prepare("DELETE FROM snmp_communities WHERE id = ?")->execute([$id]);
+        echo json_encode(['success' => true]);
+    } catch (Exception $e) {
+         echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    }
+    exit;
+}
+
+if ($action === 'get_snmp_scan_data') {
+    try {
+        $pdo = getPDO();
+        $tables = listSheetTables();
+        $all_ips = [];
+        
+        foreach ($tables as $t) {
+            $cols = getTableColumns($t);
+            $ip_col = null;
+            $name_col = null;
+            
+            foreach ($cols as $c) {
+                $c_low = strtolower($c);
+                if (in_array($c_low, ['ip', 'ipaddress', 'direccion_ip', 'ip_address', 'host'])) { $ip_col = $c; }
+                if (in_array($c_low, ['nombre', 'name', 'hostname', 'device_name'])) { $name_col = $c; }
+            }
+            
+            if ($ip_col) {
+                // Join con historial para saber si ya fue validado
+                $sql = "
+                    SELECT t.id, t.`$ip_col` as ip, " . ($name_col ? "t.`$name_col`" : "''") . " as name,
+                           h.community_ok, h.last_success
+                    FROM `$t` t
+                    LEFT JOIN snmp_scan_results h ON h.ip = t.`$ip_col` AND h.table_source = '$t' AND h.row_id = t.id
+                    WHERE t.`$ip_col` IS NOT NULL AND t.`$ip_col` != ''
+                ";
+                $rows = $pdo->query($sql)->fetchAll();
+                foreach($rows as $r) {
+                    $all_ips[] = [
+                        'table' => $t,
+                        'id' => $r['id'],
+                        'ip' => $r['ip'],
+                        'name' => $r['name'],
+                        'display_name' => str_replace('sheet_', '', $t),
+                        'community_ok' => $r['community_ok'],
+                        'last_success' => $r['last_success']
+                    ];
+                }
+            }
+        }
+        $communities = $pdo->query("SELECT id, community, description FROM snmp_communities ORDER BY community ASC")->fetchAll();
+        echo json_encode(['success' => true, 'ips' => $all_ips, 'communities' => $communities]);
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    }
+    exit;
+}
+
+if ($action === 'commit_snmp_results') {
+    try {
+        $pdo = getPDO();
+        $results = json_decode($_POST['results'] ?? '[]', true);
+        if (empty($results)) throw new Exception("No hay datos para guardar.");
+        
+        $pdo->beginTransaction();
+        $stmt = $pdo->prepare("
+            INSERT INTO snmp_scan_results (ip, community_ok, table_source, row_id, last_success)
+            VALUES (:ip, :comm, :src, :rid, NOW())
+            ON DUPLICATE KEY UPDATE community_ok = :comm, last_success = NOW()
+        ");
+        
+        foreach ($results as $res) {
+            $stmt->execute([
+                ':ip' => $res['ip'],
+                ':comm' => $res['community'],
+                ':src' => $res['table'],
+                ':rid' => $res['id']
+            ]);
+        }
+        $pdo->commit();
+        echo json_encode(['success' => true]);
+    } catch (Exception $e) {
+        if ($pdo->inTransaction()) $pdo->rollBack();
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    }
+    exit;
+}
+
+if ($action === 'delete_snmp_scan_result') {
+    try {
+        $pdo = getPDO();
+        $ip = $_POST['ip'] ?? '';
+        $src = $_POST['table'] ?? '';
+        $rid = (int)($_POST['id'] ?? 0);
+        $pdo->prepare("DELETE FROM snmp_scan_results WHERE ip = ? AND table_source = ? AND row_id = ?")
+            ->execute([$ip, $src, $rid]);
+        echo json_encode(['success' => true]);
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    }
+    exit;
+}
+
+if ($action === 'test_single_snmp') {
+    $ip = $_POST['ip'] ?? '';
+    $community = $_POST['community'] ?? '';
+    
+    if (empty($ip) || empty($community)) {
+        exit(json_encode(['success' => false, 'error' => 'IP y Comunidad requeridos.']));
+    }
+    
+    // Test using snmpget for sysObjectID.0 (1.3.6.1.2.1.1.2.0)
+    // -v2c version, -c community, -t timeout (1s), -r retries (0)
+    // Usamos escapeshellarg para seguridad
+    $cmd = "snmpget -v2c -c " . escapeshellarg($community) . " -t 1 -r 0 " . escapeshellarg($ip) . " 1.3.6.1.2.1.1.2.0 2>&1";
+    $output = [];
+    $rv = -1;
+    exec($cmd, $output, $rv);
+    
+    if ($rv === 0) {
+        $resText = implode("\n", $output);
+        exit(json_encode(['success' => true, 'status' => 'OK', 'response' => $resText]));
+    } else {
+        $errText = implode("\n", $output);
+        exit(json_encode(['success' => false, 'status' => 'FAIL', 'error' => $errText]));
+    }
 }
 
 exit(json_encode(['success'=>false,'error'=>'Accion desconocida']));

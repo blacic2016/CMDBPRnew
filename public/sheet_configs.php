@@ -8,6 +8,7 @@ require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../src/auth.php';
 require_once __DIR__ . '/../src/helpers.php';
 require_once __DIR__ . '/../src/db.php';
+require_once __DIR__ . '/../src/zabbix_api.php';
 
 // Protección de sesión: Solo SUPER_ADMIN puede gestionar claves
 if (session_status() === PHP_SESSION_NONE) session_start();
@@ -84,7 +85,7 @@ while ($r = $stmt_zabbix->fetch(PDO::FETCH_ASSOC)) {
                                     <?php
                                         $zabbix_url = ZABBIX_API_URL;
                                         $zabbix_ip = '';
-                                        if (preg_match('/http:\/\/([^\/]+)\//', $zabbix_url, $matches)) {
+                                        if (preg_match('/https?:\/\/([^\/]+)\//', $zabbix_url, $matches)) {
                                             $zabbix_ip = $matches[1];
                                         }
                                         $zabbix_token = ZABBIX_API_TOKEN;
@@ -103,9 +104,15 @@ while ($r = $stmt_zabbix->fetch(PDO::FETCH_ASSOC)) {
                                     <button type="submit" class="btn btn-primary mr-2">
                                         <i class="fas fa-save mr-1"></i> Guardar Configuración API
                                     </button>
-                                    <button type="button" id="btnTestZabbix" class="btn btn-info">
-                                        <i class="fas fa-plug mr-1"></i> Probar Conexión
-                                    </button>
+                                     <button type="button" id="btnTestZabbix" class="btn btn-info" onclick="testConnection()">
+                                         <i class="fas fa-plug mr-1"></i> Probar Conexión
+                                     </button>
+                                </div>
+                                <div id="zabbixTestResult" class="mt-3" style="display:none;">
+                                    <div class="alert" role="alert">
+                                        <h5 class="alert-heading"><i class="fas fa-info-circle mr-1"></i> Resultado de la Prueba</h5>
+                                        <p id="zabbixTestMsg" class="mb-0"></p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -214,54 +221,38 @@ document.addEventListener('DOMContentLoaded', function() {
     if(zabbixForm) {
         zabbixForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            Swal.fire({
+                title: 'Guardando...',
+                text: 'Actualizando configuración técnica y de monitoreo.',
+                allowOutsideClick: false,
+                didOpen: () => { Swal.showLoading(); }
+            });
+
             const formData = new FormData(this);
             formData.append('action', 'save_zabbix_cmdb_config');
 
             fetch('api_action.php', { method: 'POST', body: formData })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    toastr?.success('Configuración de Zabbix actualizada.');
-                    location.reload();
-                } else {
-                    alert('Error: ' + data.error);
-                }
+            .then(res => {
+                if (!res.ok) throw new Error('Servidor respondió con código ' + res.status);
+                return res.text(); // Leemos como texto primero para validar JSON
             })
-            .catch(err => alert('Error de conexión con api_action.php'));
-        });
-
-        // --- PRUEBA DE CONEXIÓN ZABBIX ---
-        const btnTest = document.getElementById('btnTestZabbix');
-        btnTest.addEventListener('click', function() {
-            const formData = new FormData(zabbixForm);
-            formData.append('action', 'test_zabbix_connection');
-
-            btnTest.disabled = true;
-            btnTest.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> Probando...';
-
-            fetch('api_action.php', { method: 'POST', body: formData })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    Swal.fire({
-                        title: 'Conexión Exitosa',
-                        text: 'Versión de Zabbix: ' + data.version,
-                        icon: 'success'
-                    });
-                } else {
-                    Swal.fire({
-                        title: 'Error de Conexión',
-                        text: data.error,
-                        icon: 'error'
-                    });
+            .then(text => {
+                try {
+                    const data = JSON.parse(text);
+                    if (data.success) {
+                        toastr?.success('Configuración de Zabbix actualizada.');
+                        location.reload();
+                    } else {
+                        alert('Error: ' + data.error);
+                    }
+                } catch (e) {
+                    console.error('Error al decodificar JSON:', text);
+                    alert('Error de respuesta del servidor (No es JSON). Revisa la consola o los logs.');
                 }
             })
             .catch(err => {
-                Swal.fire('Error Critico', 'No se pudo contactar con el servidor.', 'error');
-            })
-            .finally(() => {
-                btnTest.disabled = false;
-                btnTest.innerHTML = '<i class="fas fa-plug mr-1"></i> Probar Conexión';
+                console.error(err);
+                alert('Error de conexión con api_action.php: ' + err.message);
             });
         });
 
@@ -314,4 +305,70 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function testConnection() {
+    console.log('testConnection global invoked');
+    const zabbixForm = document.getElementById('zabbixCmdbConfigForm');
+    const btnTest = document.getElementById('btnTestZabbix');
+    const testResultDiv = document.getElementById('zabbixTestResult');
+    const testMsg = document.getElementById('zabbixTestMsg');
+
+    if (typeof Swal === 'undefined') {
+        alert('Cargando librerías de alertas... Por favor reintente en 2 segundos.');
+        return;
+    }
+
+    Swal.fire({
+        title: 'Procesando...',
+        text: 'Consultando API de Zabbix, por favor espere.',
+        allowOutsideClick: false,
+        didOpen: () => { Swal.showLoading(); }
+    });
+
+    const formData = new FormData(zabbixForm);
+    formData.append('action', 'test_zabbix_connection');
+
+    btnTest.disabled = true;
+    btnTest.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> Consultando...';
+    testResultDiv.style.display = 'none';
+
+    fetch('api_action.php', { method: 'POST', body: formData })
+    .then(res => res.json())
+    .then(data => {
+        Swal.close();
+        testResultDiv.style.display = 'block';
+        const alertDiv = testResultDiv.querySelector('.alert');
+        
+        if (data.success) {
+            alertDiv.className = 'alert alert-success shadow-sm';
+            testMsg.innerHTML = `<strong>Éxito!</strong><br>Conexión establecida con Zabbix.<br>Versión detectada: <strong>${data.version}</strong><br>${data.message || ''}`;
+            
+            Swal.fire({
+                title: 'Conexión Exitosa',
+                text: 'Versión de Zabbix: ' + data.version,
+                icon: 'success'
+            });
+        } else {
+            alertDiv.className = 'alert alert-danger shadow-sm';
+            testMsg.innerHTML = `<strong>Error de Conexión:</strong><br>${data.error}`;
+            
+            Swal.fire({
+                title: 'Error de Conexión',
+                text: data.error,
+                icon: 'error'
+            });
+        }
+    })
+    .catch(err => {
+        Swal.close();
+        testResultDiv.style.display = 'block';
+        testResultDiv.querySelector('.alert').className = 'alert alert-danger shadow-sm';
+        testMsg.innerHTML = `<strong>Error Crítico:</strong><br>Ocurrió un error al contactar con el servidor.`;
+        Swal.fire('Error Critico', 'No se pudo contactar con el endpoint de pruebas.', 'error');
+    })
+    .finally(() => {
+        btnTest.disabled = false;
+        btnTest.innerHTML = '<i class="fas fa-plug mr-1"></i> Probar Conexión';
+    });
+}
 </script>
