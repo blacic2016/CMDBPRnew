@@ -65,6 +65,15 @@ define('UPLOAD_URL_PUBLIC', PUBLIC_URL_PREFIX . '/uploads');
 
 // 6. Configuración de Seguridad y Sesión
 if (session_status() === PHP_SESSION_NONE) {
+    // FORZAR RUTA LOCAL (Solución para servidores nuevos/restringidos)
+    $local_sessions = ROOT_PATH . '/storage/sessions';
+    if (!is_dir($local_sessions)) {
+        @mkdir($local_sessions, 0777, true);
+    }
+    if (is_writable($local_sessions)) {
+        session_save_path($local_sessions);
+    }
+
     session_set_cookie_params([
         'lifetime' => 0,
         'path' => '/',

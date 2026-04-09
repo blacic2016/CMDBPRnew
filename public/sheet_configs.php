@@ -77,7 +77,7 @@ while ($r = $stmt_zabbix->fetch(PDO::FETCH_ASSOC)) {
                 </div>
                 <div class="card-body">
                     <form id="zabbixCmdbConfigForm">
-                        <?php echo csrf_field(); ?>
+                        
                         <div class="tab-content" id="zabbix-tabs-content">
                             <!-- Pestaña: Configuración API -->
                             <div class="tab-pane fade show active" id="zabbix-api" role="tabpanel" aria-labelledby="zabbix-api-tab">
@@ -162,7 +162,7 @@ while ($r = $stmt_zabbix->fetch(PDO::FETCH_ASSOC)) {
                                             </div>
                                             <div class="card-body py-2">
                                                 <form class="configForm" data-table="<?php echo htmlspecialchars($t); ?>">
-                                                    <?php echo csrf_field(); ?>
+                                                    
                                                     <div class="row">
                                                         <?php foreach ($cols as $c): 
                                                             if (in_array($c, ['id','_row_hash','created_at','updated_at'])) continue; 

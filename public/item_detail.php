@@ -73,7 +73,7 @@ $images = $stmt_images->fetchAll(PDO::FETCH_ASSOC);
                             <?php if (has_role(['ADMIN', 'SUPER_ADMIN'])): ?>
                                 <hr>
                                 <form id="image-upload-form" enctype="multipart/form-data">
-                                    <?php echo csrf_field(); ?>
+                                    
                                     <input type="file" class="form-control-file mb-2" name="image" accept="image/*" required>
                                     <button type="submit" class="btn btn-info btn-block btn-sm">Añadir Imagen</button>
                                 </form>

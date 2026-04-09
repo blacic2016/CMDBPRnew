@@ -21,7 +21,7 @@ if (isset($_GET['form']) && $_GET['form'] == '1') {
     </div>
     <div class="modal-body">
         <form id="editFormInModal">
-            <?php echo csrf_field(); ?>
+            
             <?php foreach ($cols as $c): ?>
                 <?php if (in_array($c, ['id', '_row_hash', 'created_at', 'updated_at'])) continue; ?>
                 <div class="mb-3">
@@ -103,7 +103,7 @@ if ($new) {
       <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
       <div class="modal-body">
         <form id="formCreate">
-          <?php echo csrf_field(); ?>
+          
           <?php foreach ($cols as $c): if ($c=='id' || $c=='_row_hash' || $c=='created_at' || $c=='updated_at') continue; ?>
             <div class="mb-2">
               <label class="form-label"><?php echo htmlspecialchars($c); ?></label>

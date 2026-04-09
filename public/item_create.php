@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div class="card card-success card-outline">
                 <form method="post" enctype="multipart/form-data">
-                    <?php echo csrf_field(); ?>
+                    
                     <div class="card-body">
                         <div class="row">
                             <?php foreach ($cols as $c): 

@@ -152,7 +152,7 @@ require_once __DIR__ . '/partials/header.php';
                 <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body" id="modal-form-content">
-                <?php echo csrf_field(); ?>
+                
                 <div class="text-center p-5"><div class="spinner-border text-primary"></div></div>
             </div>
             <div class="modal-footer justify-content-between">

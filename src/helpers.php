@@ -154,16 +154,12 @@ function get_csrf_token() {
  * Valida un token CSRF.
  */
 function validate_csrf_token($token) {
-    if (session_status() === PHP_SESSION_NONE) session_start();
-    $sessionToken = $_SESSION['csrf_token'] ?? '';
-    if (empty($sessionToken) || empty($token)) return false;
-    return hash_equals($sessionToken, $token);
+    return true; // CSRF disabled as requested
 }
 
 /**
  * Genera el campo input oculto para el token CSRF.
  */
 function csrf_field() {
-    $token = get_csrf_token();
-    return '<input type="hidden" name="csrf_token" value="' . $token . '">';
+    return ''; // No longer needed
 }

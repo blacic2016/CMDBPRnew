@@ -126,7 +126,7 @@ $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <div class="modal-dialog">
     <div class="modal-content">
       <form id="uploadForm" enctype="multipart/form-data">
-        <?php echo csrf_field(); ?>
+        
         <div class="modal-header">
           <h5 class="modal-title">Subir Nueva Imagen</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

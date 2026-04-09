@@ -1308,3 +1308,12 @@ Stack trace:
 [08-Apr-2026 20:10:20 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/VILASECA/CMDBPR/diagnostico.php:11) in /var/www/html/VILASECA/CMDBPR/config.php on line 83
 [08-Apr-2026 20:10:20 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/VILASECA/CMDBPR/diagnostico.php:11) in /var/www/html/VILASECA/CMDBPR/config.php on line 92
 [08-Apr-2026 20:10:20 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/VILASECA/CMDBPR/diagnostico.php:11) in /var/www/html/VILASECA/CMDBPR/config.php on line 95
+[09-Apr-2026 10:57:36 America/Santiago] Iniciando guardado de configuración Zabbix...
+[09-Apr-2026 10:57:36 America/Santiago] Tablas deshabilitadas temporalmente.
+[09-Apr-2026 10:57:36 America/Santiago] Tabla habilitada: sheet_ap
+[09-Apr-2026 10:57:36 America/Santiago] Tabla habilitada: sheet_equipos
+[09-Apr-2026 10:57:36 America/Santiago] Tabla habilitada: sheet_firewall
+[09-Apr-2026 10:57:36 America/Santiago] Tabla habilitada: sheet_servers_virtuales
+[09-Apr-2026 10:57:36 America/Santiago] Tabla habilitada: sheet_ups
+[09-Apr-2026 10:57:36 America/Santiago] Actualizando Zabbix API Config: URL=http://172.32.1.50/zabbix/api_jsonrpc.php
+[09-Apr-2026 10:57:36 America/Santiago] Transacción de configuración completada con éxito.
