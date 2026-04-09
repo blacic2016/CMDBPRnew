@@ -377,7 +377,7 @@ CREATE TABLE IF NOT EXISTS `sheet_equipos` (
   `mac` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `asset_code` (`asset_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=156 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table CMDBVilaseca2.sheet_equipos: ~155 rows (approximately)
 INSERT INTO `sheet_equipos` (`id`, `_row_hash`, `estado_actual`, `asset_code`, `zabbix_host_id`, `created_at`, `updated_at`, `item_id`, `pais`, `ciudad`, `sucursal`, `unidad`, `hostgroup`, `tipo`, `area`, `nomenclatura`, `ip`, `visiblename`, `snmp`, `seccion`, `modelo`, `serial`, `vlan`, `estado`, `propietario`, `marca`, `clasificacion`, `visible`, `mac`) VALUES
@@ -1160,6 +1160,37 @@ INSERT INTO `sheet_vmplataformas_` (`id`, `_row_hash`, `estado_actual`, `created
 	(12, '59f240a5483d88b1ae96fe97c3a62dec', 'USADO', '2026-01-30 12:22:36', '2026-01-30 12:22:36', 'UNE', 'ECFADMTGYE01 // ILO', '172.20.204.101', 'PAM', 'PAM', NULL, 'Cambio de contraseña de ILO', 'PAM'),
 	(13, 'e00a166d16c1c4a254d6e5d27bd484f2', 'USADO', '2026-01-30 12:22:36', '2026-01-30 12:22:36', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
+-- Dumping structure for table CMDBVilaseca2.snmp_communities
+CREATE TABLE IF NOT EXISTS `snmp_communities` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `community` varchar(255) NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `community` (`community`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Dumping data for table CMDBVilaseca2.snmp_communities: ~1 rows (approximately)
+INSERT INTO `snmp_communities` (`id`, `community`, `description`, `created_at`) VALUES
+	(1, 'Sonda2023.', 'LECTURA', '2026-04-08 12:45:47');
+
+-- Dumping structure for table CMDBVilaseca2.snmp_scan_results
+CREATE TABLE IF NOT EXISTS `snmp_scan_results` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip` varchar(50) NOT NULL,
+  `community_ok` varchar(255) NOT NULL,
+  `table_source` varchar(100) NOT NULL,
+  `row_id` int(11) NOT NULL,
+  `last_success` datetime DEFAULT current_timestamp(),
+  `created_at` datetime DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_ip_source` (`ip`,`table_source`,`row_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Dumping data for table CMDBVilaseca2.snmp_scan_results: ~1 rows (approximately)
+INSERT INTO `snmp_scan_results` (`id`, `ip`, `community_ok`, `table_source`, `row_id`, `last_success`, `created_at`) VALUES
+	(1, '172.32.2.30', 'Sonda2023.', 'sheet_equipos', 155, '2026-04-08 14:04:42', '2026-04-08 14:04:42');
+
 -- Dumping structure for table CMDBVilaseca2.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1178,6 +1209,19 @@ INSERT INTO `users` (`id`, `username`, `password`, `role_id`, `created_at`) VALU
 	(1, 'superadmin', '$2y$10$VUe3tu1Vf1jJIWSUVEZHbe4UcfNUOtUWnZKWC5PQ4tx1XPOhBYiZG', 1, '2026-01-30 10:10:12'),
 	(2, 'admin', '$2y$10$SvNE4pEItru.Wq35hSkOSu1jgFFJUlmCNHyuuEtB2JEjIBypN5aRC', 2, '2026-01-30 12:54:49'),
 	(3, 'user', '$2y$10$52r0uTpWmX9bqfApQOTWper685P3MS8AtpfTa8nOYp.0gtHY5jWo.', 3, '2026-01-30 12:54:49');
+
+-- Dumping structure for table CMDBVilaseca2.zabbix_api_config
+CREATE TABLE IF NOT EXISTS `zabbix_api_config` (
+  `id` int(11) NOT NULL DEFAULT 1,
+  `url` varchar(255) DEFAULT NULL,
+  `version` varchar(20) DEFAULT '7.0',
+  `token` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Dumping data for table CMDBVilaseca2.zabbix_api_config: ~1 rows (approximately)
+INSERT INTO `zabbix_api_config` (`id`, `url`, `version`, `token`) VALUES
+	(1, 'http://172.32.1.50/zabbix/api_jsonrpc.php', '7.0', '23c5e835efd1c26742b6848ee63b2547ce5349efb88b4ecefee83fa27683cb9a');
 
 -- Dumping structure for table CMDBVilaseca2.zabbix_cmdb_config
 CREATE TABLE IF NOT EXISTS `zabbix_cmdb_config` (
