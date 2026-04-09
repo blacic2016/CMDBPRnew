@@ -379,7 +379,7 @@ CREATE TABLE IF NOT EXISTS `sheet_equipos` (
   UNIQUE KEY `asset_code` (`asset_code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table CMDBVilaseca2.sheet_equipos: ~154 rows (approximately)
+-- Dumping data for table CMDBVilaseca2.sheet_equipos: ~155 rows (approximately)
 INSERT INTO `sheet_equipos` (`id`, `_row_hash`, `estado_actual`, `asset_code`, `zabbix_host_id`, `created_at`, `updated_at`, `item_id`, `pais`, `ciudad`, `sucursal`, `unidad`, `hostgroup`, `tipo`, `area`, `nomenclatura`, `ip`, `visiblename`, `snmp`, `seccion`, `modelo`, `serial`, `vlan`, `estado`, `propietario`, `marca`, `clasificacion`, `visible`, `mac`) VALUES
 	(1, 'ed26fa03454d5074eb01136ac4130878', 'USADO', 'AE-00053', NULL, '2026-03-09 16:12:19', '2026-03-23 10:15:11', '1', 'EC', 'GYE', 'ECUABARNICES', 'UNE', 'EC_GYE_ECUABARNICES _UNE', 'SWITCH', 'IT', 'EC_GYE_UNE_SW_DIST_ECUABARNICES', '192.168.24.50', 'EC_GYE_UNE_SW_DIST_ECUABARNICES -192.168.24.50', 'c0mpSEm593#', 'Centro de Computo Principal - ADM', 'HP - 5130-24G-4SFP JG932A', 'CN55GPV117', '1,70,80,110,130,90,190,910', 'Producción', 'Jose Luis Pesantes', 'HP - 5130-24G-4SFP JG932A', 'DIST', 'SW-A', '5C8A384BF330'),
 	(2, 'd0864a35ca4b0b33a0fccbea26b14014', 'USADO', 'AE-00054', NULL, '2026-03-09 16:12:19', '2026-03-23 10:15:11', '2', 'EC', 'GYE', 'ECUABARNICES', 'UNE', 'EC_GYE_ECUABARNICES _UNE', 'SWITCH', 'IT', 'EC_GYE_UNE_SW_ACCESO_ECUABARNICES', '192.168.24.51', 'EC_GYE_UNE_SW_ACCESO_ECUABARNICES -192.168.24.51', 'c0mpSEm593#', 'Centro de Computo Principal - ADM', 'HP - 5120  - 24G', 'CN34BYT0SN', '1,70,80,110,130,90,190,910', 'Producción', 'Jose Luis Pesantes', 'HP - 5120  - 24G', 'ACCESO', 'SW-B', 'D07E28F353A0'),
