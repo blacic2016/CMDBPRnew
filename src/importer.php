@@ -4,14 +4,11 @@
  * Ubicación: /var/www/html/Sonda/src/importer.php
  */
 
-// 1. Reporte total de errores para diagnóstico
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-// 2. Límites de recursos máximos para procesar las 9 hojas del archivo EQUIPOS.xlsx
+// 1. Reporte de errores manejado globalmente por la aplicación
+// 2. Límites de recursos máximos para procesar archivos grandes
 ini_set('memory_limit', '1024M');
 set_time_limit(900);
+
 
 require_once __DIR__ . '/db.php';
 if (file_exists(__DIR__ . '/helpers.php')) {
@@ -91,7 +88,7 @@ class Importer
             $createSql = "CREATE TABLE IF NOT EXISTS `{$tableName}` (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 _row_hash VARCHAR(64) NOT NULL,
-                estado_actual ENUM('USADO','ENTREGADO','NO_APARECE','DANADO') DEFAULT 'USADO',
+                estado_actual VARCHAR(50) DEFAULT 'USADO',
                 asset_code VARCHAR(50) NULL UNIQUE,
                 created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
                 updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -248,36 +245,49 @@ class Importer
     /**
      * Obtiene metadatos de un archivo Excel (Hojas y sus primeras filas para previsualizar columnas)
      */
-    public static function getExcelMetadata(string $filePath)
+    public static function getExcelMetadata(string $filePath): array
     {
         $reader = IOFactory::createReaderForFile($filePath);
-        $reader->setReadDataOnly(true);
-        $spreadsheet = $reader->load($filePath);
-        $metadata = [];
-
-        foreach ($spreadsheet->getSheetNames() as $index => $sheetName) {
-            $sheet = $spreadsheet->getSheet($index);
-            $highestColumn = $sheet->getHighestColumn();
-            $highestColumnIndex = Coordinate::columnIndexFromString($highestColumn);
-
-            // Obtener solo las primeras 2 filas para detectar cabeceras y ejemplo
-            $rows = [];
-            for ($r = 1; $r <= 2; $r++) {
-                $rowData = [];
-                for ($c = 1; $c <= $highestColumnIndex; $c++) {
-                    $val = $sheet->getCellByColumnAndRow($c, $r)->getValue();
-                    $rowData[] = ($val === null) ? '' : trim((string)$val);
+        $worksheetNames = $reader->listWorksheetNames($filePath);
+        
+        $sheets = [];
+        foreach ($worksheetNames as $name) {
+            // Solo cargar las primeras 2 filas para obtener encabezados y un ejemplo
+            $reader->setReadDataOnly(true);
+            $reader->setLoadSheetsOnly([$name]);
+            
+            // Filtro para leer solo las primeras filas
+            $filter = new class implements \PhpOffice\PhpSpreadsheet\Reader\IReadFilter {
+                public function readCell($column, $row, $worksheetName = '') {
+                    return $row <= 2;
                 }
-                if (array_filter($rowData)) $rows[] = $rowData;
+            };
+            $reader->setReadFilter($filter);
+            
+            $spreadsheet = $reader->load($filePath);
+            $sheet = $spreadsheet->getActiveSheet();
+            $highestCol = $sheet->getHighestColumn();
+            $highestColIdx = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($highestCol);
+
+            $columns = [];
+            $sample = [];
+            for ($i = 1; $i <= $highestColIdx; $i++) {
+                $colName = $sheet->getCellByColumnAndRow($i, 1)->getValue();
+                if ($colName === null || $colName === '') continue;
+                $columns[] = (string)$colName;
+                $sample[] = (string)$sheet->getCellByColumnAndRow($i, 2)->getValue();
             }
 
-            $metadata[] = [
-                'sheetName' => $sheetName,
-                'columns' => $rows[0] ?? [],
-                'sample' => $rows[1] ?? []
-            ];
+            if (!empty($columns)) {
+                $sheets[] = [
+                    'sheetName' => $name,
+                    'columns' => $columns,
+                    'sample' => $sample
+                ];
+            }
         }
-        return $metadata;
+        
+        return $sheets;
     }
 
     /**
@@ -285,7 +295,13 @@ class Importer
      */
     public static function executeMappedImport(string $tableName, string $filePath, string $sheetName, array $mapping)
     {
+        // Asegurar que el nombre de la tabla tenga el prefijo sheet_ para ser detectada por el sistema
+        if (strpos($tableName, 'sheet_') !== 0) {
+            $tableName = 'sheet_' . $tableName;
+        }
+
         $pdo = getPDO();
+
         $reader = IOFactory::createReaderForFile($filePath);
         $reader->setReadDataOnly(true);
         $spreadsheet = $reader->load($filePath);
@@ -298,7 +314,7 @@ class Importer
         $pdo->exec("CREATE TABLE `{$tableName}` (
             id INT AUTO_INCREMENT PRIMARY KEY,
             _row_hash VARCHAR(64) NOT NULL,
-            estado_actual ENUM('USADO','ENTREGADO','NO_APARECE','DANADO') DEFAULT 'USADO',
+            estado_actual VARCHAR(50) DEFAULT 'USADO',
             asset_code VARCHAR(50) NULL UNIQUE,
             zabbix_host_id VARCHAR(100) NULL,
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -347,6 +363,14 @@ class Importer
                 ->execute([$tableName, $displayName]);
         }
 
-        return ['success' => true, 'added' => $added, 'errors' => $errors];
+        // 4. Habilitar automáticamente para Monitoreo Zabbix
+        try {
+            $stmt_zbx = $pdo->prepare("INSERT INTO zabbix_cmdb_config (table_name, is_enabled) VALUES (?, 1) ON DUPLICATE KEY UPDATE is_enabled = 1");
+            $stmt_zbx->execute([$tableName]);
+        } catch (Exception $e) { /* Ignore if table doesn't exist yet */ }
+
+
+        return ['success' => true, 'added' => $added, 'errors' => $errors, 'tableName' => $tableName];
+
     }
 }

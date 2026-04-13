@@ -1,12 +1,12 @@
 <?php
-$page_title = 'Historial de Cambios';
-require_once __DIR__ . '/partials/header.php'; 
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../src/auth.php';
 require_once __DIR__ . '/../src/helpers.php';
-
-if (session_status() === PHP_SESSION_NONE) session_start();
 require_login();
+
+$page_title = 'Historial de Cambios';
+require_once __DIR__ . '/partials/header.php'; 
+
 
 $table = $_GET['table'] ?? '';
 $row_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;

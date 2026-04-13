@@ -69,6 +69,12 @@ $current_sheet = $_GET['name'] ?? '';
             <p>Distribrack</p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="<?php echo PUBLIC_URL_PREFIX; ?>/topology.php" class="nav-link <?php echo $cur === 'topology.php' ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-project-diagram"></i>
+            <p>Topología</p>
+          </a>
+        </li>
         <?php
           $is_monitoreo_page = in_array($cur, ['monitoreo.php', 'crear_monitoreo.php', 'actualizar_monitoreo.php', 'problems.php']);
         ?>

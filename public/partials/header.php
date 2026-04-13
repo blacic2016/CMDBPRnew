@@ -38,6 +38,12 @@ $page_title = $page_title ?? 'CMDB Vilaseca';
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
+      <!-- Dark Mode Toggle -->
+      <li class="nav-item">
+        <a class="nav-link" id="dark-mode-toggle" href="#" role="button">
+          <i class="fas fa-moon"></i>
+        </a>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-user"></i>
@@ -54,6 +60,20 @@ $page_title = $page_title ?? 'CMDB Vilaseca';
     </ul>
   </nav>
   <!-- /.navbar -->
+
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+        const navbar = document.querySelector('.main-header');
+        if (navbar) {
+          navbar.classList.remove('navbar-white', 'navbar-light');
+          navbar.classList.add('navbar-dark', 'navbar-primary');
+        }
+      }
+    })();
+  </script>
 
   <?php include __DIR__ . '/sidebar.php'; ?>
 

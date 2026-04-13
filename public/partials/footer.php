@@ -25,5 +25,40 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- Toastr -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<script>
+$(function() {
+  const modeToggle = $('#dark-mode-toggle');
+  const icon = modeToggle.find('i');
+  
+  function updateIcon(theme) {
+    if (theme === 'dark') {
+      icon.removeClass('fa-moon').addClass('fa-sun');
+    } else {
+      icon.removeClass('fa-sun').addClass('fa-moon');
+    }
+  }
+
+  // Initial icon state
+  updateIcon(localStorage.getItem('theme') || 'light');
+
+  modeToggle.on('click', function(e) {
+    e.preventDefault();
+    const isDark = $('body').hasClass('dark-mode');
+    const newTheme = isDark ? 'light' : 'dark';
+    
+    if (newTheme === 'dark') {
+      $('body').addClass('dark-mode');
+      $('.main-header').removeClass('navbar-white navbar-light').addClass('navbar-dark navbar-primary');
+    } else {
+      $('body').removeClass('dark-mode');
+      $('.main-header').removeClass('navbar-dark navbar-primary').addClass('navbar-white navbar-light');
+    }
+    
+    localStorage.setItem('theme', newTheme);
+    updateIcon(newTheme);
+  });
+});
+</script>
 </body>
 </html>

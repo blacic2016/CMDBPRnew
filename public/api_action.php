@@ -107,7 +107,70 @@ if ($action === 'execute_mapped_import') {
     exit;
 }
 
+if ($action === 'truncate_cmdb_table') {
+    if (!has_role(['SUPER_ADMIN'])) exit(json_encode(['success' => false, 'error' => 'Permiso denegado.']));
+    try {
+        $tableName = $_POST['tableName'] ?? '';
+        if (!isValidTableName($tableName)) throw new Exception("Nombre de tabla inválido.");
+        $pdo = getPDO();
+        $pdo->exec("TRUNCATE TABLE `$tableName` ");
+        echo json_encode(['success' => true, 'message' => "La tabla '$tableName' ha sido vaciada correctamente."]);
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    }
+    exit;
+}
+
+if ($action === 'drop_cmdb_table') {
+    if (!has_role(['SUPER_ADMIN'])) exit(json_encode(['success' => false, 'error' => 'Permiso denegado.']));
+    try {
+        $tableName = $_POST['tableName'] ?? '';
+        if (!isValidTableName($tableName)) throw new Exception("Nombre de tabla inválido.");
+        $pdo = getPDO();
+        $pdo->exec("DROP TABLE `$tableName` ");
+        // Eliminar configuraciones asociadas
+        $pdo->prepare("DELETE FROM sheet_configs WHERE table_name = ?")->execute([$tableName]);
+        $pdo->prepare("DELETE FROM zabbix_cmdb_config WHERE table_name = ?")->execute([$tableName]);
+        $pdo->prepare("DELETE FROM zabbix_mappings WHERE cmdb_table_name = ?")->execute([$tableName]);
+        
+        echo json_encode(['success' => true, 'message' => "La tabla '$tableName' ha sido eliminada por completo."]);
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    }
+    exit;
+}
+
+if ($action === 'get_table_stats') {
+    if (!has_role(['ADMIN', 'SUPER_ADMIN'])) exit(json_encode(['success' => false, 'error' => 'Permiso denegado.']));
+    try {
+        $tableName = $_POST['tableName'] ?? '';
+        if (!isValidTableName($tableName)) throw new Exception("Nombre de tabla inválido.");
+        $pdo = getPDO();
+        
+        // Consultar estadísticas de la tabla en Information Schema
+        $stmt = $pdo->prepare("
+            SELECT 
+                TABLE_ROWS as rows,
+                DATA_LENGTH as data_size,
+                INDEX_LENGTH as index_size,
+                DATA_FREE as free_space
+            FROM information_schema.TABLES 
+            WHERE TABLE_SCHEMA = :db AND TABLE_NAME = :tbl
+        ");
+        $stmt->execute([':db' => DB_CONFIG['database'], ':tbl' => $tableName]);
+        $stats = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if (!$stats) throw new Exception("No se pudieron obtener estadísticas para '$tableName'.");
+        
+        echo json_encode(['success' => true, 'stats' => $stats]);
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    }
+    exit;
+}
+
 if ($action === 'save_zabbix_cmdb_config') {
+
     if (!has_role(['SUPER_ADMIN'])) {
         exit(json_encode(['success' => false, 'error' => 'Permiso denegado.']));
     }
@@ -242,7 +305,7 @@ if ($action === 'test_zabbix_connection') {
         $payload_auth = json_encode([
             'jsonrpc' => '2.0',
             'method' => 'user.get',
-            'params' => ['output' => ['alias', 'name', 'surname'], 'get_access' => true],
+            'params' => ['output' => ['username', 'name', 'surname']],
             'id' => 2
         ]);
 
@@ -730,6 +793,7 @@ if ($action === 'update') {
     $cols = getTableColumns($table);
 
     // Get current state of the row BEFORE update for history logging
+    error_log("UPDATE REQUEST: Table=$table, ID=$id, Data=" . json_encode($_POST));
     $stmt_select = $pdo->prepare("SELECT * FROM `$table` WHERE id = :id");
     $stmt_select->execute([':id' => $id]);
     $old_row = $stmt_select->fetch(PDO::FETCH_ASSOC);
@@ -749,16 +813,25 @@ if ($action === 'update') {
 
     // Prepare update query only with submitted fields
     $sets = []; $params = [':id'=>$id];
+    $data_for_hash = $old_row; // Start with old data and overwrite with new
+
     foreach ($_POST as $key => $value) {
-        if (in_array($key, $cols) && !in_array($key, ['id','_row_hash','created_at','updated_at'])) {
+        if (in_array($key, $cols) && !in_array($key, ['id','_row_hash','created_at','updated_at','zabbix_host_id'])) {
             $sets[] = "`$key` = :$key";
             $params[":$key"] = $value;
+            $data_for_hash[$key] = $value;
         }
     }
 
     if (empty($sets)) {
         exit(json_encode(['success'=>true, 'message'=>'No hay cambios que aplicar.']));
     }
+
+    // Update _row_hash so future imports see this change
+    unset($data_for_hash['id'], $data_for_hash['_row_hash'], $data_for_hash['created_at'], $data_for_hash['updated_at'], $data_for_hash['zabbix_host_id']);
+    $newHash = hash('md5', json_encode(array_values($data_for_hash)));
+    $sets[] = "`_row_hash` = :_new_hash";
+    $params[':_new_hash'] = $newHash;
 
     // Log to history table ONLY if there were actual changes
     if (!empty($new_values)) {
@@ -774,16 +847,30 @@ if ($action === 'update') {
                 ':old' => json_encode($old_values, JSON_UNESCAPED_UNICODE),
                 ':new' => json_encode($new_values, JSON_UNESCAPED_UNICODE)
             ]);
-        } catch (Exception $e) {
-            // optional: log history error to a file
-        }
+        } catch (Exception $e) { /* ignore */ }
     }
     
     $sql = "UPDATE `$table` SET " . implode(', ', $sets) . " WHERE id = :id";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute($params);
-    
-    exit(json_encode(['success'=>true]));
+    try {
+        $stmt = $pdo->prepare($sql);
+        $res = $stmt->execute($params);
+        $count = $stmt->rowCount();
+        
+        if ($res) {
+            // Verify if it actually changed in DB
+            $vstmt = $pdo->prepare("SELECT * FROM `$table` WHERE id = :id");
+            $vstmt->execute([':id' => $id]);
+            $verified = $vstmt->fetch(PDO::FETCH_ASSOC);
+            error_log("UPDATE SUCCESS: Table=$table, ID=$id, RowsAffected=$count, NewData=" . json_encode($verified));
+            exit(json_encode(['success'=>true, 'rows_affected'=>$count]));
+        } else {
+             error_log("UPDATE FAILED for table $table, ID $id");
+             exit(json_encode(['success'=>false, 'error'=>'Error al ejecutar actualización en DB']));
+        }
+    } catch (PDOException $e) {
+        error_log("SQL UPDATE EXCEPTION: " . $e->getMessage() . " | SQL: $sql | Params: " . json_encode($params));
+        exit(json_encode(['success'=>false, 'error'=>'Error de base de datos: ' . $e->getMessage()]));
+    }
 }
 
 if ($action === 'create') {
@@ -1366,7 +1453,6 @@ if ($action === 'test_single_snmp') {
     
     // Test using snmpget for sysObjectID.0 (1.3.6.1.2.1.1.2.0)
     // -v2c version, -c community, -t timeout (1s), -r retries (0)
-    // Usamos escapeshellarg para seguridad
     $cmd = "snmpget -v2c -c " . escapeshellarg($community) . " -t 1 -r 0 " . escapeshellarg($ip) . " 1.3.6.1.2.1.1.2.0 2>&1";
     $output = [];
     $rv = -1;
@@ -1379,6 +1465,30 @@ if ($action === 'test_single_snmp') {
         $errText = implode("\n", $output);
         exit(json_encode(['success' => false, 'status' => 'FAIL', 'error' => $errText]));
     }
+}
+
+if ($action === 'check_snmp_port') {
+    $ip = $_POST['ip'] ?? '';
+    if (empty($ip)) exit(json_encode(['success' => false, 'error' => 'IP requerida.']));
+
+    // 1. Quick Ping check (1 packet, 1 second timeout)
+    $ping_cmd = "ping -c 1 -W 1 " . escapeshellarg($ip) . " > /dev/null 2>&1";
+    $ping_rv = -1;
+    exec($ping_cmd, $output, $ping_rv);
+
+    if ($ping_rv !== 0) {
+        exit(json_encode(['success' => true, 'online' => false, 'reason' => 'Host inalcanzable (Ping)']));
+    }
+
+    // 2. Probar envío de un paquete SNMP rápido (200ms) con comunidad pública
+    // Solo para ver si el puerto responde ALGO o si el host está realmente vivo para UDP
+    $snmp_probe = "snmpget -v2c -c public -t 0.2 -r 0 " . escapeshellarg($ip) . " 1.3.6.1.2.1.1.2.0 > /dev/null 2>&1";
+    $snmp_rv = -1;
+    exec($snmp_probe, $out, $snmp_rv);
+    
+    // Si snmp_rv es 0, ya sabemos que 'public' funciona, pero igual devolvemos online=true 
+    // para que el ciclo principal haga su trabajo y registre el éxito correctamente.
+    exit(json_encode(['success' => true, 'online' => true]));
 }
 
 exit(json_encode(['success'=>false,'error'=>'Accion desconocida']));

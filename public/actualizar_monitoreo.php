@@ -30,25 +30,28 @@ require_once __DIR__ . '/partials/header.php';
 ?>
 
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <style>
-    .select2-container--default .select2-selection--multiple { border-color: #ced4da; }
-    .select2-container .select2-selection--multiple { min-height: 38px; }
-    .table-head-fixed th { position: sticky; top: 0; background: #eee; z-index: 10; }
-    #action-bar { display: none; position: sticky; top: 20px; z-index: 1020; border-left: 5px solid #28a745; }
+    .select2-container--default .select2-selection--multiple { border-radius: 8px; border: 1px solid #ddd; min-height: 45px; padding: 5px; }
+    .table-head-fixed th { position: sticky; top: 0; background: #f8f9fa; z-index: 10; border-bottom: 2px solid #dee2e6; }
+    #action-bar { display: none; position: sticky; top: 10px; z-index: 1020; border-radius: 12px; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); border: 2px solid #28a745; box-shadow: 0 15px 35px rgba(40,167,69,0.15); }
+    .monitor-card { border-radius: 15px; border: none; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
 </style>
 
-<div class="content-wrapper">
-    <section class="content-header">
-        <div class="container-fluid">
-            <h1>Actualizar Monitoreo en Zabbix</h1>
+<div class="container-fluid pt-4 pb-5">
+    
+    <div class="row mb-5 animate__animated animate__fadeInDown">
+        <div class="col-md-12">
+            <h1 class="display-5 font-weight-bold text-dark"><i class="fas fa-sync-alt text-success mr-3"></i>Actualizar Sincronización</h1>
+            <p class="text-muted lead font-italic">Resincroniza datos de la CMDB con los perfiles existentes en Zabbix.</p>
         </div>
-    </section>
+    </div>
 
     <section class="content">
         <div class="container-fluid">
-            <div class="card card-success card-outline">
-                <div class="card-header">
-                    <h3 class="card-title"><i class="fas fa-sync-alt mr-1"></i> Sincronización Masiva</h3>
+            <div class="card monitor-card animate__animated animate__fadeIn">
+                <div class="card-header bg-white py-3">
+                    <h5 class="mb-0 font-weight-bold"><i class="fas fa-database mr-2 text-success"></i>Categorías CMDB para Sincronizar</h5>
                 </div>
                 <div class="card-body">
                     <?php if (isset($error_db)): ?>
@@ -59,8 +62,8 @@ require_once __DIR__ . '/partials/header.php';
                             Habilita las tablas en la configuración de la CMDB.
                         </div>
                     <?php else: ?>
-                        <div class="form-group">
-                            <label>Selecciona tablas de la CMDB para actualizar:</label>
+                        <div class="form-group mb-0">
+                            <label class="text-muted small font-weight-bold text-uppercase">Tablas Habilitadas</label>
                             <select class="form-control" id="cmdbTableSelector" multiple="multiple">
                                 <?php foreach ($enabled_tables as $table): ?>
                                     <option value="<?php echo htmlspecialchars($table); ?>">
@@ -72,6 +75,7 @@ require_once __DIR__ . '/partials/header.php';
                     <?php endif; ?>
                 </div>
             </div>
+
   
 <div id="monitoring-dashboard" style="display: none;">
     <div class="row">

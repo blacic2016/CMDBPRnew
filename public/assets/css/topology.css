@@ -1,0 +1,34 @@
+#myDiagramDiv canvas {
+    outline: none !important;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select2-container--bootstrap4 .select2-selection--single {
+    height: calc(2.25rem + 2px) !important;
+}
+
+#myDiagramDiv {
+    cursor: default;
+}
+
+/* Custom Tooltip styling */
+.gojs-tooltip {
+    background: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}

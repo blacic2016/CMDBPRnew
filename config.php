@@ -64,7 +64,7 @@ if (!defined('PUBLIC_URL_PREFIX')) {
 define('UPLOAD_URL_PUBLIC', PUBLIC_URL_PREFIX . '/uploads');
 
 // 6. Configuración de Seguridad y Sesión
-if (session_status() === PHP_SESSION_NONE) {
+if (session_status() === PHP_SESSION_NONE && php_sapi_name() !== 'cli') {
     // FORZAR RUTA LOCAL (Solución para servidores nuevos/restringidos)
     $local_sessions = ROOT_PATH . '/storage/sessions';
     if (!is_dir($local_sessions)) {
@@ -86,22 +86,25 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // Global Security Headers
-header("X-Frame-Options: SAMEORIGIN");
-header("X-Content-Type-Options: nosniff");
-header("Referrer-Policy: strict-origin-when-cross-origin");
-header("X-XSS-Protection: 1; mode=block");
+if (php_sapi_name() !== 'cli') {
+    header("X-Frame-Options: SAMEORIGIN");
+    header("X-Content-Type-Options: nosniff");
+    header("Referrer-Policy: strict-origin-when-cross-origin");
+    header("X-XSS-Protection: 1; mode=block");
 
-// CSP ajustada para AdminLTE/CDNs
-$csp = "default-src 'self'; " .
-       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; " .
-       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; " .
-       "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; " .
-       "img-src 'self' data:; " .
-       "frame-ancestors 'self';";
-header("Content-Security-Policy: " . $csp);
+    // CSP ajustada para AdminLTE/CDNs y Topología
+    $csp = "default-src 'self'; " .
+           "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com; " .
+           "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; " .
+           "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; " .
+           "img-src 'self' data: https://img.icons8.com; " .
+           "connect-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com http://172.32.1.50; " .
+           "frame-ancestors 'self';";
+    header("Content-Security-Policy: " . $csp);
 
-// Eliminar cabecera de versión de PHP si está habilitada
-header_remove("X-Powered-By");
+    // Eliminar cabecera de versión de PHP si está habilitada
+    header_remove("X-Powered-By");
+}
 
 // 7. Configuraciones Adicionales
 define('IMAGE_MAX_BYTES', 32 * 1024 * 1024);
