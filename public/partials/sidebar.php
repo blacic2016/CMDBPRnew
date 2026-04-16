@@ -75,6 +75,12 @@ $current_sheet = $_GET['name'] ?? '';
             <p>Topología</p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="<?php echo PUBLIC_URL_PREFIX; ?>/snmp_builder.php" class="nav-link <?php echo $cur === 'snmp_builder.php' ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-network-wired"></i>
+            <p>SNMP Builder</p>
+          </a>
+        </li>
         <?php
           $is_monitoreo_page = in_array($cur, ['monitoreo.php', 'crear_monitoreo.php', 'actualizar_monitoreo.php', 'problems.php']);
         ?>

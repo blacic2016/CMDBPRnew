@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zabbix SNMP Builder</title>
+
+  <!-- JS Scripts & Styles -->
+  <script type="text/javascript" src="jsSnmpbuilder/snmp_builder.js"></script>
+  <script type="text/javascript" src="jsSnmpbuilder/selecttotal.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.15/dist/js/bootstrap-select.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.15/dist/css/bootstrap-select.min.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+  <script src="dist/jstree.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css" />
+
+  <link rel="stylesheet" href="js/jquery.dynatable.css">
+  <script src="js/jquery.dynatable.js"></script>
+
+    <style>
+    body {
+      background-color: #ebeef0; /* Zabbix grey background */
+      font-family: Arial, Tahoma, Verdana, sans-serif;
+      overflow: hidden; 
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Zabbix Blue for Main App Header */
+    .app-header {
+      background-color: #0275b8; 
+      color: #ffffff;
+      padding: 10px 20px;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #014f7d;
+    }
+
+    .app-header h4 { margin: 0; font-size: 1.4rem; font-weight: bold; }
+
+    /* Configuration Panel */
+    .config-panel {
+      background-color: #ffffff;
+      border: 2px solid #bac6cb;
+      padding: 12px 15px;
+      margin: 0 10px 15px 10px;
+      border-radius: 4px;
+    }
+
+    .config-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .config-item { flex: 1; min-width: 150px; }
+    .config-item label {
+      font-weight: bold;
+      margin-bottom: 4px;
+      font-size: 0.9rem;
+      color: #333333;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .form-control, .bootstrap-select .dropdown-toggle {
+      border: 1px solid #768d99;
+      border-radius: 3px;
+      height: 35px;
+      font-size: 0.95rem;
+      padding: 5px 10px;
+    }
+
+    /* Main Dashboard Layout */
+    .dashboard-container {
+      display: flex;
+      gap: 15px;
+      padding: 0 10px;
+      height: calc(100vh - 160px); 
+      margin-bottom: 30px;
+    }
+
+    .panel-left, .panel-right {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      height: 100%;
+    }
+
+    .panel-left { flex: 3; }
+    .panel-right { flex: 7; }
+
+    /* Zabbix UI styled Panel Wrapper */
+    .panel-wrapper {
+      background-color: #ffffff;
+      border: 2px solid #bac6cb; /* Strong Distribution Lines */
+      display: flex;
+      flex-direction: column;
+      overflow: hidden; 
+      border-radius: 3px;
+    }
+
+    .top-panel { flex: 1 1 auto; } 
+    .bottom-panel { flex: 0 0 180px; }
+
+    /* Zabbix Colors for Titles (Panel Headings) */
+    .panel-heading {
+      background-color: #2b2b2b; /* Zabbix Dark Header Theme */
+      color: #ffffff; 
+      padding: 8px 12px;
+      font-weight: bold;
+      font-size: 1.05rem; 
+      flex-shrink: 0; 
+      border-bottom: 2px solid #000000; 
+    }
+    
+    .panel-body {
+      padding: 12px;
+      flex-grow: 1; 
+      overflow: auto; 
+      font-size: 1rem; 
+      color: #333333; 
+    }
+
+    #jstree_demo {
+      min-width: max-content; 
+      font-size: 1.05rem; 
+      color: #333333;
+    }
+
+    /* Tables */
+    table#miTabla {
+      width: 100%;
+      min-width: max-content;
+      border-collapse: collapse;
+      border: 2px solid #bac6cb;
+      background: #fff;
+    }
+    
+    /* Zabbix Colors for Subtitles (Table Headers) */
+    #miTabla th {
+      background-color: #2b2b2b; /* Zabbix Dark Header Theme matches panel heading */
+      color: #ffffff; 
+      padding: 8px;
+      border: 1px solid #000000;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    
+    #miTabla td {
+      padding: 8px;
+      border: 1px solid #bac6cb;
+      color: #333333;
+      font-size: 0.95rem;
+      white-space: nowrap; 
+      cursor: crosshair;
+    }
+    
+    #miTabla tbody tr:hover td {
+      background-color: #d8eeff; 
+    }
+
+    .zabbix-tag {
+      background-color: #f8f9fa;
+      border: 1px solid #bac6cb;
+      border-left: 5px solid #0275b8;
+      padding: 10px 14px;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+      color: #000;
+    }
+    .zabbix-tag-red {
+      border-left-color: #e45959 !important;
+      background-color: #fffaf9;
+    }
+    .zabbix-tag-blue {
+      border-left-color: #0275b8 !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="app-header">
+    <h4><i class="fas fa-network-wired"></i> SNMPBUILDER</h4>
+  </div>
+
+  <div class="config-panel">
+    <div class="mb-3 d-flex align-items-center">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons" id="mode-toggle">
+        <label class="btn btn-primary active">
+          <input type="radio" name="mode" id="mode_zabbix" checked> <i class="fas fa-server mr-1"></i> Modo Zabbix
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="mode" id="mode_manual"> <i class="fas fa-edit mr-1"></i> Modo Manual
+        </label>
+      </div>
+      <span class="ml-3 text-muted small"><i class="fas fa-info-circle"></i> Selecciona cómo quieres ingresar los datos del equipo.</span>
+    </div>
+
+    <div class="config-bar">
+      <div class="config-item">
+        <label for="mib">Carpetas Mib</label>
+        <select name="mib" id="mib" class="selectpicker show-tick form-control" data-live-search="true">
+          <option value="" disabled selected>Seleccionar MIB</option>
+        </select>
+      </div>
+      <div class="config-item" id="container_ip_zabbix" style="min-width: 250px;">
+        <label>Seleccionar Equipo (Zabbix)</label>
+        <select id="iphost_select" class="selectpicker show-tick form-control" data-live-search="true">
+          <option value="">Buscar en Zabbix...</option>
+        </select>
+      </div>
+      <div class="config-item" id="container_ip_manual">
+        <label for="iphost">IP Host/equipo</label>
+        <input type="text" id="iphost" class="form-control" placeholder="192.168.1.1">
+      </div>
+      <div class="config-item">
+        <label for="snmpversion">Snmp Version</label>
+        <select id="snmpversion" name="datos" class="selectpicker show-tick form-control">
+          <option value="1">v1</option>
+          <option value="2c" selected>v2c</option>
+          <option value="3">v3</option>
+        </select>
+      </div>
+      <div class="config-item">
+        <label for="comunidad">Community Snmp</label>
+        <input type="text" id="comunidad" class="form-control" placeholder="public">
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-container">
+    <div class="panel-left">
+      <div class="panel-wrapper top-panel">
+        <div class="panel-heading"><i class="fas fa-sitemap mt-1"></i> OID Tree</div>
+        <div class="bg-light p-2" style="border-bottom: 2px solid #bac6cb;">
+          <div class="input-group input-group-sm">
+            <input type="text" id="str_search_oid" class="form-control" style="border: 1px solid #bac6cb;"
+              placeholder="Buscar OID (ej: ifDescr o 1.3.6...)">
+            <div class="input-group-append">
+              <button class="btn" type="button" id="btn_search_oid"
+                style="background-color: #0275b8; color: white; border-color: #014f7d; font-weight: bold;"><i
+                  class="fas fa-search"></i> Identificar</button>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body" id="jstree_demo"></div>
+      </div>
+      <div class="panel-wrapper bottom-panel">
+        <div class="panel-heading"><i class="fas fa-info-circle mt-1"></i> OID Description</div>
+        <div class="panel-body" id="oid_discription">
+          Seleccione un OID del árbol...
+        </div>
+      </div>
+    </div>
+    <div class="panel-right">
+      <div class="panel-wrapper top-panel">
+        <div class="panel-heading"><i class="fas fa-table mt-1"></i> OID View</div>
+        <div class="panel-body" id="oidview">
+          <p class="text-muted text-center mt-5" style="font-size: 1.1rem; color: #000000 !important;">Esperando
+            selección de parámetros...</p>
+        </div>
+      </div>
+      <div class="panel-wrapper bottom-panel">
+        <div class="panel-heading"><i class="fas fa-list-ol mt-1"></i> OID List</div>
+        <div class="panel-body" id="oidlist">
+          <div class="zabbix-tag">OID y Nomenclatura Clickeados aparecerán aquí</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    if (window.jQuery) {
+      $(document).ready(function () {
+        try {
+          cargarOpcionesMib();
+          cargarEquiposZabbix();
+          $('[data-toggle="tooltip"]').tooltip();
+        } catch (error) {
+          console.error('Error en el código jQuery:', error);
+        }
+      });
+
+      function cargarEquiposZabbix() {
+        $.ajax({
+          url: "get_zabbix_hosts.php",
+          dataType: "json",
+          success: function (res) {
+            if (res.error) {
+              console.error("Error cargando equipos:", res.error);
+              return;
+            }
+            let select = $("#iphost_select");
+            select.empty();
+            select.append('<option value="">Seleccionar Equipo...</option>');
+            
+            window.zabbixHostsData = res.result; // Guardar datos para acceso rápido
+            
+            res.result.forEach(function(host) {
+              select.append('<option value="'+host.ip+'" data-subtext="'+host.ip+'">'+host.name+'</option>');
+            });
+            select.selectpicker("refresh");
+          }
+        });
+      }
+
+      $("#iphost_select").on("change", function() {
+        let ip = $(this).val();
+        if (ip) {
+          $("#iphost").val(ip);
+        }
+        
+        // Buscar datos del host seleccionado
+        let hostData = window.zabbixHostsData.find(h => h.ip === ip);
+        if (hostData) {
+          $("#comunidad").val(hostData.community);
+          
+          let version = hostData.version;
+          if (version == "2") version = "2c";
+          $("#snmpversion").selectpicker("val", version);
+          $("#snmpversion").selectpicker("refresh");
+        }
+      });
+
+      // Lógica del switch de modo
+      $('input[name="mode"]').change(function() {
+        if (this.id === 'mode_zabbix') {
+          $("#container_ip_zabbix").show();
+          $("#iphost").attr('readonly', true);
+          $("#comunidad").attr('readonly', true);
+          $("#mode-toggle label").first().addClass('active').removeClass('btn-secondary').addClass('btn-primary');
+          $("#mode-toggle label").last().removeClass('active').addClass('btn-secondary').removeClass('btn-primary');
+        } else {
+          $("#container_ip_zabbix").hide();
+          $("#iphost").attr('readonly', false).val('');
+          $("#comunidad").attr('readonly', false).val('');
+          $("#mode-toggle label").first().removeClass('active').addClass('btn-secondary').removeClass('btn-primary');
+          $("#mode-toggle label").last().addClass('active').removeClass('btn-secondary').addClass('btn-primary');
+        }
+      });
+
+      // Inicializar estado del modo
+      $("#iphost").attr('readonly', true);
+      $("#comunidad").attr('readonly', true);
+    } else {
+      console.error('Error: jQuery no está disponible.');
+    }
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#btn_search_oid").click(function () {
+        var oidStr = $("#str_search_oid").val().trim();
+        if (oidStr === "") return;
+
+        let descBox = document.getElementById("oid_discription");
+        descBox.innerHTML = '<div class="text-center mt-3"><i class="fas fa-spinner fa-spin fa-2x text-primary"></i><br>Consultando a la base MIB...</div>';
+
+        $.ajax({
+          url: "search_oid.php",
+          data: { oid: oidStr },
+          dataType: "json",
+          success: function (res) {
+            if (res.error) {
+              descBox.innerHTML = '<div class="alert alert-danger"><strong>Error:</strong> ' + res.error + '</div>';
+              return;
+            }
+
+            var html = '<div class="zabbix-tag zabbix-tag-blue" style="font-size: 1.1em;"><strong><i class="fas fa-file-alt mr-2"></i> Pertenencia Identificada:</strong> <span class="text-danger">' + res.module + '</span></div>';
+            html += '<div style="font-family: monospace; white-space: pre-wrap; font-size: 0.95em; color: #333; padding: 10px; background: #f8f9fa; border: 1px solid #000000;">' + res.full_desc + '</div>';
+
+            descBox.innerHTML = html;
+
+            // Auto-locate
+            var mibInput = res.module.toUpperCase();
+            var found = false;
+            $("#mib option").each(function () {
+              var optText = $(this).text().toUpperCase();
+              if (optText.indexOf(mibInput) !== -1 || optText === mibInput + ".TXT" || optText === mibInput + ".MIB") {
+                $("#mib").selectpicker("val", $(this).val());
+                found = true;
+                return false;
+              }
+            });
+
+            if (found) {
+              $("#mib").selectpicker("refresh");
+              $('#mib').trigger('change');
+
+              let successHtml = '<div class="alert alert-success mt-2 p-2" style="font-size: 0.85em;"><i class="fas fa-check-circle"></i> ¡El árbol del MIB <strong>' + res.module + '</strong> ha sido seleccionado y cargado automáticamente!</div>';
+              descBox.innerHTML = successHtml + descBox.innerHTML;
+            } else {
+              let warnHtml = '<div class="alert alert-warning mt-2 p-2" style="font-size: 0.85em;"><i class="fas fa-exclamation-triangle"></i> El MIB <strong>' + res.module + '</strong> no está listado en tu directorio actual de MIBs.</div>';
+              descBox.innerHTML = warnHtml + descBox.innerHTML;
+            }
+          },
+          error: function () {
+            descBox.innerHTML = '<div class="alert alert-danger">Falla de comunicación con el servidor al buscar OID.</div>';
+          }
+        });
+      });
+
+      $("#str_search_oid").keypress(function (e) {
+        if (e.which == 13) {
+          $("#btn_search_oid").click();
+          return false;
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
