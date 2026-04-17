@@ -1,5 +1,4 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) session_start();
 require_once __DIR__ . '/../../src/auth.php';
 $user = current_user();
 $page_title = $page_title ?? 'CMDB Vilaseca';

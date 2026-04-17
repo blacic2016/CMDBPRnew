@@ -66,7 +66,7 @@ require_once __DIR__ . '/partials/header.php';
     <!-- Premium Header -->
     <div class="row mb-5 animate__animated animate__fadeInDown">
         <div class="col-md-7">
-            <h1 class="display-5 font-weight-bold text-dark"><i class="fas fa-camera-retro text-success mr-3"></i>Distribrack Gallery</h1>
+            <h1 class="display-5 font-weight-bold text-dark"><i class="fas fa-images text-success mr-3"></i>Galería de Imágenes</h1>
             <p class="text-muted lead">Visualización y gestión de evidencia fotográfica de activos.</p>
         </div>
         <div class="col-md-5">

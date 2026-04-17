@@ -9,6 +9,9 @@ define('ROOT_PATH', __DIR__);
 define('STORAGE_DIR', ROOT_PATH . '/storage');
 define('UPLOAD_DIR_PUBLIC', ROOT_PATH . '/public/uploads');
 
+// Token para acceso a salud y remediación sin login (Acceso Técnico)
+define('SECURITY_TOKEN', 'vls_tech_2026');
+
 // 2. Configuración de Errores (Ahora ya existe STORAGE_DIR)
 ini_set('display_errors', 1); // Cambiar a 1 para debugear el NS_ERROR si persiste
 ini_set('log_errors', 1);
@@ -66,7 +69,7 @@ define('UPLOAD_URL_PUBLIC', PUBLIC_URL_PREFIX . '/uploads');
 // 6. Configuración de Seguridad y Sesión
 if (session_status() === PHP_SESSION_NONE && php_sapi_name() !== 'cli') {
     // FORZAR RUTA LOCAL (Solución para servidores nuevos/restringidos)
-    $local_sessions = ROOT_PATH . '/storage/sessions';
+    $local_sessions = ROOT_PATH . '/storage/sessions_fix';
     if (!is_dir($local_sessions)) {
         @mkdir($local_sessions, 0777, true);
     }

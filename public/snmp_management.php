@@ -51,18 +51,77 @@ require_once __DIR__ . '/partials/header.php';
     .dark-mode #scanProgress {
         background: #2c3034;
     }
+    .bg-success-light { background: #e8f5e9; }
+    .bg-danger-light { background: #ffebee; }
+    .bg-warning-light { background: #fff3e0; }
 </style>
 
 <div class="container-fluid py-4">
-    <div class="row align-items-center mb-4">
+    <div class="row align-items-center mb-3">
         <div class="col">
             <h1 class="h3 mb-0 font-weight-bold text-primary"><i class="fas fa-microchip mr-2"></i> Motor de Escaneo SNMP</h1>
             <p class="text-muted small mb-0">Gestión de comunidades y validación de red para activos del inventario.</p>
         </div>
-        <div class="col-auto">
-            <button type="button" class="btn btn-primary shadow-sm px-4" data-toggle="modal" data-target="#modalCommunity">
+        <div class="col-auto d-flex align-items-center">
+            <div class="btn-group btn-group-toggle mr-3 shadow-sm" data-toggle="buttons" id="source-toggle">
+                <label class="btn btn-dark active btn-sm">
+                    <input type="radio" name="source" id="source_cmdb" checked> <i class="fas fa-database mr-1"></i> Inventario CMDB
+                </label>
+                <label class="btn btn-secondary btn-sm">
+                    <input type="radio" name="source" id="source_zabbix"> <i class="fas fa-server mr-1"></i> Servidor Zabbix
+                </label>
+            </div>
+            <button type="button" class="btn btn-primary shadow-sm px-4 btn-sm" data-toggle="modal" data-target="#modalCommunity">
                 <i class="fas fa-key mr-2"></i> Comunidades
             </button>
+        </div>
+    </div>
+
+    <!-- Estadísticas Rápidas -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 bg-white p-3 d-flex flex-row align-items-center">
+                <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                    <i class="fas fa-list text-primary"></i>
+                </div>
+                <div class="ml-3">
+                    <h6 class="mb-0 text-muted small font-weight-bold uppercase">Total Equipos</h6>
+                    <h3 class="mb-0 font-weight-bold text-dark" id="statTotal">0</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 bg-white p-3 d-flex flex-row align-items-center">
+                <div class="rounded-circle bg-success-light d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                    <i class="fas fa-check-circle text-success"></i>
+                </div>
+                <div class="ml-3">
+                    <h6 class="mb-0 text-muted small font-weight-bold uppercase">SNMP OK</h6>
+                    <h3 class="mb-0 font-weight-bold text-success" id="statSuccess">0</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 bg-white p-3 d-flex flex-row align-items-center">
+                <div class="rounded-circle bg-danger-light d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                    <i class="fas fa-exclamation-triangle text-danger"></i>
+                </div>
+                <div class="ml-3">
+                    <h6 class="mb-0 text-muted small font-weight-bold uppercase">Fallo / Offline</h6>
+                    <h3 class="mb-0 font-weight-bold text-danger" id="statFailed">0</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 bg-white p-3 d-flex flex-row align-items-center">
+                <div class="rounded-circle bg-warning-light d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                    <i class="fas fa-clock text-warning"></i>
+                </div>
+                <div class="ml-3">
+                    <h6 class="mb-0 text-muted small font-weight-bold uppercase">Pendientes</h6>
+                    <h3 class="mb-0 font-weight-bold text-warning" id="statPending">0</h3>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -86,6 +145,9 @@ require_once __DIR__ . '/partials/header.php';
                             <input type="radio" name="options" autocomplete="off"> Todos
                         </label>
                     </div>
+                    <button type="button" id="btnSyncZabbix" class="btn btn-info btn-sm px-3 shadow-sm mr-1">
+                        <i class="fas fa-sync mr-1"></i> Sincronizar Zabbix
+                    </button>
                     <button type="button" id="btnStartSelectedScan" class="btn btn-success btn-sm px-3 shadow-sm">
                         <i class="fas fa-play mr-1"></i> Iniciar Escaneo
                     </button>
@@ -235,20 +297,71 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function loadScanData() {
-        fetch('api_action.php?action=get_snmp_scan_data')
-        .then(r => r.json())
-        .then(res => {
-            if (res.success) {
-                scanData.ips = res.ips;
+        const source = document.querySelector('input[name="source"]:checked').id;
+        
+        if (source === 'source_zabbix') {
+            fetch('snmpbuilder/get_zabbix_hosts.php')
+            .then(r => r.json())
+            .then(res => {
+                if (res.error) {
+                    toastr.error('Error Zabbix: ' + res.error);
+                    return;
+                }
+                // Mapear formato Zabbix a formato ScanData
+                scanData.ips = res.result.map(z => ({
+                    table: 'zabbix',
+                    id: z.ip,
+                    ip: z.ip,
+                    name: z.name,
+                    display_name: 'Zabbix Host',
+                    community_ok: z.available == 1 ? z.community : null,
+                    last_success: z.available == 1 ? new Date() : null,
+                    zabbix_available: z.available,
+                    zabbix_error: z.error
+                }));
                 renderTable();
-            }
-        });
+            });
+        } else {
+            fetch('api_action.php?action=get_snmp_scan_data')
+            .then(r => r.json())
+            .then(res => {
+                if (res.success) {
+                    scanData.ips = res.ips;
+                    renderTable();
+                }
+            });
+        }
     }
+
+    // Eventos de cambio de fuente
+    $('input[name="source"]').change(function() {
+        $("#source-toggle label").removeClass('active btn-dark').addClass('btn-secondary');
+        $(this).parent().addClass('active btn-dark').removeClass('btn-secondary');
+        loadScanData();
+    });
 
     function renderTable() {
         const tbody = document.querySelector('#tableScan tbody');
         tbody.innerHTML = '';
         
+        let stats = { total: scanData.ips.length, success: 0, failed: 0, pending: 0 };
+        
+        scanData.ips.forEach(item => {
+            if (item.table === 'zabbix') {
+                if (item.zabbix_available == 1) stats.success++;
+                else if (item.zabbix_available == 2) stats.failed++;
+                else stats.pending++;
+            } else {
+                if (item.community_ok) stats.success++;
+                else stats.pending++;
+            }
+        });
+
+        document.getElementById('statTotal').innerText = stats.total;
+        document.getElementById('statSuccess').innerText = stats.success;
+        document.getElementById('statFailed').innerText = stats.failed;
+        document.getElementById('statPending').innerText = stats.pending;
+
         let filtered = scanData.ips.filter(item => {
             const matchesFilter = filterMode === 'new' ? !item.community_ok : true;
             const matchesSearch = item.ip.toLowerCase().includes(searchText) || 
@@ -274,6 +387,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const isPersisted = !!item.community_ok;
             const dateStr = item.last_success ? new Date(item.last_success).toLocaleDateString() : '--';
             
+            let statusBadge = isPersisted ? '<span class="status-badge badge-success-snmp"><i class="fas fa-check mr-1"></i> Validado</span>' : '<span class="status-badge badge-pending">Pendiente</span>';
+            
+            // Si la fuente es Zabbix, mostrar su estatus real
+            if (item.table === 'zabbix') {
+               if (item.zabbix_available == 1) {
+                   statusBadge = '<span class="status-badge badge-success-snmp"><i class="fas fa-check-double mr-1"></i> Zabbix UP</span>';
+               } else if (item.zabbix_available == 2) {
+                   statusBadge = `<span class="status-badge badge-fail-snmp" title="${item.zabbix_error}"><i class="fas fa-exclamation-triangle mr-1"></i> Zabbix Down</span>`;
+               }
+            }
+
             tbody.innerHTML += `
                 <tr id="row-${item.table}-${item.id}" class="${isPersisted ? 'text-muted' : ''}">
                     <td class="text-center align-middle">
@@ -290,13 +414,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     <td class="align-middle small">${item.name || '-'}</td>
                     <td class="align-middle text-muted small">${dateStr}</td>
                     <td class="align-middle status-cell">
-                        ${isPersisted ? '<span class="status-badge badge-success-snmp"><i class="fas fa-check mr-1"></i> Validado</span>' : '<span class="status-badge badge-pending">Pendiente</span>'}
+                        ${statusBadge}
                     </td>
                     <td class="align-middle community-cell small">
                         ${isPersisted ? `<code class="bg-light p-1 rounded">${item.community_ok}</code>` : '-'}
                     </td>
                     <td class="align-middle text-center">
-                        ${isPersisted ? `<button class="btn btn-xs btn-link text-danger btnForget" data-ip="${item.ip}" data-table="${item.table}" data-id="${item.id}" title="Reiniciar Validación"><i class="fas fa-sync-alt"></i></button>` : ''}
+                        ${isPersisted && item.table !== 'zabbix' ? `<button class="btn btn-xs btn-link text-danger btnForget" data-ip="${item.ip}" data-table="${item.table}" data-id="${item.id}" title="Reiniciar Validación"><i class="fas fa-sync-alt"></i></button>` : ''}
                     </td>
                 </tr>
             `;
@@ -365,6 +489,72 @@ document.addEventListener('DOMContentLoaded', function() {
             };
         });
     }
+
+    document.getElementById('btnSyncZabbix').onclick = function() {
+        const btn = this;
+        const oldHtml = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> Sincronizando...';
+
+        fetch('snmpbuilder/get_zabbix_hosts.php')
+        .then(r => r.json())
+        .then(res => {
+            if (res.error) {
+                toastr.error('Error al conectar con Zabbix: ' + res.error);
+                return;
+            }
+            
+            let syncCount = 0;
+            const zabbixData = res.result;
+            
+            scanData.ips.forEach(item => {
+                // Si ya está validado, no hacemos nada
+                if (item.community_ok) return;
+
+                const match = zabbixData.find(z => z.ip === item.ip);
+                if (match) {
+                    const rowElem = document.getElementById(`row-${item.table}-${item.id}`);
+                    if (rowElem) {
+                        const statusCell = rowElem.querySelector('.status-cell');
+                        const commCell = rowElem.querySelector('.community-cell');
+                        
+                        if (match.available == 1) {
+                            statusCell.innerHTML = '<span class="status-badge badge-success-snmp"><i class="fas fa-check-double mr-1"></i> Zabbix UP</span>';
+                            commCell.innerHTML = `<code class="bg-info text-white p-1 rounded px-2" style="font-size:0.7rem;">${match.community}</code>`;
+                            
+                            tempResults.push({ 
+                                ip: item.ip, 
+                                table: item.table, 
+                                id: item.id, 
+                                community: match.community 
+                            });
+                            
+                            rowElem.classList.add('bg-info-light');
+                            syncCount++;
+                        } else {
+                            statusCell.innerHTML = `<span class="status-badge badge-fail-snmp" title="${match.error}"><i class="fas fa-exclamation-triangle mr-1"></i> Zabbix Down</span>`;
+                            commCell.innerHTML = `<small class="text-muted italic">${match.community}</small>`;
+                        }
+                    }
+                }
+            });
+
+            btn.disabled = false;
+            btn.innerHTML = oldHtml;
+            
+            if (syncCount > 0) {
+                document.getElementById('btnCommitResults').disabled = false;
+                Swal.fire('Sincronización Exitosa', `Se encontraron ${syncCount} coincidencias en Zabbix. Haz clic en "Persistir Datos" para guardar los cambios.`, 'success');
+            } else {
+                Swal.fire('Sin coincidencias', 'No se encontraron equipos en Zabbix que coincidan con las IPs pendientes en el inventario.', 'info');
+            }
+        })
+        .catch(err => {
+            toastr.error('Error de comunicación con el motor de sincronización.');
+            btn.disabled = false;
+            btn.innerHTML = oldHtml;
+        });
+    };
 
     document.getElementById('btnStartSelectedScan').onclick = async function() {
         const selected = Array.from(document.querySelectorAll('.check-item:checked'));
