@@ -186,6 +186,15 @@ $(function() {
                     if(fullOid) {
                         $('#selection-box').removeClass('d-none');
                         $('#info-full-oid').text(fullOid);
+                        
+                        // Cargar descripción técnica vía API
+                        $.get('api_snmp.php', { action: 'get_oid_details', oid: fullOid }, function(d) {
+                            if (d.success) {
+                                // Mostrar los detalles en un modal o un área expandida si existiera
+                                // Por ahora lo pondremos en un tooltip o simplemente lo dejaremos listo para el usuario
+                                console.log('Detalles:', d.details);
+                            }
+                        });
                     }
                 }).jstree({
                     'core': { 'data': jsTreeData, 'themes': { 'dots': true, 'icons': true } },

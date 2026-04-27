@@ -127,7 +127,10 @@ $current_sheet = $_GET['name'] ?? '';
         </li>
 
         <?php
-          $is_zabbix_page = in_array($cur, ['zabbix_dashboard.php', 'zabbix_hosts.php', 'reports_zabbix.php', 'monitoreo.php', 'crear_monitoreo.php', 'actualizar_monitoreo.php', 'problems.php']) || strpos($_SERVER['SCRIPT_NAME'], '/costos/') !== false || strpos($_SERVER['SCRIPT_NAME'], '/storage/') !== false;
+          $is_zabbix_page = in_array($cur, ['zabbix_dashboard.php', 'zabbix_hosts.php', 'reports_zabbix.php', 'monitoreo.php', 'crear_monitoreo.php', 'actualizar_monitoreo.php', 'problems.php', 'interfaces_manager.php']) || 
+                            strpos($_SERVER['SCRIPT_NAME'], '/costos/') !== false || 
+                            strpos($_SERVER['SCRIPT_NAME'], '/storage/') !== false ||
+                            strpos($_SERVER['SCRIPT_NAME'], '/kanbanzabbix/') !== false;
         ?>
         <?php if (has_module_access('monitoreo')): ?>
         <li class="nav-item <?php echo $is_zabbix_page ? 'menu-is-opening menu-open' : ''; ?>">
@@ -139,6 +142,12 @@ $current_sheet = $_GET['name'] ?? '';
             </p>
           </a>
           <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/kanbanzabbix/index.php" class="nav-link <?php echo strpos($_SERVER['SCRIPT_NAME'], '/kanbanzabbix/') !== false ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-danger"></i>
+                <p>Kanban Zabbix</p>
+              </a>
+            </li>
             <li class="nav-item">
               <a href="<?php echo PUBLIC_URL_PREFIX; ?>/monitoreo.php" class="nav-link <?php echo in_array($cur, ['monitoreo.php', 'problems.php']) ? 'active' : ''; ?>">
                 <i class="far fa-circle nav-icon"></i>
@@ -155,6 +164,12 @@ $current_sheet = $_GET['name'] ?? '';
               <a href="<?php echo PUBLIC_URL_PREFIX; ?>/reports_zabbix.php" class="nav-link <?php echo $cur === 'reports_zabbix.php' ? 'active' : ''; ?>">
                 <i class="far fa-circle nav-icon text-success"></i>
                 <p>Informes</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/interfaces_manager.php" class="nav-link <?php echo $cur === 'interfaces_manager.php' ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-primary"></i>
+                <p>Gestión Interfaces</p>
               </a>
             </li>
             <li class="nav-item">

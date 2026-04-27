@@ -24,11 +24,18 @@ require_once __DIR__ . '/partials/header.php';
 
                 <div class="card-body p-3">
                     <div class="row align-items-end">
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <label class="small text-muted mb-1">Grupo de Host (Zabbix)</label>
                             <select id="subgrupo-select" class="form-control select2bs4">
                                 <option value="">Seleccione un Grupo</option>
                             </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="small text-muted mb-1">Filtro de Estado</label>
+                            <div class="custom-control custom-switch mt-1">
+                                <input type="checkbox" class="custom-control-input" id="toggle-down-ports" checked>
+                                <label class="custom-control-label small" for="toggle-down-ports">Ver Puertos Down</label>
+                            </div>
                         </div>
                         <div class="col-md-3">
                             <label class="small text-muted mb-1">Diseño</label>
@@ -40,8 +47,8 @@ require_once __DIR__ . '/partials/header.php';
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <button id="generate-btn" class="btn btn-primary btn-block" disabled>
-                                <i class="fas fa-sync-alt mr-1"></i> Generar Gráfico
+                            <button id="generate-btn" class="btn btn-primary btn-block pt-2 pb-2" disabled>
+                                <i class="fas fa-sync-alt"></i> Actualizar
                             </button>
                         </div>
                     </div>

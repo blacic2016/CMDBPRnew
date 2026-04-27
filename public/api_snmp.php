@@ -122,46 +122,47 @@ switch ($action) {
 
         foreach ($lines as $line) {
             $line_clean = str_replace('|', ' ', $line);
+            if (empty(trim($line_clean)) || strpos($line, 'Cannot find') !== false) continue;
             
-            // Regex mejorada
-            $regex = '/(?:\+--\s*)?(?:(\-[RW\-]+\-)\s+)?(?:([A-Za-z0-9\-]+)\s+)?([A-Za-z0-9\-_]+)\(([0-9]+)\)/';
+            // Regex más flexible para capturar nombres correctamente
+            $regex = '/(?:\+--\s*)?(?:(\-[RW\-]+\-)\s+)?(?:([A-Za-z0-9\-_ ]+)\s+)?([A-Za-z0-9\-_]+)\(([0-9]+)\)/';
             
             if (preg_match($regex, trim($line_clean), $m)) {
-                $level = 0;
-                if (strpos($line, '+--') !== false) {
-                    $parts_indent = explode('+--', $line_clean);
-                    $level = strlen($parts_indent[0]) / 3;
+                $depth = 0;
+                if (preg_match('/^(\s*)/', $line_clean, $depth_m)) {
+                    $depth = strlen($depth_m[1]);
                 }
 
                 $access = $m[1] ?? '';
-                $type = $m[2] ?? '';
+                $type = trim($m[2] ?? '');
                 $name = $m[3];
                 $oid_num = $m[4];
                 
-                // Reconstruir Full OID
-                $oid_stack[$level] = $oid_num;
-                $current_full_oid = '.';
-                for($i=0; $i<=$level; $i++) {
-                    if(isset($oid_stack[$i])) $current_full_oid .= $oid_stack[$i] . '.';
+                // Reconstruir Full OID numérico usando un stack basado en profundidad
+                $oid_stack[$depth] = $oid_num;
+                foreach (array_keys($oid_stack) as $k) {
+                    if ($k > $depth) unset($oid_stack[$k]);
                 }
-                $current_full_oid = rtrim($current_full_oid, '.');
+                ksort($oid_stack);
+                $current_full_oid = '.' . implode('.', $oid_stack);
 
                 // Iconos estilo Observium
                 $icon = 'fas fa-folder text-warning'; 
                 $color = 'text-dark';
 
-                if ($type == 'String' || $type == 'DisplayString') { $icon = 'fas fa-font'; $color = 'text-info'; }
-                elseif (preg_match('/(Counter|Gauge|Integer|Unsigned)/i', $type)) { $icon = 'fas fa-hashtag'; $color = 'text-primary'; }
+                if (preg_match('/(String|DisplayString|Octet)/i', $type)) { $icon = 'fas fa-font'; $color = 'text-info'; }
+                elseif (preg_match('/(Counter|Gauge|Integer|Unsigned|NetAddress)/i', $type)) { $icon = 'fas fa-hashtag'; $color = 'text-primary'; }
                 elseif (strpos($type, 'Enum') !== false) { $icon = 'fas fa-list-ul'; $color = 'text-indigo'; }
                 elseif ($type == 'TimeTicks') { $icon = 'fas fa-clock'; $color = 'text-secondary'; }
+                elseif ($type == 'ObjID') { $icon = 'fas fa-link'; $color = 'text-muted'; }
                 
                 // Sobrescribir por nombre (Tablas y Entradas)
                 if (preg_match('/Table$/i', $name)) { $icon = 'fas fa-table'; $color = 'text-dark'; }
                 if (preg_match('/Entry$/i', $name)) { $icon = 'fas fa-th'; $color = 'text-danger'; }
-                if ($level == 0) { $icon = 'fas fa-project-diagram'; $color = 'text-primary'; }
+                if ($depth == 0) { $icon = 'fas fa-project-diagram'; $color = 'text-primary'; }
 
                 $tree_data[] = [
-                    'level' => (int)$level,
+                    'level' => $depth,
                     'name' => $name,
                     'oid' => $oid_num,
                     'full_oid' => $current_full_oid,

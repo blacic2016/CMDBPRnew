@@ -200,6 +200,192 @@ switch ($action) {
         }
         break;
 
+    case 'get_interfaces_data':
+        $hostid = $_GET['hostid'] ?? '';
+        if (!$hostid) exit(json_encode(['success'=>false, 'error'=>'Missing hostid']));
+
+        // BROAD SEARCH: Fetch items that commonly represent network interfaces
+        $resp = call_zabbix_api('item.get', [
+            'hostids' => $hostid,
+            'output' => ['itemid', 'name', 'key_', 'lastvalue', 'units'],
+            'search' => [
+                'key_' => ['net.if.*', 'ifHC*', 'ifIn*', 'ifOut*', 'ifOperStatus*', 'ifAlias*']
+            ],
+            'searchWildcardsEnabled' => true,
+            'searchByAny' => true,
+            'filter' => ['status' => 0]
+        ]);
+
+        if (isset($resp['error'])) {
+            // If Zabbix fails, try to load from local DB as fallback
+            $stmt = getPDO()->prepare("SELECT * FROM host_interfaces WHERE hostid = ?");
+            $stmt->execute([$hostid]);
+            $local_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if (!empty($local_data)) {
+                echo json_encode(['success' => true, 'data' => $local_data, 'source' => 'db_fallback']);
+            } else {
+                echo json_encode(['success' => false, 'error' => $resp['error']]);
+            }
+            exit;
+        }
+
+        $items = $resp['result'];
+        $interfaces = [];
+
+        foreach ($items as $item) {
+            $attr = ''; $index = '';
+            
+            // Pattern 1: net.if.X[index]
+            if (preg_match('/^net\.if\.(in|out|status|name|alias|vlan)\[([^\]]+)\]/i', $item['key_'], $matches)) {
+                $attr = strtolower($matches[1]);
+                $if_key = $matches[2];
+                $parts = explode('.', $if_key);
+                $index = end($parts);
+            }
+            // Pattern 2: ifX[index] (e.g., ifInOctets[1] or ifAlias[GigabitEthernet1])
+            elseif (preg_match('/^(if(?:HC)?(?:In|Out|OperStatus|Alias|Name|Vlan))\[([^\]]+)\]/i', $item['key_'], $matches)) {
+                $key_name = strtolower($matches[1]);
+                $index = $matches[2];
+                
+                if (strpos($key_name, 'in') !== false) $attr = 'in';
+                elseif (strpos($key_name, 'out') !== false) $attr = 'out';
+                elseif (strpos($key_name, 'status') !== false) $attr = 'status';
+                elseif (strpos($key_name, 'alias') !== false) $attr = 'alias';
+                elseif (strpos($key_name, 'name') !== false) $attr = 'name';
+                elseif (strpos($key_name, 'vlan') !== false) $attr = 'vlan';
+            }
+
+            if ($attr && $index) {
+                // Clean index (remove quotes if present)
+                $index = trim($index, '"\'');
+                
+                if (!isset($interfaces[$index])) {
+                    $interfaces[$index] = [
+                        'hostid' => $hostid,
+                        'interface_index' => $index,
+                        'interface_name' => '', 
+                        'alias' => '',
+                        'interface_type' => 'Other', // Default
+                        'bits_sent' => 0,
+                        'bits_received' => 0,
+                        'vlan' => '',
+                        'status' => 'Unknown',
+                        'connected_hostid' => null
+                    ];
+                }
+
+                // Try to extract name and alias from the item name if possible
+                if (preg_match('/Interface\s+([^\(\:]+)(?:\(([^\)]+)\))?/i', $item['name'], $nameMatches)) {
+                    if (empty($interfaces[$index]['interface_name'])) {
+                        $interfaces[$index]['interface_name'] = trim($nameMatches[1]);
+                    }
+                    if (empty($interfaces[$index]['alias']) && isset($nameMatches[2])) {
+                        $interfaces[$index]['alias'] = trim($nameMatches[2]);
+                    }
+                }
+
+                if (!empty($interfaces[$index]['interface_name'])) {
+                    if (preg_match('/^([a-zA-Z]+)/', $interfaces[$index]['interface_name'], $typeMatch)) {
+                        $interfaces[$index]['interface_type'] = $typeMatch[1];
+                    }
+                }
+
+                switch ($attr) {
+                    case 'name': $interfaces[$index]['interface_name'] = $item['lastvalue'] ?: $interfaces[$index]['interface_name']; break;
+                    case 'alias': $interfaces[$index]['alias'] = $item['lastvalue'] ?: $interfaces[$index]['alias']; break;
+                    case 'in': $interfaces[$index]['bits_received'] = (float)$item['lastvalue']; break;
+                    case 'out': $interfaces[$index]['bits_sent'] = (float)$item['lastvalue']; break;
+                    case 'status': 
+                        $val = (int)$item['lastvalue'];
+                        $interfaces[$index]['status'] = ($val === 1) ? 'Up' : (($val === 2) ? 'Down' : 'Unknown');
+                        break;
+                    case 'vlan': $interfaces[$index]['vlan'] = $item['lastvalue']; break;
+                }
+            }
+        }
+
+        $pdo = getPDO();
+        // UPSERT into host_interfaces to persist data
+        foreach ($interfaces as $iface) {
+            if (empty($iface['interface_name'])) $iface['interface_name'] = "Interface " . $iface['interface_index'];
+            
+            $stmt = $pdo->prepare("INSERT INTO host_interfaces (hostid, interface_index, interface_name, interface_type, alias, vlan, status, bits_received, bits_sent) 
+                                   VALUES (:hostid, :if_idx, :if_name, :if_type, :alias, :vlan, :status, :in, :out)
+                                   ON DUPLICATE KEY UPDATE 
+                                     interface_name = VALUES(interface_name),
+                                     interface_type = VALUES(interface_type),
+                                     alias = VALUES(alias),
+                                     vlan = VALUES(vlan),
+                                     status = VALUES(status),
+                                     bits_received = VALUES(bits_received),
+                                     bits_sent = VALUES(bits_sent)");
+            $stmt->execute([
+                ':hostid' => $iface['hostid'],
+                ':if_idx' => $iface['interface_index'],
+                ':if_name' => $iface['interface_name'],
+                ':if_type' => $iface['interface_type'] ?? 'Other',
+                ':alias' => $iface['alias'],
+                ':vlan' => $iface['vlan'],
+                ':status' => $iface['status'],
+                ':in' => $iface['bits_received'],
+                ':out' => $iface['bits_sent']
+            ]);
+        }
+
+        // LOAD EVERYTHING FROM DB (now updated) TO GET CONNECTIONS, sorted by type and name
+        $stmt = $pdo->prepare("SELECT * FROM host_interfaces WHERE hostid = ? ORDER BY interface_type ASC, interface_name ASC");
+        $stmt->execute([$hostid]);
+        $final_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Fetch connected host names
+        $connected_hostids = array_filter(array_column($final_data, 'connected_hostid'));
+        if (!empty($connected_hostids)) {
+            $h_resp = call_zabbix_api('host.get', [
+                'hostids' => array_unique($connected_hostids),
+                'output' => ['hostid', 'name']
+            ]);
+            if (!isset($h_resp['error'])) {
+                $h_names = array_column($h_resp['result'], 'name', 'hostid');
+                foreach ($final_data as &$iface) {
+                    if ($iface['connected_hostid']) {
+                        $iface['connected_host_name'] = $h_names[$iface['connected_hostid']] ?? 'Unknown Host';
+                    }
+                }
+            }
+        }
+
+        echo json_encode(['success' => true, 'data' => $final_data]);
+        break;
+
+    case 'save_interface_connection':
+        $hostid = $_POST['hostid'] ?? '';
+        $interface_index = $_POST['interface_name'] ?? ''; // From UI, it sends the index
+        $connected_hostid = $_POST['connected_hostid'] ?? '';
+
+        if (!$hostid || !$interface_index || !$connected_hostid) {
+            exit(json_encode(['success' => false, 'error' => 'Missing parameters']));
+        }
+
+        $stmt = getPDO()->prepare("UPDATE host_interfaces SET connected_hostid = ? WHERE hostid = ? AND interface_index = ?");
+        $success = $stmt->execute([$connected_hostid, $hostid, $interface_index]);
+
+        echo json_encode(['success' => $success]);
+        break;
+
+    case 'delete_interface_connection':
+        $hostid = $_POST['hostid'] ?? '';
+        $interface_index = $_POST['interface_name'] ?? '';
+
+        if (!$hostid || !$interface_index) {
+            exit(json_encode(['success' => false, 'error' => 'Missing parameters']));
+        }
+
+        $stmt = getPDO()->prepare("UPDATE host_interfaces SET connected_hostid = NULL WHERE hostid = ? AND interface_index = ?");
+        $success = $stmt->execute([$hostid, $interface_index]);
+
+        echo json_encode(['success' => $success]);
+        break;
+
     default:
         echo json_encode(['success' => false, 'error' => 'Invalid action']);
         break;

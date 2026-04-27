@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2.0,
+    "id": "interfacestatus",
+    "name": "Interface Status",
+    "version": "1.0",
+    "namespace": "InterfaceStatus",
+    "author": "monzphere.com",
+    "description": "Network interface status visualization for switches and routers",
+    "actions": {
+        "interfacestatus.view": {
+            "class": "InterfaceStatus",
+            "view": "interface.status"
+        }
+    },
+    "assets": {
+        "css": ["interface.status.css"],
+        "js": ["interface.status.js"]
+    }
+} 

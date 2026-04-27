@@ -71,61 +71,84 @@ if ($action === 'get_topology') {
         exit;
     }
     
-    // Extract hostnames to find relationships
-    $hostnames = array_map(function($h) { return $h['name']; }, $res_hosts['result']);
+    $all_hosts = $res_hosts['result'];
+    $fetched_ids = array_column($all_hosts, 'hostid');
+    $queue = $fetched_ids;
+    $processed_ports = [];
+    $depth = 0;
+    $max_depth = 3; // Limitar profundidad para evitar bucles o lentitud
+
+    $pdo = getPDO();
+
+    while (!empty($queue) && $depth < $max_depth) {
+        $placeholders = implode(',', array_fill(0, count($queue), '?'));
+        
+        // Obtener interfaces para los hosts actuales en la cola
+        $sql_if = "SELECT hostid, interface_name as name, status, connected_hostid FROM host_interfaces WHERE hostid IN ($placeholders)";
+        $stmt_if = $pdo->prepare($sql_if);
+        $stmt_if->execute($queue);
+        $if_rows = $stmt_if->fetchAll(PDO::FETCH_ASSOC);
+
+        $next_queue = [];
+        foreach ($if_rows as $row) {
+            $processed_ports[$row['hostid']][] = [
+                'name' => $row['name'],
+                'status' => strtolower($row['status']) == 'up' ? 1 : 2,
+                'connected_hostid' => $row['connected_hostid']
+            ];
+
+            if ($row['connected_hostid'] && !in_array($row['connected_hostid'], $fetched_ids)) {
+                $next_queue[] = $row['connected_hostid'];
+                $fetched_ids[] = $row['connected_hostid'];
+            }
+        }
+
+        if (!empty($next_queue)) {
+            // Buscar datos de Zabbix para los nuevos equipos descubiertos
+            $res_extra = call_zabbix_api('host.get', [
+                'hostids' => $next_queue,
+                'output' => ['hostid', 'host', 'name', 'status'],
+                'selectInterfaces' => ['ip'],
+                'selectInventory' => ['type', 'model', 'notes']
+            ]);
+            if (isset($res_extra['result'])) {
+                foreach ($res_extra['result'] as $extra) {
+                    $all_hosts[] = $extra;
+                }
+            }
+        }
+
+        $queue = $next_queue;
+        $depth++;
+    }
+
+    // Unir puertos a los hosts correspondientes
+    foreach ($all_hosts as &$h) {
+        $h['ports'] = $processed_ports[$h['hostid']] ?? [];
+    }
+
+    // Extract hostnames to find relationships (Legacy fallback)
+    $hostnames = array_map(function($h) { return $h['name']; }, $all_hosts);
     $hostnames = array_unique($hostnames);
     
     $links = [];
     if (!empty($hostnames)) {
-        $pdo = getPDO();
-        $placeholders = implode(',', array_fill(0, count($hostnames), '?'));
-        
-        $sql = "SELECT ci_origen_servicio_hostname as source, ci_destino_infraestructura_hostname as target, relaci_n as type 
+        $placeholders_rel = implode(',', array_fill(0, count($hostnames), '?'));
+        $sql_rel = "SELECT ci_origen_servicio_hostname as source, ci_destino_infraestructura_hostname as target, relaci_n as type 
                 FROM sheet_relaciones 
-                WHERE ci_origen_servicio_hostname IN ($placeholders) 
-                   OR ci_destino_infraestructura_hostname IN ($placeholders)";
+                WHERE ci_origen_servicio_hostname IN ($placeholders_rel) 
+                   OR ci_destino_infraestructura_hostname IN ($placeholders_rel)";
         
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute(array_merge($hostnames, $hostnames));
-        $links = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt_rel = $pdo->prepare($sql_rel);
+        $stmt_rel->execute(array_merge($hostnames, $hostnames));
+        $links = $stmt_rel->fetchAll(PDO::FETCH_ASSOC);
     }
-
-    // 3. For each host, if it likely a Switch, fetch its interfaces and status
-    $hostids = array_column($res_hosts['result'], 'hostid');
-    if (!empty($hostids)) {
-        $res_items = call_zabbix_api('item.get', [
-            'hostids' => $hostids,
-            'output' => ['hostid', 'name', 'lastvalue'],
-            'search' => ['name' => 'Interface *: Operational status'],
-            'searchWildcardsEnabled' => true
-        ]);
-        
-        if (isset($res_items['result'])) {
-            $ports_by_host = [];
-            foreach ($res_items['result'] as $item) {
-                if (preg_match('/Interface (.*?):/i', $item['name'], $m)) {
-                    $if_name = trim($m[1]);
-                    $ports_by_host[$item['hostid']][] = [
-                        'name' => $if_name,
-                        'status' => $item['lastvalue'] // 1 = up, 2 = down
-                    ];
-                }
-            }
-            
-            foreach ($res_hosts['result'] as &$h) {
-                $h['ports'] = $ports_by_host[$h['hostid']] ?? [];
-            }
-        }
-    }
-
 
     echo json_encode([
         'success' => true, 
-        'hosts' => $res_hosts['result'],
+        'hosts' => $all_hosts,
         'links' => $links
     ]);
-
-
     exit;
 }
 

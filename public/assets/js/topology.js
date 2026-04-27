@@ -30,6 +30,7 @@ function initDiagram() {
 
     myDiagram = $(go.Diagram, "myDiagramDiv", {
         "undoManager.isEnabled": true,
+        "draggingTool.dragsTree": true, // Mover todo el árbol si se arrastra el padre
         layout: $(go.ForceDirectedLayout, {
             defaultSpringLength: 50,
             defaultElectricalCharge: -150
@@ -48,7 +49,7 @@ function initDiagram() {
     // Hub Node Template (Level 0 - Central)
     myDiagram.nodeTemplateMap.add("Hub",
         $(go.Node, "Vertical",
-            { isTreeExpanded: true, locationSpot: go.Spot.Center },
+            { isTreeExpanded: true, locationSpot: go.Spot.Center, shadowVisible: true },
             $(go.Panel, "Auto",
                 $(go.Shape, "Circle", { fill: "#4B79A1", stroke: "#283E51", strokeWidth: 2, width: 90, height: 90 }),
                 $(go.Picture, { source: "https://img.icons8.com/color/96/network-hub.png", width: 55, height: 55 }),
@@ -63,20 +64,25 @@ function initDiagram() {
     myDiagram.nodeTemplateMap.add("Port",
         $(go.Node, "Horizontal",
             {
+                isTreeExpanded: false,
                 doubleClick: (e, obj) => {
                     const d = obj.data;
                     const baseUrl = window.zabbixBaseUrl || 'http://172.32.1.50/zabbix/';
-                    // Construir URL de monitoreo filtrada por nombre de interfaz y host
                     const url = `${baseUrl}zabbix.php?action=latest.view&name=Interface%20${encodeURIComponent(d.name)}&hostids%5B%5D=${d.hostid}&filter_set=1`;
                     window.open(url, '_blank');
                 }
             },
             $(go.Shape, "Circle", 
                 { width: 12, height: 12, stroke: null },
-                new go.Binding("fill", "status", s => s == 1 ? "#28a745" : "#BDC3C7")
+                new go.Binding("fill", "status", s => s == 1 ? "#2ECC71" : "#9B59B6") // Verde para UP, Violeta para DOWN
             ),
             $(go.TextBlock, { margin: new go.Margin(0, 0, 0, 4), font: "8pt sans-serif", stroke: "#7F8C8D" },
-                new go.Binding("text", "name"))
+                new go.Binding("text", "name")),
+            // Botón para expandir la conexión del puerto si existe
+            $("TreeExpanderButton", {
+                width: 14, height: 14, margin: new go.Margin(0, 0, 0, 4),
+                visible: false
+            }, new go.Binding("visible", "isConnected"))
         )
     );
 
@@ -85,6 +91,7 @@ function initDiagram() {
         {
             locationSpot: go.Spot.Center,
             isTreeExpanded: false,
+            shadowVisible: true,
             doubleClick: (e, obj) => {
                 showHostDetails(obj.data);
             }
@@ -126,6 +133,14 @@ function initDiagram() {
         $(go.Link,
             { routing: go.Link.Normal },
             $(go.Shape, { stroke: "#00C9FF", strokeWidth: 1, strokeDashArray: [3, 3] })
+        )
+    );
+    
+    myDiagram.linkTemplateMap.add("PhysicalLink",
+        $(go.Link,
+            { routing: go.Link.Normal, toShortLength: 4 },
+            $(go.Shape, { stroke: "#3498DB", strokeWidth: 2 }),
+            $(go.Shape, { toArrow: "Standard", fill: "#3498DB", stroke: null, scale: 1.2 })
         )
     );
 }
@@ -219,9 +234,14 @@ function renderGraph() {
             // Hub Node
             nodeDataArray.push({ key: groupKey, name: sub, category: "Hub" });
 
+            const currentLayout = $('#layout-select').val();
+            const routingType = (currentLayout === 'tree' || currentLayout === 'network') ? 'orthogonal' : 'normal';
+
             // 1. Process Hosts
+            const showDownPorts = $('#toggle-down-ports').is(':checked');
+            
             js.hosts.forEach(h => {
-                const key = 'host_' + h.name;
+                const key = 'host_id_' + h.hostid;
                 const ip = h.interfaces && h.interfaces[0] ? h.interfaces[0].ip : 'N/A';
                 const type = h.inventory && h.inventory.type ? h.inventory.type : 'Server';
                 hostKeys.add(key);
@@ -239,30 +259,52 @@ function renderGraph() {
 
                 if (h.ports && h.ports.length > 0) {
                     h.ports.forEach((p, idx) => {
+                        // Lógica: Los UP siempre se miran. Los DOWN solo si el switch está ON.
+                        if (p.status != 1 && !showDownPorts) return; 
+
                         const portKey = key + '_p_' + idx;
                         nodeDataArray.push({ 
                             key: portKey, 
                             name: p.name, 
                             status: p.status,
-                            hostid: h.hostid, // Pasar hostid del padre para los links
-                            category: "Port" 
+                            hostid: h.hostid,
+                            category: "Port",
+                            isConnected: !!p.connected_hostid,
+                            isTreeExpanded: false // Mantener cerrado el puerto al inicio
                         });
                         linkDataArray.push({ from: key, to: portKey, category: "PortLink" });
+
+                        // Si el puerto tiene un host conectado, creamos el enlace físico
+                        if (p.connected_hostid) {
+                            const targetHostKey = 'host_id_' + p.connected_hostid;
+                            if (!hostKeys.has(targetHostKey)) {
+                                nodeDataArray.push({ 
+                                    key: targetHostKey, 
+                                    name: 'Equipo Vinculado (' + p.connected_hostid + ')', 
+                                    type: 'Neighbor', 
+                                    ip: 'Conectado a ' + p.name,
+                                    isTreeExpanded: false
+                                });
+                                hostKeys.add(targetHostKey);
+                            }
+                            linkDataArray.push({ from: portKey, to: targetHostKey, text: 'Enlace Físico', category: 'PhysicalLink' });
+                        }
                     });
                 }
             });
 
-            const currentLayout = $('#layout-select').val();
-            const routingType = (currentLayout === 'tree' || currentLayout === 'network') ? 'orthogonal' : 'normal';
-
-            // 2. Process Relationships
+            // 2. Process Relationships (Legacy - fallback if no physical links)
+            // Note: Since we changed keys to host_id_, we need to match appropriately.
+            // But usually relationships are between names in sheet_relaciones.
             if (js.links && js.links.length > 0) {
                 js.links.forEach(l => {
-                    const fromKey = 'host_' + l.source;
-                    const toKey = 'host_' + l.target;
-                    ensureNodeExists(l.source, fromKey, nodeDataArray, hostKeys);
-                    ensureNodeExists(l.target, toKey, nodeDataArray, hostKeys);
-                    linkDataArray.push({ from: fromKey, to: toKey, text: l.type, routingType: routingType });
+                    // This part needs names mapping to IDs or just finding the keys
+                    const fromNode = nodeDataArray.find(n => n.name === l.source);
+                    const toNode = nodeDataArray.find(n => n.name === l.target);
+                    
+                    if (fromNode && toNode) {
+                        linkDataArray.push({ from: fromNode.key, to: toNode.key, text: l.type, routingType: routingType });
+                    }
                 });
             } else {
                 nodeDataArray.forEach(n => {

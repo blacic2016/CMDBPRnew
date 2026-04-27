@@ -156,7 +156,12 @@ include 'partials/header.php';
                                 <td class="align-middle text-muted small"><?php echo $info['description']; ?></td>
                                 <td class="text-center align-middle">
                                     <?php if ($info['exists']): ?>
-                                        <span class="badge badge-success px-3"><i class="fas fa-check mr-1"></i> CREADA</span>
+                                        <?php if ($info['columns_ok']): ?>
+                                            <span class="badge badge-success px-3"><i class="fas fa-check mr-1"></i> CREADA</span>
+                                        <?php else: ?>
+                                            <span class="badge badge-warning px-3"><i class="fas fa-columns mr-1"></i> COLUMNAS FALTANTES</span>
+                                            <div class="small text-danger mt-1">Falta: <?php echo implode(', ', $info['missing_cols']); ?></div>
+                                        <?php endif; ?>
                                     <?php else: ?>
                                         <span class="badge badge-danger px-3"><i class="fas fa-exclamation-circle mr-1"></i> FALTANTE</span>
                                     <?php endif; ?>
