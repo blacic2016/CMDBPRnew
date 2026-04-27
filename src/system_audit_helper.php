@@ -101,21 +101,53 @@ function runSystemAudit() {
                 ];
                 $existing = $pdo->query("SHOW TABLES")->fetchAll(PDO::FETCH_COLUMN);
                 $table_status = [];
+                $critical_tables = [
+                    'roles' => 'Roles de Usuario',
+                    'users' => 'Usuarios',
+                    'asset_sequence' => 'Secuencias de Activos',
+                    'sheet_configs' => 'Configuración de Hojas',
+                    'user_sheet_permissions' => 'Permisos de Hojas',
+                    'user_module_permissions' => 'Permisos de Módulos',
+                    'import_logs' => 'Logs de Importación',
+                    'zabbix_api_config' => 'Configuración API Zabbix',
+                    'snmp_communities' => 'Comunidades SNMP',
+                    'snmp_scan_results' => 'Resultados de Escaneo SNMP',
+                    'host_interfaces' => 'Interfaces de Red CMDB',
+                    'zabbix_cmdb_config' => 'Configuración Zabbix CMDB',
+                    'zabbix_keywords' => 'Palabras Clave Zabbix',
+                    'zabbix_mappings' => 'Mapeos de Inventario',
+                    'images' => 'Repositorio de Imágenes',
+                    'sheet_history' => 'Historial de Cambios',
+                    'zabbix_costs_rules' => 'Reglas de Costos'
+                ];
+                
+                $existing = $pdo->query("SHOW TABLES")->fetchAll(PDO::FETCH_COLUMN);
+                $table_status = [];
                 $missing = [];
+
+                // Definición de columnas esperadas para auditoría profunda
+                $expected_schema = [
+                    'snmp_scan_results' => ['ip', 'community_ok', 'interfaces_up_json', 'status'],
+                    'host_interfaces' => ['hostid', 'interface_name', 'connected_hostid'],
+                    'users' => ['username', 'password', 'role_id'],
+                    'zabbix_costs_rules' => ['groupid', 'hourly_rate_capacity', 'hourly_rate_utilized']
+                ];
+
                 foreach ($critical_tables as $table => $desc) {
                     $is_present = in_array($table, $existing);
                     $columns_ok = true;
                     $missing_cols = [];
 
                     if ($is_present) {
-                        // Verificación de columnas críticas
-                        if ($table === 'snmp_scan_results') {
-                            $cols = $pdo->query("DESCRIBE `$table`")->fetchAll(PDO::FETCH_COLUMN);
-                            if (!in_array('interfaces_up_json', $cols)) { $columns_ok = false; $missing_cols[] = 'interfaces_up_json'; }
-                        }
-                        if ($table === 'host_interfaces') {
-                            $cols = $pdo->query("DESCRIBE `$table`")->fetchAll(PDO::FETCH_COLUMN);
-                            if (!in_array('connected_hostid', $cols)) { $columns_ok = false; $missing_cols[] = 'connected_hostid'; }
+                        $cols = $pdo->query("DESCRIBE `$table`")->fetchAll(PDO::FETCH_COLUMN);
+                        // Verificar columnas críticas específicas si están definidas
+                        if (isset($expected_schema[$table])) {
+                            foreach ($expected_schema[$table] as $req_col) {
+                                if (!in_array($req_col, $cols)) {
+                                    $columns_ok = false;
+                                    $missing_cols[] = $req_col;
+                                }
+                            }
                         }
                     }
 
@@ -131,7 +163,10 @@ function runSystemAudit() {
                 $results['database']['missing_tables'] = $missing;
                 if (!empty($missing)) {
                     $results['database']['status'] = 'warning';
-                    $results['database']['message'] = "Estructura incompleta (" . count($missing) . " tablas faltantes)";
+                    $results['database']['message'] = "Estructura incompleta o desactualizada (" . count($missing) . " elementos)";
+                } else {
+                    $results['database']['status'] = 'success';
+                    $results['database']['message'] = "Base de datos íntegra y actualizada.";
                 }
             } else {
                 $results['database']['status'] = 'error';
@@ -230,6 +265,10 @@ function initializeDatabase()
                     $pdo->exec("ALTER TABLE `$name` ADD COLUMN status VARCHAR(20) DEFAULT 'PENDING' AFTER interfaces_up_json");
                     $log[] = "✅ Columna 'status' añadida a $name.";
                 }
+                if (!in_array('community_ok', $cols)) {
+                    $pdo->exec("ALTER TABLE `$name` ADD COLUMN community_ok VARCHAR(255) AFTER ip");
+                    $log[] = "✅ Columna 'community_ok' añadida a $name.";
+                }
             }
 
             if ($name === 'host_interfaces') {
@@ -237,6 +276,34 @@ function initializeDatabase()
                 if (!in_array('connected_hostid', $cols)) {
                     $pdo->exec("ALTER TABLE `$name` ADD COLUMN connected_hostid VARCHAR(50) AFTER bits_sent");
                     $log[] = "✅ Columna 'connected_hostid' añadida a $name.";
+                }
+                // Si existe 'name' pero no 'interface_name', hacer el rename
+                if (in_array('name', $cols) && !in_array('interface_name', $cols)) {
+                    $pdo->exec("ALTER TABLE `$name` CHANGE COLUMN name interface_name VARCHAR(255)");
+                    $log[] = "✅ Columna 'name' renombrada a 'interface_name' en $name.";
+                } elseif (!in_array('interface_name', $cols)) {
+                    $pdo->exec("ALTER TABLE `$name` ADD COLUMN interface_name VARCHAR(255) AFTER interface_index");
+                    $log[] = "✅ Columna 'interface_name' añadida a $name.";
+                }
+            }
+
+            if ($name === 'zabbix_costs_rules') {
+                $cols = $pdo->query("DESCRIBE `$name`")->fetchAll(PDO::FETCH_COLUMN);
+                if (!in_array('groupid', $cols)) {
+                    $pdo->exec("ALTER TABLE `$name` ADD COLUMN groupid VARCHAR(50) AFTER id");
+                    $log[] = "✅ Columna 'groupid' añadida a $name.";
+                }
+                if (!in_array('hourly_rate_capacity', $cols)) {
+                    $pdo->exec("ALTER TABLE `$name` ADD COLUMN hourly_rate_capacity DECIMAL(10,4) AFTER groupid");
+                    $log[] = "✅ Columna 'hourly_rate_capacity' añadida a $name.";
+                }
+                if (!in_array('hourly_rate_utilized', $cols)) {
+                    $pdo->exec("ALTER TABLE `$name` ADD COLUMN hourly_rate_utilized DECIMAL(10,4) AFTER hourly_rate_capacity");
+                    $log[] = "✅ Columna 'hourly_rate_utilized' añadida a $name.";
+                }
+                if (!in_array('currency', $cols)) {
+                    $pdo->exec("ALTER TABLE `$name` ADD COLUMN currency VARCHAR(10) DEFAULT 'USD' AFTER hourly_rate_utilized");
+                    $log[] = "✅ Columna 'currency' añadida a $name.";
                 }
             }
             

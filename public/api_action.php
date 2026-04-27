@@ -1461,10 +1461,10 @@ if ($action === 'commit_snmp_results') {
             
             $stmt->execute([
                 ':ip' => $res['ip'],
-                ':comm' => $res['community'] ?? null,
+                ':comm' => $res['community'] ?? '',
                 ':src' => $res['table'],
                 ':rid' => $res['id'],
-                ':up' => isset($res['interfaces']) ? json_encode($res['interfaces']) : null,
+                ':up' => isset($res['interfaces']) ? json_encode($res['interfaces']) : '[]',
                 ':status' => $res['status'] ?? 'SUCCESS'
             ]);
             $affected += $stmt->rowCount();
