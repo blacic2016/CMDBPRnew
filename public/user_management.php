@@ -24,7 +24,7 @@ $all_modules = [
     'distribrack' => 'Galería de Imágenes',
     'topology' => 'Topología de Red',
     'snmp_builder' => 'SNMP Builder',
-    'monitoreo' => 'Monitoreo / Alertas'
+    'monitoreo' => 'Zabbix (Dashboard/Equipos)'
 ];
 ?>
 

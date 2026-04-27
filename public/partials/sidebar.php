@@ -90,24 +90,51 @@ $current_sheet = $_GET['name'] ?? '';
         </li>
         <?php endif; ?>
 
-        <?php if (has_module_access('snmp_builder')): ?>
-        <li class="nav-item">
-          <a href="<?php echo PUBLIC_URL_PREFIX; ?>/snmp_builder.php" class="nav-link <?php echo $cur === 'snmp_builder.php' ? 'active' : ''; ?>">
-            <i class="nav-icon fas fa-network-wired"></i>
-            <p>SNMP Builder</p>
+        <li class="nav-item <?php echo in_array($cur, ['snmp_management.php', 'snmp_builder.php', 'snmp_mibs.php']) ? 'menu-open' : ''; ?>">
+          <a href="#" class="nav-link <?php echo in_array($cur, ['snmp_management.php', 'snmp_builder.php', 'snmp_mibs.php']) ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-network-wired text-info"></i>
+            <p>
+              Módulo SNMP
+              <i class="right fas fa-angle-left"></i>
+            </p>
           </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/snmp_management.php" class="nav-link <?php echo $cur === 'snmp_management.php' ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-primary"></i>
+                <p>Gestión / Escaneo</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/snmp_builder.php" class="nav-link <?php echo $cur === 'snmp_builder.php' ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-info"></i>
+                <p>SNMP Builder</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/snmp_mibs.php" class="nav-link <?php echo $cur === 'snmp_mibs.php' ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-success"></i>
+                <p>Repositorio MIBs</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/snmp_mibs_analysis.php" class="nav-link <?php echo $cur === 'snmp_mibs_analysis.php' ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-warning"></i>
+                <p>Análisis MIB</p>
+              </a>
+            </li>
+          </ul>
         </li>
-        <?php endif; ?>
 
         <?php
-          $is_monitoreo_page = in_array($cur, ['monitoreo.php', 'crear_monitoreo.php', 'actualizar_monitoreo.php', 'problems.php']);
+          $is_zabbix_page = in_array($cur, ['zabbix_dashboard.php', 'zabbix_hosts.php', 'reports_zabbix.php', 'monitoreo.php', 'crear_monitoreo.php', 'actualizar_monitoreo.php', 'problems.php']) || strpos($_SERVER['SCRIPT_NAME'], '/costos/') !== false || strpos($_SERVER['SCRIPT_NAME'], '/storage/') !== false;
         ?>
         <?php if (has_module_access('monitoreo')): ?>
-        <li class="nav-item <?php echo $is_monitoreo_page ? 'menu-is-opening menu-open' : ''; ?>">
-          <a href="#" class="nav-link <?php echo $is_monitoreo_page ? 'active' : ''; ?>">
-            <i class="nav-icon fas fa-chart-line"></i>
+        <li class="nav-item <?php echo $is_zabbix_page ? 'menu-is-opening menu-open' : ''; ?>">
+          <a href="#" class="nav-link <?php echo $is_zabbix_page ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-server"></i>
             <p>
-              Monitoreo
+              Zabbix
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
@@ -119,15 +146,39 @@ $current_sheet = $_GET['name'] ?? '';
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/crear_monitoreo.php" class="nav-link <?php echo $cur === 'crear_monitoreo.php' ? 'active' : ''; ?>">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/zabbix_hosts.php" class="nav-link <?php echo $cur === 'zabbix_hosts.php' ? 'active' : ''; ?>">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Crear Monitoreo</p>
+                <p>Equipos</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/reports_zabbix.php" class="nav-link <?php echo $cur === 'reports_zabbix.php' ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-success"></i>
+                <p>Informes</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/costos/dashboard.php" class="nav-link <?php echo strpos($_SERVER['SCRIPT_NAME'], '/costos/') !== false ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-warning"></i>
+                <p>Costos ZBX</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/storage/dashboard.php" class="nav-link <?php echo strpos($_SERVER['SCRIPT_NAME'], '/storage/') !== false ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-info"></i>
+                <p>Análisis Storage</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/crear_monitoreo.php" class="nav-link <?php echo $cur === 'crear_monitoreo.php' ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-muted"></i>
+                <p><small>Asistente Creación</small></p>
               </a>
             </li>
             <li class="nav-item">
               <a href="<?php echo PUBLIC_URL_PREFIX; ?>/actualizar_monitoreo.php" class="nav-link <?php echo $cur === 'actualizar_monitoreo.php' ? 'active' : ''; ?>">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Actualizar Monitoreo</p>
+                <i class="far fa-circle nav-icon text-muted"></i>
+                <p><small>Asistente Actualización</small></p>
               </a>
             </li>
           </ul>
@@ -158,12 +209,6 @@ $current_sheet = $_GET['name'] ?? '';
               <a href="<?php echo PUBLIC_URL_PREFIX; ?>/sheet_configs.php" class="nav-link <?php echo $cur === 'sheet_configs.php' ? 'active' : ''; ?>">
                 <i class="far fa-circle nav-icon text-info"></i>
                 <p>Config. Claves</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/snmp_management.php" class="nav-link <?php echo $cur === 'snmp_management.php' ? 'active' : ''; ?>">
-                <i class="far fa-circle nav-icon text-warning"></i>
-                <p>Gestión SNMP</p>
               </a>
             </li>
             <li class="nav-item">

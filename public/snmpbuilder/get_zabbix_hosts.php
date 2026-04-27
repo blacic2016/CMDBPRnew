@@ -23,6 +23,7 @@ $params = [
     'output' => ['hostid', 'host', 'name'],
     'selectInterfaces' => ['interfaceid', 'ip', 'type', 'details', 'available', 'error'],
     'selectMacros' => 'extend',
+    'selectGroups' => ['name'],
     'filter' => ['status' => 0],
 ];
 
@@ -57,12 +58,24 @@ foreach ($response['result'] as $host) {
                 }
             }
 
+            $group_name = 'Zabbix Host';
+            if (!empty($host['groups'])) {
+                // Filter out generic groups if multiple exist
+                foreach ($host['groups'] as $g) {
+                    if (stripos($g['name'], 'Templates') === false) {
+                        $group_name = $g['name'];
+                        break;
+                    }
+                }
+            }
+
             $hosts_output[] = [
                 'name' => $host['name'],
                 'ip' => $iface['ip'],
                 'version' => $snmp_details['version'] ?? '2',
                 'community' => $community,
-                'available' => $iface['available'], // 0-unknown, 1-available, 2-unavailable
+                'group' => $group_name,
+                'available' => $iface['available'], 
                 'error' => $iface['error']
             ];
         }

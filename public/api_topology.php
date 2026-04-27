@@ -78,7 +78,6 @@ if ($action === 'get_topology') {
     $links = [];
     if (!empty($hostnames)) {
         $pdo = getPDO();
-        // Construct placeholders for IN clause
         $placeholders = implode(',', array_fill(0, count($hostnames), '?'));
         
         $sql = "SELECT ci_origen_servicio_hostname as source, ci_destino_infraestructura_hostname as target, relaci_n as type 
@@ -87,16 +86,46 @@ if ($action === 'get_topology') {
                    OR ci_destino_infraestructura_hostname IN ($placeholders)";
         
         $stmt = $pdo->prepare($sql);
-        // We pass the hostnames twice because we have two IN clauses
         $stmt->execute(array_merge($hostnames, $hostnames));
         $links = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    
+
+    // 3. For each host, if it likely a Switch, fetch its interfaces and status
+    $hostids = array_column($res_hosts['result'], 'hostid');
+    if (!empty($hostids)) {
+        $res_items = call_zabbix_api('item.get', [
+            'hostids' => $hostids,
+            'output' => ['hostid', 'name', 'lastvalue'],
+            'search' => ['name' => 'Interface *: Operational status'],
+            'searchWildcardsEnabled' => true
+        ]);
+        
+        if (isset($res_items['result'])) {
+            $ports_by_host = [];
+            foreach ($res_items['result'] as $item) {
+                if (preg_match('/Interface (.*?):/i', $item['name'], $m)) {
+                    $if_name = trim($m[1]);
+                    $ports_by_host[$item['hostid']][] = [
+                        'name' => $if_name,
+                        'status' => $item['lastvalue'] // 1 = up, 2 = down
+                    ];
+                }
+            }
+            
+            foreach ($res_hosts['result'] as &$h) {
+                $h['ports'] = $ports_by_host[$h['hostid']] ?? [];
+            }
+        }
+    }
+
+
     echo json_encode([
         'success' => true, 
         'hosts' => $res_hosts['result'],
         'links' => $links
     ]);
+
+
     exit;
 }
 

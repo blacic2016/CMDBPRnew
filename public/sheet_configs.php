@@ -69,6 +69,11 @@ while ($r = $stmt_zabbix->fetch(PDO::FETCH_ASSOC)) {
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" id="zabbix-keywords-tab" data-toggle="pill" href="#zabbix-keywords" role="tab" aria-controls="zabbix-keywords" aria-selected="false">
+                                <i class="fas fa-tags mr-1"></i> Segmentación (Keywords)
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" id="unique-keys-tab" data-toggle="pill" href="#unique-keys" role="tab" aria-controls="unique-keys" aria-selected="false">
                                 <i class="fas fa-key mr-1"></i> Claves Únicas
                             </a>
@@ -119,7 +124,7 @@ while ($r = $stmt_zabbix->fetch(PDO::FETCH_ASSOC)) {
                             <!-- Pestaña: Tablas Visibles -->
                             <div class="tab-pane fade" id="zabbix-tables" role="tabpanel" aria-labelledby="zabbix-tables-tab">
                                 <h5 class="mb-3 text-secondary"><i class="fas fa-eye mr-2"></i> Selección de Tablas para Monitoreo</h5>
-                                <p class="text-muted">Marca las tablas que el equipo técnico de SONDA podrá utilizar para gestionar hosts en Zabbix automáticamente.</p>
+                                <p class="text-muted">Marca las tablas que el equipo técnico podrá utilizar para gestionar hosts en Zabbix automáticamente.</p>
                                 <div class="row mb-4">
                                     <?php foreach ($tables as $t): ?>
                                         <div class="col-md-3 mb-2">
@@ -138,9 +143,43 @@ while ($r = $stmt_zabbix->fetch(PDO::FETCH_ASSOC)) {
                                     <button type="submit" class="btn btn-success mr-2">
                                         <i class="fas fa-check-circle mr-1"></i> Guardar Selección de Tablas
                                     </button>
-                                    <button type="button" id="btnClearZabbixTables" class="btn btn-outline-danger">
-                                        <i class="fas fa-undo mr-1"></i> Limpiar Selección
-                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Pestaña: Segmentación (Keywords) -->
+                            <div class="tab-pane fade" id="zabbix-keywords" role="tabpanel" aria-labelledby="zabbix-keywords-tab">
+                                <h5 class="mb-3 text-secondary"><i class="fas fa-tags mr-2"></i> Palabras Clave de Segmentación</h5>
+                                <p class="text-muted small">Define las palabras clave que se usarán para filtrar los Hostgroups en el panel de Equipos (ej: VIRTUAL, SWITCH, ESXI).</p>
+                                
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="card card-outline card-success shadow-none border">
+                                            <div class="card-header"><h3 class="card-title font-weight-bold">Añadir Palabra Clave</h3></div>
+                                            <div class="card-body">
+                                                <div class="input-group">
+                                                    <input type="text" id="new-keyword" class="form-control" placeholder="Ej: FIREWALL">
+                                                    <div class="input-group-append">
+                                                        <button type="button" class="btn btn-success" onclick="addKeyword()">
+                                                            <i class="fas fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="card card-outline card-info shadow-none border">
+                                            <div class="card-header"><h3 class="card-title font-weight-bold">Palabras Clave Activas</h3></div>
+                                            <div class="card-body p-0">
+                                                <table class="table table-sm table-striped mb-0">
+                                                    <thead><tr><th>Keyword</th><th class="text-right">Acción</th></tr></thead>
+                                                    <tbody id="keywords-list-body">
+                                                        <tr><td colspan="2" class="text-center py-3 text-muted">Cargando...</td></tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -213,9 +252,54 @@ while ($r = $stmt_zabbix->fetch(PDO::FETCH_ASSOC)) {
 <?php require_once __DIR__ . '/partials/footer.php'; ?>
 
 <script>
+    // Funciones Globales para Gestión de Keywords
+    function loadKeywords() {
+        $.post('api_action.php', { action: 'list_keywords' }, function(resp) {
+            if (resp.success) {
+                let html = '';
+                resp.data.forEach(k => {
+                    html += `<tr>
+                        <td class="font-weight-bold ml-2"><code>${k.keyword}</code></td>
+                        <td class="text-right">
+                            <button class="btn btn-xs btn-outline-danger" onclick="deleteKeyword(${k.id})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>`;
+                });
+                $('#keywords-list-body').html(html || '<tr><td colspan="2" class="text-center py-3 text-muted">No hay palabras clave definidas.</td></tr>');
+            }
+        });
+    }
+
+    function addKeyword() {
+        const kw = $('#new-keyword').val();
+        if(!kw) return;
+        $.post('api_action.php', { action: 'add_keyword', keyword: kw }, function(resp) {
+            if (resp.success) {
+                $('#new-keyword').val('');
+                loadKeywords();
+                toastr.success('Keyword añadida');
+            }
+        });
+    }
+
+    function deleteKeyword(id) {
+        if(!confirm('¿Eliminar esta palabra clave?')) return;
+        $.post('api_action.php', { action: 'delete_keyword', id: id }, function(resp) {
+            if (resp.success) {
+                loadKeywords();
+                toastr.success('Keyword eliminada');
+            }
+        });
+    }
+
 document.addEventListener('DOMContentLoaded', function() {
     const csrfToken = '<?php echo get_csrf_token(); ?>';
     
+    // Carga inicial
+    loadKeywords();
+
     // 1. Guardar Configuración de visibilidad para Zabbix
     const zabbixForm = document.getElementById('zabbixCmdbConfigForm');
     if(zabbixForm) {

@@ -77,6 +77,41 @@ $sqls = [
         id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
         prefix VARCHAR(10) NOT NULL DEFAULT 'AE',
         last_id INT NOT NULL DEFAULT 0
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4",
+
+    // Zabbix API Configuration
+    "CREATE TABLE IF NOT EXISTS zabbix_api_config (
+        id INT PRIMARY KEY DEFAULT 1,
+        url VARCHAR(255) DEFAULT NULL,
+        token VARCHAR(255) DEFAULT NULL,
+        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4",
+
+    // Zabbix CMDB Visibility Config
+    "CREATE TABLE IF NOT EXISTS zabbix_cmdb_config (
+        table_name VARCHAR(255) NOT NULL PRIMARY KEY,
+        is_enabled TINYINT(1) NOT NULL DEFAULT 0
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4",
+
+    // Zabbix Mappings
+    "CREATE TABLE IF NOT EXISTS zabbix_mappings (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        cmdb_table_name VARCHAR(100) NOT NULL UNIQUE,
+        hostname_template VARCHAR(255) DEFAULT NULL,
+        visible_name_template VARCHAR(255) DEFAULT NULL,
+        hostgroup_template VARCHAR(255) DEFAULT NULL,
+        ip_field VARCHAR(100) DEFAULT NULL,
+        snmp_community_field VARCHAR(100) DEFAULT NULL,
+        template_name VARCHAR(255) DEFAULT NULL,
+        inventory_fields_json LONGTEXT DEFAULT NULL,
+        tags_json LONGTEXT DEFAULT NULL,
+        updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4",
+
+    // Zabbix Keywords for segmentation
+    "CREATE TABLE IF NOT EXISTS zabbix_keywords (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        keyword VARCHAR(100) NOT NULL UNIQUE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4"
 ];
 

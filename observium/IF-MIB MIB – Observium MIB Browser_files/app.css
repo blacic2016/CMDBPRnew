@@ -1,0 +1,351 @@
+/* ── Layout ───────────────────────────────────────────────────────────────── */
+
+.pt-navbar {
+    padding-top: 72px; /* clear fixed navbar */
+}
+
+/* ── MIB description <pre> ───────────────────────────────────────────────── */
+
+.mib-description,
+.notif-description {
+    font-size: 12px;
+    line-height: 1.45;
+    white-space: pre-wrap;
+    word-break: break-word;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: #555;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.mib-description.expanded,
+.notif-description.expanded {
+    max-height: none;
+}
+
+/* ── OID table ───────────────────────────────────────────────────────────── */
+
+.oid-table td {
+    vertical-align: middle;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.oid-table td:last-child {
+    width: 1%;          /* shrink OID number column */
+}
+
+.oid-table td:nth-child(2) {
+    white-space: normal;
+    min-width: 120px;
+    overflow-wrap: anywhere;
+}
+
+.oid-deprecated {
+    opacity: 0.65;
+}
+
+.oid-name-link {
+    text-decoration: none;
+    color: inherit;
+}
+.oid-name-link:hover {
+    text-decoration: underline;
+}
+
+/* Subtle permalink anchor — dotted underline, no link colour */
+.subtle-link {
+    color:           inherit;
+    text-decoration: none;
+    border-bottom:   1px dotted #aaa;
+}
+.subtle-link:hover {
+    color:            #0a5f7f;
+    border-bottom-color: #0a5f7f;
+}
+
+/* Permalink highlight (animated) */
+.permalink-highlight {
+    background-color: #fff3cd !important;
+    outline: 2px solid #ffc107;
+    transition: background-color 0.3s ease, outline 0.3s ease;
+}
+
+/* ── Search results ──────────────────────────────────────────────────────── */
+
+mark {
+    background-color: #fff3cd;
+    padding: 1px 2px;
+    border-radius: 2px;
+}
+
+/* ── Badge base overrides ─────────────────────────────────────────────────────
+   Smaller, lighter weight, less rounded — closer to Bootstrap 2 labels       */
+
+.badge {
+    font-size:     11px;
+    font-weight:   400;
+    padding:       2px 6px;
+    border-radius: 3px;
+}
+
+/* Links inside badges must inherit the badge text colour, not go link-blue   */
+.badge a,
+.badge a:hover,
+.badge a:focus {
+    color:           inherit !important;
+    text-decoration: none    !important;
+}
+
+/* ── Observium badge colour palette (overrides Bootstrap 5 defaults) ────────
+   Matched exactly to the Bootstrap 2 label colours in observium.css          */
+
+.badge.bg-primary   { background-color: #0a5f7f !important; }
+.badge.bg-info      { background-color: #4bb1cf !important; color: #fff !important; }
+.badge.bg-secondary { background-color: #777777 !important; color: #fff !important; }
+.badge.bg-success   { background-color: #4d9221 !important; }
+.badge.bg-warning   { background-color: #f0ad4e !important; color: #333 !important; }
+.badge.bg-danger    { background-color: #d9534f !important; }
+
+/* ── Access badge (readwrite indicator) ─────────────────────────────────────*/
+.badge.access-rw {
+    background-color: #4d9221 !important;
+    font-size:   10px;
+    padding:     1px 4px;
+    opacity:     0.85;
+}
+
+/* ── Badge group — connected two-part badge (e.g. MIB::Object) ─────────────
+   Wrap sibling .badge elements in a .badge-group span to connect them.       */
+
+.badge-group {
+    display:        inline-flex;
+    flex-wrap:      wrap;
+    vertical-align: middle;
+    margin-bottom:  2px;
+    max-width:      100%;
+}
+
+.badge-group .badge {
+    max-width:      100%;
+    white-space:    normal;
+    overflow-wrap:  anywhere;
+    word-break:     break-word;
+}
+
+.badge-group .badge:first-child {
+    border-top-right-radius:    0;
+    border-bottom-right-radius: 0;
+}
+
+.badge-group .badge:last-child {
+    border-top-left-radius:    0;
+    border-bottom-left-radius: 0;
+}
+
+.badge-group .badge:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+
+/* ── Bootstrap 5 popover overrides ──────────────────────────────────────── */
+
+.popover {
+    max-width: 420px;
+    font-size: 13px;
+}
+
+.popover table td:last-child {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* ── Imports table ───────────────────────────────────────────────────────── */
+
+.import-module-cell {
+    width:        1%;         /* shrink to content */
+    padding-right: 16px;
+}
+
+.import-module-link {
+    font-size:  12px;
+    color:      #0a5f7f;
+    font-weight: 500;
+}
+.import-module-link:hover {
+    color:      #063c50;
+    text-decoration: underline !important;
+}
+
+.import-names-cell {
+    font-size:  12px;
+    line-height: 1.6;
+}
+
+/* Each imported name — dotted underline signals tooltip availability */
+.import-name {
+    color:          #444;
+    border-bottom:  1px dotted #aaa;
+    cursor:         default;
+    margin-right:   6px;
+    white-space:    nowrap;
+    display:        inline-block;
+}
+.import-name:hover {
+    border-bottom-color: #0a5f7f;
+    color:               #0a5f7f;
+}
+
+/* ── Home page — featured MIB cards ─────────────────────────────────────── */
+
+.home-mib-card {
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+.home-mib-card:hover {
+    border-color: #4bb1cf !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08);
+    color: inherit;
+}
+.home-mib-card .fw-semibold {
+    color: #0a5f7f;
+}
+
+/* ── Enum / named-number grid (typedef values) ───────────────────────────── */
+
+.enum-grid {
+    column-count: 4;
+    column-gap:  1.2rem;
+}
+
+.enum-grid > * {
+    break-inside: avoid;
+    margin-bottom: 0.15rem;
+}
+
+.enum-grid .text-nowrap,
+.enum-grid code {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.enum-value {
+    color: #000;
+}
+
+/* ── Browse-all filter ───────────────────────────────────────────────────── */
+
+.mib-link:hover strong {
+    color: #0a5f7f;
+}
+
+/* ── Table view prototype ─────────────────────────────────────────────────── */
+
+.table-card {
+    scroll-margin-top: 88px;
+}
+
+.table-card-deprecated {
+    border-color: #d9d9d9;
+}
+
+.table-description {
+    max-height: none;
+    margin-bottom: 1rem;
+}
+
+.table-entry-block + .table-entry-block {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.table-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.table-indexes {
+    min-width: 220px;
+    max-width: 320px;
+}
+
+.table-columns td {
+    vertical-align: top;
+}
+
+.table-columns td:nth-child(2) {
+    min-width: 180px;
+    font-size: 12px;
+    line-height: 1.45;
+    color: #555;
+    overflow-wrap: anywhere;
+}
+
+.table-columns td:nth-child(2) code {
+    font-size: 11px;
+}
+
+.table-columns td:nth-child(2) .badge,
+.table-columns td:nth-child(2) .badge-group {
+    vertical-align: middle;
+}
+
+.syntax-detail-block {
+    margin-top: 0.45rem;
+    font-size: 12px;
+    line-height: 1.45;
+    color: #555;
+}
+
+.syntax-section + .syntax-section {
+    margin-top: 0.2rem;
+}
+
+.syntax-section strong {
+    font-size: 12px;
+    font-weight: 600;
+    color: #555;
+}
+
+.syntax-enum-table {
+    margin-top: 0.2rem;
+    border-collapse: collapse;
+}
+
+.syntax-enum-table td {
+    padding: 0 0.45rem 0.05rem 0;
+    vertical-align: top;
+}
+
+.syntax-enum-table td:first-child {
+    white-space: nowrap;
+    color: #555;
+}
+
+.syntax-enum-table td:last-child {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.syntax-description {
+    margin-top: 0.2rem;
+    color: #555;
+}
+
+@media (max-width: 991px) {
+    .table-entry-header {
+        flex-direction: column;
+    }
+
+    .table-indexes {
+        min-width: 0;
+        max-width: none;
+        width: 100%;
+    }
+}

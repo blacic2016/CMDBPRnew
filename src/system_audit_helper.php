@@ -79,22 +79,39 @@ function runSystemAudit() {
                 $results['database']['message'] = "Conexión exitosa";
                 $results['database']['status'] = 'success';
                 
-                // Chequeo de tablas críticas
+                // Chequeo de tablas críticas con detalle individual
                 $critical_tables = [
-                    'users', 'roles', 'asset_sequence', 'sheet_configs',
-                    'user_sheet_permissions', 'user_module_permissions', 'import_logs',
-                    'snmp_communities', 'snmp_scan_results', 'zabbix_api_config', 'zabbix_mappings',
-                    'images', 'sheet_history'
+                    'users' => 'Usuarios del sistema',
+                    'roles' => 'Roles y permisos',
+                    'asset_sequence' => 'Secuencia de activos',
+                    'sheet_configs' => 'Configuración de hojas',
+                    'user_sheet_permissions' => 'Permisos de hojas',
+                    'user_module_permissions' => 'Permisos de módulos',
+                    'import_logs' => 'Logs de importación',
+                    'snmp_communities' => 'Comunidades SNMP',
+                    'snmp_scan_results' => 'Resultados de escaneo',
+                    'zabbix_api_config' => 'Configuración API Zabbix',
+                    'zabbix_mappings' => 'Mapeos Zabbix',
+                    'images' => 'Galería de imágenes',
+                    'sheet_history' => 'Historial de cambios',
+                    'zabbix_costs_rules' => 'Reglas de costos Zabbix'
                 ];
                 $existing = $pdo->query("SHOW TABLES")->fetchAll(PDO::FETCH_COLUMN);
+                $table_status = [];
                 $missing = [];
-                foreach ($critical_tables as $table) {
-                    if (!in_array($table, $existing)) $missing[] = $table;
+                foreach ($critical_tables as $table => $desc) {
+                    $is_present = in_array($table, $existing);
+                    $table_status[$table] = [
+                        'exists' => $is_present,
+                        'description' => $desc
+                    ];
+                    if (!$is_present) $missing[] = $table;
                 }
+                $results['database']['table_analysis'] = $table_status;
                 $results['database']['missing_tables'] = $missing;
                 if (!empty($missing)) {
                     $results['database']['status'] = 'warning';
-                    $results['database']['message'] = "Tablas faltantes: " . implode(', ', $missing);
+                    $results['database']['message'] = "Estructura incompleta (" . count($missing) . " tablas faltantes)";
                 }
             } else {
                 $results['database']['status'] = 'error';
@@ -164,7 +181,9 @@ function initializeDatabase()
         "asset_sequence" => "CREATE TABLE IF NOT EXISTS `asset_sequence` (`id` int(11) NOT NULL AUTO_INCREMENT, `prefix` varchar(10) NOT NULL DEFAULT 'AE', `last_id` int(11) NOT NULL DEFAULT 0, PRIMARY KEY (`id`))",
         "sheet_configs" => "CREATE TABLE IF NOT EXISTS `sheet_configs` (`id` int(11) NOT NULL AUTO_INCREMENT, `sheet_name` varchar(255) NOT NULL, `table_name` varchar(255) NOT NULL, `unique_columns` text DEFAULT NULL, `created_at` datetime DEFAULT current_timestamp(), PRIMARY KEY (`id`), UNIQUE KEY `sheet_name` (`sheet_name`), UNIQUE KEY `table_name` (`table_name`))",
         "user_sheet_perms" => "CREATE TABLE IF NOT EXISTS user_sheet_permissions (id INT AUTO_INCREMENT PRIMARY KEY, user_id INT NOT NULL, sheet_name VARCHAR(100) NOT NULL, can_view TINYINT(1) DEFAULT 1, can_edit TINYINT(1) DEFAULT 0, can_delete TINYINT(1) DEFAULT 0, FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE, UNIQUE KEY (user_id, sheet_name))",
-        "user_module_perms" => "CREATE TABLE IF NOT EXISTS user_module_permissions (id INT AUTO_INCREMENT PRIMARY KEY, user_id INT NOT NULL, module_name VARCHAR(100) NOT NULL, can_view TINYINT(1) DEFAULT 1, FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE, UNIQUE KEY (user_id, module_name))"
+        "zabbix_api_config" => "CREATE TABLE IF NOT EXISTS zabbix_api_config (id INT AUTO_INCREMENT PRIMARY KEY, url VARCHAR(255) NOT NULL, token VARCHAR(255) NOT NULL, updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)",
+        "snmp_communities" => "CREATE TABLE IF NOT EXISTS `snmp_communities` (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) NOT NULL, community VARCHAR(255) NOT NULL, description TEXT, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, UNIQUE KEY (name))",
+        "snmp_scan_results" => "CREATE TABLE IF NOT EXISTS snmp_scan_results (id INT AUTO_INCREMENT PRIMARY KEY, ip VARCHAR(50) NOT NULL, table_source VARCHAR(100) NOT NULL, row_id VARCHAR(100) NOT NULL, community_ok VARCHAR(255), interfaces_up_json LONGTEXT, status VARCHAR(20) DEFAULT 'PENDING', last_success DATETIME, created_at DATETIME DEFAULT CURRENT_TIMESTAMP, UNIQUE KEY idx_ip_rel (ip, table_source, row_id))"
     ];
 
     foreach ($queries as $name => $sql) {

@@ -121,6 +121,47 @@ if ($action === 'truncate_cmdb_table') {
     exit;
 }
 
+if ($action === 'list_keywords') {
+    if (!has_role(['ADMIN', 'SUPER_ADMIN'])) exit(json_encode(['success' => false, 'error' => 'Permiso denegado.']));
+    try {
+        $pdo = getPDO();
+        $res = $pdo->query("SELECT * FROM zabbix_keywords ORDER BY keyword ASC");
+        echo json_encode(['success' => true, 'data' => $res->fetchAll(PDO::FETCH_ASSOC)]);
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    }
+    exit;
+}
+
+if ($action === 'add_keyword') {
+    if (!has_role(['SUPER_ADMIN'])) exit(json_encode(['success' => false, 'error' => 'Permiso denegado.']));
+    try {
+        $keyword = strtoupper(trim($_POST['keyword'] ?? ''));
+        if (empty($keyword)) throw new Exception("Palabra clave vacía.");
+        $pdo = getPDO();
+        $stmt = $pdo->prepare("INSERT IGNORE INTO zabbix_keywords (keyword) VALUES (?)");
+        $stmt->execute([$keyword]);
+        echo json_encode(['success' => true]);
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    }
+    exit;
+}
+
+if ($action === 'delete_keyword') {
+    if (!has_role(['SUPER_ADMIN'])) exit(json_encode(['success' => false, 'error' => 'Permiso denegado.']));
+    try {
+        $id = (int)($_POST['id'] ?? 0);
+        $pdo = getPDO();
+        $stmt = $pdo->prepare("DELETE FROM zabbix_keywords WHERE id = ?");
+        $stmt->execute([$id]);
+        echo json_encode(['success' => true]);
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    }
+    exit;
+}
+
 if ($action === 'drop_cmdb_table') {
     if (!has_role(['SUPER_ADMIN'])) exit(json_encode(['success' => false, 'error' => 'Permiso denegado.']));
     try {
@@ -1371,7 +1412,7 @@ if ($action === 'get_snmp_scan_data') {
                 // Join con historial para saber si ya fue validado
                 $sql = "
                     SELECT t.id, t.`$ip_col` as ip, " . ($name_col ? "t.`$name_col`" : "''") . " as name,
-                           h.community_ok, h.last_success
+                           h.community_ok, h.last_success, h.interfaces_up_json, h.status
                     FROM `$t` t
                     LEFT JOIN snmp_scan_results h ON h.ip = t.`$ip_col` AND h.table_source = '$t' AND h.row_id = t.id
                     WHERE t.`$ip_col` IS NOT NULL AND t.`$ip_col` != ''
@@ -1385,7 +1426,9 @@ if ($action === 'get_snmp_scan_data') {
                         'name' => $r['name'],
                         'display_name' => str_replace('sheet_', '', $t),
                         'community_ok' => $r['community_ok'],
-                        'last_success' => $r['last_success']
+                        'last_success' => $r['last_success'],
+                        'interfaces_up_json' => $r['interfaces_up_json'],
+                        'status' => $r['status'] ?? 'PENDING'
                     ];
                 }
             }
@@ -1406,23 +1449,32 @@ if ($action === 'commit_snmp_results') {
         
         $pdo->beginTransaction();
         $stmt = $pdo->prepare("
-            INSERT INTO snmp_scan_results (ip, community_ok, table_source, row_id, last_success)
-            VALUES (:ip, :comm, :src, :rid, NOW())
-            ON DUPLICATE KEY UPDATE community_ok = :comm, last_success = NOW()
+            INSERT INTO snmp_scan_results (ip, community_ok, table_source, row_id, interfaces_up_json, last_success, status)
+            VALUES (:ip, :comm, :src, :rid, :up, NOW(), :status)
+            ON DUPLICATE KEY UPDATE community_ok = :comm, interfaces_up_json = :up, last_success = NOW(), status = :status
         ");
         
+        $affected = 0;
         foreach ($results as $res) {
+            // Logging para depuración
+            error_log("Intentando guardar SNMP: IP=" . ($res['ip'] ?? 'N/A') . " Table=" . ($res['table'] ?? 'N/A') . " ID=" . ($res['id'] ?? 'N/A'));
+            
             $stmt->execute([
                 ':ip' => $res['ip'],
-                ':comm' => $res['community'],
+                ':comm' => $res['community'] ?? null,
                 ':src' => $res['table'],
-                ':rid' => $res['id']
+                ':rid' => $res['id'],
+                ':up' => isset($res['interfaces']) ? json_encode($res['interfaces']) : null,
+                ':status' => $res['status'] ?? 'SUCCESS'
             ]);
+            $affected += $stmt->rowCount();
         }
         $pdo->commit();
-        echo json_encode(['success' => true]);
+        error_log("SNMP Commit exitoso. Filas afectadas: $affected");
+        echo json_encode(['success' => true, 'affected' => $affected]);
     } catch (Exception $e) {
-        if ($pdo->inTransaction()) $pdo->rollBack();
+        if ($pdo && $pdo->inTransaction()) $pdo->rollBack();
+        error_log("Error en commit_snmp_results: " . $e->getMessage());
         echo json_encode(['success' => false, 'error' => $e->getMessage()]);
     }
     exit;
@@ -1452,15 +1504,40 @@ if ($action === 'test_single_snmp') {
     }
     
     // Test using snmpget for sysObjectID.0 (1.3.6.1.2.1.1.2.0)
-    // -v2c version, -c community, -t timeout (1s), -r retries (0)
     $cmd = "snmpget -v2c -c " . escapeshellarg($community) . " -t 1 -r 0 " . escapeshellarg($ip) . " 1.3.6.1.2.1.1.2.0 2>&1";
     $output = [];
     $rv = -1;
     exec($cmd, $output, $rv);
     
     if ($rv === 0) {
-        $resText = implode("\n", $output);
-        exit(json_encode(['success' => true, 'status' => 'OK', 'response' => $resText]));
+        // Discovery of UP interfaces
+        // ifOperStatus = 1.3.6.1.2.1.2.2.1.8
+        // ifDescr = 1.3.6.1.2.1.2.2.1.2
+        $up_interfaces = [];
+        $walk_cmd = "snmpwalk -v2c -c " . escapeshellarg($community) . " -t 1 -r 0 " . escapeshellarg($ip) . " 1.3.6.1.2.1.2.2.1.8 2>&1";
+        $walk_output = [];
+        exec($walk_cmd, $walk_output);
+        
+        foreach ($walk_output as $line) {
+            // Example: .1.3.6.1.2.1.2.2.1.8.1 = INTEGER: up(1)
+            if (preg_match('/\.(\d+) = INTEGER: .*?\(1\)/', $line, $m)) {
+                $index = $m[1];
+                // Get Description for this index
+                $desc_cmd = "snmpget -v2c -c " . escapeshellarg($community) . " -t 0.5 -r 0 " . escapeshellarg($ip) . " 1.3.6.1.2.1.2.2.1.2.$index 2>&1";
+                $desc_out = [];
+                exec($desc_cmd, $desc_out);
+                if (isset($desc_out[0]) && preg_match('/STRING: (.*)/', $desc_out[0], $dm)) {
+                    $up_interfaces[] = trim($dm[1], '" ');
+                }
+            }
+        }
+
+        exit(json_encode([
+            'success' => true, 
+            'status' => 'OK', 
+            'response' => implode("\n", $output),
+            'interfaces' => $up_interfaces
+        ]));
     } else {
         $errText = implode("\n", $output);
         exit(json_encode(['success' => false, 'status' => 'FAIL', 'error' => $errText]));

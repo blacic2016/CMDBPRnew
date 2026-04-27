@@ -1,10 +1,8 @@
 <?php
 require_once('funtions2.php');
-define('MIBS_ALL_PATH', '/var/www/html/snmp/mibs:/var/lib/mibs/ietf');
-$oid=filter_var($_GET['oid'],FILTER_SANITIZE_STRING);
-$server_ip=filter_var($_GET['iphost'],FILTER_SANITIZE_STRING);
-$snmpversion=filter_var($_GET['snmpversion'],FILTER_SANITIZE_STRING);
-$community=filter_var($_GET['comunidad'],FILTER_SANITIZE_STRING);
+require_once __DIR__ . '/../../config.php';
+define('MIBS_ALL_PATH', SNMP_MIBS_PATH . ':/usr/share/snmp/mibs:/var/lib/mibs/ietf');
+
 
 if (isset($_REQUEST['oid']) && !empty($_REQUEST['oid']))
 	{
@@ -41,6 +39,14 @@ if (isset($_REQUEST['oid']) && !empty($_REQUEST['oid']))
 	}
 	else
 		$community ='public';
+
+	if (isset($_REQUEST['viewtype']) && !empty($_REQUEST['viewtype']))
+	{
+		$viewtype = (int)$_REQUEST['viewtype'];
+	}
+	else
+		$viewtype = 0;
+
 
 
 //if (!$oid || !$mib)

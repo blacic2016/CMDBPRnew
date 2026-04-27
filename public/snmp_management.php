@@ -13,6 +13,7 @@ $page_title = 'Gestión SNMP Avanzada';
 require_once __DIR__ . '/partials/header.php';
 ?>
 
+
 <style>
     .premium-card {
         border-radius: 12px;
@@ -54,7 +55,34 @@ require_once __DIR__ . '/partials/header.php';
     .bg-success-light { background: #e8f5e9; }
     .bg-danger-light { background: #ffebee; }
     .bg-warning-light { background: #fff3e0; }
+
+    /* Select2 Premium Customization */
+    .select2-container--bootstrap4 .select2-selection {
+        border-radius: 8px !important;
+        border: 1px solid #ced4da !important;
+        height: auto !important;
+        min-height: 31px !important;
+    }
+    .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice {
+        background-color: #e9ecef !important;
+        border: 1px solid #dee2e6 !important;
+        color: #495057 !important;
+        border-radius: 4px !important;
+        padding: 0 8px !important;
+        margin-top: 4px !important;
+    }
+    .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice__remove {
+        color: #dc3545 !important;
+        margin-right: 5px !important;
+    }
+    .select2-container--bootstrap4.select2-container--focus .select2-selection {
+        border-color: #80bdff !important;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+    }
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@1.5.2/dist/select2-bootstrap4.min.css">
+
+
 
 <div class="container-fluid py-4">
     <div class="row align-items-center mb-3">
@@ -126,34 +154,45 @@ require_once __DIR__ . '/partials/header.php';
     </div>
 
     <div class="card premium-card">
-        <div class="card-header bg-white py-3">
+        <div class="card-header bg-white py-3 border-bottom-0">
             <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="input-group">
+                <div class="col-lg-3 col-md-4 mb-2 mb-md-0">
+                    <div class="input-group input-group-sm mb-0">
                         <div class="input-group-prepend">
-                            <span class="input-group-text bg-transparent border-right-0"><i class="fas fa-search text-muted"></i></span>
+                            <span class="input-group-text bg-light border-right-0"><i class="fas fa-search text-muted"></i></span>
                         </div>
-                        <input type="text" id="tableSearch" class="form-control border-left-0" placeholder="Filtrar por IP, Nombre o Tipo...">
+                        <input type="text" id="tableSearch" class="form-control border-left-0" placeholder="Buscar por IP, Nombre...">
                     </div>
                 </div>
-                <div class="col-md-6 text-right">
-                    <div class="btn-group btn-group-toggle mr-3" data-toggle="buttons">
-                        <label class="btn btn-outline-secondary btn-sm active" id="btnFilterNew">
-                            <input type="radio" name="options" autocomplete="off" checked> Pendientes
+                <div class="col-lg-4 col-md-8 mb-2 mb-md-0">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-filter text-muted mr-2 small"></i>
+                        <div class="flex-grow-1">
+                            <select id="categoryFilter" class="form-control select2" multiple="multiple" data-placeholder="Todas las Categorías">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12 text-lg-right">
+                    <div class="btn-group btn-group-toggle mr-2" data-toggle="buttons">
+                        <label class="btn btn-outline-secondary btn-sm active px-3" id="btnFilterNew">
+                            <input type="radio" name="options" autocomplete="off" checked> Nuevos
                         </label>
-                        <label class="btn btn-outline-secondary btn-sm" id="btnFilterAll">
+                        <label class="btn btn-outline-secondary btn-sm px-3" id="btnFilterAll">
                             <input type="radio" name="options" autocomplete="off"> Todos
                         </label>
                     </div>
-                    <button type="button" id="btnSyncZabbix" class="btn btn-info btn-sm px-3 shadow-sm mr-1">
-                        <i class="fas fa-sync mr-1"></i> Sincronizar Zabbix
-                    </button>
-                    <button type="button" id="btnStartSelectedScan" class="btn btn-success btn-sm px-3 shadow-sm">
-                        <i class="fas fa-play mr-1"></i> Iniciar Escaneo
-                    </button>
-                    <button type="button" id="btnCommitResults" class="btn btn-dark btn-sm px-3 shadow-sm ml-1" disabled>
-                        <i class="fas fa-save mr-1"></i> Persistir Datos
-                    </button>
+                    <div class="btn-group">
+                        <button type="button" id="btnSyncZabbix" class="btn btn-info btn-sm shadow-sm" title="Sincronizar con Zabbix">
+                            <i class="fas fa-sync"></i>
+                        </button>
+                        <button type="button" id="btnStartSelectedScan" class="btn btn-success btn-sm shadow-sm px-3" title="Ejecutar Escaneo">
+                            <i class="fas fa-play mr-1"></i> Escanear
+                        </button>
+                        <button type="button" id="btnCommitResults" class="btn btn-dark btn-sm shadow-sm px-3" disabled title="Guardar cambios">
+                            <i class="fas fa-save"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -185,6 +224,7 @@ require_once __DIR__ . '/partials/header.php';
                             <th class="sortable" data-col="last_success">Última Ref. <i class="fas fa-sort ml-1 opacity-50"></i></th>
                             <th>Estatus</th>
                             <th>Comunidad</th>
+                            <th class="text-center">Int. UP</th>
                             <th style="width: 60px"></th>
                         </tr>
                     </thead>
@@ -194,8 +234,13 @@ require_once __DIR__ . '/partials/header.php';
                 </table>
             </div>
         </div>
-        <div class="card-footer bg-light py-2 text-right">
+        <div class="card-footer bg-light py-2 d-flex justify-content-between align-items-center">
             <span class="badge badge-light border text-muted px-3 py-2" id="infoSelected">0 equipos seleccionados</span>
+            <nav aria-label="Navegación de tabla">
+                <ul class="pagination pagination-sm mb-0" id="tablePagination">
+                    <!-- Dinámico JS -->
+                </ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -242,17 +287,31 @@ document.addEventListener('DOMContentLoaded', function() {
     let sortCol = 'ip';
     let sortAsc = true;
     let searchText = '';
+    let selectedCategory = [];
+    let currentPage = 1;
+    const itemsPerPage = 15;
+
 
     loadCommunities();
     loadScanData();
 
     document.getElementById('tableSearch').onkeyup = function() {
         searchText = this.value.toLowerCase();
+        currentPage = 1;
         renderTable();
     };
 
-    document.getElementById('btnFilterNew').onclick = () => { filterMode = 'new'; updateFilterUI(); renderTable(); };
-    document.getElementById('btnFilterAll').onclick = () => { filterMode = 'all'; updateFilterUI(); renderTable(); };
+    $('#categoryFilter').select2({
+        width: '100%',
+        theme: 'bootstrap4'
+    }).on('change', function() {
+        selectedCategory = $(this).val();
+        currentPage = 1;
+        renderTable();
+    });
+
+    document.getElementById('btnFilterNew').onclick = () => { filterMode = 'new'; currentPage = 1; updateFilterUI(); renderTable(); };
+    document.getElementById('btnFilterAll').onclick = () => { filterMode = 'all'; currentPage = 1; updateFilterUI(); renderTable(); };
 
     function updateFilterUI() {
         document.getElementById('btnFilterNew').classList.toggle('active', filterMode === 'new');
@@ -313,12 +372,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     id: z.ip,
                     ip: z.ip,
                     name: z.name,
-                    display_name: 'Zabbix Host',
+                    display_name: z.group || 'Zabbix Host',
                     community_ok: z.available == 1 ? z.community : null,
                     last_success: z.available == 1 ? new Date() : null,
                     zabbix_available: z.available,
                     zabbix_error: z.error
                 }));
+                populateCategoryFilter();
                 renderTable();
             });
         } else {
@@ -327,11 +387,27 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(res => {
                 if (res.success) {
                     scanData.ips = res.ips;
+                    populateCategoryFilter();
                     renderTable();
                 }
             });
         }
     }
+
+    function populateCategoryFilter() {
+        const select = $('#categoryFilter');
+        const categories = [...new Set(scanData.ips.map(item => item.display_name))];
+        
+        select.empty();
+        categories.sort().forEach(cat => {
+            const option = new Option(cat.replace('Inventario ', ''), cat, false, false);
+            select.append(option);
+        });
+        
+        select.trigger('change');
+    }
+
+
 
     // Eventos de cambio de fuente
     $('input[name="source"]').change(function() {
@@ -362,12 +438,15 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('statFailed').innerText = stats.failed;
         document.getElementById('statPending').innerText = stats.pending;
 
-        let filtered = scanData.ips.filter(item => {
+        const matchesAny = selectedCategory && selectedCategory.length > 0;
+        
+        let filtered = !matchesAny ? [] : scanData.ips.filter(item => {
             const matchesFilter = filterMode === 'new' ? !item.community_ok : true;
             const matchesSearch = item.ip.toLowerCase().includes(searchText) || 
                                  (item.name || '').toLowerCase().includes(searchText) ||
                                  item.display_name.toLowerCase().includes(searchText);
-            return matchesFilter && matchesSearch;
+            const matchesCategory = selectedCategory.includes(item.display_name);
+            return matchesFilter && matchesSearch && matchesCategory;
         });
 
         filtered.sort((a, b) => {
@@ -377,19 +456,47 @@ document.addEventListener('DOMContentLoaded', function() {
             if (valA > valB) return sortAsc ? 1 : -1;
             return 0;
         });
+        
+        // Paginación
+        const totalFiltered = filtered.length;
+        const totalPages = Math.ceil(totalFiltered / itemsPerPage);
+        if (currentPage > totalPages) currentPage = Math.max(1, totalPages);
+        
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const pagedData = filtered.slice(start, end);
 
-        if (filtered.length === 0) {
+        renderPagination(totalPages);
+
+        if (!matchesAny) {
+            tbody.innerHTML = '<tr><td colspan="8" class="text-center py-5 text-muted"><i class="fas fa-filter fa-2x mb-2 d-block opacity-25"></i>Selecciona una o más categorías para comenzar...</td></tr>';
+            return;
+        }
+
+        if (pagedData.length === 0) {
             tbody.innerHTML = '<tr><td colspan="8" class="text-center py-5 text-muted"><i class="fas fa-folder-open fa-2x mb-2 d-block opacity-25"></i>No hay registros para mostrar</td></tr>';
             return;
         }
 
-        filtered.forEach(item => {
-            const isPersisted = !!item.community_ok;
+        pagedData.forEach(item => {
+            const isPersisted = !!item.community_ok || (item.status && item.status !== 'PENDING');
             const dateStr = item.last_success ? new Date(item.last_success).toLocaleDateString() : '--';
             
-            let statusBadge = isPersisted ? '<span class="status-badge badge-success-snmp"><i class="fas fa-check mr-1"></i> Validado</span>' : '<span class="status-badge badge-pending">Pendiente</span>';
+            const upInterfaces = item.interfaces_up_json ? JSON.parse(item.interfaces_up_json) : [];
+            const intUpCount = upInterfaces.length;
+            const intUpList = upInterfaces.join(', ');
+
+            let statusBadge = '<span class="status-badge badge-pending">Pendiente</span>';
+            const dbStatus = item.status || 'PENDING';
+
+            if (dbStatus === 'SUCCESS') {
+                statusBadge = '<span class="status-badge badge-success-snmp"><i class="fas fa-check mr-1"></i> Validado</span>';
+            } else if (dbStatus === 'OFFLINE') {
+                statusBadge = '<span class="status-badge badge-offline"><i class="fas fa-ghost mr-1"></i> Offline</span>';
+            } else if (dbStatus === 'FAILED') {
+                statusBadge = '<span class="status-badge badge-fail-snmp"><i class="fas fa-times mr-1"></i> Falló</span>';
+            }
             
-            // Si la fuente es Zabbix, mostrar su estatus real
             if (item.table === 'zabbix') {
                if (item.zabbix_available == 1) {
                    statusBadge = '<span class="status-badge badge-success-snmp"><i class="fas fa-check-double mr-1"></i> Zabbix UP</span>';
@@ -399,13 +506,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             tbody.innerHTML += `
-                <tr id="row-${item.table}-${item.id}" class="${isPersisted ? 'text-muted' : ''}">
+                <tr id="row-${item.table}-${item.id}" class="${isPersisted && item.status !== 'PENDING' ? 'text-muted' : ''}">
                     <td class="text-center align-middle">
                         <div class="custom-control custom-checkbox ml-1">
                             <input class="custom-control-input check-item" type="checkbox" 
                                 id="chk-${item.table}-${item.id}" 
-                                data-ip="${item.ip}" data-table="${item.table}" data-id="${item.id}"
-                                ${isPersisted ? 'disabled' : ''}>
+                                data-ip="${item.ip}" data-table="${item.table}" data-id="${item.id}">
                             <label for="chk-${item.table}-${item.id}" class="custom-control-label"></label>
                         </div>
                     </td>
@@ -420,6 +526,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         ${isPersisted ? `<code class="bg-light p-1 rounded">${item.community_ok}</code>` : '-'}
                     </td>
                     <td class="align-middle text-center">
+                        ${intUpCount > 0 ? `<span class="badge badge-pill badge-info pointer" title="${intUpList}">${intUpCount}</span>` : '<span class="text-muted">-</span>'}
+                    </td>
+                    <td class="align-middle text-right">
                         ${isPersisted && item.table !== 'zabbix' ? `<button class="btn btn-xs btn-link text-danger btnForget" data-ip="${item.ip}" data-table="${item.table}" data-id="${item.id}" title="Reiniciar Validación"><i class="fas fa-sync-alt"></i></button>` : ''}
                     </td>
                 </tr>
@@ -428,6 +537,45 @@ document.addEventListener('DOMContentLoaded', function() {
         updateSortIcons();
         attachTableEvents();
     }
+
+    function renderPagination(totalPages) {
+        const container = document.getElementById('tablePagination');
+        container.innerHTML = '';
+        
+        if (totalPages <= 1) return;
+
+        // Botón Anterior
+        container.innerHTML += `
+            <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                <a class="page-link" href="#" onclick="changePage(${currentPage - 1}); return false;"><i class="fas fa-chevron-left"></i></a>
+            </li>
+        `;
+
+        // Lógica saltos de página (simplificada)
+        let startPage = Math.max(1, currentPage - 2);
+        let endPage = Math.min(totalPages, startPage + 4);
+        if (endPage === totalPages) startPage = Math.max(1, endPage - 4);
+
+        for (let i = startPage; i <= endPage; i++) {
+            container.innerHTML += `
+                <li class="page-item ${i === currentPage ? 'active' : ''}">
+                    <a class="page-link" href="#" onclick="changePage(${i}); return false;">${i}</a>
+                </li>
+            `;
+        }
+
+        // Botón Siguiente
+        container.innerHTML += `
+            <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+                <a class="page-link" href="#" onclick="changePage(${currentPage + 1}); return false;"><i class="fas fa-chevron-right"></i></a>
+            </li>
+        `;
+    }
+
+    window.changePage = function(page) {
+        currentPage = page;
+        renderTable();
+    };
 
     function updateSortIcons() {
         document.querySelectorAll('th.sortable i').forEach(i => i.className = 'fas fa-sort ml-1 opacity-50');
@@ -556,14 +704,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-    document.getElementById('btnStartSelectedScan').onclick = async function() {
+    document.getElementById('btnStartSelectedScan').onclick = async function(e) {
+        if (e) e.preventDefault();
         const selected = Array.from(document.querySelectorAll('.check-item:checked'));
         if (selected.length === 0) return Swal.fire('Sin selección', 'Por favor, selecciona al menos un equipo de la lista.', 'info');
         if (scanData.communities.length === 0) return Swal.fire('Error', 'No hay comunidades configuradas en el diccionario.', 'error');
 
-        this.disabled = true;
-        const oldHtml = this.innerHTML;
-        this.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> Escaneando...';
+        const scanBtn = this;
+        scanBtn.disabled = true;
+        const oldHtml = scanBtn.innerHTML;
+        scanBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> Escaneando...';
         
         const progressDiv = document.getElementById('scanProgress');
         const progressBar = document.getElementById('progressBar');
@@ -573,9 +723,11 @@ document.addEventListener('DOMContentLoaded', function() {
         tempResults = [];
 
         let completed = 0; let successCount = 0; const total = selected.length;
+        updateProgress();
 
         for (const cb of selected) {
             const { ip, table, id } = cb.dataset;
+            console.log(`Iniciando escaneo para ${ip}...`);
             const rowElem = document.getElementById(`row-${table}-${id}`);
             const statusCell = rowElem.querySelector('.status-cell');
             const commCell = rowElem.querySelector('.community-cell');
@@ -593,42 +745,89 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (resPre.success && !resPre.online) {
                     statusCell.innerHTML = '<span class="status-badge badge-offline">Offline</span>';
                     commCell.innerHTML = '<small class="text-muted italic">Timeout</small>';
-                    completed++;
-                    updateProgress();
-                    continue;
+                    tempResults.push({ ip, table, id, status: 'OFFLINE', community: null });
+                } else {
+                    statusCell.innerHTML = '<span class="status-badge badge-pending text-primary"><i class="fas fa-key fa-spin mr-1"></i> SNMP...</span>';
+                    let found = false;
+                    for (const c of scanData.communities) {
+                        const fd = new FormData();
+                        fd.append('action', 'test_single_snmp');
+                        fd.append('ip', ip);
+                        fd.append('community', c.community);
+                        fd.append('csrf_token', csrfToken);
+
+                        const r = await fetch('api_action.php', { method: 'POST', body: fd });
+                        const res = await r.json();
+
+                        if (res.status === 'OK') {
+                            statusCell.innerHTML = '<span class="status-badge badge-success-snmp">ÉXITO</span>';
+                            commCell.innerHTML = `<code class="bg-success text-white p-1 rounded px-2" style="font-size:0.7rem;">${c.community}</code>`;
+                            
+                            const upCount = res.interfaces ? res.interfaces.length : 0;
+                            const upList = res.interfaces ? res.interfaces.join(', ') : '';
+                            const intCell = rowElem.children[7];
+                            if (intCell) {
+                                intCell.innerHTML = upCount > 0 ? `<span class="badge badge-pill badge-info pointer" title="${upList}">${upCount}</span>` : '<span class="text-muted">-</span>';
+                            }
+
+                            tempResults.push({ 
+                                ip, table, id, community: c.community,
+                                interfaces: res.interfaces || [],
+                                status: 'SUCCESS'
+                            });
+                            successCount++;
+                            found = true;
+                            rowElem.classList.add('bg-success-light');
+                            break;
+                        }
+                    }
+
+                    if (!found) {
+                        statusCell.innerHTML = '<span class="status-badge badge-fail-snmp">FALLO</span>';
+                        commCell.innerHTML = '<small class="text-danger">Rechazo</small>';
+                        tempResults.push({ ip, table, id, status: 'FAILED', community: null });
+                    }
                 }
-            } catch (e) {}
-
-            statusCell.innerHTML = '<span class="status-badge badge-pending text-primary"><i class="fas fa-key fa-spin mr-1"></i> SNMP...</span>';
-            let found = false;
-            for (const c of scanData.communities) {
-                const fd = new FormData();
-                fd.append('action', 'test_single_snmp');
-                fd.append('ip', ip);
-                fd.append('community', c.community);
-                fd.append('csrf_token', csrfToken);
-
-                const r = await fetch('api_action.php', { method: 'POST', body: fd });
-                const res = await r.json();
-
-                if (res.status === 'OK') {
-                    statusCell.innerHTML = '<span class="status-badge badge-success-snmp">ÉXITO</span>';
-                    commCell.innerHTML = `<code class="bg-success text-white p-1 rounded px-2" style="font-size:0.7rem;">${c.community}</code>`;
-                    tempResults.push({ ip, table, id, community: c.community });
-                    successCount++;
-                    found = true;
-                    rowElem.classList.add('bg-success-light');
-                    break;
-                }
-            }
-
-            if (!found) {
-                statusCell.innerHTML = '<span class="status-badge badge-fail-snmp">FALLO</span>';
-                commCell.innerHTML = '<small class="text-danger">Rehuso</small>';
+            } catch (e) {
+                console.error(`Error en IP ${ip}:`, e);
             }
 
             completed++;
             updateProgress();
+
+            // Autocommit individual result con await para garantizar la persistencia
+            const lastResult = tempResults[tempResults.length - 1];
+            if (lastResult) {
+                console.log(`Persistiendo datos para ${lastResult.ip}...`);
+                const fdCommit = new FormData();
+                fdCommit.append('action', 'commit_snmp_results');
+                fdCommit.append('results', JSON.stringify([lastResult]));
+                fdCommit.append('csrf_token', csrfToken);
+                try {
+                    const rCommit = await fetch('api_action.php', { method: 'POST', body: fdCommit });
+                    const resCommit = await rCommit.json();
+                    if (!resCommit.success) {
+                        toastr.warning(`No se pudo persistir la IP ${lastResult.ip}: ${resCommit.error}`);
+                    }
+                } catch(err) {
+                    console.error("Error persistiendo IP: " + lastResult.ip, err);
+                }
+            }
+        }
+
+        scanBtn.disabled = false;
+        scanBtn.innerHTML = oldHtml;
+        if (tempResults.length > 0) {
+            document.getElementById('btnCommitResults').disabled = false;
+            Swal.fire({
+                title: 'Escaneo Completado',
+                text: `Se procesaron ${tempResults.length} equipos. Los resultados han sido persistidos automáticamente.`,
+                icon: 'success',
+                timer: 3000
+            });
+            setTimeout(loadScanData, 1000);
+        } else {
+            Swal.fire('Escaneo Finalizado', 'No se procesaron equipos.', 'info');
         }
 
         function updateProgress() {
@@ -637,16 +836,6 @@ document.addEventListener('DOMContentLoaded', function() {
             progressText.innerText = `Escaneando: ${completed} de ${total} equipos`;
             progressStat.innerText = `${successCount} Éxitos`;
         }
-
-        this.disabled = false;
-        this.innerHTML = oldHtml;
-        document.getElementById('btnCommitResults').disabled = (tempResults.length === 0);
-        
-        Swal.fire({
-            title: 'Escaneo Finalizado',
-            text: `Se validaron ${successCount} equipos exitosamente. Haz clic en "Persistir Datos" para guardar los cambios.`,
-            icon: 'success'
-        });
     };
 
     document.getElementById('btnCommitResults').onclick = function() {

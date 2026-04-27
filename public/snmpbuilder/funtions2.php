@@ -33,6 +33,7 @@ function get_table_value($community, $server_ip, $oid)
 {
 	// table view
 	$rowse = array();
+	$headers = array('Message');
 	if ($server_ip =="")
 	{
 		$rowse[0] = array("No server ip.");
@@ -60,7 +61,8 @@ function get_oid_value($community, $server_ip, $oid, $idx)
 {	
 	if (!$server_ip){
 		$row = array('Missing server ip.','','');
-		$value = array('ret' => 0,'rowse' => $row);
+		$headers = array('Error', '', '');
+		$value = array('ret' => 0, 'headers' => $headers, 'rowse' => $row);
 		return ($value);
 	}
 	

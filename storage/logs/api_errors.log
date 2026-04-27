@@ -699,3 +699,282 @@ Stack trace:
 [17-Apr-2026 13:17:18 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/www/html/VILASECA/CMDBPRnew/storage/sessions) in /var/www/html/VILASECA/CMDBPRnew/src/auth.php on line 7
 [17-Apr-2026 13:17:18 America/Santiago] PHP Warning:  session_start(): Session data file is not created by your uid in /var/www/html/VILASECA/CMDBPRnew/public/login.php on line 6
 [17-Apr-2026 13:17:18 America/Santiago] PHP Warning:  session_start(): Failed to read session data: files (path: /var/www/html/VILASECA/CMDBPRnew/storage/sessions) in /var/www/html/VILASECA/CMDBPRnew/public/login.php on line 6
+[17-Apr-2026 17:28:43 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php:9
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php on line 9
+[17-Apr-2026 17:28:43 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php:9
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php on line 9
+[17-Apr-2026 17:28:43 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php:9
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php on line 9
+[17-Apr-2026 17:28:43 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php:9
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php on line 9
+[17-Apr-2026 17:30:10 America/Santiago] PHP Warning:  Undefined variable $pdo in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php on line 18
+[17-Apr-2026 17:30:10 America/Santiago] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php:18
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php on line 18
+[17-Apr-2026 17:30:34 America/Santiago] PHP Warning:  Undefined variable $pdo in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php on line 18
+[17-Apr-2026 17:30:34 America/Santiago] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php:18
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php on line 18
+[17-Apr-2026 17:31:29 America/Santiago] PHP Warning:  Undefined variable $pdo in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php on line 18
+[17-Apr-2026 17:31:29 America/Santiago] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php:18
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php on line 18
+[17-Apr-2026 17:40:26 America/Santiago] PHP Warning:  Undefined variable $pdo in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php on line 18
+[17-Apr-2026 17:40:26 America/Santiago] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php:18
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/VILASECA/CMDBPRnew/public/api_zabbix.php on line 18
+[17-Apr-2026 18:05:36 America/Santiago] Iniciando guardado de configuración Zabbix...
+[17-Apr-2026 18:05:36 America/Santiago] Tablas deshabilitadas temporalmente.
+[17-Apr-2026 18:05:36 America/Santiago] Tabla habilitada: sheet_ap
+[17-Apr-2026 18:05:36 America/Santiago] Tabla habilitada: sheet_equipos
+[17-Apr-2026 18:05:36 America/Santiago] Tabla habilitada: sheet_firewall
+[17-Apr-2026 18:05:36 America/Santiago] Tabla habilitada: sheet_servers_virtuales
+[17-Apr-2026 18:05:36 America/Santiago] Tabla habilitada: sheet_ups
+[17-Apr-2026 18:05:36 America/Santiago] Actualizando Zabbix API Config: URL=http://172.32.1.50/zabbix/api_jsonrpc.php
+[17-Apr-2026 18:05:36 America/Santiago] Transacción de configuración completada con éxito.
+[17-Apr-2026 18:05:47 America/Santiago] Iniciando guardado de configuración Zabbix...
+[17-Apr-2026 18:05:47 America/Santiago] Tablas deshabilitadas temporalmente.
+[17-Apr-2026 18:05:47 America/Santiago] Tabla habilitada: sheet_ap
+[17-Apr-2026 18:05:47 America/Santiago] Tabla habilitada: sheet_equipos
+[17-Apr-2026 18:05:47 America/Santiago] Tabla habilitada: sheet_firewall
+[17-Apr-2026 18:05:47 America/Santiago] Tabla habilitada: sheet_servers_virtuales
+[17-Apr-2026 18:05:47 America/Santiago] Tabla habilitada: sheet_ups
+[17-Apr-2026 18:05:47 America/Santiago] Actualizando Zabbix API Config: URL=http://172.32.1.50/zabbix/api_jsonrpc.php
+[17-Apr-2026 18:05:47 America/Santiago] Transacción de configuración completada con éxito.
+[17-Apr-2026 18:10:51 America/Santiago] Acción 'get_cmdb_data_for_zabbix' iniciada. Tablas solicitadas: sheet_equipos
+[17-Apr-2026 18:10:51 America/Santiago] Consultando tabla 'sheet_equipos': Se encontraron 155 filas.
+[23-Apr-2026 11:46:12 America/Santiago] PHP Warning:  Undefined variable $viewtype in /var/www/html/VILASECA/CMDBPRnew/public/snmpbuilder/value_oid.php on line 56
+[23-Apr-2026 11:46:27 America/Santiago] PHP Warning:  Undefined variable $viewtype in /var/www/html/VILASECA/CMDBPRnew/public/snmpbuilder/value_oid.php on line 56
+[23-Apr-2026 11:46:42 America/Santiago] PHP Warning:  Undefined variable $viewtype in /var/www/html/VILASECA/CMDBPRnew/public/snmpbuilder/value_oid.php on line 56
+[23-Apr-2026 11:46:43 America/Santiago] PHP Warning:  Undefined variable $viewtype in /var/www/html/VILASECA/CMDBPRnew/public/snmpbuilder/value_oid.php on line 56
+[23-Apr-2026 11:46:43 America/Santiago] PHP Warning:  Undefined variable $viewtype in /var/www/html/VILASECA/CMDBPRnew/public/snmpbuilder/value_oid.php on line 56
+[23-Apr-2026 11:46:45 America/Santiago] PHP Warning:  Undefined variable $viewtype in /var/www/html/VILASECA/CMDBPRnew/public/snmpbuilder/value_oid.php on line 56
+[23-Apr-2026 11:46:46 America/Santiago] PHP Warning:  Undefined variable $viewtype in /var/www/html/VILASECA/CMDBPRnew/public/snmpbuilder/value_oid.php on line 56
+[23-Apr-2026 11:47:01 America/Santiago] PHP Warning:  Undefined variable $viewtype in /var/www/html/VILASECA/CMDBPRnew/public/snmpbuilder/value_oid.php on line 56
+[24-Apr-2026 13:19:47 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:19:47 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:19:47 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:19:47 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:19:47 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:19:47 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:19:47 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:19:47 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:19:47 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:19:47 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:19:47 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:19:47 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:19:47 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:19:47 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:19:47 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:19:47 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[24-Apr-2026 13:21:03 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/api_costs.php on line 114
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:16:39 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:17:15 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:19:03 America/Santiago] PHP Warning:  preg_match(): Compilation failed: escape sequence is invalid in character class at offset 10 in /var/www/html/VILASECA/CMDBPRnew/public/api_storage.php on line 88
+[26-Apr-2026 18:43:16 America/Santiago] Error en commit_snmp_results: No hay datos para guardar.
+[26-Apr-2026 18:43:30 America/Santiago] Intentando guardar SNMP: IP=1.2.3.4 Table=sheet_test ID=999
+[26-Apr-2026 18:43:30 America/Santiago] SNMP Commit exitoso. Filas afectadas: 1
+[26-Apr-2026 18:51:31 America/Santiago] Intentando guardar SNMP: IP=10.0.1.10 Table=sheet_ap ID=292
+[26-Apr-2026 18:51:31 America/Santiago] Error en commit_snmp_results: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'community_ok' cannot be null
+[26-Apr-2026 18:51:33 America/Santiago] Intentando guardar SNMP: IP=10.0.1.101 Table=sheet_ap ID=288
+[26-Apr-2026 18:51:33 America/Santiago] Error en commit_snmp_results: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'community_ok' cannot be null
+[26-Apr-2026 18:52:26 America/Santiago] Intentando guardar SNMP: IP=10.0.1.10 Table=sheet_ap ID=292
+[26-Apr-2026 18:52:26 America/Santiago] Error en commit_snmp_results: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'community_ok' cannot be null
+[26-Apr-2026 18:52:27 America/Santiago] Intentando guardar SNMP: IP=10.0.1.101 Table=sheet_ap ID=288
+[26-Apr-2026 18:52:28 America/Santiago] Error en commit_snmp_results: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'community_ok' cannot be null
+[26-Apr-2026 18:54:30 America/Santiago] Intentando guardar SNMP: IP=10.0.1.10 Table=sheet_ap ID=292
+[26-Apr-2026 18:54:30 America/Santiago] SNMP Commit exitoso. Filas afectadas: 1
+[26-Apr-2026 18:54:31 America/Santiago] Intentando guardar SNMP: IP=10.0.1.101 Table=sheet_ap ID=288
+[26-Apr-2026 18:54:31 America/Santiago] SNMP Commit exitoso. Filas afectadas: 1
+[26-Apr-2026 18:54:57 America/Santiago] Intentando guardar SNMP: IP=10.0.1.10 Table=sheet_ap ID=292
+[26-Apr-2026 18:54:57 America/Santiago] SNMP Commit exitoso. Filas afectadas: 2
+[26-Apr-2026 18:54:58 America/Santiago] Intentando guardar SNMP: IP=10.0.1.101 Table=sheet_ap ID=288
+[26-Apr-2026 18:54:58 America/Santiago] SNMP Commit exitoso. Filas afectadas: 2
+[26-Apr-2026 18:54:59 America/Santiago] Intentando guardar SNMP: IP=10.0.1.101 Table=sheet_ap ID=499
+[26-Apr-2026 18:54:59 America/Santiago] SNMP Commit exitoso. Filas afectadas: 1
+[26-Apr-2026 18:55:00 America/Santiago] Intentando guardar SNMP: IP=10.0.1.102 Table=sheet_ap ID=299
+[26-Apr-2026 18:55:00 America/Santiago] SNMP Commit exitoso. Filas afectadas: 1
+[26-Apr-2026 18:55:01 America/Santiago] Intentando guardar SNMP: IP=10.0.1.105 Table=sheet_ap ID=316
+[26-Apr-2026 18:55:01 America/Santiago] SNMP Commit exitoso. Filas afectadas: 1
+[26-Apr-2026 18:55:02 America/Santiago] Intentando guardar SNMP: IP=10.0.1.107 Table=sheet_ap ID=307
+[26-Apr-2026 18:55:02 America/Santiago] SNMP Commit exitoso. Filas afectadas: 1
+[26-Apr-2026 18:55:03 America/Santiago] Intentando guardar SNMP: IP=10.0.1.108 Table=sheet_ap ID=490
+[26-Apr-2026 18:55:03 America/Santiago] SNMP Commit exitoso. Filas afectadas: 1
+[26-Apr-2026 18:55:04 America/Santiago] Intentando guardar SNMP: IP=10.0.1.109 Table=sheet_ap ID=312
+[26-Apr-2026 18:55:04 America/Santiago] SNMP Commit exitoso. Filas afectadas: 1
+[26-Apr-2026 18:55:05 America/Santiago] Intentando guardar SNMP: IP=10.0.1.110 Table=sheet_ap ID=313
+[26-Apr-2026 18:55:05 America/Santiago] SNMP Commit exitoso. Filas afectadas: 1
+[26-Apr-2026 18:55:06 America/Santiago] Intentando guardar SNMP: IP=10.0.1.111 Table=sheet_ap ID=314
+[26-Apr-2026 18:55:06 America/Santiago] SNMP Commit exitoso. Filas afectadas: 1
+[26-Apr-2026 18:55:08 America/Santiago] Intentando guardar SNMP: IP=10.0.1.112 Table=sheet_ap ID=315
+[26-Apr-2026 18:55:08 America/Santiago] SNMP Commit exitoso. Filas afectadas: 1
+[26-Apr-2026 18:55:09 America/Santiago] Intentando guardar SNMP: IP=10.0.1.113 Table=sheet_ap ID=311
+[26-Apr-2026 18:55:09 America/Santiago] SNMP Commit exitoso. Filas afectadas: 1
+[26-Apr-2026 18:55:10 America/Santiago] Intentando guardar SNMP: IP=10.0.1.114 Table=sheet_ap ID=492
+[26-Apr-2026 18:55:10 America/Santiago] SNMP Commit exitoso. Filas afectadas: 1
+[26-Apr-2026 18:55:11 America/Santiago] Intentando guardar SNMP: IP=10.0.1.117 Table=sheet_ap ID=317
+[26-Apr-2026 18:55:11 America/Santiago] SNMP Commit exitoso. Filas afectadas: 1
+[26-Apr-2026 18:55:12 America/Santiago] Intentando guardar SNMP: IP=10.0.1.119 Table=sheet_ap ID=289
+[26-Apr-2026 18:55:12 America/Santiago] SNMP Commit exitoso. Filas afectadas: 1

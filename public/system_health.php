@@ -132,6 +132,52 @@ include 'partials/header.php';
     </div>
 </div>
 
+<!-- DETAILED TABLE ANALYSIS -->
+<div class="row">
+    <div class="col-12">
+        <div class="card card-outline card-teal">
+            <div class="card-header">
+                <h3 class="card-title"><i class="fas fa-table mr-2"></i> Análisis Detallado de Tablas Maestras</h3>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-sm table-hover mb-0">
+                    <thead class="bg-light">
+                        <tr>
+                            <th>Nombre de Tabla</th>
+                            <th>Propósito / Descripción</th>
+                            <th class="text-center" style="width: 150px">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if (isset($audit['database']['table_analysis'])): ?>
+                            <?php foreach ($audit['database']['table_analysis'] as $tableName => $info): ?>
+                            <tr>
+                                <td class="align-middle"><code><?php echo $tableName; ?></code></td>
+                                <td class="align-middle text-muted small"><?php echo $info['description']; ?></td>
+                                <td class="text-center align-middle">
+                                    <?php if ($info['exists']): ?>
+                                        <span class="badge badge-success px-3"><i class="fas fa-check mr-1"></i> CREADA</span>
+                                    <?php else: ?>
+                                        <span class="badge badge-danger px-3"><i class="fas fa-exclamation-circle mr-1"></i> FALTANTE</span>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="3" class="text-center p-4">
+                                    <i class="fas fa-database text-muted mb-2 fa-2x"></i><br>
+                                    No se pudo realizar el análisis de tablas (Sin conexión a BD).
+                                </td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- MIGRATION VERDICT -->
 <div class="row">
     <div class="col-12">

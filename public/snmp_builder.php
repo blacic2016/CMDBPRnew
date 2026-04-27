@@ -11,6 +11,8 @@ $page_title = 'SNMP Builder';
 include __DIR__ . '/partials/header.php';
 ?>
 
+<div class="container-fluid py-4">
+
 <!-- Ajustamos el estilo para que el iframe ocupe todo el espacio disponible -->
 <style>
     .snmp-container {
@@ -28,6 +30,7 @@ include __DIR__ . '/partials/header.php';
         </div>
     </div>
 </div>
+</div> <!-- Cierre container-fluid py-4 -->
 
 <?php 
 // footer.php cierra el container, section, y content-wrapper

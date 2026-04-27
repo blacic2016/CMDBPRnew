@@ -1,0 +1,210 @@
+TRAP-DESTINATION-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+	OBJECT-TYPE
+		FROM RFC-1212
+	enterprises
+         FROM RFC1155-SMI
+	TAddress, 
+	TDomain, 
+	RowStatus
+		FROM SNMPv2-TC
+	MODULE-IDENTITY
+		FROM SNMPv2-SMI;
+
+hp MODULE-IDENTITY
+        LAST-UPDATED "9712280000Z"
+        ORGANIZATION "HP"
+        CONTACT-INFO "Me"
+        DESCRIPTION
+                "Blah Blah Blah"
+        ::= { enterprises 11}
+--
+-- Initial nodes from enterprises down to the hpicfBasicTraps node
+-- 
+
+nm 			OBJECT IDENTIFIER ::= { hp  		 2	}
+icf 			OBJECT IDENTIFIER ::= { nm  		14	}
+hpicfObjects 		OBJECT IDENTIFIER ::= { icf  		11	}
+hpicfCommon 		OBJECT IDENTIFIER ::= { hpicfObjects 1 	}
+hpicfBasic 		OBJECT IDENTIFIER ::= { hpicfCommon  4 	}
+hpicfBasicTraps 	OBJECT IDENTIFIER ::= { hpicfBasic  10 	}
+
+--
+-- The Trap Destination Table objects
+--
+
+hpicfTrapDestTable OBJECT-TYPE
+    SYNTAX  SEQUENCE OF HpicfTrapDestEntry
+    ACCESS  not-accessible
+    STATUS  mandatory
+    DESCRIPTION
+           "A table of trap destinations."
+    ::= { hpicfBasicTraps  2 }
+
+hpicfTrapDestEntry OBJECT-TYPE
+    SYNTAX  HpicfTrapDestEntry
+    ACCESS  not-accessible
+    STATUS  mandatory
+    DESCRIPTION
+           "An entry in the table, containing information about
+                   a single trap destination."
+    INDEX   { hpicfTrapDestIndex }
+    ::= { hpicfTrapDestTable  1 }
+
+HpicfTrapDestEntry ::=
+    SEQUENCE {
+    hpicfTrapDestIndex
+        INTEGER,
+
+    hpicfTrapDestVersion
+        INTEGER,
+
+    hpicfTrapDestCommunity
+        OCTET STRING,
+
+    hpicfTrapDestTDomain
+        TAddress,
+
+    hpicfTrapDestTAddress
+        TAddress,
+
+    hpicfTrapDestFilter
+        INTEGER,
+
+    hpicfTrapDestStatus
+        RowStatus
+    }
+
+hpicfTrapDestIndex OBJECT-TYPE
+    SYNTAX  INTEGER (1..65535)
+    ACCESS  read-only 
+    STATUS  mandatory
+    DESCRIPTION
+           "A value that uniquely identifies this 
+                   hpicfTrapDestEntry."
+    ::= { hpicfTrapDestEntry  1 }
+
+hpicfTrapDestVersion OBJECT-TYPE
+    SYNTAX  INTEGER {
+                 snmpv1(1),
+                 snmpv2c(2)
+               }
+    ACCESS  read-write
+    STATUS  mandatory
+    DESCRIPTION
+           "This object is used to indicate what version of
+                   SNMP should be used to send the trap to this
+                   destination.  When the value of this object is
+                   'snmpv1', the trap will be sent to this destination
+                   as a Trap-PDU using an SNMPv1 message wrapper, as
+                   specified in RFC 1157.  When the value of this
+                   object is 'snmpv2c', the trap will be sent to this
+                   destination as a SNMPv2-Trap-PDU using the
+                   Community-based SNMPv2 framework as specified in
+                   RFC 1901.
+
+                   An agent should reject an attempt to set an instance
+                   of this object to a value representing a version of
+                   the SNMP framework that is not supported by that
+                   agent."
+    DEFVAL  { snmpv1 }
+    ::= { hpicfTrapDestEntry  2 }
+
+hpicfTrapDestCommunity OBJECT-TYPE
+    SYNTAX  OCTET STRING (SIZE(1..32))
+    ACCESS  read-write
+    STATUS  mandatory
+    DESCRIPTION
+           "A community to which this destination address
+                   belongs.
+
+                   This entry is associated with any entry in the RMON
+                   MIB's eventTable whose value of eventCommunity is
+                   equal to the value of this object.  Every time an
+                   associated event entry sends a trap due to an event,
+                   that trap will be sent to each address in the
+                   hpicfTrapDestTable with a hpicfTrapDestCommunity
+                   equal to eventCommunity.
+
+                   This object may not be modified if the associated
+                   hpicfTrapDestStatus object is equal to active(1)."
+    ::= { hpicfTrapDestEntry  3 }
+
+hpicfTrapDestTDomain OBJECT-TYPE
+    SYNTAX  OBJECT IDENTIFIER 
+    ACCESS  read-write
+    STATUS  mandatory
+    DESCRIPTION
+           "The transport domain to use to send this trap.
+
+                   This object may not be modified if the associated
+                   hpicfTrapDestStatus object is equal to active(1)."
+    ::= { hpicfTrapDestEntry  4 }
+
+hpicfTrapDestTAddress OBJECT-TYPE
+    SYNTAX  TAddress
+    ACCESS  read-write
+    STATUS  mandatory
+    DESCRIPTION
+           "The address to send traps to on behalf of this
+                   entry, formatted according to the value of the
+                   corresponding instance of the hpicfTrapDestTDomain
+                   object.
+
+                   This object may not be modified if the associated
+                   hpicfTrapDestStatus object is equal to active(1)."
+    ::= { hpicfTrapDestEntry  5 }
+
+hpicfTrapDestFilter OBJECT-TYPE
+    SYNTAX  INTEGER (0..255)
+    ACCESS  read-write
+    STATUS  mandatory
+    DESCRIPTION
+           "The type of events that will be sent to this trap
+                   receiver.  This filter is mainly used for limiting
+                   'system event' traps that will be sent to a specific
+                   receiver.
+
+                   This filter is specified as a sum of values, where
+                   each value specifies a classification of traps that
+                   will be sent to this trap receiver.  The value for a
+                   particular trap class C is computed as 2 raised to
+                   a value representing C.  The trap classes are
+                   defined as follows:
+
+                   C (bit#)   Trap class
+                   -----------------------------------------------
+                   0          SNMP traps
+                   1          informational events
+                   2          warning events
+                   3          critical events
+                   4          debug events (HP internal use only)
+
+                   For example, to specify that this trap receiver
+                   should recieve SNMP traps and critical event traps,
+                   this object should be set to a value of 9 (2^0 +
+                   2^3).
+
+                   Note that some agents may not support
+                   trap filtering.  Those agents may either implement
+                   this object as read-only, or with a restricted
+                   write syntax."
+    DEFVAL  { 1 }
+    ::= { hpicfTrapDestEntry  6 }
+
+hpicfTrapDestStatus OBJECT-TYPE
+    SYNTAX  RowStatus
+    ACCESS  read-write
+    STATUS  mandatory
+    DESCRIPTION
+           "The status of this trap destination entry.
+
+                   An entry may not exist in the active state unless
+                   all of the objects in the entry are consistent.  In
+                   particular, the value of hpicfTrapDestAddress must
+                   have a legal length and value for the protocol
+                   specified by hpicfTrapDestProtocol."
+    ::= { hpicfTrapDestEntry  7 }
+
+END

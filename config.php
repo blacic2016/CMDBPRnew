@@ -12,6 +12,9 @@ define('UPLOAD_DIR_PUBLIC', ROOT_PATH . '/public/uploads');
 // Token para acceso a salud y remediación sin login (Acceso Técnico)
 define('SECURITY_TOKEN', 'vls_tech_2026');
 
+// Ruta portable de MIBs para el SNMP Builder
+define('SNMP_MIBS_PATH', ROOT_PATH . '/public/snmpbuilder/mibs');
+
 // 2. Configuración de Errores (Ahora ya existe STORAGE_DIR)
 ini_set('display_errors', 1); // Cambiar a 1 para debugear el NS_ERROR si persiste
 ini_set('log_errors', 1);
@@ -97,11 +100,12 @@ if (php_sapi_name() !== 'cli') {
 
     // CSP ajustada para AdminLTE/CDNs y Topología
     $csp = "default-src 'self'; " .
-           "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com; " .
-           "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; " .
+           "script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com https://cdn.datatables.net; " .
+           "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://cdn.datatables.net; " .
            "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; " .
-           "img-src 'self' data: https://img.icons8.com; " .
-           "connect-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com http://172.32.1.50; " .
+           "img-src 'self' data: https://img.icons8.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; " .
+           "connect-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com https://cdn.datatables.net http://172.32.1.50 http://172.32.1.51; " .
+           "worker-src 'self' blob:; " .
            "frame-ancestors 'self';";
     header("Content-Security-Policy: " . $csp);
 

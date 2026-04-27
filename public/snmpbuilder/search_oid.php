@@ -1,5 +1,6 @@
 <?php
-define('MIBS_ALL_PATH', '/var/www/html/snmp/mibs:/var/lib/mibs/ietf');
+require_once __DIR__ . '/../../config.php';
+define('MIBS_ALL_PATH', SNMP_MIBS_PATH . ':/usr/share/snmp/mibs:/var/lib/mibs/ietf');
 
 $oid = isset($_GET['oid']) ? filter_var($_GET['oid'], FILTER_SANITIZE_STRING) : '';
 

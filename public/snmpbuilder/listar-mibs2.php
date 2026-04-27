@@ -1,10 +1,11 @@
 <?php
 require_once('funtions2.php');
-define('MIBS_ALL_PATH', '/var/www/html/snmp/mibs:/var/lib/mibs/ietf');
+require_once __DIR__ . '/../../config.php';
+define('MIBS_ALL_PATH', SNMP_MIBS_PATH . ':/usr/share/snmp/mibs:/var/lib/mibs/ietf');
 $path=filter_var($_GET['path']);
 
 
-$filename="/var/www/html/snmp/".$path;
+$filename = realpath(SNMP_MIBS_PATH . '/../') . "/" . $path;
 
 $mib = escapeshellcmd($filename);
 

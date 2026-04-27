@@ -23,7 +23,8 @@
 ?>
 <?php
 
-define('MIBS_ALL_PATH', '/home/zabbix/public_html/snmp_builder/mibs:/usr/share/snmp/mibs');
+require_once __DIR__ . '/../../../config.php';
+define('MIBS_ALL_PATH', SNMP_MIBS_PATH . ':/usr/share/snmp/mibs');
 
 require_once('include/config.inc.php');
 
@@ -124,10 +125,15 @@ include_once('include/page_header.php');
 	$templateid = 0;
 	if (isset($_REQUEST['templateid']))
 		$templateid = $_REQUEST['templateid'];
+
+	$oids = '';
 	if (isset($_REQUEST['oids']))
 		$oids = $_REQUEST['oids'];
+
+	$viewtype = 0;
 	if (isset($_REQUEST['viewtype']))
-		$viewtype =  $_REQUEST['viewtype'];
+		$viewtype = $_REQUEST['viewtype'];
+
 		
 ////////////////////////////////////////////////
 

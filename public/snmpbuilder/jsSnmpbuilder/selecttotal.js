@@ -1,5 +1,5 @@
 function tree22 () {
-fetch('listar-mibs.php') // Aseg�rate de que la URL sea la correcta
+fetch('listar-mibs.php') // Asegúrate de que la URL sea la correcta
         .then(response => response.text())
         .then(data => {
             // document.getElementById('mib').innerHTML = data;
@@ -88,12 +88,12 @@ function treeoidvalue(data,iphost,snmpversion,comunidad) {
                 document.getElementById('oid_discription').innerHTML = response.info;
                 let oidText = '';
                 if (response.value) {
-                    if (response.value.row && response.value.row[0]) {
-                        oidText = '<div class="zabbix-tag zabbix-tag-blue"><strong><i class="fas fa-microchip mr-2"></i> OID Seleccionado:</strong> <br><span class="text-dark">' + response.value.row[0] + '</span></div>';
+                    if (response.value.rowse && response.value.rowse[0]) {
+                        oidText = '<div class="zabbix-tag zabbix-tag-blue"><strong><i class="fas fa-microchip mr-2"></i> OID Seleccionado:</strong> <br><span class="text-dark">' + response.value.rowse[0] + '</span></div>';
                     } else if (response.value.rowse && response.value.rowse.length > 0) {
                         oidText = '<div class="zabbix-tag zabbix-tag-blue"><strong><i class="fas fa-table mr-2"></i> OID de Tabla:</strong> <br><span class="text-dark">' + data + '</span></div>';
                     } else if (data) {
-                        oidText = '<div class="zabbix-tag zabbix-tag-blue"><strong><i class="fas fa-tag mr-2"></i> OID Mnemónico:</strong> <br><span class="text-dark">' + data + '</span></div>';
+                        oidText = '<div class="zabbix-tag zabbix-tag-blue"><strong><i class="fas fa-tag mr-2"></i> OID MnemÃ³nico:</strong> <br><span class="text-dark">' + data + '</span></div>';
                     }
                 }
                 document.getElementById('oidlist').innerHTML = oidText;
@@ -169,7 +169,7 @@ $('#jstree_demo').on("click", function () {
 
 function cargarOpcionesMib() {
    // const mibSelect = document.getElementById('mib');
-    fetch('listar-archivos22.php') // Aseg�rate de que la URL sea la correcta
+    fetch('listar-archivos22.php') // Asegúrate de que la URL sea la correcta
         .then(response => response.text())
         .then(data => {
 		//console.log(data);
@@ -181,8 +181,8 @@ function cargarOpcionesMib() {
             });
 			
 			document.getElementById('mib').addEventListener('change', function() {
-    // Aqu� puedes llamar a la funci�n que deseas ejecutar cuando se cambie la selecci�n
-    // Por ejemplo, puedes llamar a la funci�n cargarOpcionesMib() aqu� si deseas recargar las opciones al cambiar la selecci�n.
+    // Aquí puedes llamar a la función que deseas ejecutar cuando se cambie la selección
+    // Por ejemplo, puedes llamar a la función cargarOpcionesMib() aquí si deseas recargar las opciones al cambiar la selección.
     // cargarOpcionesMib();
 	const mibSelect = document.getElementById('mib');
 	console.log(mibSelect);
@@ -227,7 +227,7 @@ document.getElementById('oidview').innerHTML = "";
 			console.log(datatable);
             var data = datatable;
 
-            // Crear la tabla din�micamente
+            // Crear la tabla dinámicamente
             var tabla = $('<table>').attr('id', 'miTabla');
             var thead = $('<thead>').appendTo(tabla);
             var tbody = $('<tbody>').appendTo(tabla);
@@ -318,13 +318,15 @@ function Tablaoid(datatable) {
 
     $("#oidview").append(tabla);
 
-    // Initialize Dynatable
-    $("#miTabla").dynatable({
-        features: {
-            paginate: false,
-            search: false     
-        }
-    });
+    // Initialize Dynatable only if we have headers to avoid errors
+    if ($("#miTabla th").length > 0) {
+        $("#miTabla").dynatable({
+            features: {
+                paginate: false,
+                search: false     
+            }
+        });
+    }
 
     // Pure DOM-based delegated tracking
     $("#miTabla").on("click", "tbody td", function () {
@@ -348,7 +350,7 @@ function Tablaoid(datatable) {
     function handleCellClick(dato, fullOid, headerTitle) {
         console.log("Celda clickeada: " + dato);
         
-        document.getElementById("oidlist").innerHTML = '<div class="text-center mt-3 text-secondary"><i class="fas fa-spinner fa-spin"></i> Traducción OID (snmptranslate)...</div>';
+        document.getElementById("oidlist").innerHTML = '<div class="text-center mt-3 text-secondary"><i class="fas fa-spinner fa-spin"></i> TraducciÃ³n OID (snmptranslate)...</div>';
         
         $.ajax({
             url: "translate_oid.php",
@@ -356,16 +358,16 @@ function Tablaoid(datatable) {
             dataType: "json",
             success: function(res) {
                 let oidText = '<div class="zabbix-tag zabbix-tag-red">' +
-                              '<strong><i class="fas fa-hand-pointer mr-2"></i> Selección OID (SNMP-TRANSLATE):</strong><hr class="my-1" style="border-color:#bac6cb;">' +
+                              '<strong><i class="fas fa-hand-pointer mr-2"></i> SelecciÃ³n OID (SNMP-TRANSLATE):</strong><hr class="my-1" style="border-color:#bac6cb;">' +
                               '<div class="text-dark" style="user-select:all; font-size: 0.85em; font-weight:bold; margin-bottom: 5px; word-break: break-all;">Toda la OID: ' + res.fulltext + '</div>' +
-                              '<div class="text-primary" style="user-select:all; font-weight:bold; margin-bottom: 5px; word-break: break-all;">Numérico (1.3.6...): ' + res.numeric + '</div>' +
+                              '<div class="text-primary" style="user-select:all; font-weight:bold; margin-bottom: 5px; word-break: break-all;">NumÃ©rico (1.3.6...): ' + res.numeric + '</div>' +
                               '<div class="text-danger mt-2" style="font-size: 1.1em; font-weight:bold; background-color:#fce4e4; padding:5px; border-radius:3px;">Valor: ' + dato + '</div>' +
                               '</div>';
                 document.getElementById("oidlist").innerHTML = oidText;
             },
             error: function() {
                 let oidText = '<div class="zabbix-tag zabbix-tag-red">' +
-                              '<div class="text-dark" style="user-select:all; font-weight:bold; margin-bottom: 5px;">Mnemónico: ' + fullOid + '</div>' +
+                              '<div class="text-dark" style="user-select:all; font-weight:bold; margin-bottom: 5px;">MnemÃ³nico: ' + fullOid + '</div>' +
                               '<div class="text-danger mt-2" style="font-size: 1.1em; font-weight:bold; background-color:#fce4e4; padding:5px; border-radius:3px;">Valor: ' + dato + '</div>' +
                               '</div>';
                 document.getElementById("oidlist").innerHTML = oidText;
