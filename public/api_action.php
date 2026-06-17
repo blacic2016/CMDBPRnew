@@ -1414,7 +1414,13 @@ if ($action === 'get_snmp_scan_data') {
                     SELECT t.id, t.`$ip_col` as ip, " . ($name_col ? "t.`$name_col`" : "''") . " as name,
                            h.community_ok, h.last_success, h.interfaces_up_json, h.status
                     FROM `$t` t
-                    LEFT JOIN snmp_scan_results h ON h.ip = t.`$ip_col` AND h.table_source = '$t' AND h.row_id = t.id
+                    LEFT JOIN snmp_scan_results h ON h.ip = t.`$ip_col` 
+                        AND h.id = (
+                            SELECT h2.id FROM snmp_scan_results h2 
+                            WHERE h2.ip = t.`$ip_col` 
+                            ORDER BY (h2.table_source = '$t' AND h2.row_id = t.id) DESC, h2.last_success DESC 
+                            LIMIT 1
+                        )
                     WHERE t.`$ip_col` IS NOT NULL AND t.`$ip_col` != ''
                 ";
                 $rows = $pdo->query($sql)->fetchAll();

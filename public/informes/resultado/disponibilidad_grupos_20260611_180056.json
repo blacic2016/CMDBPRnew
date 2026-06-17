@@ -1,0 +1,133 @@
+{
+    "resumen_general": {
+        "total_grupos": 13,
+        "grupos_monitoreados": 0,
+        "promedio_ok": 100,
+        "promedio_problem": 0,
+        "fecha_inicio_analisis": "01-05-2026",
+        "fecha_fin_analisis": "31-05-2026",
+        "dias_analizados": null,
+        "tiempo_total_periodo_formateado": "30d 5h 59m 3s",
+        "tiempo_promedio_ok_estimado": "30d 5h 59m 3s",
+        "tiempo_promedio_problem_estimado": "0s"
+    },
+    "grupos": [
+        {
+            "groupid": "121",
+            "name": "00 SISTEMA SONDA REDES",
+            "total_hosts": 0,
+            "porcentaje_ok": 100,
+            "porcentaje_problem": 0,
+            "tiempo_ok_formateado": "30d 5h 59m 3s",
+            "tiempo_problem_formateado": "0s"
+        },
+        {
+            "groupid": "91",
+            "name": "01 SISTEMA SONDA VMWARE",
+            "total_hosts": 0,
+            "porcentaje_ok": 100,
+            "porcentaje_problem": 0,
+            "tiempo_ok_formateado": "30d 5h 59m 3s",
+            "tiempo_problem_formateado": "0s"
+        },
+        {
+            "groupid": "85",
+            "name": "02 SISTEMA SONDA STORAGE",
+            "total_hosts": 0,
+            "porcentaje_ok": 100,
+            "porcentaje_problem": 0,
+            "tiempo_ok_formateado": "30d 5h 59m 3s",
+            "tiempo_problem_formateado": "0s"
+        },
+        {
+            "groupid": "93",
+            "name": "03 SISTEMA SONDA GPF",
+            "total_hosts": 0,
+            "porcentaje_ok": 100,
+            "porcentaje_problem": 0,
+            "tiempo_ok_formateado": "30d 5h 59m 3s",
+            "tiempo_problem_formateado": "0s"
+        },
+        {
+            "groupid": "86",
+            "name": "04 SISTEMA SONDA DATACENTER",
+            "total_hosts": 0,
+            "porcentaje_ok": 100,
+            "porcentaje_problem": 0,
+            "tiempo_ok_formateado": "30d 5h 59m 3s",
+            "tiempo_problem_formateado": "0s"
+        },
+        {
+            "groupid": "79",
+            "name": "05 SISTEMA SONDA WIRELESS",
+            "total_hosts": 0,
+            "porcentaje_ok": 100,
+            "porcentaje_problem": 0,
+            "tiempo_ok_formateado": "30d 5h 59m 3s",
+            "tiempo_problem_formateado": "0s"
+        },
+        {
+            "groupid": "123",
+            "name": "05 SISTEMA SONDA WIRELESS GYE",
+            "total_hosts": 0,
+            "porcentaje_ok": 100,
+            "porcentaje_problem": 0,
+            "tiempo_ok_formateado": "30d 5h 59m 3s",
+            "tiempo_problem_formateado": "0s"
+        },
+        {
+            "groupid": "107",
+            "name": "06 SISTEMA SONDA BIOMETRICOS",
+            "total_hosts": 0,
+            "porcentaje_ok": 100,
+            "porcentaje_problem": 0,
+            "tiempo_ok_formateado": "30d 5h 59m 3s",
+            "tiempo_problem_formateado": "0s"
+        },
+        {
+            "groupid": "124",
+            "name": "06 SISTEMA SONDA CAMARAS",
+            "total_hosts": 0,
+            "porcentaje_ok": 100,
+            "porcentaje_problem": 0,
+            "tiempo_ok_formateado": "30d 5h 59m 3s",
+            "tiempo_problem_formateado": "0s"
+        },
+        {
+            "groupid": "72",
+            "name": "07 SISTEMA SONDA FIREWALL",
+            "total_hosts": 0,
+            "porcentaje_ok": 100,
+            "porcentaje_problem": 0,
+            "tiempo_ok_formateado": "30d 5h 59m 3s",
+            "tiempo_problem_formateado": "0s"
+        },
+        {
+            "groupid": "94",
+            "name": "08 SISTEMA SONDA ENLACES",
+            "total_hosts": 0,
+            "porcentaje_ok": 100,
+            "porcentaje_problem": 0,
+            "tiempo_ok_formateado": "30d 5h 59m 3s",
+            "tiempo_problem_formateado": "0s"
+        },
+        {
+            "groupid": "87",
+            "name": "10 SISTEMA SONDA IMPRESORAS",
+            "total_hosts": 0,
+            "porcentaje_ok": 100,
+            "porcentaje_problem": 0,
+            "tiempo_ok_formateado": "30d 5h 59m 3s",
+            "tiempo_problem_formateado": "0s"
+        },
+        {
+            "groupid": "114",
+            "name": "SONDA-DC/TELEFONIA (vm)",
+            "total_hosts": 0,
+            "porcentaje_ok": 100,
+            "porcentaje_problem": 0,
+            "tiempo_ok_formateado": "30d 5h 59m 3s",
+            "tiempo_problem_formateado": "0s"
+        }
+    ]
+}

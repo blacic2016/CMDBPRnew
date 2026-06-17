@@ -8,20 +8,14 @@ require_once __DIR__ . '/../partials/header.php';
 <style>
     /* Professional Light Theme Style */
     :root {
-        --page-bg: #f4f6f9;
-        --card-bg: #ffffff;
-        --accent-color: #007bff;
-        --text-main: #2b2b2b;
-        --text-muted: #6c757d;
-        --border-color: #dee2e6;
-        --table-header-bg: #f8f9fa;
+        --accent-color: var(--sonda-orange);
         --success-color: #28a745;
         --danger-color: #dc3545;
     }
 
     /* Force Light Mode if needed, otherwise respect AdminLTE */
-    body:not(.dark-mode) .content-wrapper { background: var(--page-bg); }
-    body:not(.dark-mode) .card { background: var(--card-bg); color: var(--text-main); }
+    .content-wrapper { background: var(--body-bg) !important; }
+    .card { background: var(--card-bg) !important; color: var(--text-color) !important; }
 
     .pricing-summary {
         background: #e7f3ff;
@@ -35,7 +29,7 @@ require_once __DIR__ . '/../partials/header.php';
     .pricing-summary p { margin: 0; color: var(--text-main); font-size: 1rem; font-weight: 600; }
 
     .filter-bar {
-        background: #fff;
+        background: var(--card-bg);
         border-radius: 8px;
         padding: 15px;
         margin-bottom: 20px;
@@ -43,10 +37,10 @@ require_once __DIR__ . '/../partials/header.php';
         box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
-    .cost-table { width: 100% !important; background: #fff; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; }
+    .cost-table { width: 100% !important; background: var(--table-bg); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; }
     .cost-table thead th { 
         background: var(--table-header-bg); 
-        color: var(--text-main) !important; 
+        color: var(--table-header-color) !important; 
         border-bottom: 2px solid var(--border-color);
         font-weight: 700; 
         font-size: 0.8rem; 
@@ -57,7 +51,7 @@ require_once __DIR__ . '/../partials/header.php';
         padding: 15px 10px; 
         vertical-align: top;
         border-bottom: 1px solid var(--border-color);
-        color: var(--text-main) !important;
+        color: var(--text-color) !important;
         font-size: 0.9rem;
     }
     
@@ -82,19 +76,20 @@ require_once __DIR__ . '/../partials/header.php';
     .form-control, 
     .select2-container--default .select2-selection--single,
     .select2-container--default .select2-selection--multiple {
-        border-color: var(--border-color) !important;
+        border-color: var(--input-border) !important;
         height: 42px !important;
         min-height: 42px !important;
         display: flex;
         align-items: center;
-        background-color: #fff !important;
+        background-color: var(--input-bg) !important;
         border-radius: 6px !important;
+        color: var(--input-text) !important;
     }
 
     .select2-container--default .select2-selection--single .select2-selection__rendered {
         line-height: 42px !important;
         padding-left: 12px !important;
-        color: var(--text-main) !important;
+        color: var(--input-text) !important;
     }
 
     .select2-container--default .select2-selection--single .select2-selection__arrow {

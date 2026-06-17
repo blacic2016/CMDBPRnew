@@ -240,7 +240,7 @@ function initializeDatabase()
         "import_logs" => "CREATE TABLE IF NOT EXISTS import_logs (id INT AUTO_INCREMENT PRIMARY KEY, filename VARCHAR(255), table_name VARCHAR(100), total_rows INT, imported_rows INT, errors TEXT, created_at DATETIME DEFAULT CURRENT_TIMESTAMP)",
         "zabbix_api_config" => "CREATE TABLE IF NOT EXISTS zabbix_api_config (id INT AUTO_INCREMENT PRIMARY KEY, url VARCHAR(255) NOT NULL, token VARCHAR(255) NOT NULL, updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)",
         "snmp_communities" => "CREATE TABLE IF NOT EXISTS `snmp_communities` (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) NOT NULL, community VARCHAR(255) NOT NULL, description TEXT, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, UNIQUE KEY (name))",
-        "snmp_scan_results" => "CREATE TABLE IF NOT EXISTS snmp_scan_results (id INT AUTO_INCREMENT PRIMARY KEY, ip VARCHAR(50) NOT NULL, table_source VARCHAR(100) NOT NULL, row_id VARCHAR(100) NOT NULL, community_ok VARCHAR(255), interfaces_up_json LONGTEXT, status VARCHAR(20) DEFAULT 'PENDING', last_success DATETIME, created_at DATETIME DEFAULT CURRENT_TIMESTAMP, UNIQUE KEY idx_ip_rel (ip, table_source, row_id))",
+        "snmp_scan_results" => "CREATE TABLE IF NOT EXISTS snmp_scan_results (id INT AUTO_INCREMENT PRIMARY KEY, ip VARCHAR(50) NOT NULL, table_source VARCHAR(255) NOT NULL, row_id VARCHAR(255) NOT NULL, community_ok VARCHAR(255), interfaces_up_json LONGTEXT, status VARCHAR(20) DEFAULT 'PENDING', last_success DATETIME, created_at DATETIME DEFAULT CURRENT_TIMESTAMP, UNIQUE KEY idx_ip_rel (ip, table_source, row_id))",
         "host_interfaces" => "CREATE TABLE IF NOT EXISTS host_interfaces (id INT AUTO_INCREMENT PRIMARY KEY, hostid VARCHAR(50) NOT NULL, interface_index VARCHAR(100), interface_name VARCHAR(255), interface_type VARCHAR(50), alias TEXT, vlan VARCHAR(50), status VARCHAR(20), bits_received BIGINT DEFAULT 0, bits_sent BIGINT DEFAULT 0, connected_hostid VARCHAR(50), updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY (hostid, interface_name))",
         "zabbix_cmdb_config" => "CREATE TABLE IF NOT EXISTS zabbix_cmdb_config (id INT AUTO_INCREMENT PRIMARY KEY, setting_key VARCHAR(100) NOT NULL, setting_value TEXT, UNIQUE KEY (setting_key))",
         "zabbix_keywords" => "CREATE TABLE IF NOT EXISTS zabbix_keywords (id INT AUTO_INCREMENT PRIMARY KEY, keyword VARCHAR(100) NOT NULL, category VARCHAR(50), UNIQUE KEY (keyword))",
@@ -269,6 +269,9 @@ function initializeDatabase()
                     $pdo->exec("ALTER TABLE `$name` ADD COLUMN community_ok VARCHAR(255) AFTER ip");
                     $log[] = "✅ Columna 'community_ok' añadida a $name.";
                 }
+                // Asegurar que row_id y table_source sean suficientemente largos
+                $pdo->exec("ALTER TABLE `$name` MODIFY COLUMN table_source VARCHAR(255) NOT NULL");
+                $pdo->exec("ALTER TABLE `$name` MODIFY COLUMN row_id VARCHAR(255) NOT NULL");
             }
 
             if ($name === 'host_interfaces') {

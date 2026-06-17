@@ -26,14 +26,14 @@ require_once __DIR__ . '/../partials/header.php';
         height: calc(100vh - 150px); /* Ajuste para header/footer de AdminLTE */
         margin: -15px; /* Contrarestar padding de container-fluid */
         overflow: hidden;
-        background: #f4f7f9;
+        background: var(--body-bg);
     }
 
     /* Sidebar interno de filtros */
     .kanban-sidebar {
         width: 300px;
-        background: #fff;
-        border-right: 1px solid #dee2e6;
+        background: var(--card-bg);
+        border-right: 1px solid var(--border-color);
         padding: 20px;
         overflow-y: auto;
     }
@@ -76,7 +76,8 @@ require_once __DIR__ . '/../partials/header.php';
     .kanban-column {
         flex: 1;
         min-width: 280px;
-        background-color: var(--bg-column);
+        background-color: var(--input-bg);
+        border: 1px solid var(--border-color);
         border-radius: 10px;
         display: flex;
         flex-direction: column;
@@ -94,7 +95,7 @@ require_once __DIR__ . '/../partials/header.php';
     .column-header h3 {
         font-size: 0.95rem;
         font-weight: 700;
-        color: var(--primary-blue);
+        color: var(--text-color);
         margin: 0;
     }
 
@@ -105,11 +106,11 @@ require_once __DIR__ . '/../partials/header.php';
     }
 
     .card-kanban {
-        background: #fff;
+        background: var(--card-bg);
         border-radius: 8px;
         padding: 12px;
         margin-bottom: 12px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         border-left: 4px solid transparent;
         cursor: grab;
         position: relative;
@@ -131,11 +132,11 @@ require_once __DIR__ . '/../partials/header.php';
         font-weight: 600;
         display: block;
         margin-bottom: 5px;
-        color: var(--primary-blue);
+        color: var(--text-color);
     }
 
-    .host-text { font-size: 0.75rem; color: #777; margin-bottom: 3px; }
-    .date-text { font-size: 0.7rem; color: #999; }
+    .host-text { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 3px; }
+    .date-text { font-size: 0.7rem; color: var(--text-muted); }
 
     /* Severity Colors */
     .sev-5 { border-left-color: var(--sev-5); }

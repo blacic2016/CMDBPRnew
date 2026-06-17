@@ -1,0 +1,1228 @@
+{
+    "resumen_general": {
+        "total_hosts_analizados": 4,
+        "promedio_ok": 84.3266,
+        "promedio_problem": 15.6734,
+        "fecha_inicio_analisis": "01-05-2026",
+        "fecha_fin_analisis": "31-05-2026",
+        "dias_analizados": 31,
+        "tiempo_total_periodo_segundos": 2678400,
+        "tiempo_total_periodo_formateado": "31d",
+        "tiempo_promedio_ok_estimado": "26d 3h 23m 23s",
+        "tiempo_promedio_problem_estimado": "4d 20h 36m 37s",
+        "por_host": [
+            {
+                "host": "Impresora 7piso Finanzas",
+                "ip": "172.32.2.196",
+                "porcentaje_ok_total": 96.9467,
+                "porcentaje_problem_total": 3.0533,
+                "tiempo_ok_estimado": "30d 1h 17m",
+                "tiempo_problem_estimado": "22h 43m"
+            },
+            {
+                "host": "Impresora 5piso WPS BN",
+                "ip": "172.32.2.192",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "Impresora  6piso Bodega",
+                "ip": "172.32.2.198",
+                "porcentaje_ok_total": 99.9082,
+                "porcentaje_problem_total": 0.0918,
+                "tiempo_ok_estimado": "30d 23h 19m 1s",
+                "tiempo_problem_estimado": "40m 59s"
+            },
+            {
+                "host": "Impresora 5piso Gerencia Personas",
+                "ip": "172.32.2.194",
+                "porcentaje_ok_total": 40.4514,
+                "porcentaje_problem_total": 59.5486,
+                "tiempo_ok_estimado": "12d 12h 57m 30s",
+                "tiempo_problem_estimado": "18d 11h 2m 30s"
+            }
+        ]
+    },
+    "detalle_diario_por_host": [
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 15.9724,
+            "ok": 84.0276
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 24.9968,
+            "ok": 75.0032
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 53.6835,
+            "ok": 46.3165
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10758,
+            "host": "Impresora 7piso Finanzas",
+            "ip": "172.32.2.196",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10793,
+            "host": "Impresora 5piso WPS BN",
+            "ip": "172.32.2.192",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 2.8473,
+            "ok": 97.1527
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10794,
+            "host": "Impresora  6piso Bodega",
+            "ip": "172.32.2.198",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 46.0063,
+            "ok": 53.9937
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 10795,
+            "host": "Impresora 5piso Gerencia Personas",
+            "ip": "172.32.2.194",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 100,
+            "ok": 0
+        }
+    ],
+    "eventos_de_problema": [
+        {
+            "eventid": "281790734",
+            "inicio": "2026-05-20 07:40:02",
+            "start_timestamp": 1779277202,
+            "valor_inicial": 1,
+            "fin": "2026-05-20 11:30:02",
+            "duracion": "3h 50m",
+            "fecha": "20-05-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "Impresora 7piso Finanzas",
+            "hostid": 10758,
+            "triggerid": "31535",
+            "end_timestamp": 1779291002,
+            "valor_final": 0
+        },
+        {
+            "eventid": "282054498",
+            "inicio": "2026-05-21 18:00:02",
+            "start_timestamp": 1779400802,
+            "valor_inicial": 1,
+            "fin": "2026-05-22 12:53:02",
+            "duracion": "18h 53m",
+            "fecha": "21-05-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "Impresora 7piso Finanzas",
+            "hostid": 10758,
+            "triggerid": "31535",
+            "end_timestamp": 1779468782,
+            "valor_final": 0
+        },
+        {
+            "eventid": "279041047",
+            "inicio": "2026-05-06 15:46:29",
+            "start_timestamp": 1778096789,
+            "valor_inicial": 1,
+            "fin": "2026-05-06 16:27:29",
+            "duracion": "41m",
+            "fecha": "06-05-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "Impresora  6piso Bodega",
+            "hostid": 10794,
+            "triggerid": "33264",
+            "end_timestamp": 1778099249,
+            "valor_final": 0
+        },
+        {
+            "eventid": "280426796",
+            "inicio": "2026-05-13 12:41:29",
+            "start_timestamp": 1778690489,
+            "valor_inicial": 1,
+            "fin": "2026-05-13 12:44:29",
+            "duracion": "3m",
+            "fecha": "13-05-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "Impresora 5piso Gerencia Personas",
+            "hostid": 10795,
+            "triggerid": "33286",
+            "end_timestamp": 1778690669,
+            "valor_final": 0
+        }
+    ]
+}

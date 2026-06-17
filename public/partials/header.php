@@ -10,14 +10,16 @@ $page_title = $page_title ?? 'CMDB Vilaseca';
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?php echo htmlspecialchars($page_title); ?></title>
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Google Font: Kumbh Sans (Sonda Brand Font) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   <!-- Theme style -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2.0/dist/css/adminlte.min.css" integrity="sha384-qrt37eUXKQgF1p6OlpdB29OTyKryxbxdJHkvfVN4suujWnn6PibIvbnygcK4uJfA" crossorigin="anonymous">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="../public/assets/css/app.css">
+  <link rel="stylesheet" href="<?php echo defined('PUBLIC_URL_PREFIX') ? PUBLIC_URL_PREFIX : '/public'; ?>/assets/css/app.css">
   <!-- SweetAlert2 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <!-- Toastr -->
@@ -38,7 +40,7 @@ $page_title = $page_title ?? 'CMDB Vilaseca';
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light border-bottom-0 shadow-sm">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -90,6 +92,7 @@ $page_title = $page_title ?? 'CMDB Vilaseca';
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+    <?php if (empty($hide_content_header)): ?>
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -99,6 +102,7 @@ $page_title = $page_title ?? 'CMDB Vilaseca';
         </div>
       </div><!-- /.container-fluid -->
     </section>
+    <?php endif; ?>
 
     <!-- Main content -->
     <section class="content">

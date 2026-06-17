@@ -1,0 +1,280 @@
+<?php
+/**
+ * Datacenter Floor Plan Visualizer (OpenDCIM Style Grid)
+ */
+
+require_once __DIR__ . '/../../config.php';
+require_once __DIR__ . '/../../src/auth.php';
+require_once __DIR__ . '/../../src/db.php';
+
+require_login();
+$pdo = getPDO();
+$room_id = (int)($_GET['id'] ?? 0);
+
+if (!$room_id) {
+    die("ID de Cuarto no proporcionado.");
+}
+
+$stmt = $pdo->prepare("SELECT * FROM dc_rooms WHERE id = ?");
+$stmt->execute([$room_id]);
+$room = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$room) {
+    die("Cuarto no encontrado.");
+}
+
+// Calculate Grid
+$tile_size = (float)($room['tile_size'] ?? 0.6);
+if ($tile_size <= 0) $tile_size = 0.6;
+
+$width_m = (float)($room['width_meters'] ?? 6.0);
+$length_m = (float)($room['length_meters'] ?? 6.0);
+
+$tiles_x = floor($width_m / $tile_size);
+$tiles_y = floor($length_m / $tile_size);
+
+$page_title = 'Floor Plan: ' . htmlspecialchars($room['name']);
+
+// Get racks in this room
+$stmt = $pdo->prepare("SELECT id, name, grid_x, grid_y, width_tiles, depth_tiles, total_u FROM dc_racks WHERE room_id = ?");
+$stmt->execute([$room_id]);
+$racks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Generate Column Headers (AA, AB, AC...)
+$col_name = 'AA';
+$col_headers = [];
+for ($i = 0; $i < $tiles_x; $i++) {
+    $col_headers[] = $col_name++;
+}
+
+// Generate Row Headers (01, 02, 03...)
+$row_headers = [];
+for ($i = 1; $i <= $tiles_y; $i++) {
+    $row_headers[] = str_pad($i, 2, '0', STR_PAD_LEFT);
+}
+
+require_once __DIR__ . '/../partials/header.php';
+?>
+
+<style>
+    .floor-wrapper {
+        position: relative;
+        display: inline-block;
+        background: #fff;
+        margin-top: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        padding-bottom: 20px;
+        padding-right: 20px;
+        user-select: none;
+    }
+    
+    .floor-table {
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+    
+    .floor-table th, .floor-table td {
+        width: 40px; /* Tamaño visual de la baldosa de 0.6x0.6m */
+        height: 40px;
+        border: 1px solid #ccc;
+        text-align: center;
+        vertical-align: middle;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .floor-table th {
+        background-color: #f8f9fa;
+        font-weight: bold;
+        font-size: 11px;
+        color: #555;
+    }
+    
+    .floor-table .row-header {
+        background-color: #f8f9fa;
+        width: 30px;
+    }
+
+    /* Contenedor relativo exacto sobre la tabla (excluyendo cabeceras) */
+    .racks-layer {
+        position: absolute;
+        top: 40px; /* Altura del th superior */
+        left: 30px; /* Ancho del th lateral */
+        width: calc(100% - 30px);
+        height: calc(100% - 40px);
+        pointer-events: none; /* Dejar pasar los clicks a la tabla si no es rack */
+    }
+
+    .rack-item {
+        position: absolute;
+        background-color: #5cb85c; /* Color verde OpenDCIM */
+        color: #fff;
+        border: 2px solid #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 10px;
+        font-weight: bold;
+        cursor: grab;
+        z-index: 10;
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        pointer-events: auto; /* El rack si recibe eventos */
+    }
+    
+    .rack-item:hover {
+        z-index: 20;
+        filter: brightness(1.1);
+        border-color: #000;
+    }
+    
+    .rack-item:active {
+        cursor: grabbing;
+        opacity: 0.8;
+    }
+    
+    .sidebar-legend {
+        background: white;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 20px;
+    }
+</style>
+
+<div class="container-fluid pt-3">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h4 class="mb-0"><i class="fas fa-th text-success mr-2"></i> Floor Plan: <?php echo htmlspecialchars($room['name']); ?></h4>
+            <p class="text-muted mb-0">Área: <?php echo $width_m; ?>m x <?php echo $length_m; ?>m | Total: <?php echo $tiles_x * $tiles_y; ?> baldosas de piso falso (0.6x0.6m)</p>
+        </div>
+        <div>
+            <a href="racks.php?room_id=<?php echo $room_id; ?>" class="btn btn-primary btn-sm mr-2"><i class="fas fa-server"></i> Ir a Lista de Racks</a>
+            <a href="rooms.php" class="btn btn-outline-secondary btn-sm"><i class="fas fa-arrow-left"></i> Volver a Cuartos</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-9" style="overflow: auto; max-height: calc(100vh - 150px);">
+            <div class="floor-wrapper" id="floor-wrapper">
+                <table class="floor-table" id="floor-table">
+                    <thead>
+                        <tr>
+                            <th class="row-header"></th>
+                            <?php foreach ($col_headers as $col): ?>
+                                <th><?php echo $col; ?></th>
+                            <?php endforeach; ?>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($row_headers as $y_index => $row): ?>
+                            <tr>
+                                <th class="row-header"><?php echo $row; ?></th>
+                                <?php for ($x_index = 0; $x_index < $tiles_x; $x_index++): ?>
+                                    <td data-x="<?php echo $x_index; ?>" data-y="<?php echo $y_index; ?>"></td>
+                                <?php endfor; ?>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+                
+                <div class="racks-layer" id="racks-layer">
+                    <?php 
+                    $px_per_tile = 40;
+                    foreach($racks as $r): 
+                        // Ignorar racks no posicionados para no amontonarlos visualmente en 0,0 si no queremos, o mostrarlos en 0,0.
+                        $x = (int)($r['grid_x']);
+                        $y = (int)($r['grid_y']);
+                        $wt = (int)($r['width_tiles'] ?: 1);
+                        $dt = (int)($r['depth_tiles'] ?: 2); // Racks suelen ocupar 2 baldosas de profundidad
+                        
+                        $left = $x * $px_per_tile;
+                        $top = $y * $px_per_tile;
+                        $w_px = $wt * $px_per_tile;
+                        $h_px = $dt * $px_per_tile;
+                    ?>
+                    <div class="rack-item" id="rack-<?php echo $r['id']; ?>" data-id="<?php echo $r['id']; ?>" 
+                         style="left: <?php echo $left; ?>px; top: <?php echo $top; ?>px; width: <?php echo $w_px; ?>px; height: <?php echo $h_px; ?>px;"
+                         title="<?php echo htmlspecialchars($r['name']); ?> (<?php echo $r['total_u']; ?>U)">
+                        <span class="text-truncate px-1 d-block w-100"><?php echo htmlspecialchars($r['name']); ?></span>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-3">
+            <div class="sidebar-legend">
+                <h5><i class="fas fa-info-circle text-info mr-2"></i> Instrucciones (DCIM)</h5>
+                <p class="small text-muted">
+                    La cuadrícula representa las baldosas de piso elevado. Cada celda es de 0.6m x 0.6m.<br><br>
+                    Arrastra los Racks desde la capa superior para posicionarlos. El guardado es automático.
+                </p>
+                <hr>
+                <h6>Estado de Posicionamiento</h6>
+                <ul class="list-unstyled small mt-2">
+                    <?php 
+                    $unpos = array_filter($racks, function($r) { return $r['grid_x'] == 0 && $r['grid_y'] == 0; });
+                    if(count($unpos) > 0) {
+                        foreach($unpos as $up) {
+                            echo "<li class='mb-1'><i class='fas fa-exclamation-triangle text-warning'></i> " . htmlspecialchars($up['name']) . " en AA-01</li>";
+                        }
+                        echo "<li class='text-muted mt-2'><i>Mueve los racks que están encimados en la celda AA-01.</i></li>";
+                    } else {
+                        echo "<li class='text-success'><i class='fas fa-check'></i> Todos distribuidos.</li>";
+                    }
+                    ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery UI for Draggable -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+<script>
+    const TILE_PX = 40;
+    const MAX_X = <?php echo $tiles_x; ?>;
+    const MAX_Y = <?php echo $tiles_y; ?>;
+
+    $(function() {
+        $(".rack-item").draggable({
+            containment: "#floor-table",
+            grid: [TILE_PX, TILE_PX],
+            stop: function(event, ui) {
+                let rack_id = $(this).data('id');
+                // Calculate grid coordinates based on pixel position relative to the layer
+                let grid_x = Math.round(ui.position.left / TILE_PX);
+                let grid_y = Math.round(ui.position.top / TILE_PX);
+                
+                // Evitar salir de los límites
+                if (grid_x < 0) grid_x = 0;
+                if (grid_y < 0) grid_y = 0;
+                
+                // Save to API
+                $.post('api.php', {
+                    action: 'update_rack_position',
+                    rack_id: rack_id,
+                    grid_x: grid_x,
+                    grid_y: grid_y
+                }, function(res) {
+                    if(res.success) {
+                        toastr.success('Posición del rack actualizada');
+                    } else {
+                        toastr.error('Error al guardar: ' + res.message);
+                    }
+                }, 'json');
+            }
+        });
+        
+        $(".rack-item").dblclick(function() {
+            let id = $(this).data('id');
+            window.location.href = 'rack_builder.php?id=' + id;
+        });
+    });
+</script>
+
+<?php require_once __DIR__ . '/../partials/footer.php'; ?>

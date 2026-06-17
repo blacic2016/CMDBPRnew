@@ -1,0 +1,3494 @@
+{
+    "resumen_general": {
+        "total_hosts_analizados": 12,
+        "promedio_ok": 99.9996,
+        "promedio_problem": 0.0004,
+        "fecha_inicio_analisis": "01-05-2026",
+        "fecha_fin_analisis": "31-05-2026",
+        "dias_analizados": 31,
+        "tiempo_total_periodo_segundos": 2678400,
+        "tiempo_total_periodo_formateado": "31d",
+        "tiempo_promedio_ok_estimado": "30d 23h 59m 50s",
+        "tiempo_promedio_problem_estimado": "10s",
+        "por_host": [
+            {
+                "host": "DNS PRINCIPAL GPF",
+                "ip": "172.20.200.23",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "DNS SECUNDARIO GPF",
+                "ip": "172.20.200.24",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "IP ARANDA GPF",
+                "ip": "172.20.200.188",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "IP VRP FLOTANTE",
+                "ip": "10.26.27.1",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "SIP Trunk 1",
+                "ip": "10.70.1.5",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "SIP Trunk 2",
+                "ip": "10.60.1.5",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "SW-GPF-02",
+                "ip": "172.32.2.17",
+                "porcentaje_ok_total": 99.9978,
+                "porcentaje_problem_total": 0.0022,
+                "tiempo_ok_estimado": "30d 23h 59m 1s",
+                "tiempo_problem_estimado": "59s"
+            },
+            {
+                "host": "SW-GPF-01",
+                "ip": "172.32.2.32",
+                "porcentaje_ok_total": 99.9977,
+                "porcentaje_problem_total": 0.0023,
+                "tiempo_ok_estimado": "30d 23h 58m 58s",
+                "tiempo_problem_estimado": "1m 2s"
+            },
+            {
+                "host": "ENLACE BACKUP LUMEN GPF",
+                "ip": "10.26.27.3",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "ENLACE PRINCIPAL TELCO GPF",
+                "ip": "10.26.27.2",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "Monitoreo GPF_amaguaña",
+                "ip": "172.21.9.36",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "wew",
+                "ip": "127.0.0.1",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            }
+        ]
+    },
+    "detalle_diario_por_host": [
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10834,
+            "host": "DNS PRINCIPAL GPF",
+            "ip": "172.20.200.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10787,
+            "host": "DNS SECUNDARIO GPF",
+            "ip": "172.20.200.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10786,
+            "host": "IP ARANDA GPF",
+            "ip": "172.20.200.188",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10836,
+            "host": "IP VRP FLOTANTE",
+            "ip": "10.26.27.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10837,
+            "host": "SIP Trunk 1",
+            "ip": "10.70.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10838,
+            "host": "SIP Trunk 2",
+            "ip": "10.60.1.5",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0.0683,
+            "ok": 99.9317
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0.0718,
+            "ok": 99.9282
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10785,
+            "host": "ENLACE BACKUP LUMEN GPF",
+            "ip": "10.26.27.3",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10835,
+            "host": "ENLACE PRINCIPAL TELCO GPF",
+            "ip": "10.26.27.2",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10857,
+            "host": "Monitoreo GPF_amaguaña",
+            "ip": "172.21.9.36",
+            "trigger": "Sin trigger ICMP",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11757,
+            "host": "wew",
+            "ip": "127.0.0.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        }
+    ],
+    "eventos_de_problema": [
+        {
+            "eventid": "283745341",
+            "inicio": "2026-05-31 03:17:28",
+            "start_timestamp": 1780211848,
+            "valor_inicial": 1,
+            "fin": "2026-05-31 03:18:27",
+            "duracion": "59s",
+            "fecha": "31-05-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "SW-GPF-02",
+            "hostid": 10724,
+            "triggerid": "50195",
+            "end_timestamp": 1780211907,
+            "valor_final": 0
+        },
+        {
+            "eventid": "283745604",
+            "inicio": "2026-05-31 03:17:40",
+            "start_timestamp": 1780211860,
+            "valor_inicial": 1,
+            "fin": "2026-05-31 03:18:42",
+            "duracion": "1m 2s",
+            "fecha": "31-05-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "SW-GPF-01",
+            "hostid": 11067,
+            "triggerid": "49799",
+            "end_timestamp": 1780211922,
+            "valor_final": 0
+        }
+    ]
+}
