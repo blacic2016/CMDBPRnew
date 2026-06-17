@@ -20,6 +20,8 @@ $drill_end = $_GET['endDate'] ?? '';
 
 <!-- jQuery UI & Styles for Datepicker -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+<!-- Select2 Bootstrap 4 Theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@1.5.2/dist/select2-bootstrap4.min.css">
 <!-- jsPDF, html2canvas -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -73,11 +75,11 @@ $drill_end = $_GET['endDate'] ?? '';
         <div class="card-body">
             <form id="reportForm">
                 <div class="row">
-                    <div class="col-md-3 form-group">
+                    <div class="col-md-2 form-group">
                         <label for="startDatePicker" class="small font-weight-bold">Fecha de Inicio</label>
                         <input type="text" id="startDatePicker" required class="form-control" autocomplete="off" value="<?php echo htmlspecialchars($drill_start); ?>">
                     </div>
-                    <div class="col-md-3 form-group">
+                    <div class="col-md-2 form-group">
                         <label for="endDatePicker" class="small font-weight-bold">Fecha Fin</label>
                         <input type="text" id="endDatePicker" required class="form-control" autocomplete="off" value="<?php echo htmlspecialchars($drill_end); ?>">
                     </div>
@@ -87,12 +89,18 @@ $drill_end = $_GET['endDate'] ?? '';
                             <option value="">Cargando grupos...</option>
                         </select>
                     </div>
-                    <div class="col-md-3 d-flex align-items-end form-group">
+                    <div class="col-md-3 form-group">
+                        <label for="hosts" class="small font-weight-bold">Equipos</label>
+                        <select name="hosts[]" id="hosts" class="form-control select2bs4" multiple="multiple">
+                            <option value="all" selected>Todos (ALL)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end form-group">
                         <button type="submit" id="generateReportButton" class="btn btn-primary btn-block py-2 font-weight-bold shadow-sm">
-                            <i class="fas fa-sync-alt mr-2"></i> GENERAR INFORME
+                            <i class="fas fa-sync-alt mr-1"></i> GENERAR
                         </button>
                         <button type="button" id="pdfExportButton" class="btn btn-danger btn-block py-2 font-weight-bold shadow-sm ml-2 mt-0" style="display: none;">
-                            <i class="fas fa-file-pdf mr-2"></i> PDF
+                            <i class="fas fa-file-pdf mr-1"></i> PDF
                         </button>
                     </div>
                 </div>
@@ -115,6 +123,9 @@ $drill_end = $_GET['endDate'] ?? '';
 
 <script>
     $(function() {
+        // Inicializar select2
+        $('.select2bs4').select2({ theme: 'bootstrap4' });
+
         // Inicializar date pickers
         $("#startDatePicker").datepicker({
             dateFormat: 'yy-mm-dd',
@@ -136,17 +147,80 @@ $drill_end = $_GET['endDate'] ?? '';
 
         if (!drillStart || !drillEnd) {
             var today = new Date();
-            var firstDayOfLastMonth = new Date(today.getFullYear(), today.getMonth() - 1, 1);
-            var lastDayOfLastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
-
-            $("#startDatePicker").datepicker("setDate", firstDayOfLastMonth);
-            $("#endDatePicker").datepicker("setDate", lastDayOfLastMonth);
+            var firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+            $("#startDatePicker").datepicker("setDate", firstDayOfMonth);
+            $("#endDatePicker").datepicker("setDate", today);
         }
 
         const hostgroupSelect = document.getElementById('hostgroup');
         const errorMessageDiv = document.getElementById('error-message');
         const pdfExportButton = document.getElementById('pdfExportButton');
         const generateReportButton = document.getElementById('generateReportButton');
+        const hostsSelectEl = document.getElementById('hosts');
+
+        // Lógica de multiselect con "Todos (ALL)"
+        let lastSelection = ['all'];
+        $('#hosts').on('change', function(e) {
+            let currentSelection = $(this).val() || [];
+            if (currentSelection.length === 0) {
+                $(this).val(['all']).trigger('change.select2');
+                lastSelection = ['all'];
+                return;
+            }
+            if (currentSelection.includes('all') && !lastSelection.includes('all')) {
+                $(this).val(['all']).trigger('change.select2');
+                lastSelection = ['all'];
+            } else if (currentSelection.includes('all') && currentSelection.length > 1) {
+                let newSelection = currentSelection.filter(val => val !== 'all');
+                $(this).val(newSelection).trigger('change.select2');
+                lastSelection = newSelection;
+            } else {
+                lastSelection = currentSelection;
+            }
+        });
+
+        // Función para cargar equipos de un grupo
+        async function fetchHosts(groupName) {
+            const $hostsSelect = $('#hosts');
+            if (!groupName) {
+                $hostsSelect.html('<option value="all" selected>Todos (ALL)</option>').trigger('change.select2');
+                $hostsSelect.prop('disabled', true);
+                return;
+            }
+
+            $hostsSelect.prop('disabled', true);
+            try {
+                const response = await fetch('get_hosts.php?hostgroup=' + encodeURIComponent(groupName));
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const hosts = await response.json();
+
+                $hostsSelect.html('<option value="all" selected>Todos (ALL)</option>');
+                if (hosts.length > 0) {
+                    hosts.forEach(host => {
+                        const option = document.createElement('option');
+                        option.value = host.hostid;
+                        option.textContent = host.name;
+                        $hostsSelect.append(option);
+                    });
+                    $hostsSelect.prop('disabled', false);
+                } else {
+                    $hostsSelect.prop('disabled', false);
+                }
+                $hostsSelect.val(['all']).trigger('change.select2');
+            } catch (error) {
+                console.error('Error fetching hosts:', error);
+                $hostsSelect.html('<option value="all" selected>Todos (ALL)</option>').trigger('change.select2');
+                $hostsSelect.prop('disabled', false);
+            }
+        }
+
+        // Detectar cambios en grupo de hosts para cargar equipos
+        $('#hostgroup').on('change', function() {
+            const selectedGroup = $(this).val();
+            fetchHosts(selectedGroup);
+        });
 
         // Función para cargar grupos de host
         async function fetchHostGroups() {
@@ -169,6 +243,8 @@ $drill_end = $_GET['endDate'] ?? '';
                         hostgroupSelect.appendChild(option);
                     });
                     
+                    $(hostgroupSelect).trigger('change.select2');
+                    
                     // Si es un drill-down automático
                     if (drillGroup && drillStart && drillEnd) {
                         $('#reportForm').submit();
@@ -176,12 +252,14 @@ $drill_end = $_GET['endDate'] ?? '';
                 } else {
                     hostgroupSelect.innerHTML = '<option value="">No se encontraron grupos de host</option>';
                     hostgroupSelect.disabled = true;
+                    $(hostgroupSelect).trigger('change.select2');
                 }
             } catch (error) {
                 errorMessageDiv.textContent = `Error al cargar grupos de host: ${error.message}.`;
                 errorMessageDiv.style.display = 'block';
                 hostgroupSelect.innerHTML = '<option value="">Error al cargar</option>';
                 hostgroupSelect.disabled = true;
+                $(hostgroupSelect).trigger('change.select2');
                 console.error('Error fetching host groups:', error);
             }
         }
@@ -205,6 +283,7 @@ $drill_end = $_GET['endDate'] ?? '';
             const startDate = $('#startDatePicker').val();
             const endDate = $('#endDatePicker').val();
             const hostgroup = hostgroupSelect.value;
+            const hosts = $('#hosts').val();
 
             if (!hostgroup || !startDate || !endDate) {
                 errorMessageDiv.textContent = "Por favor, complete todos los campos.";
@@ -218,7 +297,7 @@ $drill_end = $_GET['endDate'] ?? '';
                 const response = await fetch('process_report.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ startDate, endDate, hostgroup })
+                    body: JSON.stringify({ startDate, endDate, hostgroup, hosts })
                 });
 
                 if (!response.ok) {

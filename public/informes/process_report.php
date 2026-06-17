@@ -62,6 +62,7 @@ if (json_last_error() !== JSON_ERROR_NONE) {
 $start_date_str = $request_data['startDate'] ?? ''; 
 $end_date_str = $request_data['endDate'] ?? '';   
 $selected_hostgroup_name = $request_data['hostgroup'] ?? '';
+$selected_hosts = $request_data['hosts'] ?? [];
 
 // Validación de formato de fecha YYYY-MM-DD
 if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', (string)$start_date_str)) {
@@ -136,6 +137,11 @@ try {
     foreach ($hosts_response as $host) {
         if (isset($host['host']) && $host['host'] === $host['name'] && !empty($host['templateid'])) {
             continue;
+        }
+        if (!empty($selected_hosts) && !in_array('all', $selected_hosts)) {
+            if (!in_array($host['hostid'], $selected_hosts)) {
+                continue;
+            }
         }
         $valid_hosts[$host['hostid']] = $host['name'];
     }

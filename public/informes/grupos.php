@@ -166,11 +166,9 @@ require_once __DIR__ . '/../partials/header.php';
 
         // Valores por defecto
         var today = new Date();
-        var firstDayOfLastMonth = new Date(today.getFullYear(), today.getMonth() - 1, 1);
-        var lastDayOfLastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
-
-        $("#startDatePicker").datepicker("setDate", firstDayOfLastMonth);
-        $("#endDatePicker").datepicker("setDate", lastDayOfLastMonth);
+        var firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+        $("#startDatePicker").datepicker("setDate", firstDayOfMonth);
+        $("#endDatePicker").datepicker("setDate", today);
 
         const errorMessageDiv = document.getElementById('error-message');
         const pdfExportButton = document.getElementById('pdfExportButton');
