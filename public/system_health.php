@@ -105,18 +105,41 @@ include 'partials/header.php';
                 <div class="callout callout-<?php echo $audit['database']['status']; ?>">
                     <h5>Base de Datos (<?php echo $audit['database']['host']; ?>)</h5>
                     <p><?php echo $audit['database']['message']; ?></p>
-                    <?php if (!empty($audit['database']['missing_tables'])): ?>
+                    <?php 
+                    $missing_tables = [];
+                    $missing_columns = [];
+                    if (isset($audit['database']['table_analysis'])) {
+                        foreach ($audit['database']['table_analysis'] as $tbl => $info) {
+                            if (!$info['exists']) {
+                                $missing_tables[] = $tbl;
+                            } elseif (!$info['columns_ok']) {
+                                $missing_columns[] = $tbl . ' (Falta: ' . implode(', ', $info['missing_cols']) . ')';
+                            }
+                        }
+                    }
+                    ?>
+                    <?php if (!empty($missing_tables) || !empty($missing_columns)): ?>
                         <div class="mt-2">
-                            <span class="badge badge-danger">Tablas Faltantes:</span>
-                            <ul class="mb-0">
-                                <?php foreach($audit['database']['missing_tables'] as $t): ?>
-                                    <li><code><?php echo $t; ?></code></li>
-                                <?php endforeach; ?>
-                            </ul>
+                            <?php if(!empty($missing_tables)): ?>
+                                <span class="badge badge-danger">Tablas Faltantes:</span>
+                                <ul class="mb-1">
+                                    <?php foreach($missing_tables as $t): ?>
+                                        <li><code><?php echo $t; ?></code></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
+                            <?php if(!empty($missing_columns)): ?>
+                                <span class="badge badge-warning text-dark">Estructura Desactualizada (Columnas Faltantes):</span>
+                                <ul class="mb-0">
+                                    <?php foreach($missing_columns as $c): ?>
+                                        <li><code><?php echo $c; ?></code></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
                         </div>
                     <?php else: ?>
                         <div class="mt-2">
-                            <span class="badge badge-success"><i class="fas fa-check-double mr-1"></i> Estructura de Tablas OK</span>
+                            <span class="badge badge-success"><i class="fas fa-check-double mr-1"></i> Estructura de Tablas y Columnas OK</span>
                         </div>
                     <?php endif; ?>
                 </div>
@@ -200,24 +223,41 @@ include 'partials/header.php';
 
             <div class="info-box bg-light">
             <div class="info-box-content">
-                <span class="info-box-text text-center text-muted">Veredicto de Portabilidad</span>
+                <span class="info-box-text text-center text-muted">Veredicto de Portabilidad y Base de Datos</span>
                 <span class="info-box-number text-center text-muted mb-0">
                     <?php 
-                    $errors = count(array_filter($audit['extensions'], function($e){return $e['status']=='error';})) + 
-                                count(array_filter($audit['directories'], function($d){return $d['status']=='error';}));
-                    if ($errors > 0 || !$audit['database']['connected']) {
-                        echo "<h3 class='text-danger'>⚠️ PORTABILIDAD LIMITADA</h3>";
-                        echo "<p>El sistema requiere intervención manual ($errors puntos rojos).</p>";
+                    $dir_errors = count(array_filter($audit['directories'], function($d){return $d['status']=='error';}));
+                    $ext_errors = count(array_filter($audit['extensions'], function($e){return $e['status']=='error';}));
+                    $db_errors = 0;
+                    if (isset($audit['database']['table_analysis'])) {
+                        foreach ($audit['database']['table_analysis'] as $tbl => $info) {
+                            if (!$info['exists'] || !$info['columns_ok']) {
+                                $db_errors++;
+                            }
+                        }
+                    }
+                    $total_errors = $dir_errors + $ext_errors + $db_errors;
+
+                    if ($total_errors > 0 || !$audit['database']['connected']) {
+                        echo "<h3 class='text-danger'>⚠️ PORTABILIDAD LIMITADA / ESQUEMA DESACTUALIZADO</h3>";
+                        echo "<p>El sistema requiere atención ($total_errors puntos que requieren atención o actualización de esquema).</p>";
                         
-                        // Botón de remediación automática (solo carpetas)
+                        // Botón de remediación automática (Carpetas + BD)
                         echo '<form method="POST" class="mt-3">
-                                <button type="submit" name="fix_issues" class="btn btn-warning">
-                                    <i class="fas fa-magic mr-1"></i> Intentar Corregir Permisos de Carpetas
+                                <button type="submit" name="fix_issues" class="btn btn-warning shadow-sm">
+                                    <i class="fas fa-magic mr-1"></i> Ejecutar Remediación y Actualizar Base de Datos
                                 </button>
                                 </form>';
                     } else {
-                        echo "<h3 class='text-success'>✅ LISTO PARA MIGRAR</h3>";
-                        echo "<p>Todos los requisitos se cumplen para una migración limpia.</p>";
+                        echo "<h3 class='text-success'>✅ LISTO PARA MIGRAR / ESQUEMA AL DÍA</h3>";
+                        echo "<p>Todos los requisitos del servidor, permisos de carpetas y esquema de base de datos se cumplen.</p>";
+                        
+                        // Botón opcional para re-ejecutar inicialización
+                        echo '<form method="POST" class="mt-3">
+                                <button type="submit" name="fix_issues" class="btn btn-outline-success btn-sm">
+                                    <i class="fas fa-sync mr-1"></i> Re-Verificar / Forzar Inicialización de BD
+                                </button>
+                                </form>';
                     }
                     ?>
                 </span>

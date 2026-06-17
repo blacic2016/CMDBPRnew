@@ -1681,3 +1681,4 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /var/www/html/VILASECA/CMDBPRnew/public/datacenter/floor_plan_3d.php on line 11
+[17-Jun-2026 13:16:21 America/Santiago] PHP Fatal error:  Cannot redeclare function getPDOWithoutDB() (previously declared in /var/www/html/VILASECA/CMDBPRnew/src/db.php:13) in /var/www/html/VILASECA/CMDBPRnew/src/db.php on line 13
