@@ -1,0 +1,90 @@
+{
+    "resumen_general": {
+        "total_alarmas": 3,
+        "total_equipos_afectados": 3,
+        "por_severidad": [
+            0,
+            0,
+            0,
+            3,
+            0,
+            0
+        ],
+        "fecha_inicio_analisis": "01-05-2026",
+        "fecha_fin_analisis": "31-05-2026"
+    },
+    "por_equipo": [
+        {
+            "hostid": "10627",
+            "name": "172.32.2.103",
+            "total": 1,
+            "severities": [
+                0,
+                0,
+                0,
+                1,
+                0,
+                0
+            ]
+        },
+        {
+            "hostid": "10628",
+            "name": "172.32.2.102",
+            "total": 1,
+            "severities": [
+                0,
+                0,
+                0,
+                1,
+                0,
+                0
+            ]
+        },
+        {
+            "hostid": "10625",
+            "name": "172.32.2.104",
+            "total": 1,
+            "severities": [
+                0,
+                0,
+                0,
+                1,
+                0,
+                0
+            ]
+        }
+    ],
+    "por_tipo_alarma": [
+        {
+            "name": "VMware: Hypervisor is down",
+            "count": 3,
+            "severity": 3
+        }
+    ],
+    "lista_alarmas": [
+        {
+            "eventid": "283745213",
+            "hostid": "10627",
+            "host": "172.32.2.103",
+            "severity": 3,
+            "name": "VMware: Hypervisor is down",
+            "date": "31-05-2026 03:15:51"
+        },
+        {
+            "eventid": "283745214",
+            "hostid": "10628",
+            "host": "172.32.2.102",
+            "severity": 3,
+            "name": "VMware: Hypervisor is down",
+            "date": "31-05-2026 03:15:51"
+        },
+        {
+            "eventid": "283745211",
+            "hostid": "10625",
+            "host": "172.32.2.104",
+            "severity": 3,
+            "name": "VMware: Hypervisor is down",
+            "date": "31-05-2026 03:15:48"
+        }
+    ]
+}

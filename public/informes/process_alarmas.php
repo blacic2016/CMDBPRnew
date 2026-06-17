@@ -76,22 +76,23 @@ try {
     $from_timestamp = $from_date->getTimestamp();
     $to_timestamp = $to_date->getTimestamp();
 
-    // --- 2. Obtener Grupos Autorizados y Filtrar ---
-    $hostgroups_file = __DIR__ . '/hostgroups.txt';
-    $allowed_groups = [];
-    if (file_exists($hostgroups_file)) {
-        $allowed_groups = array_filter(array_map('trim', file($hostgroups_file)));
-    }
+    // --- 2. Obtener Grupos desde Zabbix ---
+    $all_groups_response = zabbix_api_request('hostgroup.get', [
+        'output' => ['name'],
+        'with_monitored_hosts' => true
+    ]);
+    
+    $allowed_groups = array_column($all_groups_response, 'name');
 
     if (empty($allowed_groups)) {
-        throw new Exception("No hay grupos de host configurados en hostgroups.txt.");
+        throw new Exception("No se encontraron grupos de host activos en Zabbix.");
     }
 
     // Filtrar grupo seleccionado
     $groups_to_query = $allowed_groups;
     if (!empty($selected_hostgroup_name)) {
         if (!in_array($selected_hostgroup_name, $allowed_groups)) {
-            throw new Exception("El grupo de host seleccionado no está autorizado.");
+            throw new Exception("El grupo de host seleccionado no es válido en Zabbix.");
         }
         $groups_to_query = [$selected_hostgroup_name];
     }
@@ -107,7 +108,7 @@ try {
     }
 
     if (empty($group_ids)) {
-        throw new Exception("Ninguno de los grupos autorizados fue encontrado en Zabbix.");
+        throw new Exception("Ninguno de los grupos seleccionados fue encontrado en Zabbix.");
     }
 
     // --- 3. Obtener Hosts Monitoreados ---

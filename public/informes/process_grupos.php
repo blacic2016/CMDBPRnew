@@ -69,13 +69,18 @@ if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', (string)$start_date_str) || !preg_match
 }
 
 try {
-    // --- 1. Cargar grupos de host desde el archivo de configuración ---
-    $host_groups_file = __DIR__ . '/hostgroups.txt';
-    $host_group_names = [];
-    
-    if (file_exists($host_groups_file)) {
-        $host_group_names = array_map('trim', file($host_groups_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES));
+    // --- 1. Cargar grupos de host directamente de Zabbix ---
+    $host_groups_response = zabbix_api_request('hostgroup.get', [
+        'output' => ['groupid', 'name'],
+        'with_monitored_hosts' => true,
+        'sortfield' => 'name'
+    ]);
+
+    if (empty($host_groups_response)) {
+        throw new Exception("No se encontraron grupos de host activos en Zabbix.");
     }
+
+    $group_ids = array_column($host_groups_response, 'groupid');
 
     // --- 2. Procesamiento de Fechas y Rango ---
     $from_date = DateTime::createFromFormat('Y-m-d', $start_date_str);
@@ -102,25 +107,6 @@ try {
 
     $interval = new DateInterval('P1D');
     $period = new DatePeriod($from_date->setTime(0, 0, 0), $interval, (clone $to_date)->modify('+1 second'));
-
-    // --- 3. Obtener IDs de Grupos en Zabbix ---
-    if (!empty($host_group_names)) {
-        $host_groups_response = zabbix_api_request('hostgroup.get', [
-            'output' => ['groupid', 'name'],
-            'filter' => ['name' => $host_group_names]
-        ]);
-    } else {
-        $host_groups_response = zabbix_api_request('hostgroup.get', [
-            'output' => ['groupid', 'name'],
-            'real_hosts' => true
-        ]);
-    }
-
-    if (empty($host_groups_response)) {
-        throw new Exception("No se encontraron grupos de host configurados o válidos en Zabbix.");
-    }
-
-    $group_ids = array_column($host_groups_response, 'groupid');
 
     // --- 4. Obtener Hosts activos y monitoreados en estos grupos ---
     $hosts_response = zabbix_api_request('host.get', [
