@@ -38,6 +38,6 @@ require_once __DIR__ . '/partials/header.php';
 </script>
 <script src="https://unpkg.com/gojs/release/go.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="assets/js/ci_business_view.js"></script>
+<script src="assets/js/ci_business_view.js?v=<?php echo time(); ?>"></script>
 
 <?php require_once __DIR__ . '/partials/footer.php'; ?>

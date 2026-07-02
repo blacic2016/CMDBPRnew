@@ -96,7 +96,7 @@ $current_sheet = $_GET['name'] ?? '';
                       if (strpos($icon, 'fa-') === false) $icon = 'fa-' . $icon;
                       
                       $html .= '<li class="nav-item ' . $open_class . '">';
-                      $html .= '<a href="' . PUBLIC_URL_PREFIX . '/ci_list.php?category_id=' . $node['id'] . '" class="nav-link ' . $active_class . '">';
+                      $html .= '<a href="' . PUBLIC_URL_PREFIX . '/ci_list.php?category_id=' . $node['id'] . '" class="nav-link ' . $active_class . '" onclick="window.location.href=this.href;">';
                       $html .= '<i class="fas ' . $icon . ' nav-icon ' . ($has_children ? 'text-success' : 'text-warning') . '"></i>';
                       $html .= '<p>' . htmlspecialchars($node['name']);
                       if ($has_children) {
@@ -121,7 +121,7 @@ $current_sheet = $_GET['name'] ?? '';
           $active_cat_id = isset($_GET['category_id']) ? (int)$_GET['category_id'] : 0;
         ?>
         <li class="nav-item <?php echo $is_cmdb_nuevo_active ? 'menu-is-opening menu-open' : ''; ?>">
-          <a href="<?php echo PUBLIC_URL_PREFIX; ?>/ci_list.php" class="nav-link <?php echo ($is_cmdb_nuevo_active && !$active_cat_id) ? 'active' : ''; ?>">
+          <a href="<?php echo PUBLIC_URL_PREFIX; ?>/ci_list.php" class="nav-link <?php echo ($is_cmdb_nuevo_active && !$active_cat_id) ? 'active' : ''; ?>" onclick="window.location.href=this.href;">
             <i class="nav-icon fas fa-project-diagram text-primary"></i>
             <p>
               CMDB
@@ -208,7 +208,7 @@ $current_sheet = $_GET['name'] ?? '';
         </li>
 
         <?php
-          $is_datacenter_open = in_array($cur, ['rooms.php', 'racks.php', 'rack_builder.php']);
+          $is_datacenter_open = in_array($cur, ['rooms.php', 'racks.php', 'rack_builder.php', 'analisis.php']);
         ?>
         <?php if (has_role('SUPER_ADMIN')): ?>
         <li class="nav-item <?php echo $is_datacenter_open ? 'menu-open' : ''; ?>">
@@ -230,6 +230,12 @@ $current_sheet = $_GET['name'] ?? '';
               <a href="<?php echo PUBLIC_URL_PREFIX; ?>/datacenter/racks.php" class="nav-link <?php echo $cur === 'racks.php' || $cur === 'rack_builder.php' ? 'active' : ''; ?>">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Racks (Gabinetes)</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/datacenter/analisis.php" class="nav-link <?php echo $cur === 'analisis.php' ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-info"></i>
+                <p>Análisis Datacenter</p>
               </a>
             </li>
           </ul>
@@ -336,6 +342,14 @@ $current_sheet = $_GET['name'] ?? '';
         </li>
         <?php endif; ?>
 
+        <!-- Módulo Portmapping -->
+        <li class="nav-item">
+          <a href="<?php echo PUBLIC_URL_PREFIX; ?>/portmapping.php" class="nav-link <?php echo $cur === 'portmapping.php' ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-project-diagram text-primary"></i>
+            <p>Portmapping</p>
+          </a>
+        </li>
+
         <li class="nav-item <?php echo in_array($cur, ['snmp_management.php', 'snmp_builder.php', 'snmp_mibs.php']) ? 'menu-open' : ''; ?>">
           <a href="#" class="nav-link <?php echo in_array($cur, ['snmp_management.php', 'snmp_builder.php', 'snmp_mibs.php']) ? 'active' : ''; ?>">
             <i class="nav-icon fas fa-network-wired text-info"></i>
@@ -399,7 +413,7 @@ $current_sheet = $_GET['name'] ?? '';
 
         <?php if (has_role(['SUPER_ADMIN'])): ?>
         <?php 
-          $admin_pages = ['sheet_configs.php', 'snmp_management.php', 'system_health.php', 'user_management.php', 'ci_builder.php', 'ci_categories.php'];
+          $admin_pages = ['sheet_configs.php', 'snmp_management.php', 'system_health.php', 'user_management.php', 'ci_builder.php', 'ci_categories.php', 'ci_relationships.php'];
           $is_admin_open = in_array($cur, $admin_pages);
         ?>
         <li class="nav-item <?php echo $is_admin_open ? 'menu-open' : ''; ?>">
@@ -411,32 +425,38 @@ $current_sheet = $_GET['name'] ?? '';
             </p>
           </a>
           <ul class="nav nav-treeview">
-            <!-- Sub-pestaña CMDB Avanzada -->
-            <li class="nav-item <?php echo in_array($cur, ['ci_builder.php', 'ci_categories.php', 'ci_attributes.php']) ? 'menu-is-opening menu-open' : ''; ?>">
-              <a href="#" class="nav-link <?php echo in_array($cur, ['ci_builder.php', 'ci_categories.php', 'ci_attributes.php']) ? 'active' : ''; ?>">
-                <i class="nav-icon fas fa-project-diagram text-primary"></i>
+            <!-- Sub-pestaña CMDB Admin -->
+            <li class="nav-item <?php echo in_array($cur, ['ci_builder.php', 'ci_categories.php', 'ci_attributes.php', 'ci_relationships.php']) ? 'menu-is-opening menu-open' : ''; ?>">
+              <a href="#" class="nav-link <?php echo in_array($cur, ['ci_builder.php', 'ci_categories.php', 'ci_attributes.php', 'ci_relationships.php']) ? 'active' : ''; ?>">
+                <i class="nav-icon fas fa-layer-group text-primary"></i>
                 <p>
-                  CMDB Avanzada
+                  CMDB Admin
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview" style="margin-left: 10px;">
                 <li class="nav-item">
-                  <a href="<?php echo PUBLIC_URL_PREFIX; ?>/ci_builder.php" class="nav-link <?php echo $cur === 'ci_builder.php' ? 'active' : ''; ?>">
-                    <i class="far fa-circle nav-icon text-success"></i>
-                    <p>Crear Activo</p>
+                  <a href="<?php echo PUBLIC_URL_PREFIX; ?>/ci_categories.php" class="nav-link <?php echo $cur === 'ci_categories.php' ? 'active' : ''; ?>">
+                    <i class="far fa-circle nav-icon text-warning"></i>
+                    <p>CATEGORÍAS</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?php echo PUBLIC_URL_PREFIX; ?>/ci_categories.php" class="nav-link <?php echo $cur === 'ci_categories.php' ? 'active' : ''; ?>">
-                    <i class="far fa-circle nav-icon text-warning"></i>
-                    <p>Gestor de Clases</p>
+                  <a href="<?php echo PUBLIC_URL_PREFIX; ?>/ci_relationships.php" class="nav-link <?php echo $cur === 'ci_relationships.php' ? 'active' : ''; ?>">
+                    <i class="far fa-circle nav-icon text-danger"></i>
+                    <p>Tipos de Relación</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="<?php echo PUBLIC_URL_PREFIX; ?>/ci_attributes.php" class="nav-link <?php echo $cur === 'ci_attributes.php' ? 'active' : ''; ?>">
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="far fa-circle nav-icon text-info"></i>
                     <p>Atributos Globales</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?php echo PUBLIC_URL_PREFIX; ?>/ci_builder.php" class="nav-link <?php echo $cur === 'ci_builder.php' ? 'active' : ''; ?>">
+                    <i class="far fa-circle nav-icon text-success"></i>
+                    <p>Crear CI</p>
                   </a>
                 </li>
               </ul>

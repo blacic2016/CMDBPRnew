@@ -31,13 +31,15 @@ define('DB_CONFIG', [
 // 4. Configuración de Zabbix API (Carga Dinámica desde BBDD)
 require_once __DIR__ . '/src/db.php';
 try {
-    $pdo_cfg = getPDO();
-    if ($pdo_cfg) {
-        $stmt_cfg = $pdo_cfg->query("SELECT url, token FROM zabbix_api_config LIMIT 1");
-        $db_cfg = $stmt_cfg->fetch(PDO::FETCH_ASSOC);
-        if ($db_cfg) {
-            define('ZABBIX_API_URL', $db_cfg['url']);
-            define('ZABBIX_API_TOKEN', $db_cfg['token']);
+    if (function_exists('getPDO')) {
+        $pdo_cfg = getPDO();
+        if ($pdo_cfg) {
+            $stmt_cfg = $pdo_cfg->query("SELECT url, token FROM zabbix_api_config LIMIT 1");
+            $db_cfg = $stmt_cfg->fetch(PDO::FETCH_ASSOC);
+            if ($db_cfg) {
+                define('ZABBIX_API_URL', $db_cfg['url']);
+                define('ZABBIX_API_TOKEN', $db_cfg['token']);
+            }
         }
     }
 } catch (Exception $e) { /* Error en carga, se usan fallbacks abajo */ }

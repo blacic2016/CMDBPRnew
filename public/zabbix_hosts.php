@@ -299,7 +299,7 @@ $(function() {
             const statusZbx = h.available == 1 ? 'status-ok' : (h.available == 2 ? 'status-err' : 'status-off');
             const statusSnmp = h.snmp_available == 1 ? 'status-ok' : (h.snmp_available == 2 ? 'status-err' : 'status-off');
             
-            const groups = (h.groups || []).map(g => `<span class="badge badge-outline mr-1">${g.name}</span>`).join('');
+            const groups = (h.groups || h.hostgroups || []).map(g => `<span class="badge badge-outline mr-1">${g.name}</span>`).join('');
             const templates = (h.parentTemplates || []).map(t => `<span class="badge badge-info mr-1">${t.name}</span>`).join('');
             const inventoryMode = h.inventory_mode == 1 ? '<span class="text-success"><i class="fas fa-check-circle"></i> Auto</span>' : '<span class="text-muted">Manual</span>';
             const interfaces = h.interfaces || [];
@@ -460,7 +460,7 @@ $(function() {
                 $('#single-host-name').text(h.name);
                 $('#single-host').val(h.host);
                 $('#single-name').val(h.name);
-                $('#single-groups').val((h.groups || []).map(g => g.groupid)).trigger('change');
+                $('#single-groups').val((h.groups || h.hostgroups || []).map(g => g.groupid)).trigger('change');
                 $('#single-templates').val((h.parentTemplates || []).map(t => t.templateid)).trigger('change');
                 
                 // Inventory

@@ -310,17 +310,58 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
         const tilesX = <?php echo $tiles_x; ?>;
         const tilesY = <?php echo $tiles_y; ?>;
         const tileSize = <?php echo $tile_size; ?>; // 0.6m
-        const floorHeight = <?php echo (float)($room['floor_height_meters'] ?? 0.0); ?>;
+        const floorHeight = <?php echo (float)($room['floor_height_meters'] ?: 0.3); ?>;
 
         // Scene variables
         let scene, camera, renderer, controls;
         let raycaster, mouse;
         let interactiveObjects = [];
-        let ambientLight, dirLight, blueLight, greenLight;
+        let ambientLight, dirLight, lightsGroup;
 
         // Data arrays from PHP
         const racksData = <?php echo json_encode($racks); ?>;
         const itemsData = <?php echo json_encode($items); ?>;
+
+        // Texture Loader and Textures
+        const textureLoader = new THREE.TextureLoader();
+
+        // Floor textures (using floor3.jpg for normal smooth tiles)
+        const tileTopTex = textureLoader.load('3dmodel/texturas/floor/floor3.jpg');
+        const tileSideTex = textureLoader.load('3dmodel/texturas/floor/pae75po-side.png');
+        const tileBottomTex = textureLoader.load('3dmodel/texturas/floor/paepo-back.png');
+
+        // Rack textures
+        const rackFrontTex = textureLoader.load('3dmodel/texturas/floor/RACK-FRONT.png');
+        const rackBackTex = textureLoader.load('3dmodel/texturas/floor/RACK-BACK.png');
+        const rackSideTex = textureLoader.load('3dmodel/texturas/floor/RACK-SIDEA.png');
+        const rackTopTex = textureLoader.load('3dmodel/texturas/floor/RACK-TOP.png');
+
+        // Door textures
+        const doorFrontTex = textureLoader.load('3dmodel/texturas/floor/datacenterdoorsingle.jpg');
+        const doorBackTex = textureLoader.load('3dmodel/texturas/floor/datacenterdoorsingleback.jpg');
+
+        // UPS textures
+        const upsFrontTex = textureLoader.load('3dmodel/pictures/T-UPSfront.png');
+        const upsBackTex = textureLoader.load('3dmodel/pictures/T-UPSback.png');
+        const upsSideTex = textureLoader.load('3dmodel/pictures/T-UPSside1.png');
+        const upsTopTex = textureLoader.load('3dmodel/pictures/T-UPSup.png');
+
+        // AACC (UMA) textures
+        const aaccFrontTex = textureLoader.load('3dmodel/pictures/UMAfront.png');
+        const aaccBackTex = textureLoader.load('3dmodel/pictures/UMAback.jpg');
+        const aaccSide1Tex = textureLoader.load('3dmodel/pictures/UMAside1.jpg');
+        const aaccSide2Tex = textureLoader.load('3dmodel/pictures/UMAside2.jpg');
+        const aaccTopTex = textureLoader.load('3dmodel/pictures/UMAup.jpg');
+
+        // Perforated tile texture
+        const perforatedTex = textureLoader.load('3dmodel/texturas/floor/malla-front.png');
+
+        // Camera textures
+        const camSideTex = textureLoader.load('3dmodel/texturas/floor/CAMARASIDE.jpg');
+        const camSideRTex = textureLoader.load('3dmodel/texturas/floor/CAMARASIDEr.jpg');
+        const camUpTex = textureLoader.load('3dmodel/texturas/floor/CAMARASIDEup.jpg');
+        const camBackTex = textureLoader.load('3dmodel/texturas/floor/CAMARASIDbackk.jpg');
+        const camFrontTex = textureLoader.load('3dmodel/texturas/floor/CAMARASIDfront.jpg');
 
         init();
         animate();
@@ -328,8 +369,8 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
         function init() {
             // 1. Create Scene
             scene = new THREE.Scene();
-            scene.background = new THREE.Color(0x0f172a);
-            scene.fog = new THREE.FogExp2(0x0f172a, 0.015);
+            scene.background = new THREE.Color(0x0a0f1d);
+            scene.fog = new THREE.FogExp2(0x0a0f1d, 0.015);
 
             // 2. Camera Setup
             camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -346,16 +387,16 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
             controls = new THREE.OrbitControls(camera, renderer.domElement);
             controls.enableDamping = true;
             controls.dampingFactor = 0.05;
-            controls.maxPolarAngle = Math.PI / 2 - 0.05; // Prevent camera going below floor
+            controls.maxPolarAngle = Math.PI - 0.05; // Allow camera to go below floor to view underneath
             controls.minDistance = 2;
             controls.maxDistance = 100;
             controls.target.set(roomWidth / 2, floorHeight, roomDepth / 2);
 
             // 5. Lights
-            ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+            ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
             scene.add(ambientLight);
 
-            dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            dirLight = new THREE.DirectionalLight(0xffffff, 0.9);
             dirLight.position.set(roomWidth / 2, 20, roomDepth / 2);
             dirLight.castShadow = true;
             dirLight.shadow.mapSize.width = 2048;
@@ -369,14 +410,52 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
             dirLight.shadow.camera.bottom = -d;
             scene.add(dirLight);
 
-            // Subtle colored point lights for realistic datacenter aesthetic
-            blueLight = new THREE.PointLight(0x0ea5e9, 2.0, 25);
-            blueLight.position.set(2, floorHeight + 4, 2);
-            scene.add(blueLight);
+            // Create 4 distributed natural white lights with visible bulb fixtures ("lamparitas")
+            lightsGroup = new THREE.Group();
+            
+            const positions = [
+                { x: roomWidth * 0.3, z: roomDepth * 0.3 },
+                { x: roomWidth * 0.7, z: roomDepth * 0.3 },
+                { x: roomWidth * 0.3, z: roomDepth * 0.7 },
+                { x: roomWidth * 0.7, z: roomDepth * 0.7 }
+            ];
 
-            greenLight = new THREE.PointLight(0x10b981, 2.0, 25);
-            greenLight.position.set(roomWidth - 2, floorHeight + 4, roomDepth - 2);
-            scene.add(greenLight);
+            const ceilingHeight = floorHeight + 3.0;
+
+            positions.forEach(pos => {
+                const subGroup = new THREE.Group();
+
+                // 1. Metal base of the fixture
+                const baseGeo = new THREE.CylinderGeometry(0.12, 0.12, 0.05, 12);
+                const baseMat = new THREE.MeshStandardMaterial({ color: 0x4b5563, metalness: 0.8, roughness: 0.3 });
+                const base = new THREE.Mesh(baseGeo, baseMat);
+                base.position.set(pos.x, ceilingHeight - 0.025, pos.z);
+                subGroup.add(base);
+
+                // 2. Glowing bulb/globe
+                const bulbGeo = new THREE.SphereGeometry(0.08, 16, 16);
+                const bulbMat = new THREE.MeshStandardMaterial({ 
+                    color: 0xffffff, 
+                    emissive: 0xffffff, 
+                    emissiveIntensity: 1.0 
+                });
+                const bulb = new THREE.Mesh(bulbGeo, bulbMat);
+                bulb.position.set(pos.x, ceilingHeight - 0.08, pos.z);
+                subGroup.add(bulb);
+
+                // 3. PointLight (Natural White / Natural Daylight)
+                const light = new THREE.PointLight(0xffffff, 2.8, 20); // Natural white
+                light.position.set(pos.x, ceilingHeight - 0.12, pos.z);
+                light.castShadow = true;
+                light.shadow.mapSize.width = 512;
+                light.shadow.mapSize.height = 512;
+                light.shadow.bias = -0.002;
+                subGroup.add(light);
+
+                lightsGroup.add(subGroup);
+            });
+
+            scene.add(lightsGroup);
 
             // 6. Floor Grid (Fake floor tile system)
             createFloor();
@@ -400,8 +479,7 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 dirLight.visible = e.target.checked;
             });
             document.getElementById('toggle-neon').addEventListener('change', function(e) {
-                blueLight.visible = e.target.checked;
-                greenLight.visible = e.target.checked;
+                lightsGroup.visible = e.target.checked;
             });
         }
 
@@ -419,122 +497,213 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
         function createFloor() {
-            // Tile grid lines (matching tiles_x and tiles_y)
-            const gridHelper = new THREE.GridHelper(
-                Math.max(roomWidth, roomDepth), 
-                Math.max(tilesX, tilesY), 
-                0x475569, 
-                0x334155
-            );
+            // Concrete base at y = -0.01
+            const baseGeo = new THREE.PlaneGeometry(roomWidth, roomDepth);
+            const baseMat = new THREE.MeshStandardMaterial({
+                color: 0x18181b, // Dark concrete
+                roughness: 0.9,
+                metalness: 0.1
+            });
+            const concreteBase = new THREE.Mesh(baseGeo, baseMat);
+            concreteBase.rotation.x = -Math.PI / 2;
+            concreteBase.position.set(roomWidth / 2, -0.01, roomDepth / 2);
+            concreteBase.receiveShadow = true;
+            scene.add(concreteBase);
 
             if (floorHeight > 0) {
-                // Concrete base at y = -0.005 (slightly below y=0 to prevent z-fighting with the grid)
-                const baseGeo = new THREE.PlaneGeometry(roomWidth, roomDepth);
-                const baseMat = new THREE.MeshStandardMaterial({
-                    color: 0x0f172a, // Darker concrete color
-                    roughness: 0.9,
-                    metalness: 0.1
+                const tileHeight = 0.04; // 4cm raised floor tile thickness
+                
+                // Pedestal cylinder template geometry
+                const pedestalGeo = new THREE.CylinderGeometry(0.015, 0.015, floorHeight - tileHeight, 16);
+                const pedestalMat = new THREE.MeshStandardMaterial({
+                    color: 0x71717a,
+                    metalness: 0.8,
+                    roughness: 0.2
                 });
-                const concreteBase = new THREE.Mesh(baseGeo, baseMat);
-                concreteBase.rotation.x = -Math.PI / 2;
-                concreteBase.position.set(roomWidth / 2, -0.005, roomDepth / 2);
-                concreteBase.receiveShadow = true;
-                scene.add(concreteBase);
 
-                // Raised floor slab at y = floorHeight
-                const raisedGeo = new THREE.BoxGeometry(roomWidth, floorHeight, roomDepth);
-                const raisedMat = new THREE.MeshStandardMaterial({
-                    color: 0xf8fafc, // Off-white color requested by the user
-                    roughness: 0.5,
-                    metalness: 0.2,
-                    transparent: true,
-                    opacity: 0.9 // Higher opacity for a clear white surface
+                // Tile materials (fully opaque)
+                const tileSideMat = new THREE.MeshStandardMaterial({ 
+                    map: tileSideTex, 
+                    roughness: 0.5 
                 });
-                const raisedFloor = new THREE.Mesh(raisedGeo, raisedMat);
-                raisedFloor.position.set(roomWidth / 2, floorHeight / 2, roomDepth / 2);
-                raisedFloor.receiveShadow = true;
-                scene.add(raisedFloor);
+                const tileTopMat = new THREE.MeshStandardMaterial({ 
+                    map: tileTopTex, 
+                    roughness: 0.3, 
+                    metalness: 0.1 
+                });
+                const tileBottomMat = new THREE.MeshStandardMaterial({ 
+                    map: tileBottomTex, 
+                    roughness: 0.7 
+                });
 
-                // Tile divisions grid on top of the raised floor
-                const topGrid = new THREE.GridHelper(
-                    Math.max(roomWidth, roomDepth), 
-                    Math.max(tilesX, tilesY), 
-                    0x94a3b8, // Slate gray divisions
-                    0xcbd5e1  // Light slate gray divisions
-                );
-                topGrid.position.set(roomWidth / 2, floorHeight + 0.002, roomDepth / 2);
-                scene.add(topGrid);
+                const tileMaterials = [
+                    tileSideMat,   // Right
+                    tileSideMat,   // Left
+                    tileTopMat,    // Top
+                    tileBottomMat, // Bottom
+                    tileSideMat,   // Front
+                    tileSideMat    // Back
+                ];
+
+                const tileGeo = new THREE.BoxGeometry(tileSize - 0.005, tileHeight, tileSize - 0.005);
+                const tileMeshTemplate = new THREE.Mesh(tileGeo, tileMaterials);
+                tileMeshTemplate.receiveShadow = true;
+                tileMeshTemplate.castShadow = true;
+
+                // Create a group for the raised floor tiles and pedestals
+                const raisedFloorGroup = new THREE.Group();
+
+                for (let x = 0; x < tilesX; x++) {
+                    for (let y = 0; y < tilesY; y++) {
+                        // Skip floor tile if it overlaps with a ramp area
+                        const isRampTile = itemsData.some(i => {
+                            if (i.type !== 'rampa') return false;
+                            const rx = parseFloat(i.grid_x);
+                            const ry = parseFloat(i.grid_y);
+                            const wt = parseFloat(i.width_tiles || 1);
+                            const wtAdjusted = Math.max(wt, 2.0 / tileSize);
+                            const dt = parseFloat(i.depth_tiles || 1);
+                            const rot = parseInt(i.rotation) || 0;
+                            const isSwapped = (rot === 90 || rot === 270);
+                            const wtRender = isSwapped ? dt : wtAdjusted;
+                            const dtRender = isSwapped ? wtAdjusted : dt;
+                            return (x >= rx && x < rx + wtRender && y >= ry && y < ry + dtRender);
+                        });
+
+                        if (isRampTile) continue;
+
+                        // Place individual textured tile
+                        const tile = tileMeshTemplate.clone();
+                        const posX = x * tileSize + tileSize / 2;
+                        const posZ = y * tileSize + tileSize / 2;
+                        tile.position.set(posX, floorHeight - tileHeight/2, posZ);
+                        raisedFloorGroup.add(tile);
+                    }
+                }
+
+                // Place pedestals at all grid intersection points
+                for (let x = 0; x <= tilesX; x++) {
+                    for (let y = 0; y <= tilesY; y++) {
+                        const pedX = x * tileSize;
+                        const pedZ = y * tileSize;
+                        if (pedX <= roomWidth && pedZ <= roomDepth) {
+                            // Skip pedestal if it is on or touches any ramp cell boundary
+                            const touchesRamp = itemsData.some(i => {
+                                if (i.type !== 'rampa') return false;
+                                const rx = parseFloat(i.grid_x);
+                                const ry = parseFloat(i.grid_y);
+                                const wt = parseFloat(i.width_tiles || 1);
+                                const wtAdjusted = Math.max(wt, 2.0 / tileSize);
+                                const dt = parseFloat(i.depth_tiles || 1);
+                                const rot = parseInt(i.rotation) || 0;
+                                const isSwapped = (rot === 90 || rot === 270);
+                                const wtRender = isSwapped ? dt : wtAdjusted;
+                                const dtRender = isSwapped ? wtAdjusted : dt;
+                                return (x >= rx && x <= rx + wtRender && y >= ry && y <= ry + dtRender);
+                            });
+
+                            if (touchesRamp) continue;
+
+                            const pedestal = new THREE.Mesh(pedestalGeo, pedestalMat);
+                            pedestal.position.set(pedX, (floorHeight - tileHeight) / 2, pedZ);
+                            raisedFloorGroup.add(pedestal);
+                        }
+                    }
+                }
+
+                scene.add(raisedFloorGroup);
             } else {
-                // Base floor plane at y = -0.005 (slightly below y=0 to prevent z-fighting with the grid)
+                // If no raised floor height, render top of floor with the tile texture directly
                 const floorGeo = new THREE.PlaneGeometry(roomWidth, roomDepth);
                 const floorMat = new THREE.MeshStandardMaterial({
-                    color: 0xf8fafc, // Render a white base floor if floorHeight is 0 so divisions are always visible
-                    roughness: 0.5,
-                    metalness: 0.2
+                    map: tileTopTex,
+                    roughness: 0.4,
+                    metalness: 0.1
                 });
+                
+                // Repeat texture to match tile counts
+                tileTopTex.wrapS = THREE.RepeatWrapping;
+                tileTopTex.wrapT = THREE.RepeatWrapping;
+                tileTopTex.repeat.set(tilesX, tilesY);
+                
                 const floor = new THREE.Mesh(floorGeo, floorMat);
                 floor.rotation.x = -Math.PI / 2;
-                floor.position.set(roomWidth / 2, -0.005, roomDepth / 2);
+                floor.position.set(roomWidth / 2, -0.002, roomDepth / 2);
                 floor.receiveShadow = true;
                 scene.add(floor);
             }
 
-            // Always place the grid helper on the lowest point (exactly at y = 0)
-            gridHelper.position.set(roomWidth / 2, 0, roomDepth / 2);
-            scene.add(gridHelper);
-
-            // Add room boundary walls (transparent/wireframe style to look high-tech)
-            const wallMat = new THREE.MeshBasicMaterial({
-                color: 0x38bdf8,
-                wireframe: true,
+            // Off-white semi-transparent walls (50% opacity)
+            const wallMat = new THREE.MeshStandardMaterial({
+                color: 0xf5f5f0, // Blanco hueso (off-white)
                 transparent: true,
-                opacity: 0.15
+                opacity: 0.5,
+                roughness: 0.4,
+                metalness: 0.1,
+                side: THREE.DoubleSide
             });
 
+            const wallHeight = 3.0;
+
             // Back wall
-            const wallBackGeo = new THREE.PlaneGeometry(roomWidth, 3);
+            const wallBackGeo = new THREE.PlaneGeometry(roomWidth, wallHeight);
             const wallBack = new THREE.Mesh(wallBackGeo, wallMat);
-            wallBack.position.set(roomWidth / 2, floorHeight + 1.5, 0);
+            wallBack.position.set(roomWidth / 2, floorHeight + wallHeight / 2, 0);
+            wallBack.receiveShadow = true;
+            wallBack.castShadow = true;
             scene.add(wallBack);
 
             // Left wall
-            const wallLeftGeo = new THREE.PlaneGeometry(roomDepth, 3);
+            const wallLeftGeo = new THREE.PlaneGeometry(roomDepth, wallHeight);
             const wallLeft = new THREE.Mesh(wallLeftGeo, wallMat);
             wallLeft.rotation.y = Math.PI / 2;
-            wallLeft.position.set(0, floorHeight + 1.5, roomDepth / 2);
+            wallLeft.position.set(0, floorHeight + wallHeight / 2, roomDepth / 2);
+            wallLeft.receiveShadow = true;
+            wallLeft.castShadow = true;
             scene.add(wallLeft);
+
+            // Right wall
+            const wallRightGeo = new THREE.PlaneGeometry(roomDepth, wallHeight);
+            const wallRight = new THREE.Mesh(wallRightGeo, wallMat);
+            wallRight.rotation.y = -Math.PI / 2;
+            wallRight.position.set(roomWidth, floorHeight + wallHeight / 2, roomDepth / 2);
+            wallRight.receiveShadow = true;
+            wallRight.castShadow = true;
+            scene.add(wallRight);
         }
 
         function renderRacks() {
-            // Rack geometry (standard rack is 0.6m wide, 1.2m deep, 2.0m high)
-            // In grid coordinate units: width = 1 tile, depth = 2 tiles, height = 2 meters
             racksData.forEach(r => {
                 const rx = parseFloat(r.grid_x);
                 const ry = parseFloat(r.grid_y);
                 const rot = parseInt(r.rotation) || 0;
                 
-                const w = parseFloat(r.width_tiles || 1) * tileSize;
-                const d = parseFloat(r.depth_tiles || 2) * tileSize;
+                const wt = parseFloat(r.width_tiles || 1);
+                const dt = parseFloat(r.depth_tiles || 2);
+                const w = wt * tileSize;
+                const d = dt * tileSize;
                 const h = 2.0; // standard height: 2 meters
 
-                // Create group for rack + indicators
                 const rackGroup = new THREE.Group();
 
                 // Main rack body box
                 const rackGeo = new THREE.BoxGeometry(w - 0.04, h, d - 0.04);
                 
-                // Beautiful multi-material setup: green sides, black front
-                const greenMat = new THREE.MeshStandardMaterial({ color: 0x10b981, roughness: 0.5, metalness: 0.5 });
-                const blackMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.9, metalness: 0.1 });
-                const frontIndicatorMat = new THREE.MeshStandardMaterial({ color: 0x000000, roughness: 0.2 });
+                // Beautiful multi-material setup using 3Dtelco assets
+                const rightMat = new THREE.MeshStandardMaterial({ map: rackSideTex, roughness: 0.5, metalness: 0.3 });
+                const leftMat = new THREE.MeshStandardMaterial({ map: rackSideTex, roughness: 0.5, metalness: 0.3 });
+                const topMat = new THREE.MeshStandardMaterial({ map: rackTopTex, roughness: 0.6, metalness: 0.2 });
+                const bottomMat = new THREE.MeshStandardMaterial({ color: 0x18181b });
+                const backMat = new THREE.MeshStandardMaterial({ map: rackBackTex, roughness: 0.5, metalness: 0.3 });
+                const frontMat = new THREE.MeshStandardMaterial({ map: rackFrontTex, roughness: 0.4, metalness: 0.4 });
 
                 const materials = [
-                    greenMat, // Right
-                    greenMat, // Left
-                    greenMat, // Top
-                    greenMat, // Bottom
-                    blackMat, // Back
-                    frontIndicatorMat // Front (indicates direction)
+                    rightMat,  // Right
+                    leftMat,   // Left
+                    topMat,    // Top
+                    bottomMat, // Bottom
+                    backMat,   // Back
+                    frontMat   // Front
                 ];
 
                 const rackMesh = new THREE.Mesh(rackGeo, materials);
@@ -548,9 +717,9 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 canvas.width = 256;
                 canvas.height = 64;
                 const ctx = canvas.getContext('2d');
-                ctx.fillStyle = '#0f172a';
+                ctx.fillStyle = '#1e293b';
                 ctx.fillRect(0, 0, 256, 64);
-                ctx.fillStyle = '#ffffff';
+                ctx.fillStyle = '#38bdf8';
                 ctx.font = 'bold 24px Outfit';
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
@@ -558,17 +727,19 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 const texture = new THREE.CanvasTexture(canvas);
                 const textMat = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
-                const textGeo = new THREE.PlaneGeometry(w * 0.9, 0.2);
+                const textGeo = new THREE.PlaneGeometry(w * 0.9, 0.22);
                 const textMesh = new THREE.Mesh(textGeo, textMat);
                 textMesh.position.set(0, h + 0.12, 0);
                 textMesh.rotation.y = 0;
                 rackGroup.add(textMesh);
 
-                // Position the group
-                // Note: database coordinates are top-left of the tile grid, Three.js coordinates are center-based
-                // We add half width and half depth to center
-                const posX = rx * tileSize + w / 2;
-                const posZ = ry * tileSize + d / 2;
+                // Calculate center position matching 2D coordinate alignment
+                const isSwapped = (rot === 90 || rot === 270);
+                const wtRender = isSwapped ? dt : wt;
+                const dtRender = isSwapped ? wt : dt;
+                
+                const posX = rx * tileSize + (wtRender * tileSize) / 2;
+                const posZ = ry * tileSize + (dtRender * tileSize) / 2;
                 rackGroup.position.set(posX, floorHeight, posZ);
 
                 // Apply rotation
@@ -591,51 +762,85 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 const rx = parseFloat(i.grid_x);
                 const ry = parseFloat(i.grid_y);
                 const wt = parseFloat(i.width_tiles || 1);
+                // Enforce minimum ramp length (run) of 2.0 meters (2.0 / tileSize in tiles)
+                const wtAdjusted = (i.type === 'rampa') ? Math.max(wt, 2.0 / tileSize) : wt;
                 const dt = parseFloat(i.depth_tiles || 1);
                 const rot = parseInt(i.rotation) || 0;
                 const type = i.type;
 
-                const w = wt * tileSize;
+                const w = wtAdjusted * tileSize;
                 const d = dt * tileSize;
-                let h = parseFloat(i.height_meters) || 1.8; // Fallback default height
+                let h = parseFloat(i.height_meters) || 1.8;
 
-                const posX = rx * tileSize + w / 2;
-                const posZ = ry * tileSize + d / 2;
+                // Calculate center position matching 2D coordinate alignment (handling swaps on rotation)
+                const isSwapped = (rot === 90 || rot === 270);
+                const wtRender = isSwapped ? dt : wtAdjusted;
+                const dtRender = isSwapped ? wtAdjusted : dt;
+
+                const posX = rx * tileSize + (wtRender * tileSize) / 2;
+                const posZ = ry * tileSize + (dtRender * tileSize) / 2;
 
                 let mesh;
 
                 if (type === 'aacc') {
-                    // Air Conditioner (Blue taller cabinet)
+                    // Air Conditioner (Textured cabinet using 3Dtelco assets)
                     h = 2.0;
                     const geo = new THREE.BoxGeometry(w - 0.02, h, d - 0.02);
-                    const blueMat = new THREE.MeshStandardMaterial({ color: 0x0ea5e9, roughness: 0.3, metalness: 0.7 });
-                    const darkMat = new THREE.MeshStandardMaterial({ color: 0x0f172a });
-                    const materials = [blueMat, blueMat, blueMat, blueMat, darkMat, blueMat]; // Black back/front indicator
+                    
+                    const rightMat = new THREE.MeshStandardMaterial({ map: aaccSide1Tex, roughness: 0.5 });
+                    const leftMat = new THREE.MeshStandardMaterial({ map: aaccSide2Tex, roughness: 0.5 });
+                    const topMat = new THREE.MeshStandardMaterial({ map: aaccTopTex, roughness: 0.6 });
+                    const bottomMat = new THREE.MeshStandardMaterial({ color: 0x18181b });
+                    const backMat = new THREE.MeshStandardMaterial({ map: aaccBackTex, roughness: 0.5 });
+                    const frontMat = new THREE.MeshStandardMaterial({ map: aaccFrontTex, roughness: 0.4 });
+
+                    const materials = [
+                        rightMat,  // Right
+                        leftMat,   // Left
+                        topMat,    // Top
+                        bottomMat, // Bottom
+                        backMat,   // Back
+                        frontMat   // Front
+                    ];
+
                     mesh = new THREE.Mesh(geo, materials);
                     mesh.position.set(posX, floorHeight + h / 2, posZ);
                     mesh.rotation.y = -THREE.MathUtils.degToRad(rot);
                     
                 } else if (type === 'ups') {
-                    // UPS (Orange block cabinet)
+                    // UPS (Textured cabinet using 3Dtelco assets)
                     h = 1.8;
                     const geo = new THREE.BoxGeometry(w - 0.02, h, d - 0.02);
-                    const orangeMat = new THREE.MeshStandardMaterial({ color: 0xf59e0b, roughness: 0.4, metalness: 0.6 });
-                    const darkMat = new THREE.MeshStandardMaterial({ color: 0x0f172a });
-                    const materials = [orangeMat, orangeMat, orangeMat, orangeMat, darkMat, orangeMat];
+                    
+                    const rightMat = new THREE.MeshBasicMaterial({ map: upsSideTex });
+                    const leftMat = new THREE.MeshBasicMaterial({ map: upsSideTex });
+                    const topMat = new THREE.MeshBasicMaterial({ map: upsTopTex });
+                    const bottomMat = new THREE.MeshBasicMaterial({ color: 0x18181b });
+                    const backMat = new THREE.MeshBasicMaterial({ map: upsBackTex });
+                    const frontMat = new THREE.MeshBasicMaterial({ map: upsFrontTex });
+
+                    const materials = [
+                        rightMat,  // Right
+                        leftMat,   // Left
+                        topMat,    // Top
+                        bottomMat, // Bottom
+                        backMat,   // Back
+                        frontMat   // Front
+                    ];
+
                     mesh = new THREE.Mesh(geo, materials);
                     mesh.position.set(posX, floorHeight + h / 2, posZ);
                     mesh.rotation.y = -THREE.MathUtils.degToRad(rot);
 
                 } else if (type === 'rampa') {
-                    // Ramp (Slanted wedge geometry)
-                    h = floorHeight > 0 ? floorHeight : 0.3; // Connect ground to raised floor
+                    // Ramp (Slanted wedge geometry) resting on concrete floor
+                    h = floorHeight > 0 ? floorHeight : 0.3;
                     
-                    // Create a wedge shape
                     const shape = new THREE.Shape();
                     shape.moveTo(-w/2, 0);
                     shape.lineTo(w/2, 0);
                     shape.lineTo(w/2, h);
-                    shape.lineTo(-w/2, 0); // Triangle
+                    shape.lineTo(-w/2, 0);
 
                     const extrudeSettings = {
                         depth: d,
@@ -643,34 +848,77 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     };
 
                     const geo = new THREE.ExtrudeGeometry(shape, extrudeSettings);
-                    geo.center(); // Center geometry
+                    geo.center();
                     
-                    const purpleMat = new THREE.MeshStandardMaterial({ color: 0x8b5cf6, roughness: 0.6 });
-                    mesh = new THREE.Mesh(geo, purpleMat);
-                    // Adjust position: centers the ramp between ground and floor height
-                    mesh.position.set(posX, h / 2, posZ);
+                    // Dark steel/grey metal texture for ramp
+                    const rampMat = new THREE.MeshStandardMaterial({ 
+                        color: 0x3f3f46, 
+                        roughness: 0.6,
+                        metalness: 0.5 
+                    });
+                    mesh = new THREE.Mesh(geo, rampMat);
+
+                    // Snap the ramp to the closest wall/door boundary so its low end is flush
+                    let adjustedPosX = posX;
+                    let adjustedPosZ = posZ;
+                    const snapThreshold = 1.5;
+
+                    if (rx * tileSize < snapThreshold) {
+                        if (rot === 0 || rot === 180) adjustedPosX = w / 2;
+                    } else if (rx * tileSize > roomWidth - snapThreshold - (isSwapped ? d : w)) {
+                        if (rot === 0 || rot === 180) adjustedPosX = roomWidth - w / 2;
+                    }
+
+                    if (ry * tileSize < snapThreshold) {
+                        if (rot === 90 || rot === 270) adjustedPosZ = w / 2;
+                    } else if (ry * tileSize > roomDepth - snapThreshold - (isSwapped ? w : d)) {
+                        if (rot === 90 || rot === 270) adjustedPosZ = roomDepth - w / 2;
+                    }
+
+                    mesh.position.set(adjustedPosX, h / 2, adjustedPosZ);
                     mesh.rotation.y = -THREE.MathUtils.degToRad(rot);
 
                 } else if (type === 'camaras') {
-                    // Camera (Sphere mounted high up on a wall/stand)
-                    h = 2.4; // Ceiling height
+                    // Camera
+                    h = 2.4;
                     const group = new THREE.Group();
                     
-                    // Small stand/pole
-                    const poleGeo = new THREE.CylinderGeometry(0.02, 0.02, 0.4);
-                    const darkMat = new THREE.MeshStandardMaterial({ color: 0x475569 });
+                    // Ceiling-mount support pole
+                    const poleGeo = new THREE.CylinderGeometry(0.015, 0.015, 0.5);
+                    const darkMat = new THREE.MeshStandardMaterial({ color: 0x3f3f46, roughness: 0.8 });
                     const pole = new THREE.Mesh(poleGeo, darkMat);
-                    pole.position.y = h - 0.2;
+                    pole.position.y = h - 0.25;
                     group.add(pole);
 
-                    // Camera body (sphere/box)
-                    const camGeo = new THREE.SphereGeometry(0.1, 16, 16);
-                    const camMat = new THREE.MeshStandardMaterial({ color: 0x0ea5e9, roughness: 0.2 });
-                    const cameraSphere = new THREE.Mesh(camGeo, camMat);
-                    cameraSphere.position.y = h - 0.4;
-                    group.add(cameraSphere);
+                    // Textured Camera Box using 3Dtelco camera textures
+                    const camWidth = 0.16;
+                    const camHeight = 0.14;
+                    const camDepth = 0.28;
+                    const camGeo = new THREE.BoxGeometry(camWidth, camHeight, camDepth);
+                    
+                    const rightMat = new THREE.MeshStandardMaterial({ map: camSideTex, roughness: 0.5 });
+                    const leftMat = new THREE.MeshStandardMaterial({ map: camSideRTex, roughness: 0.5 });
+                    const topMat = new THREE.MeshStandardMaterial({ map: camUpTex, roughness: 0.5 });
+                    const bottomMat = new THREE.MeshStandardMaterial({ color: 0x18181b });
+                    const backMat = new THREE.MeshStandardMaterial({ map: camBackTex, roughness: 0.5 });
+                    const frontMat = new THREE.MeshStandardMaterial({ map: camFrontTex, roughness: 0.4 });
 
-                    // Dummy main mesh for raycasting bounding box
+                    const materials = [
+                        rightMat,  // Right
+                        leftMat,   // Left
+                        topMat,    // Top
+                        bottomMat, // Bottom
+                        backMat,   // Back
+                        frontMat   // Front
+                    ];
+
+                    const cameraBox = new THREE.Mesh(camGeo, materials);
+                    cameraBox.position.y = h - 0.55;
+                    cameraBox.rotation.x = THREE.MathUtils.degToRad(15); // Tilted down slightly
+                    cameraBox.castShadow = true;
+                    cameraBox.receiveShadow = true;
+                    group.add(cameraBox);
+
                     const dummyGeo = new THREE.BoxGeometry(w, h, d);
                     const dummyMat = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0.0 });
                     mesh = new THREE.Mesh(dummyGeo, dummyMat);
@@ -679,52 +927,129 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     mesh.add(group);
                     
                 } else if (type === 'puerta') {
-                    // Door (Thin slate standing panel)
+                    // Door - Dark blue / black colored and flush against the wall
                     h = 2.1;
                     const doorThickness = 0.08;
                     const geo = new THREE.BoxGeometry(w - 0.02, h, doorThickness);
-                    const woodMat = new THREE.MeshStandardMaterial({ color: 0xea580c, roughness: 0.7 });
-                    mesh = new THREE.Mesh(geo, woodMat);
-                    mesh.position.set(posX, h / 2, posZ);
+                    
+                    // Dark blue/black door color
+                    const doorMat = new THREE.MeshStandardMaterial({ 
+                        color: 0x090d16, // Dark slate/black
+                        roughness: 0.5,
+                        metalness: 0.6
+                    });
+
+                    mesh = new THREE.Mesh(geo, doorMat);
+                    
+                    // Snap the door to the closest wall to avoid any visual separation gaps
+                    let adjustedPosX = posX;
+                    let adjustedPosZ = posZ;
+                    
+                    // Threshold to detect proximity to boundaries
+                    const threshold = 1.2; 
+                    if (posX < threshold) {
+                        adjustedPosX = doorThickness / 2;
+                    } else if (posX > roomWidth - threshold) {
+                        adjustedPosX = roomWidth - doorThickness / 2;
+                    }
+                    
+                    if (posZ < threshold) {
+                        adjustedPosZ = doorThickness / 2;
+                    } else if (posZ > roomDepth - threshold) {
+                        adjustedPosZ = roomDepth - doorThickness / 2;
+                    }
+
+                    mesh.position.set(adjustedPosX, h / 2, adjustedPosZ);
                     mesh.rotation.y = -THREE.MathUtils.degToRad(rot);
 
                 } else if (type.includes('escalerilla')) {
-                    // Cable Tray heights relative to the raised floor:
-                    // Fibra (Yellow) = 2.3m, Datos (Blue/Cobre) = 2.45m, Energía (Red) = 2.60m
-                    let altitude = 2.3; // Default (fibra)
-                    let trayColor = 0xeab308; // Fibra (Yellow)
+                    // Cable Tray
+                    let altitude = 2.3;
+                    let trayColor = 0xeab308;
 
                     if (type === 'escalerilla_cobre') {
                         altitude = 2.45;
-                        trayColor = 0x0284c7; // Cobre (Blue)
+                        trayColor = 0x0284c7;
                     } else if (type === 'escalerilla_energia') {
-                        altitude = 2.60;
-                        trayColor = 0xdc2626; // Energía (Red)
+                        // Place under the raised floor tiles (in the plenum space)
+                        altitude = - (floorHeight * 0.5); 
+                        trayColor = 0xdc2626;
                     }
 
-                    const trayHeight = 0.06;
-                    const geo = new THREE.BoxGeometry(w, trayHeight, d);
+                    // Dynamically determine length vs width to align texture along the long axis
+                    const isLongAlongZ = (d > w);
+                    const trayLength = isLongAlongZ ? d : w;
+                    const trayWidth = isLongAlongZ ? w : d;
 
-                    const trayMat = new THREE.MeshStandardMaterial({ 
+                    const trayHeight = 0.06;
+                    const geo = new THREE.BoxGeometry(trayLength, trayHeight, trayWidth);
+
+                    // Load textured repeating grid for tray from correct textures/floor/ directory
+                    const trayTex = textureLoader.load('3dmodel/texturas/floor/escalerilla.png');
+                    trayTex.wrapS = THREE.RepeatWrapping;
+                    trayTex.wrapT = THREE.RepeatWrapping;
+                    // Repeat along X relative to length, matching step size
+                    const repeatCount = Math.max(1, Math.round(trayLength / 0.3));
+                    trayTex.repeat.set(repeatCount, 1);
+
+                    // Load side rails texture matching 3Dtelco sidee.png
+                    const sideTex = textureLoader.load('3dmodel/pictures/sidee.png');
+                    sideTex.wrapS = THREE.RepeatWrapping;
+                    sideTex.wrapT = THREE.RepeatWrapping;
+                    sideTex.repeat.set(repeatCount, 1);
+
+                    const sideMat = new THREE.MeshStandardMaterial({ 
                         color: trayColor, 
-                        wireframe: true, 
-                        transparent: true, 
-                        opacity: 0.9 
+                        map: sideTex,
+                        roughness: 0.4
                     });
-                    mesh = new THREE.Mesh(geo, trayMat);
+                    
+                    const topBottomMat = new THREE.MeshStandardMaterial({ 
+                        color: trayColor, 
+                        map: trayTex,
+                        transparent: true, 
+                        opacity: 0.9,
+                        roughness: 0.4
+                    });
+
+                    const materials = [
+                        sideMat,       // Right
+                        sideMat,       // Left
+                        topBottomMat,  // Top
+                        topBottomMat,  // Bottom
+                        sideMat,       // Back
+                        sideMat        // Front
+                    ];
+
+                    mesh = new THREE.Mesh(geo, materials);
                     mesh.position.set(posX, floorHeight + altitude, posZ);
-                    mesh.rotation.y = -THREE.MathUtils.degToRad(rot);
+                    
+                    // Add 90 degrees if length is along Z to align texture direction
+                    const finalRot = isLongAlongZ ? (rot + 90) : rot;
+                    mesh.rotation.y = -THREE.MathUtils.degToRad(finalRot);
 
                 } else if (type.includes('piso')) {
-                    // Perforated Floor Grid (Very flat on grid)
+                    // Perforated Floor Grid (using malla-front texture)
                     h = 0.02;
                     const geo = new THREE.BoxGeometry(w - 0.01, h, d - 0.01);
-                    const tileMat = new THREE.MeshStandardMaterial({ 
-                        color: 0x64748b, 
-                        roughness: 0.9, 
-                        wireframe: true 
+                    
+                    const sideMat = new THREE.MeshStandardMaterial({ color: 0x64748b, roughness: 0.9 });
+                    const topMat = new THREE.MeshStandardMaterial({ 
+                        map: perforatedTex, 
+                        transparent: true,
+                        roughness: 0.6 
                     });
-                    mesh = new THREE.Mesh(geo, tileMat);
+
+                    const materials = [
+                        sideMat, // Right
+                        sideMat, // Left
+                        topMat,  // Top
+                        sideMat, // Bottom
+                        sideMat, // Back
+                        sideMat  // Front
+                    ];
+
+                    mesh = new THREE.Mesh(geo, materials);
                     mesh.position.set(posX, floorHeight + h / 2, posZ);
                     mesh.rotation.y = -THREE.MathUtils.degToRad(rot);
                 }
@@ -733,7 +1058,6 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     mesh.castShadow = true;
                     mesh.receiveShadow = true;
                     
-                    // Set metadata
                     mesh.userData = {
                         name: i.name,
                         type: type.toUpperCase(),

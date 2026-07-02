@@ -20,7 +20,13 @@ $action = $_REQUEST['action'] ?? '';
 try {
     if ($action === 'get_devices') {
         $rack_id = $_GET['rack_id'] ?? 0;
-        $stmt = $pdo->prepare("SELECT * FROM dc_rack_devices WHERE rack_id = ? ORDER BY start_u ASC");
+        $stmt = $pdo->prepare("
+            SELECT d.*, i.hostname as cmdb_hostname, i.attributes_json as cmdb_attrs 
+            FROM dc_rack_devices d
+            LEFT JOIN ci_instances i ON d.cmdb_reference = i.id
+            WHERE d.rack_id = ?
+            ORDER BY d.start_u ASC
+        ");
         $stmt->execute([$rack_id]);
         $devices = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
@@ -28,6 +34,20 @@ try {
         foreach ($devices as &$dev) {
             $dev['details'] = json_decode($dev['details_json'], true) ?: [];
             unset($dev['details_json']);
+            
+            if ($dev['cmdb_reference']) {
+                $cmdb_attrs = json_decode($dev['cmdb_attrs'], true) ?: [];
+                $dev['cmdb_imagen_frontal'] = $cmdb_attrs['imagen_frontal'] ?? '';
+                $dev['cmdb_imagen_trasera'] = $cmdb_attrs['imagen_trasera'] ?? '';
+                
+                // Sobrescribir campos si vienen del CI para mantener consistencia
+                if (!empty($cmdb_attrs['marca'])) $dev['details']['make'] = $cmdb_attrs['marca'];
+                if (!empty($cmdb_attrs['modelo'])) $dev['details']['model'] = $cmdb_attrs['modelo'];
+                if (!empty($cmdb_attrs['serial_number'])) $dev['details']['serial_number'] = $cmdb_attrs['serial_number'];
+                if (!empty($cmdb_attrs['asset_tag'])) $dev['details']['asset_tag'] = $cmdb_attrs['asset_tag'];
+                if (!empty($dev['cmdb_hostname'])) $dev['name'] = $dev['cmdb_hostname'];
+            }
+            unset($dev['cmdb_attrs']);
         }
         
         echo json_encode(['success' => true, 'data' => $devices]);
@@ -56,28 +76,169 @@ try {
             'watts' => $_POST['watts'] ?? '',
             'amps' => $_POST['amps'] ?? '',
             'voltage' => $_POST['voltage'] ?? '',
-            'color' => $_POST['color'] ?? '#2a2a2a' // Color de fondo visual en el rack
+            'color' => $_POST['color'] ?? '#2a2a2a', // Color de fondo visual en el rack
+            'depth' => $_POST['depth'] ?? 'full',
+            'mounting' => $_POST['mounting'] ?? 'horizontal',
+            'outlets_c13' => $_POST['outlets_c13'] ?? '',
+            'outlets_c19' => $_POST['outlets_c19'] ?? '',
+            'outlets_nema' => $_POST['outlets_nema'] ?? ''
         ];
         
         $details_json = json_encode($details);
         
-        if ($id > 0) {
-            // Actualizar
-            $stmt = $pdo->prepare("UPDATE dc_rack_devices SET name=?, start_u=?, height_u=?, orientation=?, cmdb_reference=?, details_json=? WHERE id=? AND rack_id=?");
-            $stmt->execute([$name, $start_u, $height_u, $orientation, $cmdb_ref, $details_json, $id, $rack_id]);
-            echo json_encode(['success' => true, 'message' => 'Dispositivo actualizado']);
-        } else {
-            // Insertar
-            $stmt = $pdo->prepare("INSERT INTO dc_rack_devices (rack_id, name, start_u, height_u, orientation, cmdb_reference, details_json) VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt->execute([$rack_id, $name, $start_u, $height_u, $orientation, $cmdb_ref, $details_json]);
-            echo json_encode(['success' => true, 'message' => 'Dispositivo agregado', 'id' => $pdo->lastInsertId()]);
+        $pdo->beginTransaction();
+        try {
+            if ($id > 0) {
+                // Obtener referencia cmdb anterior
+                $stmt_prev = $pdo->prepare("SELECT cmdb_reference FROM dc_rack_devices WHERE id = ?");
+                $stmt_prev->execute([$id]);
+                $prev_cmdb_ref = $stmt_prev->fetchColumn();
+                
+                // Si la referencia CMDB cambió, desvincular la anterior
+                if ($prev_cmdb_ref && $prev_cmdb_ref != $cmdb_ref) {
+                    $stmt_ci = $pdo->prepare("SELECT attributes_json FROM ci_instances WHERE id = ?");
+                    $stmt_ci->execute([$prev_cmdb_ref]);
+                    $ci = $stmt_ci->fetch(PDO::FETCH_ASSOC);
+                    if ($ci) {
+                        $ci_attrs = json_decode($ci['attributes_json'], true) ?: [];
+                        unset($ci_attrs['rack_id'], $ci_attrs['rack_start_u'], $ci_attrs['rack_height_u'], $ci_attrs['rack_orientation'], $ci_attrs['rack_color'], $ci_attrs['rack_depth'], $ci_attrs['rack_mounting'], $ci_attrs['rack_outlets_c13'], $ci_attrs['rack_outlets_c19'], $ci_attrs['rack_outlets_nema']);
+                        $pdo->prepare("UPDATE ci_instances SET attributes_json = ? WHERE id = ?")->execute([json_encode($ci_attrs), $prev_cmdb_ref]);
+                    }
+                }
+
+                // Actualizar
+                $stmt = $pdo->prepare("UPDATE dc_rack_devices SET name=?, start_u=?, height_u=?, orientation=?, cmdb_reference=?, details_json=? WHERE id=? AND rack_id=?");
+                $stmt->execute([$name, $start_u, $height_u, $orientation, $cmdb_ref, $details_json, $id, $rack_id]);
+                $device_db_id = $id;
+                $msg = 'Dispositivo actualizado';
+            } else {
+                // Insertar
+                $stmt = $pdo->prepare("INSERT INTO dc_rack_devices (rack_id, name, start_u, height_u, orientation, cmdb_reference, details_json) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                $stmt->execute([$rack_id, $name, $start_u, $height_u, $orientation, $cmdb_ref, $details_json]);
+                $device_db_id = $pdo->lastInsertId();
+                $msg = 'Dispositivo agregado';
+            }
+
+            // Sincronizar bidireccionalmente con CMDB si está vinculado
+            if (!empty($cmdb_ref)) {
+                $stmt_ci = $pdo->prepare("SELECT hostname, attributes_json FROM ci_instances WHERE id = ?");
+                $stmt_ci->execute([$cmdb_ref]);
+                $ci = $stmt_ci->fetch(PDO::FETCH_ASSOC);
+                if ($ci) {
+                    $ci_attrs = json_decode($ci['attributes_json'], true) ?: [];
+                    $ci_attrs['rack_id'] = (string)$rack_id;
+                    $ci_attrs['rack_start_u'] = (string)$start_u;
+                    $ci_attrs['rack_height_u'] = (string)$height_u;
+                    $ci_attrs['rack_orientation'] = $orientation;
+                    $ci_attrs['rack_color'] = $details['color'];
+                    $ci_attrs['rack_depth'] = $details['depth'];
+                    $ci_attrs['rack_mounting'] = $details['mounting'];
+                    $ci_attrs['rack_outlets_c13'] = $details['outlets_c13'] ?? '';
+                    $ci_attrs['rack_outlets_c19'] = $details['outlets_c19'] ?? '';
+                    $ci_attrs['rack_outlets_nema'] = $details['outlets_nema'] ?? '';
+                    
+                    // Sincronizar campos hacia el CI
+                    if (!empty($details['make'])) $ci_attrs['marca'] = $details['make'];
+                    if (!empty($details['model'])) $ci_attrs['modelo'] = $details['model'];
+                    if (!empty($details['serial_number'])) $ci_attrs['serial_number'] = $details['serial_number'];
+                    if (!empty($details['asset_tag'])) $ci_attrs['asset_tag'] = $details['asset_tag'];
+                    
+                    $updated_ci_attrs = json_encode($ci_attrs);
+                    
+                    $stmt_up_ci = $pdo->prepare("UPDATE ci_instances SET hostname = ?, attributes_json = ? WHERE id = ?");
+                    $stmt_up_ci->execute([$name, $updated_ci_attrs, $cmdb_ref]);
+                }
+            }
+
+            $pdo->commit();
+            echo json_encode(['success' => true, 'message' => $msg, 'id' => $device_db_id]);
+        } catch (Exception $e) {
+            $pdo->rollBack();
+            throw $e;
         }
         
     } elseif ($action === 'delete_device') {
         $id = $_POST['id'] ?? 0;
-        $stmt = $pdo->prepare("DELETE FROM dc_rack_devices WHERE id = ?");
-        $stmt->execute([$id]);
-        echo json_encode(['success' => true, 'message' => 'Dispositivo eliminado']);
+        $pdo->beginTransaction();
+        try {
+            // Desvincular de la CMDB primero si estaba vinculado
+            $stmt_ref = $pdo->prepare("SELECT cmdb_reference FROM dc_rack_devices WHERE id = ?");
+            $stmt_ref->execute([$id]);
+            $cmdb_ref = $stmt_ref->fetchColumn();
+            
+            if ($cmdb_ref) {
+                $stmt_ci = $pdo->prepare("SELECT attributes_json FROM ci_instances WHERE id = ?");
+                $stmt_ci->execute([$cmdb_ref]);
+                $ci = $stmt_ci->fetch(PDO::FETCH_ASSOC);
+                if ($ci) {
+                    $ci_attrs = json_decode($ci['attributes_json'], true) ?: [];
+                    unset($ci_attrs['rack_id'], $ci_attrs['rack_start_u'], $ci_attrs['rack_height_u'], $ci_attrs['rack_orientation'], $ci_attrs['rack_color'], $ci_attrs['rack_depth'], $ci_attrs['rack_mounting'], $ci_attrs['rack_outlets_c13'], $ci_attrs['rack_outlets_c19'], $ci_attrs['rack_outlets_nema']);
+                    $pdo->prepare("UPDATE ci_instances SET attributes_json = ? WHERE id = ?")->execute([json_encode($ci_attrs), $cmdb_ref]);
+                }
+            }
+            
+            $stmt = $pdo->prepare("DELETE FROM dc_rack_devices WHERE id = ?");
+            $stmt->execute([$id]);
+            
+            $pdo->commit();
+            echo json_encode(['success' => true, 'message' => 'Dispositivo eliminado']);
+        } catch (Exception $e) {
+            $pdo->rollBack();
+            throw $e;
+        }
+        
+    } elseif ($action === 'update_device_u_position') {
+        $id = (int)($_POST['id'] ?? 0);
+        $start_u = (int)($_POST['start_u'] ?? 1);
+        $orientation = $_POST['orientation'] ?? null;
+        
+        if ($id > 0) {
+            $pdo->beginTransaction();
+            try {
+                // Obtener datos actuales del dispositivo
+                $stmt = $pdo->prepare("SELECT rack_id, cmdb_reference, details_json, orientation, height_u FROM dc_rack_devices WHERE id = ?");
+                $stmt->execute([$id]);
+                $dev = $stmt->fetch(PDO::FETCH_ASSOC);
+                
+                if ($dev) {
+                    $details = json_decode($dev['details_json'], true) ?: [];
+                    $depth = $details['depth'] ?? 'full';
+                    
+                    if ($depth !== 'full' && $orientation !== null) {
+                        $stmt_up = $pdo->prepare("UPDATE dc_rack_devices SET start_u = ?, orientation = ? WHERE id = ?");
+                        $stmt_up->execute([$start_u, $orientation, $id]);
+                    } else {
+                        $stmt_up = $pdo->prepare("UPDATE dc_rack_devices SET start_u = ? WHERE id = ?");
+                        $stmt_up->execute([$start_u, $id]);
+                    }
+                    
+                    // Sincronizar con CMDB
+                    $cmdb_ref = $dev['cmdb_reference'];
+                    if ($cmdb_ref) {
+                        $stmt_ci = $pdo->prepare("SELECT attributes_json FROM ci_instances WHERE id = ?");
+                        $stmt_ci->execute([$cmdb_ref]);
+                        $ci = $stmt_ci->fetch(PDO::FETCH_ASSOC);
+                        if ($ci) {
+                            $ci_attrs = json_decode($ci['attributes_json'], true) ?: [];
+                            $ci_attrs['rack_start_u'] = (string)$start_u;
+                            if ($depth !== 'full' && $orientation !== null) {
+                                $ci_attrs['rack_orientation'] = $orientation;
+                            }
+                            
+                            $pdo->prepare("UPDATE ci_instances SET attributes_json = ? WHERE id = ?")->execute([json_encode($ci_attrs), $cmdb_ref]);
+                        }
+                    }
+                }
+                
+                $pdo->commit();
+                echo json_encode(['success' => true, 'message' => 'Posición U actualizada']);
+            } catch (Exception $e) {
+                $pdo->rollBack();
+                throw $e;
+            }
+        } else {
+            echo json_encode(['success' => false, 'message' => 'ID de dispositivo inválido']);
+        }
         
     } elseif ($action === 'update_rack_position') {
         $rack_id = (int)($_POST['rack_id'] ?? 0);
@@ -243,9 +404,13 @@ try {
     } elseif ($action === 'get_zabbix_hosts') {
         require_once __DIR__ . '/../../src/zabbix_api.php';
         $groupid = $_GET['groupid'] ?? null;
+        if ($groupid === '') {
+            $groupid = null;
+        }
         $params = [
             'output' => ['hostid', 'host', 'name'],
             'selectInterfaces' => ['ip'],
+            'selectInventory' => 'extend',
             'sortfield' => 'name'
         ];
         if ($groupid) {
@@ -260,10 +425,17 @@ try {
                 if (!empty($h['interfaces'])) {
                     $ip = $h['interfaces'][0]['ip'];
                 }
+                $inv = $h['inventory'] ?? [];
                 return [
                     'hostid' => $h['hostid'],
                     'name' => $h['name'],
-                    'ip' => $ip
+                    'ip' => $ip,
+                    'make' => $inv['vendor'] ?? '',
+                    'model' => $inv['model'] ?? '',
+                    'serial' => $inv['serialno_a'] ?? '',
+                    'asset_tag' => $inv['tag'] ?? '',
+                    'owner' => $inv['contact'] ?? '',
+                    'notes' => $inv['notes'] ?? ''
                 ];
             }, $response['result']);
             echo json_encode(['success' => true, 'data' => $hosts]);

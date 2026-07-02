@@ -70,6 +70,7 @@ require_once __DIR__ . '/partials/header.php';
                                 <option value="Propiedad">Propiedad</option>
                                 <option value="Version">Version</option>
                                 <option value="Ubicación">Ubicación</option>
+                                <option value="Imagen">Imagen</option>
                             </select>
                         </div>
                         
@@ -81,7 +82,15 @@ require_once __DIR__ . '/partials/header.php';
                                 <option value="number">Número (Integer/Float)</option>
                                 <option value="boolean">Booleano (Sí/No)</option>
                                 <option value="date">Fecha</option>
+                                <option value="multiselect">Lista de Opciones (Select)</option>
+                                <option value="image">Imagen / Archivo (Upload)</option>
                             </select>
+                        </div>
+
+                        <div class="form-group" id="group_multiselect_values" style="display: none;">
+                            <label>Opciones del Selector <span class="text-danger">*</span></label>
+                            <textarea name="multiselect_values" id="attr_multiselect_values" class="form-control" rows="2" placeholder="ej: Opción 1, Opción 2, Opción 3"></textarea>
+                            <small class="form-text text-muted">Ingrese las opciones de la lista separadas por comas (,).</small>
                         </div>
                         
                         <div class="form-group">
@@ -119,6 +128,16 @@ let attributes = [];
 
 $(document).ready(function() {
     loadAttributes();
+
+    $('#attr_type').change(function() {
+        if ($(this).val() === 'multiselect') {
+            $('#group_multiselect_values').show();
+            $('#attr_multiselect_values').prop('required', true);
+        } else {
+            $('#group_multiselect_values').hide();
+            $('#attr_multiselect_values').prop('required', false).val('');
+        }
+    });
 
     $('#attribute-form').submit(function(e) {
         e.preventDefault();
@@ -165,7 +184,9 @@ function renderTable() {
             'textarea': '<span class="badge badge-secondary">Texto Largo</span>',
             'number': '<span class="badge badge-primary">Número</span>',
             'boolean': '<span class="badge badge-success">Booleano</span>',
-            'date': '<span class="badge badge-warning">Fecha</span>'
+            'date': '<span class="badge badge-warning">Fecha</span>',
+            'multiselect': '<span class="badge badge-dark">Select</span>',
+            'image': '<span class="badge badge-danger"><i class="fas fa-image"></i> Imagen</span>'
         };
         let req = attr.is_required == 1 ? '<i class="fas fa-check text-success"></i>' : '<i class="fas fa-times text-muted"></i>';
         
@@ -192,9 +213,10 @@ function openCreateForm() {
     $('#attr_id').val(0);
     $('#attr_name').val('');
     $('#attr_group_name').val('General');
-    $('#attr_type').val('string');
+    $('#attr_type').val('string').trigger('change');
     $('#attr_is_required').prop('checked', false);
     $('#attr_description').val('');
+    $('#attr_multiselect_values').val('');
 }
 
 function openEditForm(id) {
@@ -209,9 +231,10 @@ function openEditForm(id) {
     $('#attr_id').val(attr.id);
     $('#attr_name').val(attr.name);
     $('#attr_group_name').val(attr.group_name || 'General');
-    $('#attr_type').val(attr.type);
+    $('#attr_type').val(attr.type).trigger('change');
     $('#attr_is_required').prop('checked', attr.is_required == 1);
     $('#attr_description').val(attr.description || '');
+    $('#attr_multiselect_values').val(attr.multiselect_values || '');
 }
 
 function closeForm() {

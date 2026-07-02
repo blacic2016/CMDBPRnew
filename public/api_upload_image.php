@@ -22,7 +22,7 @@ try {
     $table = $_POST['table'] ?? $_POST['entity_type'] ?? '';
     $id = isset($_POST['id']) ? (int)$_POST['id'] : (isset($_POST['entity_id']) ? (int)$_POST['entity_id'] : 0);
 
-    if (empty($table) || $id <= 0) {
+    if (empty($table) || ($id <= 0 && $table !== 'ci_attributes')) {
         throw new Exception("Datos del activo incompletos (Tabla/Tipo: $table, ID: $id).");
     }
 

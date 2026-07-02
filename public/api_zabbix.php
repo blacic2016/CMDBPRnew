@@ -148,6 +148,7 @@ switch ($action) {
             'hostids' => $hostid,
             'output' => 'extend',
             'selectGroups' => 'extend',
+            'selectHostGroups' => 'extend',
             'selectParentTemplates' => 'extend',
             'selectTags' => 'extend',
             'selectMacros' => 'extend',
@@ -337,8 +338,37 @@ switch ($action) {
         $stmt->execute([$hostid]);
         $final_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+        // Fetch corresponding CMDB instance and its mappings
+        $stmt_ci = $pdo->prepare("SELECT id FROM ci_instances WHERE zabbix_host_id = ?");
+        $stmt_ci->execute([$hostid]);
+        $ci_id = $stmt_ci->fetchColumn();
+
+        $cmdb_mappings = [];
+        if ($ci_id) {
+            $sql_cmdb = "SELECT 
+                            c.name as port_name,
+                            pm.id as mapping_id,
+                            pm.cable_type,
+                            pm.color_code,
+                            pm.notes,
+                            c_tgt.name as dest_port_name,
+                            i_tgt.id as dest_device_id,
+                            i_tgt.hostname as dest_device_name
+                        FROM ci_components c
+                        JOIN port_mappings pm ON (pm.source_component_id = c.id OR pm.target_component_id = c.id)
+                        LEFT JOIN ci_components c_tgt ON (CASE WHEN pm.source_component_id = c.id THEN pm.target_component_id ELSE pm.source_component_id END) = c_tgt.id
+                        LEFT JOIN ci_instances i_tgt ON c_tgt.parent_ci_id = i_tgt.id
+                        WHERE c.parent_ci_id = ?";
+            $stmt_cmdb = $pdo->prepare($sql_cmdb);
+            $stmt_cmdb->execute([$ci_id]);
+            while ($row = $stmt_cmdb->fetch(PDO::FETCH_ASSOC)) {
+                $cmdb_mappings[$row['port_name']] = $row;
+            }
+        }
+
         // Fetch connected host names
         $connected_hostids = array_filter(array_column($final_data, 'connected_hostid'));
+        $h_names = [];
         if (!empty($connected_hostids)) {
             $h_resp = call_zabbix_api('host.get', [
                 'hostids' => array_unique($connected_hostids),
@@ -346,15 +376,36 @@ switch ($action) {
             ]);
             if (!isset($h_resp['error'])) {
                 $h_names = array_column($h_resp['result'], 'name', 'hostid');
-                foreach ($final_data as &$iface) {
-                    if ($iface['connected_hostid']) {
-                        $iface['connected_host_name'] = $h_names[$iface['connected_hostid']] ?? 'Unknown Host';
-                    }
-                }
             }
         }
 
-        echo json_encode(['success' => true, 'data' => $final_data]);
+        foreach ($final_data as &$iface) {
+            $iname = $iface['interface_name'];
+            if (isset($cmdb_mappings[$iname])) {
+                $m = $cmdb_mappings[$iname];
+                $iface['connected_host_name'] = $m['dest_device_name'];
+                $iface['connected_port_name'] = $m['dest_port_name'];
+                $iface['cable_type'] = $m['cable_type'];
+                $iface['color_code'] = $m['color_code'];
+                $iface['notes'] = $m['notes'];
+                $iface['mapping_id'] = $m['mapping_id'];
+                $iface['dest_device_id'] = $m['dest_device_id'];
+            } else {
+                $iface['connected_host_name'] = $iface['connected_hostid'] ? ($h_names[$iface['connected_hostid']] ?? 'Unknown Host') : null;
+                $iface['connected_port_name'] = null;
+                $iface['cable_type'] = null;
+                $iface['color_code'] = null;
+                $iface['notes'] = null;
+                $iface['mapping_id'] = null;
+                $iface['dest_device_id'] = null;
+            }
+        }
+
+        echo json_encode([
+            'success' => true, 
+            'data' => $final_data, 
+            'ci_device_id' => $ci_id ? (int)$ci_id : null
+        ]);
         break;
 
     case 'save_interface_connection':
