@@ -6,10 +6,15 @@
 
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../src/auth.php';
+require_once __DIR__ . '/../src/permissions_helper.php';
 require_once __DIR__ . '/../src/db.php';
 
 // Protección de sesión
-require_login(); 
+require_login();
+if (!has_module_access('monitoreo')) {
+    header("Location: dashboard.php");
+    exit();
+}
 
 $page_title = 'Actualizar Monitoreo';
 

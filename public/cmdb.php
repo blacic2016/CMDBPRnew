@@ -7,13 +7,35 @@
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../src/auth.php';
 require_once __DIR__ . '/../src/helpers.php';
+require_once __DIR__ . '/../src/permissions_helper.php';
 
 // Protección de sesión
 require_login(); 
 
+$name = $_GET['name'] ?? '';
+
+if ($name) {
+    if (!has_sheet_access($name, 'view')) {
+        header("Location: dashboard.php");
+        exit();
+    }
+} else {
+    $sheet_tables = listSheetTables();
+    $has_any = false;
+    foreach ($sheet_tables as $table) {
+        if (has_sheet_access($table, 'view')) {
+            $has_any = true;
+            break;
+        }
+    }
+    if (!$has_any) {
+        header("Location: dashboard.php");
+        exit();
+    }
+}
+
 // 1. Procesar nombre de la tabla para el título
 $sheet_name_clean = 'CMDB';
-$name = $_GET['name'] ?? '';
 
 if ($name) {
     // Corregimos la regex: 'sheet_' por el nombre real de la tabla

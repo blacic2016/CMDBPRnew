@@ -1,11 +1,12 @@
 <?php
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../src/auth.php';
+require_once __DIR__ . '/../src/permissions_helper.php';
 
 header('Content-Type: application/json');
 
-if (!current_user_id()) {
-    echo json_encode(['success' => false, 'error' => 'No session']);
+if (!current_user_id() || !has_module_access('snmp')) {
+    echo json_encode(['success' => false, 'error' => 'No autorizado']);
     exit;
 }
 

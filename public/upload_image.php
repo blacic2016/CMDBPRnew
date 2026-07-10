@@ -5,6 +5,7 @@
  */
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../src/auth.php';
+require_once __DIR__ . '/../src/permissions_helper.php';
 require_once __DIR__ . '/../src/db.php';
 require_once __DIR__ . '/../src/helpers.php';
 
@@ -18,6 +19,10 @@ try {
     // 1. Validar permisos
     if (!current_user_id()) {
         throw new Exception("Sesión expirada. Por favor inicie sesión nuevamente.");
+    }
+
+    if (!has_module_access('ci_list') && !has_module_access('distribrack')) {
+        throw new Exception("No autorizado.");
     }
 
     // 2. Validar parámetros (Soporta múltiples nombres de parámetros según quien llame)

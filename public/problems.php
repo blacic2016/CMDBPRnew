@@ -6,9 +6,14 @@
 
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../src/auth.php';
+require_once __DIR__ . '/../src/permissions_helper.php';
 require_once __DIR__ . '/../src/zabbix_api.php';
 
 require_login();
+if (!has_module_access('monitoreo')) {
+    header("Location: dashboard.php");
+    exit();
+}
 
 function format_zabbix_duration($seconds) {
     if ($seconds < 60) return "{$seconds}s";

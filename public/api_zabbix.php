@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../src/auth.php';
+require_once __DIR__ . '/../src/permissions_helper.php';
 require_once __DIR__ . '/../src/zabbix_api.php';
 require_once __DIR__ . '/../src/db.php';
 
@@ -8,6 +9,11 @@ header('Content-Type: application/json');
 
 if (!current_user_id()) {
     echo json_encode(['success' => false, 'error' => 'No session']);
+    exit;
+}
+
+if (!has_module_access('monitoreo') && !has_module_access('ci_list') && !has_module_access('portmapping') && !has_module_access('reports')) {
+    echo json_encode(['success' => false, 'error' => 'No autorizado']);
     exit;
 }
 

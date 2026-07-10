@@ -1,0 +1,107 @@
+==========================================
+Sheet: Implementacion
+==========================================
+Row 1: IMPLEMENTACIÓN
+Row 2: MANTENIMIENTO PREVENTIVO |  |  | MARGEN | =Costos!J2 (0.2)
+Row 3: MANTENIMIENTO CORRECTIVO
+Row 4: BOLSA DE HORAS |  |  | CLIENTE: | UDLA
+Row 5: RESUMEN DEL PROYECTO |  |  |  |  |  |  |  |  |  |  |  |  |  | HORAS LABORABLES
+Row 6:  |  |  | Detalle | N1 | N2 | N3 | E1 | E2 |  | Tipo | Horas Laborables | Horas no Laborables 50% | Horas no Laborables 100% |  | Costo |  | Costo |  | Costo
+Row 7:  |  |  | Gestión de Proyecto 1 |  |  |  |  |  |  |  |  |  |  | =($W$7*Costos!$J$11) (238.4765625) | =($W$7*Costos!$G$11) (190.78125) | =($W$7*Costos!$J$12) (279.8125) | =($W$7*Costos!$G$12) (223.85)
+Row 8:  |  |  | Movilización |  |  |  |  |  |  |  |  |  |  | =SUM($L$11:$L$79,L80/Costos!G5) (44) | =SUM(L11:L79) (44) | =SUM($M$11:$N$79,M80/Costos!H5,Implementacion!N80/Costos!I5) (0) | =SUM(M11:N79) (0) | =$O$8/7 (6.2857142857143) | =$O$8/7 (6.2857142857143)
+Row 9:  |  |  | Documentación
+Row 11:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L11*Costos!$J$4) (0) | =($L11*Costos!$G$4) (0) | =($L11*Costos!$J$5) (0) | =($L11*Costos!$G$5) (0) | =($L11*Costos!$J$6) (0) | =($L11*Costos!$G$6) (0)
+Row 12:  |  |  | Revisión y actualización del Collector |  |  | x |  |  |  |  | 3 |  |  | =($L12*Costos!$J$4) (52.161654135338) | =($L12*Costos!$G$4) (41.729323308271) | =($L12*Costos!$J$5) (86.936090225564) | =($L12*Costos!$G$5) (69.548872180451) | =($L12*Costos!$J$6) (104.32330827068) | =($L12*Costos!$G$6) (83.458646616541)
+Row 13:  |  |  | Revisión de CX Cloud / cx.cisco.com |  |  | x |  |  |  |  | 6 |  |  | =($L13*Costos!$J$4) (104.32330827068) | =($L13*Costos!$G$4) (83.458646616541) | =($L13*Costos!$J$5) (173.87218045113) | =($L13*Costos!$G$5) (139.0977443609) | =($L13*Costos!$J$6) (208.64661654135) | =($L13*Costos!$G$6) (166.91729323308)
+Row 14:  |  |  | Análisis de vulnerabilidades y recomendaciones |  |  | x |  |  |  |  | 6 |  |  | =($L14*Costos!$J$4) (104.32330827068) | =($L14*Costos!$G$4) (83.458646616541) | =($L14*Costos!$J$5) (173.87218045113) | =($L14*Costos!$G$5) (139.0977443609) | =($L14*Costos!$J$6) (208.64661654135) | =($L14*Costos!$G$6) (166.91729323308)
+Row 15:  |  |  | Reunion presentación |  |  | x |  |  |  |  | 1 |  |  | =($L15*Costos!$J$4) (17.387218045113) | =($L15*Costos!$G$4) (13.90977443609) | =($L15*Costos!$J$5) (28.978696741855) | =($L15*Costos!$G$5) (23.182957393484) | =($L15*Costos!$J$6) (34.774436090226) | =($L15*Costos!$G$6) (27.81954887218)
+Row 16:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L16*Costos!$J$4) (0) | =($L16*Costos!$G$4) (0) | =($L16*Costos!$J$5) (0) | =($L16*Costos!$G$5) (0) | =($L16*Costos!$J$6) (0) | =($L16*Costos!$G$6) (0)
+Row 17:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L17*Costos!$J$4) (0) | =($L17*Costos!$G$4) (0) | =($L17*Costos!$J$5) (0) | =($L17*Costos!$G$5) (0) | =($L17*Costos!$J$6) (0) | =($L17*Costos!$G$6) (0)
+Row 18: a.      El proveedor debe enviar un informe mensual de las horas soporte us |  |  | Elaboración de informe Trimestral |  | x |  |  |  |  |  | =6*4 (24) |  |  | =($L18*Costos!$J$4) (417.29323308271) | =($L18*Costos!$G$4) (333.83458646617) | =($L18*Costos!$J$5) (695.48872180451) | =($L18*Costos!$G$5) (556.39097744361) | =($L18*Costos!$J$6) (834.58646616541) | =($L18*Costos!$G$6) (667.66917293233)
+Row 19: b.      El proveedor debe enviar un informe mensual del estado de salud del |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L19*Costos!$J$4) (0) | =($L19*Costos!$G$4) (0) | =($L19*Costos!$J$5) (0) | =($L19*Costos!$G$5) (0) | =($L19*Costos!$J$6) (0) | =($L19*Costos!$G$6) (0)
+Row 20: c.      El proveedor debe enviar un informe mensual de recomendaciones tecn |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L20*Costos!$J$4) (0) | =($L20*Costos!$G$4) (0) | =($L20*Costos!$J$5) (0) | =($L20*Costos!$G$5) (0) | =($L20*Costos!$J$6) (0) | =($L20*Costos!$G$6) (0)
+Row 21:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L21*Costos!$J$4) (0) | =($L21*Costos!$G$4) (0) | =($L21*Costos!$J$5) (0) | =($L21*Costos!$G$5) (0) | =($L21*Costos!$J$6) (0) | =($L21*Costos!$G$6) (0)
+Row 22:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L22*Costos!$J$4) (0) | =($L22*Costos!$G$4) (0) | =($L22*Costos!$J$5) (0) | =($L22*Costos!$G$5) (0) | =($L22*Costos!$J$6) (0) | =($L22*Costos!$G$6) (0)
+Row 23:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L23*Costos!$J$4) (0) | =($L23*Costos!$G$4) (0) | =($L23*Costos!$J$5) (0) | =($L23*Costos!$G$5) (0) | =($L23*Costos!$J$6) (0) | =($L23*Costos!$G$6) (0)
+Row 24:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L24*Costos!$J$4) (0) | =($L24*Costos!$G$4) (0) | =($L24*Costos!$J$5) (0) | =($L24*Costos!$G$5) (0) | =($L24*Costos!$J$6) (0) | =($L24*Costos!$G$6) (0)
+Row 25:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L25*Costos!$J$4) (0) | =($L25*Costos!$G$4) (0) | =($L25*Costos!$J$5) (0) | =($L25*Costos!$G$5) (0) | =($L25*Costos!$J$6) (0) | =($L25*Costos!$G$6) (0)
+Row 26:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L26*Costos!$J$4) (0) | =($L26*Costos!$G$4) (0) | =($L26*Costos!$J$5) (0) | =($L26*Costos!$G$5) (0) | =($L26*Costos!$J$6) (0) | =($L26*Costos!$G$6) (0)
+Row 27:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L27*Costos!$J$4) (0) | =($L27*Costos!$G$4) (0) | =($L27*Costos!$J$5) (0) | =($L27*Costos!$G$5) (0) | =($L27*Costos!$J$6) (0) | =($L27*Costos!$G$6) (0)
+Row 28:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L28*Costos!$J$4) (0) | =($L28*Costos!$G$4) (0) | =($L28*Costos!$J$5) (0) | =($L28*Costos!$G$5) (0) | =($L28*Costos!$J$6) (0) | =($L28*Costos!$G$6) (0)
+Row 29:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L29*Costos!$J$4) (0) | =($L29*Costos!$G$4) (0) | =($L29*Costos!$J$5) (0) | =($L29*Costos!$G$5) (0) | =($L29*Costos!$J$6) (0) | =($L29*Costos!$G$6) (0)
+Row 30:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L30*Costos!$J$4) (0) | =($L30*Costos!$G$4) (0) | =($L30*Costos!$J$5) (0) | =($L30*Costos!$G$5) (0) | =($L30*Costos!$J$6) (0) | =($L30*Costos!$G$6) (0)
+Row 31:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L31*Costos!$J$4) (0) | =($L31*Costos!$G$4) (0) | =($L31*Costos!$J$5) (0) | =($L31*Costos!$G$5) (0) | =($L31*Costos!$J$6) (0) | =($L31*Costos!$G$6) (0)
+Row 32:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L32*Costos!$J$4) (0) | =($L32*Costos!$G$4) (0) | =($L32*Costos!$J$5) (0) | =($L32*Costos!$G$5) (0) | =($L32*Costos!$J$6) (0) | =($L32*Costos!$G$6) (0)
+Row 33:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L33*Costos!$J$4) (0) | =($L33*Costos!$G$4) (0) | =($L33*Costos!$J$5) (0) | =($L33*Costos!$G$5) (0) | =($L33*Costos!$J$6) (0) | =($L33*Costos!$G$6) (0)
+Row 34:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L34*Costos!$J$4) (0) | =($L34*Costos!$G$4) (0) | =($L34*Costos!$J$5) (0) | =($L34*Costos!$G$5) (0) | =($L34*Costos!$J$6) (0) | =($L34*Costos!$G$6) (0)
+Row 35:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L35*Costos!$J$4) (0) | =($L35*Costos!$G$4) (0) | =($L35*Costos!$J$5) (0) | =($L35*Costos!$G$5) (0) | =($L35*Costos!$J$6) (0) | =($L35*Costos!$G$6) (0)
+Row 36:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L36*Costos!$J$4) (0) | =($L36*Costos!$G$4) (0) | =($L36*Costos!$J$5) (0) | =($L36*Costos!$G$5) (0) | =($L36*Costos!$J$6) (0) | =($L36*Costos!$G$6) (0)
+Row 37:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L37*Costos!$J$4) (0) | =($L37*Costos!$G$4) (0) | =($L37*Costos!$J$5) (0) | =($L37*Costos!$G$5) (0) | =($L37*Costos!$J$6) (0) | =($L37*Costos!$G$6) (0)
+Row 38:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L38*Costos!$J$4) (0) | =($L38*Costos!$G$4) (0) | =($L38*Costos!$J$5) (0) | =($L38*Costos!$G$5) (0) | =($L38*Costos!$J$6) (0) | =($L38*Costos!$G$6) (0)
+Row 39:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L39*Costos!$J$4) (0) | =($L39*Costos!$G$4) (0) | =($L39*Costos!$J$5) (0) | =($L39*Costos!$G$5) (0) | =($L39*Costos!$J$6) (0) | =($L39*Costos!$G$6) (0)
+Row 40:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L40*Costos!$J$4) (0) | =($L40*Costos!$G$4) (0) | =($L40*Costos!$J$5) (0) | =($L40*Costos!$G$5) (0) | =($L40*Costos!$J$6) (0) | =($L40*Costos!$G$6) (0)
+Row 41:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L41*Costos!$J$4) (0) | =($L41*Costos!$G$4) (0) | =($L41*Costos!$J$5) (0) | =($L41*Costos!$G$5) (0) | =($L41*Costos!$J$6) (0) | =($L41*Costos!$G$6) (0)
+Row 42:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L42*Costos!$J$4) (0) | =($L42*Costos!$G$4) (0) | =($L42*Costos!$J$5) (0) | =($L42*Costos!$G$5) (0) | =($L42*Costos!$J$6) (0) | =($L42*Costos!$G$6) (0)
+Row 43:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L43*Costos!$J$4) (0) | =($L43*Costos!$G$4) (0) | =($L43*Costos!$J$5) (0) | =($L43*Costos!$G$5) (0) | =($L43*Costos!$J$6) (0) | =($L43*Costos!$G$6) (0)
+Row 44:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L44*Costos!$J$4) (0) | =($L44*Costos!$G$4) (0) | =($L44*Costos!$J$5) (0) | =($L44*Costos!$G$5) (0) | =($L44*Costos!$J$6) (0) | =($L44*Costos!$G$6) (0)
+Row 45:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L45*Costos!$J$4) (0) | =($L45*Costos!$G$4) (0) | =($L45*Costos!$J$5) (0) | =($L45*Costos!$G$5) (0) | =($L45*Costos!$J$6) (0) | =($L45*Costos!$G$6) (0)
+Row 46:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L46*Costos!$J$4) (0) | =($L46*Costos!$G$4) (0) | =($L46*Costos!$J$5) (0) | =($L46*Costos!$G$5) (0) | =($L46*Costos!$J$6) (0) | =($L46*Costos!$G$6) (0)
+Row 47:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L47*Costos!$J$4) (0) | =($L47*Costos!$G$4) (0) | =($L47*Costos!$J$5) (0) | =($L47*Costos!$G$5) (0) | =($L47*Costos!$J$6) (0) | =($L47*Costos!$G$6) (0)
+Row 48:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L48*Costos!$J$4) (0) | =($L48*Costos!$G$4) (0) | =($L48*Costos!$J$5) (0) | =($L48*Costos!$G$5) (0) | =($L48*Costos!$J$6) (0) | =($L48*Costos!$G$6) (0)
+Row 49:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L49*Costos!$J$4) (0) | =($L49*Costos!$G$4) (0) | =($L49*Costos!$J$5) (0) | =($L49*Costos!$G$5) (0) | =($L49*Costos!$J$6) (0) | =($L49*Costos!$G$6) (0)
+Row 50:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L50*Costos!$J$4) (0) | =($L50*Costos!$G$4) (0) | =($L50*Costos!$J$5) (0) | =($L50*Costos!$G$5) (0) | =($L50*Costos!$J$6) (0) | =($L50*Costos!$G$6) (0)
+Row 51:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L51*Costos!$J$4) (0) | =($L51*Costos!$G$4) (0) | =($L51*Costos!$J$5) (0) | =($L51*Costos!$G$5) (0) | =($L51*Costos!$J$6) (0) | =($L51*Costos!$G$6) (0)
+Row 52:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L52*Costos!$J$4) (0) | =($L52*Costos!$G$4) (0) | =($L52*Costos!$J$5) (0) | =($L52*Costos!$G$5) (0) | =($L52*Costos!$J$6) (0) | =($L52*Costos!$G$6) (0)
+Row 53:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L53*Costos!$J$4) (0) | =($L53*Costos!$G$4) (0) | =($L53*Costos!$J$5) (0) | =($L53*Costos!$G$5) (0) | =($L53*Costos!$J$6) (0) | =($L53*Costos!$G$6) (0)
+Row 54:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L54*Costos!$J$4) (0) | =($L54*Costos!$G$4) (0) | =($L54*Costos!$J$5) (0) | =($L54*Costos!$G$5) (0) | =($L54*Costos!$J$6) (0) | =($L54*Costos!$G$6) (0)
+Row 55:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L55*Costos!$J$4) (0) | =($L55*Costos!$G$4) (0) | =($L55*Costos!$J$5) (0) | =($L55*Costos!$G$5) (0) | =($L55*Costos!$J$6) (0) | =($L55*Costos!$G$6) (0)
+Row 56:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L56*Costos!$J$4) (0) | =($L56*Costos!$G$4) (0) | =($L56*Costos!$J$5) (0) | =($L56*Costos!$G$5) (0) | =($L56*Costos!$J$6) (0) | =($L56*Costos!$G$6) (0)
+Row 57:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L57*Costos!$J$4) (0) | =($L57*Costos!$G$4) (0) | =($L57*Costos!$J$5) (0) | =($L57*Costos!$G$5) (0) | =($L57*Costos!$J$6) (0) | =($L57*Costos!$G$6) (0)
+Row 58:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L58*Costos!$J$4) (0) | =($L58*Costos!$G$4) (0) | =($L58*Costos!$J$5) (0) | =($L58*Costos!$G$5) (0) | =($L58*Costos!$J$6) (0) | =($L58*Costos!$G$6) (0)
+Row 59:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L59*Costos!$J$4) (0) | =($L59*Costos!$G$4) (0) | =($L59*Costos!$J$5) (0) | =($L59*Costos!$G$5) (0) | =($L59*Costos!$J$6) (0) | =($L59*Costos!$G$6) (0)
+Row 60:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L60*Costos!$J$4) (0) | =($L60*Costos!$G$4) (0) | =($L60*Costos!$J$5) (0) | =($L60*Costos!$G$5) (0) | =($L60*Costos!$J$6) (0) | =($L60*Costos!$G$6) (0)
+Row 61:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L61*Costos!$J$4) (0) | =($L61*Costos!$G$4) (0) | =($L61*Costos!$J$5) (0) | =($L61*Costos!$G$5) (0) | =($L61*Costos!$J$6) (0) | =($L61*Costos!$G$6) (0)
+Row 62:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L62*Costos!$J$4) (0) | =($L62*Costos!$G$4) (0) | =($L62*Costos!$J$5) (0) | =($L62*Costos!$G$5) (0) | =($L62*Costos!$J$6) (0) | =($L62*Costos!$G$6) (0)
+Row 63:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L63*Costos!$J$4) (0) | =($L63*Costos!$G$4) (0) | =($L63*Costos!$J$5) (0) | =($L63*Costos!$G$5) (0) | =($L63*Costos!$J$6) (0) | =($L63*Costos!$G$6) (0)
+Row 64:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L64*Costos!$J$4) (0) | =($L64*Costos!$G$4) (0) | =($L64*Costos!$J$5) (0) | =($L64*Costos!$G$5) (0) | =($L64*Costos!$J$6) (0) | =($L64*Costos!$G$6) (0)
+Row 65:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L65*Costos!$J$4) (0) | =($L65*Costos!$G$4) (0) | =($L65*Costos!$J$5) (0) | =($L65*Costos!$G$5) (0) | =($L65*Costos!$J$6) (0) | =($L65*Costos!$G$6) (0)
+Row 66:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L66*Costos!$J$4) (0) | =($L66*Costos!$G$4) (0) | =($L66*Costos!$J$5) (0) | =($L66*Costos!$G$5) (0) | =($L66*Costos!$J$6) (0) | =($L66*Costos!$G$6) (0)
+Row 67:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L67*Costos!$J$4) (0) | =($L67*Costos!$G$4) (0) | =($L67*Costos!$J$5) (0) | =($L67*Costos!$G$5) (0) | =($L67*Costos!$J$6) (0) | =($L67*Costos!$G$6) (0)
+Row 68:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L68*Costos!$J$4) (0) | =($L68*Costos!$G$4) (0) | =($L68*Costos!$J$5) (0) | =($L68*Costos!$G$5) (0) | =($L68*Costos!$J$6) (0) | =($L68*Costos!$G$6) (0)
+Row 69:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L69*Costos!$J$4) (0) | =($L69*Costos!$G$4) (0) | =($L69*Costos!$J$5) (0) | =($L69*Costos!$G$5) (0) | =($L69*Costos!$J$6) (0) | =($L69*Costos!$G$6) (0)
+Row 70:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L70*Costos!$J$4) (0) | =($L70*Costos!$G$4) (0) | =($L70*Costos!$J$5) (0) | =($L70*Costos!$G$5) (0) | =($L70*Costos!$J$6) (0) | =($L70*Costos!$G$6) (0)
+Row 71:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L71*Costos!$J$4) (0) | =($L71*Costos!$G$4) (0) | =($L71*Costos!$J$5) (0) | =($L71*Costos!$G$5) (0) | =($L71*Costos!$J$6) (0) | =($L71*Costos!$G$6) (0)
+Row 72:  |  |  |  |  |  |  |  |  |  |  |  |  |  | =($L72*Costos!$J$4) (0) | =($L72*Costos!$G$4) (0) | =($L72*Costos!$J$5) (0) | =($L72*Costos!$G$5) (0) | =($L72*Costos!$J$6) (0) | =($L72*Costos!$G$6) (0)
+Row 73:  |  |  | Transferencia de conocimiento (40 Horas) |  |  |  | x |  |  |  |  | =L73*0.2 (0) |  | =($L73*Costos!$J$4) (0) | =($L73*Costos!$G$4) (0) | =($L73*Costos!$J$5) (0) | =($L73*Costos!$G$5) (0) | =($L73*Costos!$J$6) (0) | =($L73*Costos!$G$6) (0)
+Row 74:  |  |  | Riesgo Proyecto |  |  |  |  |  |  |  | =SUM(L11:L73)*0.1 (4) | =SUM(M11:M73)*0.1 (0) | =SUM(N11:N73)*0.1 (0) | =($L74*Costos!$J$4) (69.548872180451) | =($L74*Costos!$G$4) (55.639097744361) | =($L74*Costos!$J$5) (115.91478696742) | =($L74*Costos!$G$5) (92.731829573935) | =($L74*Costos!$J$6) (139.0977443609) | =($L74*Costos!$G$6) (111.27819548872)
+Row 77:  |  |  | Noche Provincias fuera de Pichincha y Guayas |  | x
+Row 78:  |  |  | Vuelos Nacionales Gye, Cue, Manta, Galap |  | x |  |  |  | 0
+Row 79:  |  |  | Breaks - Capacitaciones - Talleres
+Row 80:  |  |  | PSS (Valor en dólares) |  |  |  |  |  |  |  | =+J80*30% (0) | =+J80*30% (0) | =+J80*40% (0) |  |  | =+L80/Costos!J5 (0) | =+Q80*Costos!G5 (0)
+Row 85:  |  |  | Detalle | Casos |  |  | No seleccionado | Costo Viajes fuera | Horas | Meses | Costo Total | margen | Precio MC
+Row 86: Se puede agregar servicios externos u otros servicios/productos |  |  | Apoyo Proveedor Externo Site Principal |  |  |  |  |  |  |  |  | =E2 (0.2) | =L86/(1-M86) (0)
+Row 87:  |  |  | Apoyo Proveedor Externo Site Secundario |  |  |  |  |  |  |  |  | =M86 (0.2) | =L87/(1-M87) (0)
+Row 88:  |  |  | Apoyo Proveedor Externo Garzota |  |  |  |  |  |  |  |  | =M87 (0.2) | =L88/(1-M88) (0)
+Row 92:  |  |  | TOTAL APOYO PROVEEDOR EXTERNO |  |  |  |  |  |  |  | =ROUNDUP((SUM(L86:L91)),0) (0) |  | =ROUNDUP((SUM(N86:N91)),0) (0)
+Row 93:  |  |  |  |  |  |  | Precio Unitario |  | Horas | Meses
+Row 94: Corresponde a la gestio del SM |  |  | Gestión BOC post Implemnetación por X meses |  |  |  | =Costos!H9 (15.648496240602) |  | 2 | 12 | =K94*J94*H94 (375.56390977444) | =Costos!J2 (0.2) | =L94/(1-M94) (469.45488721805)
+Row 95:  |  |  | Elaboración mensual de informes técnicos |  |  |  | =Costos!G5 (23.182957393484) |  | 6 | 12 | =H95*J95*K95 (1669.1729323308) | =E2 (0.2) | =L95/(1-M95) (2086.4661654135)
+Row 96:  |  |  | Tornillos y binchas |  |  |  |  |  |  |  |  | 0 | =L96/(1-M96) (0)
+Row 97:  |  |  | Etiquetas |  |  |  |  |  |  |  |  | 0 | =L97/(1-M97) (0)
+Row 98:  |  |  | Vacunas |  |  |  |  |  |  |  |  | 0 | =L98/(1-M98) (0)
+Row 100:  |  |  | GESTION DE SERVICIO
+Row 101:  |  |  | Detalle | % ocupacion | costo | precio
+Row 102: El servicio de Gestión se divide en 50% implementación |  |  | Implementación | 1 | =L94*E102 (375.56390977444) | =Implementacion!$N$94*E102 (469.45488721805)
+Row 103: 25% preventivos y 25% correctivos
+Row 104:  |  |  | EPPs | 100 | por cada persona
+Row 105:  |  |  | Tornillos y binchas | 12 | por cada paquete de 12
+Row 106:  |  |  | Etiquetas | 40 | por cada cinta
+Row 108:  |  |  | RESUMEN IMPLEMENTACIÓN
+Row 109:  |  |  | Detalle | Costo | Precio | Precio Final | Utilidad | Margen real
+Row 110:  |  |  | Servicios de Implementación + Transferencia de conocimientos | =$AA$78+$AN$78+$BA$78 (1641.7336309524) | =$AA$79+$AN$79+$BA$79 (2052.1670386905) | =ROUNDUP(F110,0) (2053) | =G110-E110 (411.26636904762) | =H110/G110 (0.20032458307239)
+Row 111:  |  |  | Adicionales (Prov Externo, EPPs, etc) | =L92+L95+L96+L97+L98+L94 (2044.7368421053) | =N92+N95+N96+N97+N98+N94 (2555.9210526316) | =ROUNDUP(F111,0) (2556) | =G111-E111 (511.26315789474) | =H111/G111 (0.20002470966148)
+Row 112:  |  |  | TOTAL IMPLEMENTACIÓN | =ROUNDUP((SUM(E110:E111)),0) (3687) |  | =SUM(G110:G111) (4609)
+Row 116: Facturación / mes | 1
+Row 117: coordinacion Mantenimiento preventivo | 1
+Row 118: coordinacion soportes y correctivos | ='Mant Corr'!I18 (6)
+Row 119: Gestion BOC 2/mes

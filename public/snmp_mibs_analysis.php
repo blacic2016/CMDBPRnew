@@ -1,8 +1,13 @@
 <?php
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../src/auth.php';
+require_once __DIR__ . '/../src/permissions_helper.php';
 
 require_login();
+if (!has_module_access('snmp')) {
+    header("Location: dashboard.php");
+    exit();
+}
 
 $page_title = 'Análisis MIB - Explorador Interactivo';
 include __DIR__ . '/partials/header.php';

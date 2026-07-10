@@ -2,6 +2,12 @@
 require_once __DIR__ . '/../src/auth.php';
 require_once __DIR__ . '/../src/permissions_helper.php';
 
+require_login();
+if (!has_module_access('portmapping')) {
+    header("Location: dashboard.php");
+    exit();
+}
+
 $page_title = 'Portmapping (Gestión y Conectividad)';
 include __DIR__ . '/partials/header.php';
 ?>
@@ -843,6 +849,13 @@ async function initDeviceSelectors() {
                     $('#device_manager_body').hide();
                 }
             });
+
+            // Auto-select device from query parameters if present
+            const urlParams = new URLSearchParams(window.location.search);
+            const devId = urlParams.get('device_id');
+            if (devId) {
+                selector.val(devId).trigger('change');
+            }
         }
     } catch (err) {
         toastr.error('Error cargando catálogo de equipos de la CMDB');

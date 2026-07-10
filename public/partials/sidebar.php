@@ -120,6 +120,7 @@ $current_sheet = $_GET['name'] ?? '';
           $is_cmdb_nuevo_active = ($cur === 'ci_list.php');
           $active_cat_id = isset($_GET['category_id']) ? (int)$_GET['category_id'] : 0;
         ?>
+        <?php if (has_module_access('ci_list')): ?>
         <li class="nav-item <?php echo $is_cmdb_nuevo_active ? 'menu-is-opening menu-open' : ''; ?>">
           <a href="<?php echo PUBLIC_URL_PREFIX; ?>/ci_list.php" class="nav-link <?php echo ($is_cmdb_nuevo_active && !$active_cat_id) ? 'active' : ''; ?>" onclick="window.location.href=this.href;">
             <i class="nav-icon fas fa-project-diagram text-primary"></i>
@@ -139,7 +140,30 @@ $current_sheet = $_GET['name'] ?? '';
             <?php echo renderSidebarTreeHTML($cat_tree, $active_cat_id); ?>
           </ul>
         </li>
+        <?php endif; ?>
 
+        <?php
+          $has_any_sheet_access = false;
+          foreach ($sheet_tables as $table) {
+              if (has_sheet_access($table)) {
+                  $has_any_sheet_access = true;
+                  break;
+              }
+          }
+
+          $has_any_activo_access = false;
+          foreach ($activos_list as $activo_type) {
+              if (has_sheet_access($activo_type)) {
+                  $has_any_activo_access = true;
+                  break;
+              }
+          }
+
+          $has_pasivos_access = has_sheet_access('sheet_pasivos');
+          $has_equipos_access = $has_any_activo_access || $has_pasivos_access;
+        ?>
+
+        <?php if ($has_any_sheet_access): ?>
         <li class="nav-item <?php echo $is_cmdb_page ? 'menu-is-opening menu-open' : ''; ?>">
           <a href="#" class="nav-link <?php echo $is_cmdb_page ? 'active' : ''; ?>">
             <i class="nav-icon fas fa-database"></i>
@@ -150,6 +174,7 @@ $current_sheet = $_GET['name'] ?? '';
           </a>
           <ul class="nav nav-treeview">
             <!-- Equipos Menu -->
+            <?php if ($has_equipos_access): ?>
             <li class="nav-item <?php echo $is_equipos_page ? 'menu-is-opening menu-open' : ''; ?>">
               <a href="#" class="nav-link <?php echo $is_equipos_page ? 'active' : ''; ?>">
                 <i class="nav-icon fas fa-desktop"></i>
@@ -159,6 +184,7 @@ $current_sheet = $_GET['name'] ?? '';
                 </p>
               </a>
               <ul class="nav nav-treeview" style="margin-left: 10px;">
+                <?php if ($has_any_activo_access): ?>
                 <li class="nav-item <?php echo $is_activos_page ? 'menu-is-opening menu-open' : ''; ?>">
                   <a href="#" class="nav-link <?php echo $is_activos_page ? 'active' : ''; ?>">
                     <i class="nav-icon fas fa-hdd"></i>
@@ -169,24 +195,31 @@ $current_sheet = $_GET['name'] ?? '';
                   </a>
                   <ul class="nav nav-treeview" style="margin-left: 10px;">
                     <?php foreach ($activos_list as $activo_type): ?>
-                      <?php $sheet_name_clean = ucfirst(str_replace('sheet_', '', $activo_type)); ?>
-                      <li class="nav-item">
-                        <a href="<?php echo PUBLIC_URL_PREFIX; ?>/cmdb.php?name=<?php echo urlencode($activo_type); ?>" class="nav-link <?php echo $current_sheet === $activo_type ? 'active' : ''; ?>">
-                          <i class="far fa-circle nav-icon text-success"></i>
-                          <p><?php echo $sheet_name_clean; ?></p>
-                        </a>
-                      </li>
+                      <?php if (has_sheet_access($activo_type)): ?>
+                        <?php $sheet_name_clean = ucfirst(str_replace('sheet_', '', $activo_type)); ?>
+                        <li class="nav-item">
+                          <a href="<?php echo PUBLIC_URL_PREFIX; ?>/cmdb.php?name=<?php echo urlencode($activo_type); ?>" class="nav-link <?php echo $current_sheet === $activo_type ? 'active' : ''; ?>">
+                            <i class="far fa-circle nav-icon text-success"></i>
+                            <p><?php echo $sheet_name_clean; ?></p>
+                          </a>
+                        </li>
+                      <?php endif; ?>
                     <?php endforeach; ?>
                   </ul>
                 </li>
+                <?php endif; ?>
+                
+                <?php if ($has_pasivos_access): ?>
                 <li class="nav-item">
                   <a href="<?php echo PUBLIC_URL_PREFIX; ?>/cmdb.php?name=sheet_pasivos" class="nav-link <?php echo $is_pasivos_page ? 'active' : ''; ?>">
                     <i class="nav-icon fas fa-plug"></i>
                     <p>Pasivos</p>
                   </a>
                 </li>
+                <?php endif; ?>
               </ul>
             </li>
+            <?php endif; ?>
 
             <!-- Original Sheets -->
             <?php foreach ($sheet_tables as $table): ?>
@@ -206,11 +239,12 @@ $current_sheet = $_GET['name'] ?? '';
             <?php endforeach; ?>
           </ul>
         </li>
+        <?php endif; ?>
 
         <?php
           $is_datacenter_open = in_array($cur, ['rooms.php', 'racks.php', 'rack_builder.php', 'analisis.php']);
         ?>
-        <?php if (has_role('SUPER_ADMIN')): ?>
+        <?php if (has_module_access('datacenter')): ?>
         <li class="nav-item <?php echo $is_datacenter_open ? 'menu-open' : ''; ?>">
           <a href="#" class="nav-link <?php echo $is_datacenter_open ? 'active' : ''; ?>">
             <i class="nav-icon fas fa-building text-warning"></i>
@@ -316,40 +350,126 @@ $current_sheet = $_GET['name'] ?? '';
         </li>
         <?php endif; ?>
 
-        <?php if (has_module_access('topology')): ?>
-        <li class="nav-item <?php echo ($cur === 'topology.php' || $cur === 'topology_3d.php') ? 'menu-open' : ''; ?>">
-          <a href="#" class="nav-link <?php echo ($cur === 'topology.php' || $cur === 'topology_3d.php') ? 'active' : ''; ?>">
-            <i class="nav-icon fas fa-project-diagram"></i>
+        <!-- Módulo Proyectos -->
+        <?php if (has_module_access('project')): ?>
+        <li class="nav-item">
+          <a href="<?php echo PUBLIC_URL_PREFIX; ?>/project.php" class="nav-link <?php echo $cur === 'project.php' ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-tasks text-success"></i>
+            <p>Proyectos</p>
+          </a>
+        </li>
+        <?php endif; ?>
+
+        <!-- Módulo Diagramas (Grupo de diagramación y topologías) -->
+        <?php if (has_module_access('diagrams') || has_module_access('topology') || has_module_access('portmapping')): ?>
+        <?php 
+          $diag_active = in_array($cur, ['flujos.php', 'bpmn.php', 'visio.php', 'topology.php', 'topology_3d.php', 'portmapping.php']);
+        ?>
+        <li class="nav-item <?php echo $diag_active ? 'menu-open' : ''; ?>">
+          <a href="#" class="nav-link <?php echo $diag_active ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-project-diagram text-primary"></i>
             <p>
-              Topología
+              Diagramas
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <?php if (has_module_access('diagrams')): ?>
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/flujos.php" class="nav-link <?php echo $cur === 'flujos.php' ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-info"></i>
+                <p>Flujos (Mermaid)</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/bpmn.php" class="nav-link <?php echo $cur === 'bpmn.php' ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-warning"></i>
+                <p>Procesos (BPMN)</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/visio.php" class="nav-link <?php echo $cur === 'visio.php' ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-success"></i>
+                <p>Modelos Visio (VSDX)</p>
+              </a>
+            </li>
+            <?php endif; ?>
+            
+            <?php if (has_module_access('topology')): ?>
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/topology.php" class="nav-link <?php echo $cur === 'topology.php' ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-primary"></i>
+                <p>Topología (2D)</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/topology_3d.php" class="nav-link <?php echo $cur === 'topology_3d.php' ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-danger"></i>
+                <p>Topología (3D)</p>
+              </a>
+            </li>
+            <?php endif; ?>
+            
+            <?php if (has_module_access('portmapping')): ?>
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/portmapping.php" class="nav-link <?php echo $cur === 'portmapping.php' ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-warning"></i>
+                <p>Portmapping</p>
+              </a>
+            </li>
+            <?php endif; ?>
+          </ul>
+        </li>
+        <?php endif; ?>
+
+        <!-- Módulo PASSWORD -->
+        <?php if (has_module_access('password')): ?>
+        <li class="nav-item">
+          <a href="<?php echo PUBLIC_URL_PREFIX; ?>/password.php" class="nav-link <?php echo $cur === 'password.php' ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-key text-warning"></i>
+            <p>PASSWORD</p>
+          </a>
+        </li>
+        <?php endif; ?>
+
+        <!-- Módulo Cotizador -->
+        <?php if (has_module_access('cotizador')): ?>
+        <?php 
+          $is_cotizador = (strpos($_SERVER['SCRIPT_NAME'], '/cotizador/') !== false);
+          $active_sub = $is_cotizador ? ($_GET['tab'] ?? 'configurador') : '';
+        ?>
+        <li class="nav-item <?php echo $is_cotizador ? 'menu-open' : ''; ?>">
+          <a href="#" class="nav-link <?php echo $is_cotizador ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-calculator text-info"></i>
+            <p>
+              Cotizador
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/topology.php" class="nav-link <?php echo $cur === 'topology.php' ? 'active' : ''; ?>">
-                <i class="far fa-circle nav-icon text-info"></i>
-                <p>Vista 2D Dinámica</p>
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/cotizador/index.php?tab=configurador" class="nav-link <?php echo ($is_cotizador && $active_sub === 'configurador') ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-primary"></i>
+                <p>Configurador</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/topology_3d.php" class="nav-link <?php echo $cur === 'topology_3d.php' ? 'active' : ''; ?>">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/cotizador/index.php?tab=editor" class="nav-link <?php echo ($is_cotizador && $active_sub === 'editor') ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-info"></i>
+                <p>Diseño Cotización</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/cotizador/index.php?tab=list" class="nav-link <?php echo ($is_cotizador && $active_sub === 'list') ? 'active' : ''; ?>">
                 <i class="far fa-circle nav-icon text-success"></i>
-                <p>Vista 3D Inmersiva</p>
+                <p>Historial Cotizaciones</p>
               </a>
             </li>
           </ul>
         </li>
         <?php endif; ?>
 
-        <!-- Módulo Portmapping -->
-        <li class="nav-item">
-          <a href="<?php echo PUBLIC_URL_PREFIX; ?>/portmapping.php" class="nav-link <?php echo $cur === 'portmapping.php' ? 'active' : ''; ?>">
-            <i class="nav-icon fas fa-project-diagram text-primary"></i>
-            <p>Portmapping</p>
-          </a>
-        </li>
-
+        <?php if (has_module_access('snmp')): ?>
         <li class="nav-item <?php echo in_array($cur, ['snmp_management.php', 'snmp_builder.php', 'snmp_mibs.php']) ? 'menu-open' : ''; ?>">
           <a href="#" class="nav-link <?php echo in_array($cur, ['snmp_management.php', 'snmp_builder.php', 'snmp_mibs.php']) ? 'active' : ''; ?>">
             <i class="nav-icon fas fa-network-wired text-info"></i>
@@ -385,6 +505,7 @@ $current_sheet = $_GET['name'] ?? '';
             </li>
           </ul>
         </li>
+        <?php endif; ?>
 
         <?php if (has_module_access('import')): ?>
         <li class="nav-item">
@@ -395,12 +516,24 @@ $current_sheet = $_GET['name'] ?? '';
         </li>
         <?php endif; ?>
 
+        <?php if (has_module_access('reports')): ?>
         <li class="nav-item">
           <a href="<?php echo PUBLIC_URL_PREFIX; ?>/reports_list.php" class="nav-link <?php echo ($cur === 'reports_list.php' || strpos($_SERVER['SCRIPT_NAME'], '/informes/') !== false) ? 'active' : ''; ?>">
             <i class="nav-icon fas fa-file-invoice text-teal"></i>
             <p>Informes</p>
           </a>
         </li>
+        <?php endif; ?>
+
+        <!-- Módulo de Análisis de Logs -->
+        <?php if (has_module_access('log_analysis')): ?>
+        <li class="nav-item">
+          <a href="<?php echo PUBLIC_URL_PREFIX; ?>/log_analysis.php" class="nav-link <?php echo $cur === 'log_analysis.php' ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-terminal text-warning"></i>
+            <p>Análisis de Logs</p>
+          </a>
+        </li>
+        <?php endif; ?>
 
         <?php if (has_module_access('distribrack')): ?>
         <li class="nav-item">

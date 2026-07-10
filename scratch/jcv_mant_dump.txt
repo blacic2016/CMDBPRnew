@@ -1,0 +1,60 @@
+==========================================
+Sheet: Mant Prev
+==========================================
+Row 1: IMPLEMENTACIÓN
+Row 2: MANTENIMIENTO PREVENTIVO |  |  | MARGEN | =Costos!J2 (0.2)
+Row 3: MANTENIMIENTO CORRECTIVO
+Row 4: BOLSA DE HORAS |  |  | CLIENTE | =Implementacion!E4 (UDLA)
+Row 5: RESUMEN DEL PROYECTO
+Row 6:  |  |  |  |  |  |  |  |  |  |  |  |  |  | HORAS LABORABLES
+Row 7: LISTADO DE EQUIPOS |  |  | Detalle | N1 | N2 | N3 | E1 | E2 |  | Tipo | Horas Laborables | Horas no Laborables 50% | Horas no Laborables 100%
+Row 8: Equipo | Numero | Horas | Movilización |  |  |  |  |  |  |  |  |  |  | =SUM($L$9,L13/Costos!G5) (0)
+Row 9: SITE PRINCIPAL |  |  | Mantenimiento Preventivo: |  | x |  |  |  | 1 | 366 |  | =+$K$9*$J$9*0 (0) | =+$K$9*$J$9*1 (366)
+Row 10: Total equipos | 267 |  | Noche Provincias fuera de Pichincha y Guayas |  | x
+Row 11:  |  |  | Vuelos Nacionales Gye, Cue, Manta, Galap |  | x
+Row 12:  |  |  | Materiales Mantenimiento |  |  |  |  |  | =+J9*0.5 (0.5) |  |  |  |  | 20
+Row 13:  |  |  | PSS (Valor en dólares) |  |  |  |  |  |  |  | =+J13*30% (0) | =+J13*30% (0) | =+J13*40% (0)
+Row 17:  |  |  | Detalle | Ventanas | Horas |  | Nivel 1 Junior | Costo Viajes fuera | Horas | Meses | Costo Total | margen | Precio MC
+Row 18:  |  |  | Apoyo mantenimiento preventivo |  |  |  | =Costos!H4 (20.864661654135) |  |  |  | =H18*F18*E18 (0) | =Costos!J2 (0.2) | =L18/(1-M18) (0)
+Row 19:  |  |  | Adicional Movilización | 0 | 0 |  |  |  |  |  | =H19*F19*E19 (0) | 0 | =L19/(1-M19) (0)
+Row 21:  |  |  | GESTION DE SERVICIO
+Row 22:  |  |  | Detalle | % ocupacion | costo | precio
+Row 23:  |  |  | Preventivos | 0 | =Implementacion!$L$94*E23 (0) | =Implementacion!$N$94*E23 (0)
+Row 25:  |  |  | RESUMEN PREVENTIVOS
+Row 26:  |  |  | Detalle | Costo | Precio
+Row 28:  |  |  | Mantenimiento preventivo | =$AA$12+$AN$12+$BA$12+$L$18+$F$23+L19 (18504. | =$AA$13+$AN$13+$BA$13+$N$18+$G$23+N19 (23148.
+Row 30:  |  |  | TOTAL | =ROUNDUP((SUM(E27:E29)),0) (18505) | =ROUNDUP((SUM(F27:F29)),0) (23149)
+==========================================
+Sheet: Mant Corr
+==========================================
+Row 1: IMPLEMENTACIÓN
+Row 2: MANTENIMIENTO PREVENTIVO |  |  | MARGEN | =Costos!J2 (0.2)
+Row 3: MANTENIMIENTO CORRECTIVO
+Row 4: BOLSA DE HORAS
+Row 5: RESUMEN DEL PROYECTO |  |  |  | CLIENTE: | =Implementacion!E4 (UDLA)
+Row 6:  |  |  |  | OPCIO 1 - CÁLCULO POR HORAS
+Row 7:  |  |  |  | Detalle | N1 | N2 | N3 | E1 | E2 |  |  | Tipo | Horas Laborables | Horas no Laborables 50%
+Row 8: Listado de equipos |  |  |  | Movilización
+Row 9:  |  |  |  | Mantenimiento Correctivo (Gestión Directa SO |  | x |  |  |  |  | 20 | 1 | =+$M$9*$L$9*3*0.3 (18) | =+$M$9*$L$9*3*0.4 (24)
+Row 10:  |  |  |  | Noche Provincias fuera de Pichincha y Guayas |  | x |  |  |  |  | 0
+Row 11:  |  |  |  | Vuelos Nacionales Gye, Cue, Manta, Galap |  | x |  |  |  |  | 0
+Row 12:  |  |  |  | PSS (Valor en dólares) |  |  |  |  |  |  |  |  | =+L12*30% (0) | =+L12*30% (0)
+Row 16:  |  |  |  | OPC 2 - CÁLCULO POR NIVEL DE CASOS DE ATENCI
+Row 17:  |  |  |  | Listado de Equipos | Numero de Equipos | Detalle | % daño | Casos | Nivel 2 Intermedio | Años de Contrato | Horas / soporte | Costo Total | margen | Precio MC
+Row 18:  |  |  |  |  | 53 | Mantenimiento correctivo 7x24 | 0.1 | =ROUNDUP(F18*H18,0) (6) | =IF(J17 = Costos!B3, Costos!G2, VLOOKUP(J17,  | 1 | 4 | =K18*J18*I18*L18 (1112.7819548872) | =E2 (0.2) | =M18/(1-N18) (1390.977443609)
+Row 19:  |  |  |  |  | 194 | Movilización correctivo 8x5xNBD | 0.1 | =ROUNDUP(F19*H19,0) (20) | =IF(J17 = Costos!B3, Costos!G2, VLOOKUP(J17,  | 1 | 4 | =K19*J19*I19*L19 (2781.954887218) | =E2 (0.2) | =M19/(1-N19) (3477.4436090226)
+Row 20:  |  |  |  |  |  |  |  | # Viaje / Año |  | Años de Contrato | Costo Precio Unitario | Costo Mov | margen | Precio Mov
+Row 21:  |  |  |  | Movilización 24/7 |  |  |  | =I18 (6) |  | =K18 (1) | 15 | =L21*K21*I21 (90) | 0 | =M21/(1-N21) (90)
+Row 22:  |  |  |  | Movilización 8/5 |  |  |  | =I19 (20) |  | =K19 (1) | 15 | =L22*K22*I22 (300) | 0 | =M22/(1-N22) (300)
+Row 26:  |  |  |  | Routers
+Row 27:  |  |  |  | Switches
+Row 28:  |  |  |  | Access Points
+Row 29:  |  |  |  | Firewalls
+Row 30:  |  |  |  | Servidor blades
+Row 31:  |  |  |  | GESTION DE SERVICIO
+Row 32:  |  |  |  | Detalle | % ocupacion | costo | precio
+Row 33:  |  |  |  | Correctivos | 0 | =Implementacion!$L$94*F33 (0) | =Implementacion!$N$94*F33 (0)
+Row 36:  |  |  |  | RESUMEN CORRECTIVOS
+Row 37:  |  |  |  | Detalle | Costo | Precio
+Row 38:  |  |  |  | OPCION 1 | =ROUNDUP(($AC$11+$AP$11+$BC$11+$G$33),0) (230 | =ROUNDUP(($AC$12+$AP$12+$BC$12+$H$33),0) (284
+Row 39:  |  |  |  | OPCION 2 | =ROUNDUP(($M$18+$M$19+$M$21+$M$22),0) (4285) | =ROUNDUP(($O$18+$O$19+$O$21+$O$22),0) (5259)

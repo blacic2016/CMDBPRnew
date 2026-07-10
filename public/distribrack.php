@@ -6,9 +6,14 @@
 
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../src/auth.php';
+require_once __DIR__ . '/../src/permissions_helper.php';
 require_once __DIR__ . '/../src/helpers.php';
 
 require_login();
+if (!has_module_access('distribrack')) {
+    header("Location: dashboard.php");
+    exit();
+}
 
 $user = current_user();
 $pdo = getPDO();

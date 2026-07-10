@@ -2,8 +2,13 @@
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../src/auth.php';
 require_once __DIR__ . '/../src/db.php';
+require_once __DIR__ . '/../src/permissions_helper.php';
 
 require_login();
+if (!has_module_access('ci_list')) {
+    header("Location: dashboard.php");
+    exit();
+}
 
 $page_title = 'Inventario CMDB';
 require_once __DIR__ . '/partials/header.php';
@@ -1258,6 +1263,12 @@ $(document).ready(function() {
         
         sortCITable(colType, currentSortAsc);
     });
+    // Auto-open CI details modal if show_ci_id param is provided
+    const urlParams = new URLSearchParams(window.location.search);
+    const showCiId = urlParams.get('show_ci_id');
+    if (showCiId) {
+        viewCIDetails(showCiId);
+    }
 });
 </script>
 

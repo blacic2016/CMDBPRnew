@@ -4,10 +4,15 @@
  */
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../src/auth.php';
+require_once __DIR__ . '/../src/permissions_helper.php';
 require_once __DIR__ . '/../src/helpers.php';
 
 if (session_status() === PHP_SESSION_NONE) session_start();
 require_login();
+if (!has_module_access('snmp')) {
+    header("Location: dashboard.php");
+    exit();
+}
 
 $page_title = 'Gestión SNMP Avanzada';
 require_once __DIR__ . '/partials/header.php';

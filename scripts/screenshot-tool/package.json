@@ -1,0 +1,9 @@
+{
+  "name": "screenshot-tool",
+  "version": "1.0.0",
+  "description": "Takes headless screenshots of URLs",
+  "main": "screenshot.js",
+  "dependencies": {
+    "puppeteer": "^19.11.1"
+  }
+}

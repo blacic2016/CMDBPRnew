@@ -311,3 +311,53 @@ body.dark-mode .form-control::placeholder {
       min-width: 120px;
   }
 }
+
+/* ─── Cotizador: Brand/Category Separators in Activity Tables ─── */
+.brand-separator-row td {
+  font-size: 0.84rem;
+  letter-spacing: 0.03em;
+  user-select: none;
+  border-top: 1px solid rgba(0,0,0,0.06) !important;
+}
+.brand-separator-row:first-child td {
+  border-top: none !important;
+}
+
+/* Level 1 — Brand header (prominent) */
+.brand-sep-l1 td {
+  padding: 9px 16px !important;
+  border-top: 2px solid rgba(0,0,0,0.1) !important;
+}
+.brand-sep-l1:first-child td {
+  border-top: none !important;
+}
+
+/* Level 2 — Activity sub-header (compact, indented) */
+.brand-sep-l2 td {
+  padding: 5px 16px 5px 32px !important;
+  border-top: 1px dashed rgba(0,0,0,0.08) !important;
+  font-size: 0.8rem;
+}
+
+/* Item rows: subtle left-border color per brand */
+#table-impl-items tbody tr:not(.brand-separator-row),
+#table-prev-items tbody tr:not(.brand-separator-row),
+#table-corr-items tbody tr:not(.brand-separator-row),
+#table-bolsa-items tbody tr:not(.brand-separator-row) {
+  transition: background-color 0.15s ease;
+}
+#table-impl-items tbody tr:not(.brand-separator-row):hover,
+#table-prev-items tbody tr:not(.brand-separator-row):hover,
+#table-corr-items tbody tr:not(.brand-separator-row):hover,
+#table-bolsa-items tbody tr:not(.brand-separator-row):hover {
+  background-color: rgba(0, 184, 212, 0.07) !important;
+}
+/* Dark mode adjustments for separator rows */
+body.dark-mode .brand-separator-row td {
+  border-top-color: rgba(255,255,255,0.08) !important;
+  filter: brightness(0.65);
+}
+body.dark-mode .brand-sep-l2 td {
+  border-top-color: rgba(255,255,255,0.05) !important;
+}
+

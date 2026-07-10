@@ -47,6 +47,7 @@ set_exception_handler(function($exception) {
 require_once __DIR__ . '/../src/db.php';
 require_once __DIR__ . '/../src/helpers.php';
 require_once __DIR__ . '/../src/auth.php';
+require_once __DIR__ . '/../src/permissions_helper.php';
 require_once __DIR__ . '/../src/zabbix_api.php';
 require_once __DIR__ . '/../src/importer.php';
 
@@ -59,6 +60,43 @@ require_login();
 header('Content-Type: application/json');
 $action = $_REQUEST['action'] ?? '';
 $user = current_user();
+
+// Validate action permissions
+$import_actions = [
+    'get_excel_metadata', 'execute_mapped_import', 'truncate_cmdb_table', 
+    'list_keywords', 'add_keyword', 'delete_keyword', 'drop_cmdb_table', 'get_table_stats'
+];
+$monitoreo_actions = [
+    'save_zabbix_cmdb_config', 'test_zabbix_connection', 'save_zabbix_mapping', 
+    'create_zabbix_host', 'get_zabbix_mapping', 'get_cmdb_data_for_zabbix', 
+    'update_zabbix_host', 'delete_zabbix_host', 'get_mapping_form'
+];
+$ci_actions = [
+    'delete', 'deactivate', 'update', 'create'
+];
+$snmp_actions = [
+    'list_snmp_communities', 'save_snmp_community', 'delete_snmp_community', 
+    'get_snmp_scan_data', 'commit_snmp_results', 'delete_snmp_scan_result', 
+    'test_single_snmp', 'check_snmp_port'
+];
+
+if (in_array($action, $import_actions) && !has_module_access('import')) {
+    exit(json_encode(['success' => false, 'error' => 'Acceso denegado al módulo de importación.']));
+}
+if (in_array($action, $monitoreo_actions) && !has_module_access('monitoreo')) {
+    exit(json_encode(['success' => false, 'error' => 'Acceso denegado al módulo de monitoreo.']));
+}
+if (in_array($action, $ci_actions) && !has_module_access('ci_list')) {
+    exit(json_encode(['success' => false, 'error' => 'Acceso denegado al módulo de CIs.']));
+}
+if (in_array($action, $snmp_actions) && !has_module_access('snmp')) {
+    exit(json_encode(['success' => false, 'error' => 'Acceso denegado al módulo SNMP.']));
+}
+if (in_array($action, ['list_images', 'delete_image'])) {
+    if (!has_module_access('ci_list') && !has_module_access('distribrack')) {
+        exit(json_encode(['success' => false, 'error' => 'Acceso denegado al módulo de imágenes.']));
+    }
+}
 
 // --- NUEVAS ACCIONES PARA IMPORTACIÓN GRANULAR ---
 
@@ -780,8 +818,8 @@ if ($action === 'get_cmdb_data_for_zabbix') {
 }
 
 if ($action === 'delete') {
-    if (!has_role(['ADMIN','SUPER_ADMIN'])) exit(json_encode(['success'=>false,'error'=>'Permiso denegado']));
     $table = $_POST['table'] ?? '';
+    if (!has_sheet_access($table, 'delete')) exit(json_encode(['success'=>false,'error'=>'Permiso denegado']));
     $id = (int)($_POST['id'] ?? 0);
     if (!isValidTableName($table) || !$id) exit(json_encode(['success'=>false,'error'=>'Parametros invalidos']));
     $pdo = getPDO();
@@ -813,8 +851,8 @@ if ($action === 'delete') {
 }
 
 if ($action === 'deactivate') {
-    if (!has_role(['ADMIN','SUPER_ADMIN'])) exit(json_encode(['success'=>false,'error'=>'Permiso denegado']));
     $table = $_POST['table'] ?? '';
+    if (!has_sheet_access($table, 'edit')) exit(json_encode(['success'=>false,'error'=>'Permiso denegado']));
     $id = (int)($_POST['id'] ?? 0);
     if (!isValidTableName($table) || !$id) exit(json_encode(['success'=>false,'error'=>'Parametros invalidos']));
     $pdo = getPDO();
@@ -825,8 +863,8 @@ if ($action === 'deactivate') {
 }
 
 if ($action === 'update') {
-    if (!has_role(['ADMIN','SUPER_ADMIN'])) exit(json_encode(['success'=>false,'error'=>'Permiso denegado']));
     $table = $_POST['table'] ?? '';
+    if (!has_sheet_access($table, 'edit')) exit(json_encode(['success'=>false,'error'=>'Permiso denegado']));
     $id = (int)($_POST['id'] ?? 0);
     if (!isValidTableName($table) || !$id) exit(json_encode(['success'=>false,'error'=>'Parametros invalidos']));
     
@@ -915,8 +953,8 @@ if ($action === 'update') {
 }
 
 if ($action === 'create') {
-    if (!has_role(['ADMIN','SUPER_ADMIN'])) exit(json_encode(['success'=>false,'error'=>'Permiso denegado']));
     $table = $_POST['table'] ?? '';
+    if (!has_sheet_access($table, 'edit')) exit(json_encode(['success'=>false,'error'=>'Permiso denegado']));
     if (!isValidTableName($table)) exit(json_encode(['success'=>false,'error'=>'Tabla invalida']));
     $cols = getTableColumns($table);
     $data = [];

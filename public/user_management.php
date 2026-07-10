@@ -18,13 +18,38 @@ include 'partials/header.php';
 $pdo = getPDO();
 $roles = $pdo->query("SELECT * FROM roles")->fetchAll(PDO::FETCH_ASSOC);
 $all_sheets = listSheetTables();
+$activos_list = ['sheet_routers', 'sheet_switches', 'sheet_aps', 'sheet_laptops', 'sheet_servers', 'sheet_datastores', 'sheet_vms'];
+$main_sheets_order = array_merge($activos_list, ['sheet_pasivos']);
+
+$pestañas_principales = [];
+foreach ($main_sheets_order as $ms) {
+    if (in_array($ms, $all_sheets)) {
+        $pestañas_principales[] = $ms;
+    }
+}
+$otras_pestañas = [];
+foreach ($all_sheets as $s) {
+    if (!in_array($s, $main_sheets_order)) {
+        $otras_pestañas[] = $s;
+    }
+}
+
 $all_modules = [
     'dashboard' => 'Dashboard Principal',
+    'ci_list' => 'CMDB (Gestión de CIs)',
     'import' => 'Importar Excel',
     'distribrack' => 'Galería de Imágenes',
     'topology' => 'Topología de Red',
-    'snmp_builder' => 'SNMP Builder',
-    'monitoreo' => 'Zabbix (Dashboard/Equipos)'
+    'monitoreo' => 'Zabbix (Dashboard/Equipos)',
+    'project' => 'Gestión de Proyectos',
+    'portmapping' => 'Portmapping',
+    'diagrams' => 'Diagramas (Mermaid/BPMN/Visio)',
+    'password' => 'PASSWORD (Bóveda)',
+    'cotizador' => 'Cotizador de Servicios',
+    'snmp' => 'Módulo SNMP (Escaneo/Builder/MIBs)',
+    'reports' => 'Informes',
+    'log_analysis' => 'Análisis de Logs',
+    'datacenter' => 'Datacenter (DCIM)'
 ];
 ?>
 
@@ -135,10 +160,28 @@ $all_modules = [
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($all_sheets as $s): ?>
+                            <!-- Pestañas Principales (Activos y Pasivos) -->
+                            <tr class="bg-light text-primary font-weight-bold">
+                                <td colspan="4" style="background-color: #f1f7fc !important;"><i class="fas fa-star mr-1"></i> Pestañas Principales (Activos y Pasivos)</td>
+                            </tr>
+                            <?php foreach ($pestañas_principales as $s): ?>
                             <?php $clean = str_replace('sheet_', '', $s); ?>
                             <tr>
-                                <td><?php echo ucfirst($clean); ?></td>
+                                <td><span class="pl-2 font-weight-bold"><?php echo ucfirst($clean); ?></span></td>
+                                <td class="text-center"><input type="checkbox" class="sheet-perm-view" data-sheet="<?php echo $s; ?>"></td>
+                                <td class="text-center"><input type="checkbox" class="sheet-perm-edit" data-sheet="<?php echo $s; ?>"></td>
+                                <td class="text-center"><input type="checkbox" class="sheet-perm-delete" data-sheet="<?php echo $s; ?>"></td>
+                            </tr>
+                            <?php endforeach; ?>
+
+                            <!-- Otras Pestañas / Tablas de CMDB -->
+                            <tr class="bg-light text-muted font-weight-bold">
+                                <td colspan="4" style="background-color: #fcfcfc !important;"><i class="fas fa-list mr-1"></i> Otras Tablas / Pestañas de CMDB</td>
+                            </tr>
+                            <?php foreach ($otras_pestañas as $s): ?>
+                            <?php $clean = str_replace('sheet_', '', $s); ?>
+                            <tr>
+                                <td><span class="pl-2 text-muted"><?php echo ucfirst($clean); ?></span></td>
                                 <td class="text-center"><input type="checkbox" class="sheet-perm-view" data-sheet="<?php echo $s; ?>"></td>
                                 <td class="text-center"><input type="checkbox" class="sheet-perm-edit" data-sheet="<?php echo $s; ?>"></td>
                                 <td class="text-center"><input type="checkbox" class="sheet-perm-delete" data-sheet="<?php echo $s; ?>"></td>

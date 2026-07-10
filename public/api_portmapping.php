@@ -6,8 +6,10 @@ require_once __DIR__ . '/../src/zabbix_api.php';
 
 header('Content-Type: application/json');
 
-if (!current_user_id()) {
-    echo json_encode(['success' => false, 'error' => 'No session']);
+require_once __DIR__ . '/../src/permissions_helper.php';
+
+if (!current_user_id() || !has_module_access('portmapping')) {
+    echo json_encode(['success' => false, 'error' => 'No session or unauthorized']);
     exit;
 }
 
