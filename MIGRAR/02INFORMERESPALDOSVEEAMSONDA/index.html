@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>TRANSFERUNION BACKUP ANALISIS DE DATOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/pivot.css">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="dist/pivot.js"></script>
+    <script type="text/javascript" src="dist/c3_renderers.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+    <style>
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            padding: 20px;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            padding: 15px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .header-container h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #007bff;
+            font-weight: 700;
+        }
+        .header-container img {
+            height: 80px;
+            width: auto;
+        }
+        .controls-container {
+            background-color: #ffffff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+        .control-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .control-group label {
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #555;
+        }
+        .controls-container select,
+        .controls-container input[type="text"],
+        .controls-container button {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #fff;
+            color: #333;
+        }
+        .controls-container button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: none;
+            font-weight: 500;
+        }
+        .controls-container button:hover {
+            background-color: #0056b3;
+        }
+        #output {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        /* Style for the pivot table itself */
+        .pvtTable {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .pvtTable th, .pvtTable td {
+            border: 1px solid #e0e0e0;
+            padding: 8px 12px;
+            text-align: left;
+            white-space: nowrap;
+        }
+        .pvtTable th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #444;
+        }
+        .pvtTable tr:nth-child(even) {
+            background-color: #fdfdfd;
+        }
+        .pvtTable .pvtVal {
+            text-align: center;
+        }
+        /* Specific coloring for success/failure in the pivot table */
+        #output .pvtVal.success {
+            background-color: #d4edda !important;
+            color: #155724 !important;
+            font-weight: bold;
+        }
+        #output .pvtVal.failure {
+            background-color: #f8d7da !important;
+            color: #721c24 !important;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <h1>TRANSFERUNION BACKUP ANALISIS</h1>
+        <img src="logo.png" alt="Logo">
+    </div>
+
+    <div class="controls-container">
+        <div class="control-group">
+            <label for="startDatePicker">Fecha de Inicio:</label>
+            <input type="text" id="startDatePicker">
+        </div>
+        <div class="control-group">
+            <label for="endDatePicker">Fecha Fin:</label>
+            <input type="text" id="endDatePicker">
+        </div>
+        <button id="analyzeData">Analizar Datos</button>
+        <button id="exportExcel">Exportar a Excel</button>
+        <a href="manage_tasks.php" target="_blank"><button>Gestionar Tareas</button></a>
+    </div>
+
+    <div id="output"></div>
+
+    <script>
+        $(function() {
+            var derivers = $.pivotUtilities.derivers;
+            var renderers = $.extend($.pivotUtilities.renderers, $.pivotUtilities.c3_renderers);
+
+            // Initialize date pickers
+            $("#startDatePicker").datepicker({
+                dateFormat: 'yy-mm-dd',
+                onSelect: function(selectedDate) {
+                    $("#endDatePicker").datepicker("option", "minDate", selectedDate);
+                }
+            });
+            $("#endDatePicker").datepicker({
+                dateFormat: 'yy-mm-dd',
+                onSelect: function(selectedDate) {
+                    $("#startDatePicker").datepicker("option", "maxDate", selectedDate);
+                }
+            });
+
+            // Set initial dates to the previous month
+            var today = new Date();
+            var firstDayOfLastMonth = new Date(today.getFullYear(), today.getMonth() - 1, 1);
+            var lastDayOfLastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+
+            $("#startDatePicker").datepicker("setDate", firstDayOfLastMonth);
+            $("#endDatePicker").datepicker("setDate", lastDayOfLastMonth);
+
+            function fetchData(startDate, endDate) {
+                // Show a loading indicator
+                $("#output").html('<p style="text-align: center; color: #555;">Cargando datos, por favor espere...</p>');
+
+                $.getJSON('fetch_data.php', { startDate: startDate, endDate: endDate }, function(data) {
+                    $("#output").pivotUI(data, {
+                        rows: ["job_name", "vm_name", "HORA", "FRECUENCIA"],
+                        cols: ["year", "mes", "dia", "dia_semana"],
+                        vals: ["Succeeded"],
+                        aggregatorName: "Last", // Or "Sum" if 'Succeeded' is numeric (e.g., 0 for failed, 1 for succeeded)
+                        rendererName: "Table",
+                        rendererOptions: {
+                            table: {
+                                clickCallback: function(e, value, filters, pivotData) {
+                                    var names = [];
+                                    pivotData.forEachMatchingRecord(filters, function(record) {
+                                        names.push( "Job: " + record.job_name,"VM: " + record.vm_name,"VM status: " + record.vm_status,  "Fecha: " + record.year +"-"+ record.mes + "-" +record.dia, "Inicio: " + record.vm_start_time_str,"Hora prevista: " + record.HORA, "----------------------------- ");
+                                    });
+                                    alert("Detalle del Respaldo:\n" + names.join("\n"));
+                                }
+                            }
+                        },
+                        onRefresh: function(config) {
+                            // Apply coloring based on cell content
+                            $('#output td').each(function() {
+                                var cellText = $(this).text().trim();
+                                if (cellText === "OK") {
+                                    $(this).addClass("success");
+                                    $(this).removeClass("failure");
+                                } else if (cellText === "Failed") {
+                                    $(this).addClass("failure");
+                                    $(this).removeClass("success");
+                                } else {
+                                    $(this).removeClass("success failure");
+                                }
+                            });
+                        }
+                    });
+                }).fail(function() {
+                    $("#output").html('<p style="text-align: center; color: red;">Error al cargar los datos. Verifique la conexión o el script PHP.</p>');
+                });
+            }
+
+            // Initial data load when page loads
+            fetchData($("#startDatePicker").val(), $("#endDatePicker").val());
+
+            // Event listener for the Analyze Data button
+            $('#analyzeData').on('click', function() {
+                var selectedStartDate = $('#startDatePicker').val();
+                var selectedEndDate = $('#endDatePicker').val();
+                fetchData(selectedStartDate, selectedEndDate);
+            });
+
+            $("#exportExcel").click(function() {
+                var table = document.querySelector(".pvtTable");
+                if (!table) {
+                    alert("No hay datos para exportar.");
+                    return;
+                }
+                var wb = XLSX.utils.book_new();
+                var ws = XLSX.utils.table_to_sheet(table);
+                XLSX.utils.book_append_sheet(wb, ws, "RespaldoDatos");
+                XLSX.writeFile(wb, "Respaldo_Networker.xlsx");
+            });
+
+            // Auto-reload every 6 hours (21600000 milliseconds)
+            setTimeout(function() {
+                location.reload();
+            }, 21600000);
+        });
+    </script>
+</body>
+</html>

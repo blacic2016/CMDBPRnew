@@ -1,0 +1,2601 @@
+{
+    "resumen_general": {
+        "total_hosts": 9,
+        "promedio_ok": 100,
+        "promedio_problem": 0,
+        "fecha_inicio_analisis": "01-09-2025",
+        "fecha_fin_analisis": "30-09-2025",
+        "tiempo_total_periodo_segundos": 2592000,
+        "tiempo_total_periodo_formateado": "30d",
+        "tiempo_promedio_ok_estimado": "30d",
+        "tiempo_promedio_problem_estimado": "0s",
+        "por_host": [
+            {
+                "host": "ESXI_202",
+                "ip": "172.32.2.202",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "ESXI_201",
+                "ip": "172.32.2.201",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "ESXI_203",
+                "ip": "172.32.2.203",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "ESXI_204",
+                "ip": "172.32.2.204",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "SAP_ESXI_209",
+                "ip": "172.32.2.209",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "VCENTER",
+                "ip": "172.32.2.51",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "HX_ESX01",
+                "ip": "172.32.2.102",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "HX_ESX02",
+                "ip": "172.32.2.103",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "HX_ESX03",
+                "ip": "172.32.2.104",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            }
+        ]
+    },
+    "detalle_diario_por_host": [
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "01-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "02-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "03-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "04-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "05-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "06-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "07-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "08-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "09-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "10-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "11-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "12-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "13-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "14-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "15-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "16-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "17-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "18-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "19-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "20-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "21-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "22-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "23-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "24-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "25-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "26-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "27-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "28-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "29-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "30-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10816,
+            "host": "ESXI_202",
+            "ip": "172.32.2.202",
+            "trigger": "N/A",
+            "date": "01-10-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "01-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "02-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "03-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "04-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "05-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "06-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "07-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "08-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "09-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "10-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "11-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "12-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "13-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "14-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "15-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "16-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "17-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "18-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "19-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "20-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "21-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "22-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "23-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "24-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "25-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "26-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "27-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "28-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "29-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "30-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10817,
+            "host": "ESXI_201",
+            "ip": "172.32.2.201",
+            "trigger": "N/A",
+            "date": "01-10-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "01-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "02-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "03-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "04-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "05-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "06-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "07-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "08-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "09-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "10-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "11-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "12-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "13-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "14-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "15-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "16-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "17-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "18-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "19-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "20-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "21-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "22-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "23-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "24-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "25-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "26-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "27-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "28-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "29-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "30-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10818,
+            "host": "ESXI_203",
+            "ip": "172.32.2.203",
+            "trigger": "N/A",
+            "date": "01-10-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "01-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "02-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "03-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "04-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "05-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "06-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "07-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "08-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "09-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "10-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "11-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "12-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "13-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "14-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "15-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "16-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "17-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "18-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "19-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "20-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "21-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "22-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "23-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "24-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "25-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "26-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "27-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "28-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "29-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "30-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10819,
+            "host": "ESXI_204",
+            "ip": "172.32.2.204",
+            "trigger": "N/A",
+            "date": "01-10-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "01-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "02-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "03-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "04-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "05-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "06-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "07-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "08-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "09-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "10-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "11-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "12-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "13-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "14-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "15-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "16-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "17-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "18-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "19-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "20-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "21-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "22-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "23-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "24-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "25-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "26-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "27-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "28-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "29-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "30-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10820,
+            "host": "SAP_ESXI_209",
+            "ip": "172.32.2.209",
+            "trigger": "N/A",
+            "date": "01-10-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10609,
+            "host": "VCENTER",
+            "ip": "172.32.2.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-10-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "01-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "02-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "03-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "04-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "05-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "06-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "07-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "08-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "09-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "10-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "11-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "12-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "13-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "14-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "15-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "16-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "17-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "18-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "19-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "20-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "21-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "22-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "23-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "24-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "25-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "26-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "27-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "28-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "29-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "30-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10821,
+            "host": "HX_ESX01",
+            "ip": "172.32.2.102",
+            "trigger": "N/A",
+            "date": "01-10-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "01-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "02-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "03-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "04-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "05-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "06-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "07-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "08-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "09-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "10-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "11-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "12-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "13-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "14-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "15-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "16-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "17-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "18-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "19-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "20-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "21-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "22-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "23-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "24-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "25-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "26-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "27-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "28-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "29-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "30-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10822,
+            "host": "HX_ESX02",
+            "ip": "172.32.2.103",
+            "trigger": "N/A",
+            "date": "01-10-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "01-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "02-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "03-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "04-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "05-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "06-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "07-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "08-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "09-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "10-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "11-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "12-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "13-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "14-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "15-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "16-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "17-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "18-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "19-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "20-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "21-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "22-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "23-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "24-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "25-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "26-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "27-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "28-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "29-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "30-09-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10823,
+            "host": "HX_ESX03",
+            "ip": "172.32.2.104",
+            "trigger": "N/A",
+            "date": "01-10-2025",
+            "problems": 0,
+            "ok": 100
+        }
+    ],
+    "eventos_de_problema": []
+}

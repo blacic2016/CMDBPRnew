@@ -46,6 +46,15 @@ $current_sheet = $_GET['name'] ?? '';
         </li>
         <?php endif; ?>
 
+        <?php if (has_role('SUPER_ADMIN') || has_module_access('novaiops_dashboard')): ?>
+        <li class="nav-item">
+          <a href="<?php echo PUBLIC_URL_PREFIX; ?>/novaiops_dashboard.php" class="nav-link <?php echo $cur === 'novaiops_dashboard.php' ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-chart-pie text-info"></i>
+            <p>NovaIOPS</p>
+          </a>
+        </li>
+        <?php endif; ?>
+
         <!-- CMDB (Graph-Based List) -->
         <?php
           require_once __DIR__ . '/../../src/db.php';
@@ -463,6 +472,89 @@ $current_sheet = $_GET['name'] ?? '';
               <a href="<?php echo PUBLIC_URL_PREFIX; ?>/cotizador/index.php?tab=list" class="nav-link <?php echo ($is_cotizador && $active_sub === 'list') ? 'active' : ''; ?>">
                 <i class="far fa-circle nav-icon text-success"></i>
                 <p>Historial Cotizaciones</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <?php endif; ?>
+
+        <!-- Módulo CLIENTES -->
+        <?php if (has_module_access('clientes')): ?>
+        <?php 
+          $is_clientes = (strpos($_SERVER['SCRIPT_NAME'], '/clientes/') !== false);
+          $is_sonda = (strpos($_SERVER['SCRIPT_NAME'], '/clientes/sonda/') !== false);
+          $is_gpf = (strpos($_SERVER['SCRIPT_NAME'], '/clientes/gpf/') !== false);
+          $is_vilaseca = (strpos($_SERVER['SCRIPT_NAME'], '/clientes/vilaseca/') !== false);
+        ?>
+        <li class="nav-item <?php echo $is_clientes ? 'menu-open' : ''; ?>">
+          <a href="#" class="nav-link <?php echo $is_clientes ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-users text-primary"></i>
+            <p>
+              CLIENTES
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <!-- SONDA -->
+            <li class="nav-item <?php echo $is_sonda ? 'menu-open' : ''; ?>" style="padding-left: 10px;">
+              <a href="#" class="nav-link <?php echo $is_sonda ? 'active' : ''; ?>">
+                <i class="far fa-folder nav-icon text-warning"></i>
+                <p>
+                  SONDA
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <!-- iin -->
+                <li class="nav-item menu-open" style="padding-left: 15px;">
+                  <a href="#" class="nav-link active">
+                    <i class="far fa-folder-open nav-icon text-info"></i>
+                    <p>
+                      iin
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview" style="display: block;">
+                    <li class="nav-item">
+                      <a href="<?php echo PUBLIC_URL_PREFIX; ?>/clientes/sonda/iin/disponibilidad.php" class="nav-link <?php echo $cur === 'disponibilidad.php' ? 'active' : ''; ?>">
+                        <i class="far fa-chart-bar nav-icon text-success"></i>
+                        <p style="font-size: 0.85rem;">Inf. Disponibilidad</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="<?php echo PUBLIC_URL_PREFIX; ?>/clientes/sonda/iin/respaldos_veeam.php" class="nav-link <?php echo $cur === 'respaldos_veeam.php' ? 'active' : ''; ?>">
+                        <i class="fas fa-hdd nav-icon text-info"></i>
+                        <p style="font-size: 0.85rem;">Respaldos Veeam</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="<?php echo PUBLIC_URL_PREFIX; ?>/clientes/sonda/iin/wifi_monitor.php" class="nav-link <?php echo $cur === 'wifi_monitor.php' ? 'active' : ''; ?>">
+                        <i class="fas fa-wifi nav-icon text-warning"></i>
+                        <p style="font-size: 0.85rem;">Wi-Fi Monitor Pro</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="<?php echo PUBLIC_URL_PREFIX; ?>/clientes/sonda/iin/analisis_wireless.php" class="nav-link <?php echo $cur === 'analisis_wireless.php' ? 'active' : ''; ?>">
+                        <i class="fas fa-signal nav-icon text-danger"></i>
+                        <p style="font-size: 0.85rem;">Análisis Wireless</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <!-- GPF -->
+            <li class="nav-item" style="padding-left: 10px;">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/clientes/gpf/index.php" class="nav-link <?php echo $is_gpf ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-success"></i>
+                <p>GPF</p>
+              </a>
+            </li>
+            <!-- VILASECA -->
+            <li class="nav-item" style="padding-left: 10px;">
+              <a href="<?php echo PUBLIC_URL_PREFIX; ?>/clientes/vilaseca/index.php" class="nav-link <?php echo $is_vilaseca ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon text-danger"></i>
+                <p>VILASECA</p>
               </a>
             </li>
           </ul>

@@ -1,0 +1,4324 @@
+{
+    "resumen_general": {
+        "total_hosts_analizados": 15,
+        "promedio_ok": 100,
+        "promedio_problem": 0,
+        "fecha_inicio_analisis": "01-05-2026",
+        "fecha_fin_analisis": "31-05-2026",
+        "dias_analizados": 31,
+        "tiempo_total_periodo_segundos": 2678400,
+        "tiempo_total_periodo_formateado": "31d",
+        "tiempo_promedio_ok_estimado": "31d",
+        "tiempo_promedio_problem_estimado": "0s",
+        "por_host": [
+            {
+                "host": "NVR Hinkvision GYE",
+                "ip": "172.32.10.16",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "NVR Hinkvision UIO",
+                "ip": "172.32.10.15",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "ENTRADA_1_P5",
+                "ip": "172.32.10.38",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "MESA_PRODU_P5",
+                "ip": "172.32.10.20",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "Piso5_Mesa_Petro&Produ",
+                "ip": "172.32.10.21",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "COMEDOR_P7",
+                "ip": "172.32.10.44",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "Piso5_Mesa_Petro1",
+                "ip": "172.32.10.46",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "ENTRADA_2_P5",
+                "ip": "172.32.10.45",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "DC_P5",
+                "ip": "172.32.10.35",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "PAS_MESA_PRODU_P5",
+                "ip": "172.32.10.52",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "SUPERVISORES_MESA_P5",
+                "ip": "172.32.10.51",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "DC_P6",
+                "ip": "172.32.10.24",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "ENTRADA_P7",
+                "ip": "172.32.10.30",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "PAS_COMEDOR_P7",
+                "ip": "172.32.10.25",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "FINANCIERO_P7",
+                "ip": "172.32.10.23",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            }
+        ]
+    },
+    "detalle_diario_por_host": [
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11078,
+            "host": "NVR Hinkvision GYE",
+            "ip": "172.32.10.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10754,
+            "host": "NVR Hinkvision UIO",
+            "ip": "172.32.10.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11092,
+            "host": "ENTRADA_1_P5",
+            "ip": "172.32.10.38",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11165,
+            "host": "MESA_PRODU_P5",
+            "ip": "172.32.10.20",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11166,
+            "host": "Piso5_Mesa_Petro&Produ",
+            "ip": "172.32.10.21",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11098,
+            "host": "COMEDOR_P7",
+            "ip": "172.32.10.44",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11167,
+            "host": "Piso5_Mesa_Petro1",
+            "ip": "172.32.10.46",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11168,
+            "host": "ENTRADA_2_P5",
+            "ip": "172.32.10.45",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11071,
+            "host": "DC_P5",
+            "ip": "172.32.10.35",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11169,
+            "host": "PAS_MESA_PRODU_P5",
+            "ip": "172.32.10.52",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11170,
+            "host": "SUPERVISORES_MESA_P5",
+            "ip": "172.32.10.51",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11172,
+            "host": "DC_P6",
+            "ip": "172.32.10.24",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11087,
+            "host": "ENTRADA_P7",
+            "ip": "172.32.10.30",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11173,
+            "host": "PAS_COMEDOR_P7",
+            "ip": "172.32.10.25",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11174,
+            "host": "FINANCIERO_P7",
+            "ip": "172.32.10.23",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        }
+    ],
+    "eventos_de_problema": []
+}

@@ -1,0 +1,2602 @@
+{
+    "resumen_general": {
+        "total_hosts_analizados": 9,
+        "promedio_ok": 100,
+        "promedio_problem": 0,
+        "fecha_inicio_analisis": "01-01-2026",
+        "fecha_fin_analisis": "31-01-2026",
+        "dias_analizados": 31,
+        "tiempo_total_periodo_segundos": 2678400,
+        "tiempo_total_periodo_formateado": "31d",
+        "tiempo_promedio_ok_estimado": "31d",
+        "tiempo_promedio_problem_estimado": "0s",
+        "por_host": [
+            {
+                "host": "Biometricos Controladora",
+                "ip": "172.32.10.80",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "Biométrico facial DC piso 5",
+                "ip": "172.32.10.83",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "Biométrico facial ingreso 1 piso 5",
+                "ip": "172.32.10.81",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "Biométrico facial ingreso 2 piso 5",
+                "ip": "172.32.10.82",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "Biométrico facial ingreso 1 piso 6",
+                "ip": "172.32.10.84",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "Biométrico facial ingreso 2 piso 6",
+                "ip": "172.32.10.85",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "Biométrico facial DC piso 6",
+                "ip": "172.32.10.86",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "Biométrico facial ingreso 1 piso 7",
+                "ip": "172.32.10.87",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "GYE Biométrico facial ingreso 1 piso 1",
+                "ip": "172.32.10.100",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            }
+        ]
+    },
+    "detalle_diario_por_host": [
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11101,
+            "host": "Biometricos Controladora",
+            "ip": "172.32.10.80",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11102,
+            "host": "Biométrico facial DC piso 5",
+            "ip": "172.32.10.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11103,
+            "host": "Biométrico facial ingreso 1 piso 5",
+            "ip": "172.32.10.81",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11104,
+            "host": "Biométrico facial ingreso 2 piso 5",
+            "ip": "172.32.10.82",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11105,
+            "host": "Biométrico facial ingreso 1 piso 6",
+            "ip": "172.32.10.84",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11106,
+            "host": "Biométrico facial ingreso 2 piso 6",
+            "ip": "172.32.10.85",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11107,
+            "host": "Biométrico facial DC piso 6",
+            "ip": "172.32.10.86",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11108,
+            "host": "Biométrico facial ingreso 1 piso 7",
+            "ip": "172.32.10.87",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11109,
+            "host": "GYE Biométrico facial ingreso 1 piso 1",
+            "ip": "172.32.10.100",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-01-2026",
+            "problems": 0,
+            "ok": 100
+        }
+    ],
+    "eventos_de_problema": []
+}

@@ -1888,3 +1888,219 @@ Stack trace:
 [09-Jul-2026 17:16:43 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at Command line code:15) in /var/www/html/VILASECA/CMDBPRnew/public/api_cotizador.php on line 5
 [10-Jul-2026 10:48:09 America/Santiago] Intentando guardar SNMP: IP=172.32.1.6 Table=zabbix ID=172.32.1.6
 [10-Jul-2026 10:48:09 America/Santiago] SNMP Commit exitoso. Filas afectadas: 1
+[13-Jul-2026 12:25:40 America/Santiago] PHP Fatal error:  Uncaught PDOException: There is no active transaction in /var/www/html/VILASECA/CMDBPRnew/public/api_novaiops.php:473
+Stack trace:
+#0 /var/www/html/VILASECA/CMDBPRnew/public/api_novaiops.php(473): PDO->rollBack()
+#1 /var/www/html/VILASECA/CMDBPRnew/scratch/test_import_novaiops.php(34): process_excel_file()
+#2 {main}
+  thrown in /var/www/html/VILASECA/CMDBPRnew/public/api_novaiops.php on line 473
+[13-Jul-2026 19:23:59 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined function get_db_connection() in Command line code:3
+Stack trace:
+#0 {main}
+  thrown in Command line code on line 3
+[13-Jul-2026 19:25:24 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined function db_connect() in Command line code:6
+Stack trace:
+#0 {main}
+  thrown in Command line code on line 6
+[14-Jul-2026 10:44:40 America/Santiago] PHP Fatal error:  Cannot redeclare function init_novaiops_system_tables() (previously declared in /var/www/html/VILASECA/CMDBPRnew/public/api_novaiops.php:280) in /var/www/html/VILASECA/CMDBPRnew/public/api_novaiops.php on line 280
+[14-Jul-2026 10:44:51 America/Santiago] PHP Warning:  copy(/var/www/html/VILASECA/CMDBPRnew/scratch/../public/uploads/novaiops/stage_default_6a564b63afe0e.xlsx): Failed to open stream: Permission denied in /var/www/html/VILASECA/CMDBPRnew/scratch/test_staging_novaiops.php on line 50
+[14-Jul-2026 10:44:51 America/Santiago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'CMDBVilaseca2.novaiops_reporte_tareas' doesn't exist in /var/www/html/VILASECA/CMDBPRnew/scratch/test_staging_novaiops.php:101
+Stack trace:
+#0 /var/www/html/VILASECA/CMDBPRnew/scratch/test_staging_novaiops.php(101): PDO->query()
+#1 {main}
+  thrown in /var/www/html/VILASECA/CMDBPRnew/scratch/test_staging_novaiops.php on line 101
+[14-Jul-2026 15:54:44 America/Santiago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in Command line code:1
+Stack trace:
+#0 Command line code(1): PDOStatement->execute()
+#1 {main}
+  thrown in Command line code on line 1
+[14-Jul-2026 16:11:27 America/Santiago] PHP Warning:  mkdir(): Permission denied in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_report.php on line 447
+[14-Jul-2026 16:11:27 America/Santiago] Error en el script de disponibilidad: No se pudo crear el directorio de salida: /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/resultado
+[14-Jul-2026 16:11:53 America/Santiago] PHP Warning:  mkdir(): Permission denied in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_report.php on line 447
+[14-Jul-2026 16:11:53 America/Santiago] Error en el script de disponibilidad: No se pudo crear el directorio de salida: /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/resultado
+[14-Jul-2026 16:13:53 America/Santiago] PHP Warning:  mkdir(): Permission denied in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_report.php on line 447
+[14-Jul-2026 16:13:53 America/Santiago] Error en el script de disponibilidad: No se pudo crear el directorio de salida: /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/resultado
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  Undefined array key "groups" in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190
+[14-Jul-2026 16:16:07 America/Santiago] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/VILASECA/CMDBPRnew/public/clientes/sonda/iin/process_grupos.php on line 190

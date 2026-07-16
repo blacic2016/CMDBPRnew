@@ -1,0 +1,1440 @@
+{
+    "resumen_general": {
+        "total_hosts_analizados": 5,
+        "promedio_ok": 99.9574,
+        "promedio_problem": 0.0426,
+        "fecha_inicio_analisis": "01-02-2026",
+        "fecha_fin_analisis": "28-02-2026",
+        "dias_analizados": 28,
+        "tiempo_total_periodo_segundos": 2419200,
+        "tiempo_total_periodo_formateado": "28d",
+        "tiempo_promedio_ok_estimado": "27d 23h 42m 49s",
+        "tiempo_promedio_problem_estimado": "17m 11s",
+        "por_host": [
+            {
+                "host": "UPS 40KVA DATACENTER",
+                "ip": "172.32.1.155",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "28d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "Monitoreo Lobato Electric DMG8000",
+                "ip": "172.32.1.156",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "28d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+                "ip": "172.32.4.7",
+                "porcentaje_ok_total": 99.7868,
+                "porcentaje_problem_total": 0.2132,
+                "tiempo_ok_estimado": "27d 22h 34m 2s",
+                "tiempo_problem_estimado": "1h 25m 58s"
+            },
+            {
+                "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+                "ip": "172.32.4.8",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "28d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+                "ip": "172.32.4.9",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "28d",
+                "tiempo_problem_estimado": "0s"
+            }
+        ]
+    },
+    "detalle_diario_por_host": [
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10608,
+            "host": "UPS 40KVA DATACENTER",
+            "ip": "172.32.1.155",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11111,
+            "host": "Monitoreo Lobato Electric DMG8000",
+            "ip": "172.32.1.156",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-02-2026",
+            "problems": 5.9688,
+            "ok": 94.0312
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11155,
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "ip": "172.32.4.7",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11156,
+            "host": "Sonda UIO Alarma de intrusión Piso 6 HUB",
+            "ip": "172.32.4.8",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-02-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11157,
+            "host": "Sonda UIO Alarma de intrusión Piso 7 HUB",
+            "ip": "172.32.4.9",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-02-2026",
+            "problems": 0,
+            "ok": 100
+        }
+    ],
+    "eventos_de_problema": [
+        {
+            "eventid": "265105606",
+            "inicio": "2026-02-07 02:26:12",
+            "start_timestamp": 1770431172,
+            "valor_inicial": 1,
+            "fin": "2026-02-07 02:33:12",
+            "duracion": "7m",
+            "fecha": "07-02-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "hostid": 11155,
+            "triggerid": "55352",
+            "end_timestamp": 1770431592,
+            "valor_final": 0
+        },
+        {
+            "eventid": "265122290",
+            "inicio": "2026-02-07 04:37:11",
+            "start_timestamp": 1770439031,
+            "valor_inicial": 1,
+            "fin": "2026-02-07 04:42:11",
+            "duracion": "5m",
+            "fecha": "07-02-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "hostid": 11155,
+            "triggerid": "55352",
+            "end_timestamp": 1770439331,
+            "valor_final": 0
+        },
+        {
+            "eventid": "265123452",
+            "inicio": "2026-02-07 04:57:11",
+            "start_timestamp": 1770440231,
+            "valor_inicial": 1,
+            "fin": "2026-02-07 04:58:11",
+            "duracion": "1m",
+            "fecha": "07-02-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "hostid": 11155,
+            "triggerid": "55352",
+            "end_timestamp": 1770440291,
+            "valor_final": 0
+        },
+        {
+            "eventid": "265126049",
+            "inicio": "2026-02-07 05:37:12",
+            "start_timestamp": 1770442632,
+            "valor_inicial": 1,
+            "fin": "2026-02-07 06:09:12",
+            "duracion": "32m",
+            "fecha": "07-02-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "hostid": 11155,
+            "triggerid": "55352",
+            "end_timestamp": 1770444552,
+            "valor_final": 0
+        },
+        {
+            "eventid": "265129803",
+            "inicio": "2026-02-07 06:35:12",
+            "start_timestamp": 1770446112,
+            "valor_inicial": 1,
+            "fin": "2026-02-07 06:42:11",
+            "duracion": "6m 59s",
+            "fecha": "07-02-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "hostid": 11155,
+            "triggerid": "55352",
+            "end_timestamp": 1770446531,
+            "valor_final": 0
+        },
+        {
+            "eventid": "265134871",
+            "inicio": "2026-02-07 07:54:12",
+            "start_timestamp": 1770450852,
+            "valor_inicial": 1,
+            "fin": "2026-02-07 08:07:11",
+            "duracion": "12m 59s",
+            "fecha": "07-02-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "hostid": 11155,
+            "triggerid": "55352",
+            "end_timestamp": 1770451631,
+            "valor_final": 0
+        },
+        {
+            "eventid": "265136521",
+            "inicio": "2026-02-07 08:18:11",
+            "start_timestamp": 1770452291,
+            "valor_inicial": 1,
+            "fin": "2026-02-07 08:20:11",
+            "duracion": "2m",
+            "fecha": "07-02-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "hostid": 11155,
+            "triggerid": "55352",
+            "end_timestamp": 1770452411,
+            "valor_final": 0
+        },
+        {
+            "eventid": "265139177",
+            "inicio": "2026-02-07 08:59:12",
+            "start_timestamp": 1770454752,
+            "valor_inicial": 1,
+            "fin": "2026-02-07 09:18:11",
+            "duracion": "18m 59s",
+            "fecha": "07-02-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "Sonda UIO Alarma de intrusión Piso 5 HUB",
+            "hostid": 11155,
+            "triggerid": "55352",
+            "end_timestamp": 1770455891,
+            "valor_final": 0
+        }
+    ]
+}

@@ -1,0 +1,914 @@
+{
+    "resumen_general": {
+        "total_hosts_analizados": 3,
+        "promedio_ok": 99.8465,
+        "promedio_problem": 0.1535,
+        "fecha_inicio_analisis": "01-11-2025",
+        "fecha_fin_analisis": "30-11-2025",
+        "dias_analizados": 30,
+        "tiempo_total_periodo_segundos": 2592000,
+        "tiempo_total_periodo_formateado": "30d",
+        "tiempo_promedio_ok_estimado": "29d 22h 53m 40s",
+        "tiempo_promedio_problem_estimado": "1h 6m 20s",
+        "por_host": [
+            {
+                "host": "CISCO FIREPOWER MANAGEMENT",
+                "ip": "172.32.1.83",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "SW-FIREWALL-FORTI",
+                "ip": "172.32.2.34",
+                "porcentaje_ok_total": 99.7199,
+                "porcentaje_problem_total": 0.2801,
+                "tiempo_ok_estimado": "29d 21h 59m",
+                "tiempo_problem_estimado": "2h 1m"
+            },
+            {
+                "host": "Fortigate GYE",
+                "ip": "172.32.30.1",
+                "porcentaje_ok_total": 99.8194,
+                "porcentaje_problem_total": 0.1806,
+                "tiempo_ok_estimado": "29d 22h 41m 59s",
+                "tiempo_problem_estimado": "1h 18m 1s"
+            }
+        ]
+    },
+    "detalle_diario_por_host": [
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10841,
+            "host": "CISCO FIREPOWER MANAGEMENT",
+            "ip": "172.32.1.83",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "01-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "02-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "03-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "04-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "05-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "06-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "07-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "08-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "09-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "10-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "11-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "12-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "13-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "14-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "15-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "16-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "17-11-2025",
+            "problems": 2.0822,
+            "ok": 97.9178
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "18-11-2025",
+            "problems": 4.9306,
+            "ok": 95.0694
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "19-11-2025",
+            "problems": 1.3889,
+            "ok": 98.6111
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "20-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "21-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "22-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "23-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "24-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "25-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "26-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "27-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "28-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "29-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11056,
+            "host": "SW-FIREWALL-FORTI",
+            "ip": "172.32.2.34",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "30-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "01-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "02-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "03-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "04-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "05-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "06-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "07-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "08-11-2025",
+            "problems": 5.4167,
+            "ok": 94.5833
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "09-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "10-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "11-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "12-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "13-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "14-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "15-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "16-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "17-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "18-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "19-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "20-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "21-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "22-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "23-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "24-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "25-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "26-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "27-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "28-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "29-11-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10757,
+            "host": "Fortigate GYE",
+            "ip": "172.32.30.1",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "date": "30-11-2025",
+            "problems": 0,
+            "ok": 100
+        }
+    ],
+    "eventos_de_problema": [
+        {
+            "eventid": "257484390",
+            "inicio": "2025-11-17 21:52:33",
+            "start_timestamp": 1763416353,
+            "valor_inicial": 1,
+            "fin": "2025-11-17 22:22:32",
+            "duracion": "29m 59s",
+            "fecha": "17-11-2025",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "host": "SW-FIREWALL-FORTI",
+            "hostid": 11056,
+            "triggerid": "49145",
+            "end_timestamp": 1763418152,
+            "valor_final": 0
+        },
+        {
+            "eventid": "257560366",
+            "inicio": "2025-11-18 17:35:32",
+            "start_timestamp": 1763487332,
+            "valor_inicial": 1,
+            "fin": "2025-11-18 18:46:32",
+            "duracion": "1h 11m",
+            "fecha": "18-11-2025",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "host": "SW-FIREWALL-FORTI",
+            "hostid": 11056,
+            "triggerid": "49145",
+            "end_timestamp": 1763491592,
+            "valor_final": 0
+        },
+        {
+            "eventid": "257675322",
+            "inicio": "2025-11-19 23:29:32",
+            "start_timestamp": 1763594972,
+            "valor_inicial": 1,
+            "fin": "2025-11-19 23:49:32",
+            "duracion": "20m",
+            "fecha": "19-11-2025",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "host": "SW-FIREWALL-FORTI",
+            "hostid": 11056,
+            "triggerid": "49145",
+            "end_timestamp": 1763596172,
+            "valor_final": 0
+        },
+        {
+            "eventid": "256646843",
+            "inicio": "2025-11-08 15:10:00",
+            "start_timestamp": 1762614600,
+            "valor_inicial": 1,
+            "fin": "2025-11-08 16:28:00",
+            "duracion": "1h 18m",
+            "fecha": "08-11-2025",
+            "trigger": "FortiGate: Unavailable by ICMP ping",
+            "host": "Fortigate GYE",
+            "hostid": 10757,
+            "triggerid": "31548",
+            "end_timestamp": 1762619280,
+            "valor_final": 0
+        }
+    ]
+}

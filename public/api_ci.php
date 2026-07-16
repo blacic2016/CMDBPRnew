@@ -795,6 +795,10 @@ try {
                     break;
                 }
             }
+            // Fetch images associated with this CI instance
+            $stmt_images = $pdo->prepare("SELECT id, filepath FROM images WHERE entity_type = 'ci_instances' AND entity_id = ? ORDER BY uploaded_at DESC");
+            $stmt_images->execute([$id]);
+            $images = $stmt_images->fetchAll(PDO::FETCH_ASSOC);
             
             echo json_encode([
                 'success' => true, 
@@ -802,7 +806,8 @@ try {
                     'ci' => $ci, 
                     'lineage' => $lineage, 
                     'relations' => $relations,
-                    'parent_chain' => array_reverse($parent_chain)
+                    'parent_chain' => array_reverse($parent_chain),
+                    'images' => $images
                 ]
             ]);
         } else {

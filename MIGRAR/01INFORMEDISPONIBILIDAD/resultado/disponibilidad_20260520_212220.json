@@ -1,0 +1,896 @@
+{
+    "resumen_general": {
+        "total_hosts_analizados": 3,
+        "promedio_ok": 77.046,
+        "promedio_problem": 22.954,
+        "fecha_inicio_analisis": "01-03-2026",
+        "fecha_fin_analisis": "31-03-2026",
+        "dias_analizados": 31,
+        "tiempo_total_periodo_segundos": 2678400,
+        "tiempo_total_periodo_formateado": "31d",
+        "tiempo_promedio_ok_estimado": "23d 21h 13m 21s",
+        "tiempo_promedio_problem_estimado": "7d 2h 46m 39s",
+        "por_host": [
+            {
+                "host": "Salida Internet Principal TELEFONICA UIO",
+                "ip": "200.24.223.205",
+                "porcentaje_ok_total": 31.463,
+                "porcentaje_problem_total": 68.537,
+                "tiempo_ok_estimado": "9d 18h 5m 5s",
+                "tiempo_problem_estimado": "21d 5h 54m 55s"
+            },
+            {
+                "host": "Salida Internet Backup TELEFONICA UIO",
+                "ip": "200.24.217.225",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "Salida Internet Principal TELEFONICA GYE",
+                "ip": "200.7.199.217",
+                "porcentaje_ok_total": 99.6751,
+                "porcentaje_problem_total": 0.3249,
+                "tiempo_ok_estimado": "30d 21h 34m 58s",
+                "tiempo_problem_estimado": "2h 25m 2s"
+            }
+        ]
+    },
+    "detalle_diario_por_host": [
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-03-2026",
+            "problems": 24.6484,
+            "ok": 75.3516
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11149,
+            "host": "Salida Internet Principal TELEFONICA UIO",
+            "ip": "200.24.223.205",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-03-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11162,
+            "host": "Salida Internet Backup TELEFONICA UIO",
+            "ip": "200.24.217.225",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-03-2026",
+            "problems": 10.0719,
+            "ok": 89.9281
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11147,
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "ip": "200.7.199.217",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-03-2026",
+            "problems": 0,
+            "ok": 100
+        }
+    ],
+    "eventos_de_problema": [
+        {
+            "eventid": "269735112",
+            "inicio": "2026-03-19 08:51:00",
+            "start_timestamp": 1773910260,
+            "valor_inicial": 1,
+            "fin": "2026-03-19 11:16:02",
+            "duracion": "2h 25m 2s",
+            "fecha": "19-03-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "Salida Internet Principal TELEFONICA GYE",
+            "hostid": 11147,
+            "triggerid": "55308",
+            "end_timestamp": 1773918962,
+            "valor_final": 0
+        }
+    ]
+}

@@ -1,0 +1,4220 @@
+{
+    "resumen_general": {
+        "total_hosts_analizados": 15,
+        "promedio_ok": 98.604,
+        "promedio_problem": 1.396,
+        "fecha_inicio_analisis": "01-04-2026",
+        "fecha_fin_analisis": "30-04-2026",
+        "dias_analizados": 30,
+        "tiempo_total_periodo_segundos": 2592000,
+        "tiempo_total_periodo_formateado": "30d",
+        "tiempo_promedio_ok_estimado": "29d 13h 56m 56s",
+        "tiempo_promedio_problem_estimado": "10h 3m 4s",
+        "por_host": [
+            {
+                "host": "AP14 - Coworking",
+                "ip": "172.32.2.128",
+                "porcentaje_ok_total": 99.25,
+                "porcentaje_problem_total": 0.75,
+                "tiempo_ok_estimado": "29d 18h 36m",
+                "tiempo_problem_estimado": "5h 24m"
+            },
+            {
+                "host": "AP03 - Mesa GPF",
+                "ip": "172.32.2.111",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "AP09 - DCC",
+                "ip": "172.32.2.125",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "AP11 - Plataforma",
+                "ip": "172.32.2.127",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "AP06 - Bodega",
+                "ip": "172.32.2.116",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "AP01 - Gerencia WPS",
+                "ip": "172.32.2.113",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "AP05 - Mesa Petro",
+                "ip": "172.32.2.112",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "AP08 - Gerencia General",
+                "ip": "172.32.2.118",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "AP02 - Gerencia Personas",
+                "ip": "172.32.2.115",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "AP13 - SAP",
+                "ip": "172.32.2.130",
+                "porcentaje_ok_total": 79.8102,
+                "porcentaje_problem_total": 20.1898,
+                "tiempo_ok_estimado": "23d 22h 38m",
+                "tiempo_problem_estimado": "6d 1h 22m"
+            },
+            {
+                "host": "AP07 - Multiindustria",
+                "ip": "172.32.2.117",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "AP04 - Mesa Petro y Produ",
+                "ip": "172.32.2.114",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "AP12 - Gerencia Financiera",
+                "ip": "172.32.2.129",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "AP10 - Gerencia Plataforma",
+                "ip": "172.32.2.126",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "Aruba Controladora AP",
+                "ip": "172.32.2.110",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            }
+        ]
+    },
+    "detalle_diario_por_host": [
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-04-2026",
+            "problems": 22.5003,
+            "ok": 77.4997
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11131,
+            "host": "AP14 - Coworking",
+            "ip": "172.32.2.128",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11132,
+            "host": "AP03 - Mesa GPF",
+            "ip": "172.32.2.111",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11133,
+            "host": "AP09 - DCC",
+            "ip": "172.32.2.125",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11134,
+            "host": "AP11 - Plataforma",
+            "ip": "172.32.2.127",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11135,
+            "host": "AP06 - Bodega",
+            "ip": "172.32.2.116",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11136,
+            "host": "AP01 - Gerencia WPS",
+            "ip": "172.32.2.113",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11137,
+            "host": "AP05 - Mesa Petro",
+            "ip": "172.32.2.112",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11138,
+            "host": "AP08 - Gerencia General",
+            "ip": "172.32.2.118",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11139,
+            "host": "AP02 - Gerencia Personas",
+            "ip": "172.32.2.115",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-04-2026",
+            "problems": 12.2964,
+            "ok": 87.7036
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-04-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-04-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-04-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-04-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-04-2026",
+            "problems": 100,
+            "ok": 0
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-04-2026",
+            "problems": 93.3981,
+            "ok": 6.6019
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11140,
+            "host": "AP13 - SAP",
+            "ip": "172.32.2.130",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11141,
+            "host": "AP07 - Multiindustria",
+            "ip": "172.32.2.117",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11142,
+            "host": "AP04 - Mesa Petro y Produ",
+            "ip": "172.32.2.114",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11143,
+            "host": "AP12 - Gerencia Financiera",
+            "ip": "172.32.2.129",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11144,
+            "host": "AP10 - Gerencia Plataforma",
+            "ip": "172.32.2.126",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-04-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10998,
+            "host": "Aruba Controladora AP",
+            "ip": "172.32.2.110",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-04-2026",
+            "problems": 0,
+            "ok": 100
+        }
+    ],
+    "eventos_de_problema": [
+        {
+            "eventid": "271480499",
+            "inicio": "2026-04-02 15:35:44",
+            "start_timestamp": 1775144144,
+            "valor_inicial": 1,
+            "fin": "2026-04-02 20:59:44",
+            "duracion": "5h 24m",
+            "fecha": "02-04-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "AP14 - Coworking",
+            "hostid": 11131,
+            "triggerid": "55233",
+            "end_timestamp": 1775163584,
+            "valor_final": 0
+        },
+        {
+            "eventid": "271509090",
+            "inicio": "2026-04-02 21:02:55",
+            "start_timestamp": 1775163775,
+            "valor_inicial": 1,
+            "fin": "2026-04-08 22:24:55",
+            "duracion": "6d 1h 22m",
+            "fecha": "02-04-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "AP13 - SAP",
+            "hostid": 11140,
+            "triggerid": "55260",
+            "end_timestamp": 1775687095,
+            "valor_final": 0
+        }
+    ]
+}

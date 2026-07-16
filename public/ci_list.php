@@ -394,23 +394,110 @@ foreach ($schema_properties as $key => $prop) {
                 height: calc(100vh - 56px) !important;
                 overflow-y: auto !important;
             }
+
+            /* Premium detail card, gallery, and map styling */
+            .premium-card { border-radius: 12px; border: none; box-shadow: 0 4px 20px rgba(0,0,0,0.05) !important; }
+            .gallery-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; }
+            .gallery-item { position: relative; border-radius: 8px; overflow: hidden; height: 90px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 2px solid #fff; transition: transform 0.2s; }
+            .gallery-item:hover { transform: scale(1.03); z-index: 10; cursor: pointer; }
+            .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+            
+            .btn-floating-delete { position: absolute; top: 3px; right: 3px; opacity: 0; transition: opacity 0.2s; padding: 2px 5px; font-size: 10px; }
+            .gallery-item:hover .btn-floating-delete { opacity: 1; }
+            
+            .map-wrapper { height: 350px; border-radius: 12px; overflow: hidden; background: #e9ecef; }
+
+            /* Match NovaIOPS table and control sizes */
+            #ci-table,
+            #tbl-zabbix-modal-triggers,
+            #tbl-zabbix-modal-items {
+                font-size: 0.75rem !important;
+            }
+            #ci-table th, 
+            #ci-table td,
+            #tbl-zabbix-modal-triggers th,
+            #tbl-zabbix-modal-triggers td,
+            #tbl-zabbix-modal-items th,
+            #tbl-zabbix-modal-items td {
+                padding: 4px 6px !important;
+                vertical-align: middle !important;
+                line-height: 1.25 !important;
+            }
+            #ci-table .badge {
+                font-size: 0.68rem !important;
+                padding: 2px 4px !important;
+            }
+            #ci-table a {
+                font-size: 0.75rem !important;
+            }
+            #ci-table small {
+                font-size: 0.68rem !important;
+                display: block;
+                margin-top: 1px;
+            }
+            /* Make the search controls compact to match NovaIOPS filters */
+            #ci-search-input {
+                height: 30px !important;
+                font-size: 0.75rem !important;
+                padding: 4px 8px !important;
+            }
+            #search-addon {
+                height: 30px !important;
+                font-size: 0.75rem !important;
+                padding: 4px 8px !important;
+                display: flex;
+                align-items: center;
+            }
+            #ci-search-clear-btn {
+                height: 30px !important;
+                font-size: 0.75rem !important;
+                padding: 4px 10px !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #ci-counter-label {
+                font-size: 0.75rem !important;
+                padding: 4px 10px !important;
+                line-height: 1.5 !important;
+            }
+            /* Table header style tweaks */
+            #ci-table thead th {
+                font-weight: 600 !important;
+                border-bottom: 2px solid #cbd5e1 !important;
+                background-color: #f1f5f9 !important;
+                color: #0f172a !important;
+            }
+            .dark-mode #ci-table thead th {
+                border-bottom: 2px solid #475569 !important;
+                background-color: #334155 !important;
+                color: #f8fafc !important;
+            }
+            .dark-mode #ci-table tbody tr {
+                background-color: #1e293b !important;
+                color: #f8fafc !important;
+            }
+            /* Row Hover transition */
+            #ci-table tbody tr {
+                transition: background-color 0.15s ease;
+            }
             </style>
 
             <!-- Buscador general arriba de la tabla -->
-            <div class="row mb-4 align-items-center">
+            <div class="row mb-3 align-items-center">
                 <div class="col-md-6 mb-2 mb-md-0">
                     <div class="input-group shadow-sm">
                         <div class="input-group-prepend">
-                            <span class="input-group-text bg-white border-right-0" id="search-addon" style="border-radius: 8px 0 0 8px;"><i class="fas fa-search text-muted"></i></span>
+                            <span class="input-group-text bg-white border-right-0" id="search-addon" style="border-radius: 6px 0 0 6px;"><i class="fas fa-search text-muted"></i></span>
                         </div>
-                        <input type="text" id="ci-search-input" class="form-control border-left-0 pl-0" placeholder="Buscar por Nombre, Sigla o IP Address..." aria-describedby="search-addon" style="border-radius: 0 8px 8px 0; height: 38px;">
+                        <input type="text" id="ci-search-input" class="form-control border-left-0 pl-0" placeholder="Buscar por Nombre, Sigla o IP Address..." aria-describedby="search-addon" style="border-radius: 0; height: 30px;">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" id="ci-search-clear-btn" style="border-radius: 0 8px 8px 0;" title="Limpiar búsqueda"><i class="fas fa-times"></i></button>
+                            <button class="btn btn-outline-secondary" type="button" id="ci-search-clear-btn" style="border-radius: 0 6px 6px 0; height: 30px;" title="Limpiar búsqueda"><i class="fas fa-times"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 text-md-right">
-                    <span class="badge badge-light border text-dark font-weight-bold px-3 py-2" id="ci-counter-label" style="font-size: 0.9em;">
+                    <span class="badge badge-light border text-dark font-weight-bold px-3 py-1" id="ci-counter-label" style="font-size: 0.75rem;">
                         Mostrando <?php echo count($instances); ?> de <?php echo count($instances); ?> CIs
                     </span>
                 </div>
@@ -449,6 +536,7 @@ foreach ($schema_properties as $key => $prop) {
                             $attrCount = count($attrs);
                         ?>
                         <tr class="ci-row animate__animated animate__fadeIn" 
+                            data-id="<?php echo $inst['id']; ?>"
                             data-unique="<?php echo htmlspecialchars($inst['ci_unique'] ?? ''); ?>"
                             data-hostname="<?php echo htmlspecialchars($inst['hostname'] ?? ''); ?>"
                             data-parent-name="<?php echo htmlspecialchars($inst['parent_ci_name'] ?? ''); ?>"
@@ -552,7 +640,7 @@ foreach ($schema_properties as $key => $prop) {
 </div>
 
 <!-- Modal rediseñado a tamaño Extra Grande (modal-xl) con diseño Técnico/Gerencial -->
-<div class="modal fade" id="attrModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade modal-fullscreen" id="attrModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content border-0 shadow-lg" style="border-radius: 12px; overflow: hidden;">
             <div class="modal-header bg-gradient-primary text-white border-bottom-0 py-3 d-flex align-items-center">
@@ -561,7 +649,7 @@ foreach ($schema_properties as $key => $prop) {
                 </h5>
                 <div class="ml-auto d-flex align-items-center">
                     <button type="button" class="btn btn-sm btn-outline-light mr-2 border-0" id="btn-maximize-modal" title="Pantalla Completa" style="opacity: 0.8; outline: none; background: transparent; color: white;">
-                        <i class="fas fa-expand"></i>
+                        <i class="fas fa-compress"></i>
                     </button>
                     <button type="button" class="close text-white border-0 bg-transparent" data-dismiss="modal" aria-label="Close" style="font-size: 1.5rem; opacity: 0.8; outline: none; line-height: 1;">
                         <span aria-hidden="true">&times;</span>
@@ -580,13 +668,12 @@ foreach ($schema_properties as $key => $prop) {
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-// Ficha de Detalles en formato Estructurado Gerencial y Técnico (modal-xl)
 function viewCIDetails(id) {
     $('#attrModalTitle').html('<i class="fas fa-server mr-2"></i> Cargando detalles...');
     $('#attrModalBody').html(`
         <div class="text-center py-5">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;"></div>
-            <p class="mt-3 text-muted">Obteniendo información del CI de forma segura...</p>
+            <p class="mt-3 text-muted">Obteniendo expediente técnico...</p>
         </div>
     `);
     $('#attrModal').modal('show');
@@ -594,11 +681,35 @@ function viewCIDetails(id) {
     $.get('api_ci.php?action=get_ci_details&id=' + id, function(res) {
         if (res.success) {
             let ci = res.data.ci;
-            
-            // Set modal title
             $('#attrModalTitle').html('<i class="fas fa-server mr-2"></i>' + ci.hostname + ' <span class="badge badge-info ml-2 font-weight-normal text-white">' + ci.category_name + '</span>');
             
-            // Build properties schema lineage
+            // Setup Prev/Next Navigation
+            let visibleIds = $('.ci-row:visible').map(function() { return $(this).data('id'); }).get();
+            let currentIndex = visibleIds.indexOf(id);
+            let prevId = currentIndex > 0 ? visibleIds[currentIndex - 1] : null;
+            let nextId = currentIndex < visibleIds.length - 1 ? visibleIds[currentIndex + 1] : null;
+
+            let navHtml = `
+                <button type="button" class="btn btn-sm btn-outline-light mr-2 font-weight-bold px-3" id="btn-prev-ci" style="border-radius: 20px;" ${prevId ? '' : 'disabled'}>
+                    <i class="fas fa-chevron-left mr-1"></i> Anterior
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-light mr-2 font-weight-bold px-3" id="btn-next-ci" style="border-radius: 20px;" ${nextId ? '' : 'disabled'}>
+                    Siguiente <i class="fas fa-chevron-right ml-1"></i>
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-light mr-2 border-0" id="btn-maximize-modal" title="Pantalla Completa" style="opacity: 0.8; outline: none; background: transparent; color: white;">
+                    <i class="fas fa-compress"></i>
+                </button>
+                <button type="button" class="btn btn-sm btn-danger text-white font-weight-bold px-4" data-dismiss="modal" style="border-radius: 20px;">
+                    <i class="fas fa-times mr-1"></i> Cerrar
+                </button>
+            `;
+            $('#attrModal .ml-auto').html(navHtml);
+            
+            // Re-bind navigation events
+            $('#btn-prev-ci').off('click').on('click', function() { if (prevId) viewCIDetails(prevId); });
+            $('#btn-next-ci').off('click').on('click', function() { if (nextId) viewCIDetails(nextId); });
+
+            // Extract all properties from lineage schema
             let allProps = {};
             res.data.lineage.forEach(cat => {
                 try {
@@ -609,11 +720,9 @@ function viewCIDetails(id) {
                 } catch(e) {}
             });
             
-            // Build attributes map
             let attrs = {};
             try { attrs = JSON.parse(ci.attributes_json); } catch(e) {}
             
-            // Group attributes
             let groups = {};
             for(let key in allProps) {
                 let prop = allProps[key];
@@ -623,139 +732,117 @@ function viewCIDetails(id) {
             }
             
             let groupKeys = Object.keys(groups).sort();
-            let hasRelations = res.data.relations && res.data.relations.length > 0;
             
-            // Ficha Técnica (Columna izquierda, sin Dependencia Superior que ahora está en pestañas)
-            let sourceHtml = ci.source === 'zabbix' ? `
-                <span class="badge badge-danger px-2.5 py-1.5"><i class="fas fa-server mr-1"></i> Zabbix Integration</span>
-            ` : `
-                <span class="badge badge-primary px-2.5 py-1.5"><i class="fas fa-keyboard mr-1"></i> Registro Manual</span>
-            `;
-
-            let leftColHtml = `
-                <div class="card border-0 shadow-sm mb-4 h-100" style="border-radius: 10px;">
-                    <div class="card-body">
-                        <div class="text-center pb-3 border-bottom mb-3">
-                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3 text-primary shadow-sm" style="width: 60px; height: 60px; background-color: rgba(0, 123, 255, 0.1);">
-                                <i class="fas fa-server fa-2x"></i>
-                            </div>
-                            <h4 class="font-weight-bold mb-1 text-dark">${ci.hostname}</h4>
-                            <span class="badge badge-info mb-2 px-2 py-1 text-uppercase">${ci.category_name}</span>
-                            <p class="text-muted small px-3 mb-0">${ci.description || 'Sin descripción descriptiva registrada.'}</p>
-                        </div>
-                        
-                        <div class="px-2">
-                            <div class="mb-3">
-                                <div class="detail-card-label">Código Único CI</div>
-                                <div class="detail-card-value font-weight-bold text-monospace"><span class="badge badge-dark px-2 py-1">${ci.ci_unique || 'SND-XXXXXXXXXX'}</span></div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="detail-card-label">Sigla / Etiqueta</div>
-                                <div class="detail-card-value"><span class="badge badge-secondary px-2 py-1">${ci.sigla || '-'}</span></div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="detail-card-label">Dirección IP</div>
-                                <div class="detail-card-value font-weight-bold text-primary"><i class="fas fa-network-wired mr-1"></i>${ci.ip_address || '<span class="text-muted font-italic">N/D</span>'}</div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="detail-card-label">Estado Operativo</div>
-                                <div class="detail-card-value"><span class="badge badge-success px-2 py-1"><i class="fas fa-check-circle mr-1"></i>${ci.status || 'Activo'}</span></div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="detail-card-label">Origen de Datos</div>
-                                <div class="detail-card-value mt-1">${sourceHtml}</div>
-                            </div>
-                        </div>
+            // Base Attributes UI
+            let baseFieldsHtml = `
+                <div class="row pt-2">
+                    <div class="col-md-4 mb-3 pb-2 border-bottom">
+                        <div class="detail-card-label text-muted font-weight-bold" style="font-size:0.75rem; text-transform:uppercase;">Código Único CI</div>
+                        <div class="detail-card-value font-weight-bold text-monospace"><span class="badge badge-dark px-2.5 py-1.5" style="font-size: 0.85rem;">${ci.ci_unique || 'SND-XXXXXXXXXX'}</span></div>
                     </div>
-                    <div class="card-footer bg-white border-top-0 pt-0 pb-4 text-center">
-                        <div class="text-muted small">
-                            <div><i class="far fa-calendar-alt mr-1"></i> <strong>Creado:</strong> ${ci.created_at ? new Date(ci.created_at).toLocaleString('es-ES') : '-'}</div>
-                            <div class="mt-1"><i class="far fa-user mr-1"></i> <strong>Por:</strong> ${ci.creator_name || 'Desconocido'}</div>
-                        </div>
+                    <div class="col-md-4 mb-3 pb-2 border-bottom">
+                        <div class="detail-card-label text-muted font-weight-bold" style="font-size:0.75rem; text-transform:uppercase;">Nombre / Hostname</div>
+                        <div class="detail-card-value font-weight-bold text-dark" style="font-size: 0.95rem;">${ci.hostname}</div>
+                    </div>
+                    <div class="col-md-4 mb-3 pb-2 border-bottom">
+                        <div class="detail-card-label text-muted font-weight-bold" style="font-size:0.75rem; text-transform:uppercase;">Dirección IP</div>
+                        <div class="detail-card-value font-weight-bold text-primary" style="font-size: 0.95rem;"><i class="fas fa-network-wired mr-1.5"></i>${ci.ip_address || '<span class="text-muted font-italic">N/D</span>'}</div>
+                    </div>
+                    <div class="col-md-4 mb-3 pb-2 border-bottom">
+                        <div class="detail-card-label text-muted font-weight-bold" style="font-size:0.75rem; text-transform:uppercase;">Categoría</div>
+                        <div class="detail-card-value"><span class="badge badge-info px-2.5 py-1.5 text-uppercase" style="font-size: 0.8rem;">${ci.category_name}</span></div>
+                    </div>
+                    <div class="col-md-4 mb-3 pb-2 border-bottom">
+                        <div class="detail-card-label text-muted font-weight-bold" style="font-size:0.75rem; text-transform:uppercase;">Sigla / Código</div>
+                        <div class="detail-card-value"><span class="badge badge-secondary px-2.5 py-1.5" style="font-size: 0.8rem;">${ci.sigla || '-'}</span></div>
+                    </div>
+                    <div class="col-md-4 mb-3 pb-2 border-bottom">
+                        <div class="detail-card-label text-muted font-weight-bold" style="font-size:0.75rem; text-transform:uppercase;">Estado</div>
+                        <div class="detail-card-value"><span class="badge badge-success px-2.5 py-1.5" style="font-size: 0.8rem;"><i class="fas fa-check-circle mr-1"></i>${ci.status || 'Activo'}</span></div>
+                    </div>
+                    <div class="col-md-4 mb-3 pb-2 border-bottom">
+                        <div class="detail-card-label text-muted font-weight-bold" style="font-size:0.75rem; text-transform:uppercase;">Origen</div>
+                        <div class="detail-card-value">${ci.source === 'zabbix' ? '<span class="badge badge-danger px-2.5 py-1.5" style="font-size: 0.8rem;"><i class="fas fa-server mr-1"></i> Zabbix</span>' : '<span class="badge badge-primary px-2.5 py-1.5" style="font-size: 0.8rem;"><i class="fas fa-keyboard mr-1"></i> Manual</span>'}</div>
+                    </div>
+                    <div class="col-md-4 mb-3 pb-2 border-bottom">
+                        <div class="detail-card-label text-muted font-weight-bold" style="font-size:0.75rem; text-transform:uppercase;">Fecha Registro</div>
+                        <div class="detail-card-value text-muted" style="font-size: 0.9rem;"><i class="far fa-calendar-alt mr-1"></i>${ci.created_at ? new Date(ci.created_at).toLocaleString('es-ES') : '-'}</div>
+                    </div>
+                    <div class="col-md-4 mb-3 pb-2 border-bottom">
+                        <div class="detail-card-label text-muted font-weight-bold" style="font-size:0.75rem; text-transform:uppercase;">Registrado Por</div>
+                        <div class="detail-card-value text-muted" style="font-size: 0.9rem;"><i class="far fa-user mr-1"></i>${ci.creator_name || 'Desconocido'}</div>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <div class="detail-card-label text-muted font-weight-bold" style="font-size:0.75rem; text-transform:uppercase;">Descripción</div>
+                        <div class="p-3 bg-light rounded text-muted" style="font-size: 0.9rem; border: 1px solid #e9ecef;">${ci.description || 'Sin descripción registrada.'}</div>
                     </div>
                 </div>
             `;
 
-            // Atributos y relaciones (Columna derecha)
             let tabsHtml = '<ul class="nav modal-nav-pills mb-3 border-bottom pb-2" role="tablist" id="modalDetailTabs">';
             let contentHtml = '<div class="tab-content" id="modalDetailTabsContent">';
             
-            let hasActiveTab = false;
-            // Si tiene atributos definidos por grupos
+            tabsHtml += `
+                <li class="nav-item mr-2">
+                    <a class="nav-link font-weight-bold active px-3 py-2" data-toggle="tab" href="#view-base-attrs" role="tab">
+                        <i class="fas fa-info-circle mr-1.5 text-primary"></i> Atributos Base
+                    </a>
+                </li>`;
+            
+            contentHtml += `
+                <div class="tab-pane fade show active" id="view-base-attrs" role="tabpanel">
+                    ${baseFieldsHtml}
+                </div>`;
+            
             groupKeys.forEach((groupName, index) => {
                 let safeId = groupName.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase() + '-' + index;
-                let activeClass = '';
-                if (!hasActiveTab) {
-                    activeClass = 'active';
-                    hasActiveTab = true;
-                }
-                
                 tabsHtml += `
                     <li class="nav-item mr-2">
-                        <a class="nav-link font-weight-bold ${activeClass} px-3 py-2" data-toggle="tab" href="#view-${safeId}" role="tab">
-                            <i class="fas fa-cubes mr-1.5"></i> ${groupName}
+                        <a class="nav-link font-weight-bold px-3 py-2" data-toggle="tab" href="#view-${safeId}" role="tab">
+                            <i class="fas fa-cubes mr-1.5 text-info"></i> ${groupName}
                         </a>
                     </li>`;
                 
-                contentHtml += `<div class="tab-pane fade show ${activeClass}" id="view-${safeId}" role="tabpanel">`;
+                contentHtml += `<div class="tab-pane fade" id="view-${safeId}" role="tabpanel">`;
                 contentHtml += `<div class="row pt-2">`;
                 
                 let props = groups[groupName] || {};
-                let keysCount = Object.keys(props).length;
-                
-                if (keysCount === 0) {
-                    contentHtml += `<div class="col-12 text-center text-muted py-4"><p class="mb-0">Sin atributos configurados en este grupo.</p></div>`;
-                } else {
-                    for(let key in props) {
-                        let prop = props[key];
-                        let rawVal = attrs[key];
-                        let val = '<span class="text-muted font-italic">N/D</span>';
-                        
-                        if (rawVal !== undefined && rawVal !== '') {
-                            if (prop.type === 'boolean') {
-                                if (rawVal == 1 || rawVal === '1' || rawVal === true) {
-                                    val = '<span class="badge badge-success px-2.5 py-1.5"><i class="fas fa-check mr-1"></i>Sí</span>';
-                                } else {
-                                    val = '<span class="badge badge-secondary px-2.5 py-1.5"><i class="fas fa-times mr-1"></i>No</span>';
-                                }
-                            } else if (prop.type === 'image') {
-                                val = `
-                                    <div class="my-1 text-center">
-                                        <a href="${rawVal}" target="_blank" class="d-inline-block shadow-sm rounded overflow-hidden border bg-white p-1">
-                                            <img src="${rawVal}" style="max-height: 120px; max-width: 100%; display: block; object-fit: contain; border-radius: 4px;">
-                                        </a>
-                                    </div>
-                                `;
-                            } else if (prop.type === 'multiselect') {
-                                let arr = Array.isArray(rawVal) ? rawVal : (typeof rawVal === 'string' ? rawVal.split(',') : []);
-                                val = '';
-                                arr.forEach(item => {
-                                    item = item.trim();
-                                    if (item) {
-                                        val += `<span class="badge badge-dark mr-1.5 mb-1 px-2.5 py-1.5" style="font-size: 0.85rem;"><i class="fas fa-circle mr-1" style="font-size: 0.5rem; vertical-align: middle;"></i>${item}</span>`;
-                                    }
-                                });
-                                if (!val) val = '<span class="text-muted font-italic">N/D</span>';
-                            } else {
-                                val = Array.isArray(rawVal) ? rawVal.join(', ') : rawVal;
-                            }
+                for(let key in props) {
+                    let prop = props[key];
+                    let rawVal = attrs[key];
+                    let val = '<span class="text-muted font-italic">N/D</span>';
+                    
+                    if (rawVal !== undefined && rawVal !== '') {
+                        if (prop.type === 'boolean') {
+                            val = (rawVal == 1 || rawVal === '1' || rawVal === true) ? '<span class="badge badge-success px-2.5 py-1.5"><i class="fas fa-check mr-1"></i>Sí</span>' : '<span class="badge badge-secondary px-2.5 py-1.5"><i class="fas fa-times mr-1"></i>No</span>';
+                        } else if (prop.type === 'image') {
+                            val = `<div class="my-1"><a href="${rawVal}" target="_blank" class="shadow-sm rounded"><img src="${rawVal}" style="max-height: 80px; border-radius: 4px;"></a></div>`;
+                        } else if (prop.type === 'multiselect') {
+                            let arr = Array.isArray(rawVal) ? rawVal : (typeof rawVal === 'string' ? rawVal.split(',') : []);
+                            val = '';
+                            arr.forEach(item => {
+                                item = item.trim();
+                                if (item) val += `<span class="badge badge-dark mr-1 mb-1 px-2 py-1">${item}</span>`;
+                            });
+                            if (!val) val = '<span class="text-muted font-italic">N/D</span>';
+                        } else {
+                            val = Array.isArray(rawVal) ? rawVal.join(', ') : rawVal;
                         }
-                        
-                        let label = prop.title || key.charAt(0).toUpperCase() + key.slice(1).replace(/_/g, ' ');
-                        contentHtml += `
-                            <div class="col-md-6 mb-3">
-                                <div class="p-3 detail-attr-box h-100">
-                                    <div class="detail-card-label">${label}</div>
-                                    <div class="detail-card-value mt-2">${val}</div>
-                                </div>
-                            </div>`;
                     }
+                    
+                    let label = prop.title || key.charAt(0).toUpperCase() + key.slice(1).replace(/_/g, ' ');
+                    contentHtml += `
+                        <div class="col-md-6 mb-3">
+                            <div class="p-3 border rounded h-100 bg-white shadow-xs">
+                                <div class="detail-card-label text-muted font-weight-bold mb-1.5" style="font-size:0.75rem; text-transform:uppercase;">${label}</div>
+                                <div class="detail-card-value font-weight-bold text-dark" style="font-size:0.9rem;">${val}</div>
+                            </div>
+                        </div>`;
                 }
-                
                 contentHtml += `</div></div>`;
             });
 
-            // Clasificación Temática de Relaciones y Jerarquía
+            // Thematic groups mapping
             let thematicTabs = {
                 'Ubicación': [],
                 'Personal / Contacto': [],
@@ -769,172 +856,109 @@ function viewCIDetails(id) {
                 if (!categoryName) return 'Otros / Relacionados';
                 let catLower = categoryName.toLowerCase();
                 const groupMappings = {
-                    'Ubicación': ['país', 'pais', 'ciudad', 'datacenter', 'rooms', 'room', 'rack', 'fila', 'ubicación', 'ubicacion', 'geografía', 'geografia', 'sector', 'edificio', 'localidad', 'área', 'area', 'cuartos', 'cuarto'],
-                    'Personal / Contacto': ['personal', 'soporte', 'propietario', 'contacto', 'proveedor', 'usuario', 'creador', 'cliente'],
-                    'Facility': ['facility', 'eléctrico', 'electrico', 'aire', 'climatización', 'climatizacion', 'energía', 'energia', 'generador', 'ups', 'pdu', 'batería', 'bateria', 'chiller', 'tablero'],
-                    'Hardware / Infraestructura': ['servidor', 'storage', 'switch', 'router', 'firewall', 'chasis', 'blade', 'hardware', 'equipo', 'monitoreo', 'enlace', 'red'],
-                    'Servicios / Software': ['servicio', 'software', 'sistema operativo', 'base de datos', 'aplicación', 'aplicacion', 'api', 'licencia', 'vlan', 'puerto']
+                    'Ubicación': ['país', 'ciudad', 'datacenter', 'rack', 'ubicación', 'geografía', 'sector', 'edificio', 'localidad', 'área', 'area', 'cuarto', 'localidades'],
+                    'Personal / Contacto': ['personal', 'soporte', 'propietario', 'contacto', 'proveedor', 'usuario'],
+                    'Facility': ['facility', 'eléctrico', 'aire', 'climatización', 'energía', 'ups', 'pdu', 'batería', 'chiller', 'tablero'],
+                    'Hardware / Infraestructura': ['servidor', 'storage', 'switch', 'router', 'firewall', 'chasis', 'blade', 'hardware', 'equipo', 'monitoreo', 'red'],
+                    'Servicios / Software': ['servicio', 'software', 'sistema operativo', 'base de datos', 'aplicación', 'api', 'licencia', 'vlan']
                 };
                 for (let group in groupMappings) {
-                    if (groupMappings[group].some(keyword => catLower.includes(keyword))) {
-                        return group;
-                    }
+                    if (groupMappings[group].some(keyword => catLower.includes(keyword))) return group;
                 }
                 return 'Otros / Relacionados';
             }
 
-            // 1. Clasificar CIs ascendentes de parent_chain
             if (res.data.parent_chain && res.data.parent_chain.length > 0) {
                 res.data.parent_chain.forEach(pci => {
-                    let grp = getThematicGroup(pci.category_name);
-                    thematicTabs[grp].push({
-                        type: 'parent',
-                        id: pci.id,
-                        hostname: pci.hostname,
-                        category_name: pci.category_name,
-                        schema_json: pci.schema_json,
-                        attributes_json: pci.attributes_json,
-                        ci_unique: pci.ci_unique,
-                        sigla: pci.sigla,
-                        ip_address: pci.ip_address,
-                        description: pci.description
-                    });
+                    thematicTabs[getThematicGroup(pci.category_name)].push({type: 'parent', ...pci});
                 });
             }
-
-            // 2. Clasificar relaciones directas
             if (res.data.relations && res.data.relations.length > 0) {
                 res.data.relations.forEach(r => {
-                    let grp = getThematicGroup(r.target_category_name);
-                    thematicTabs[grp].push({
-                        type: 'relation',
-                        id: r.target_id,
-                        hostname: r.target_name,
-                        category_name: r.target_category_name || 'CI Relacionado',
-                        schema_json: r.target_schema_json || '{}',
-                        attributes_json: r.target_attributes_json || '{}',
-                        ci_unique: r.target_unique,
-                        sigla: r.target_sigla,
-                        ip_address: r.target_ip,
-                        description: r.target_desc,
-                        relation_type: r.relation_type,
-                        impact: r.impact
+                    thematicTabs[getThematicGroup(r.target_category_name)].push({
+                        type: 'relation', 
+                        id: r.target_id, 
+                        hostname: r.target_name, 
+                        category_name: r.target_category_name || 'Relación',
+                        relation_type: r.relation_type
                     });
                 });
             }
 
-            // Renderizar las pestañas temáticas dinámicas
-            let thematicKeys = Object.keys(thematicTabs);
-            thematicKeys.forEach((groupName) => {
+            Object.keys(thematicTabs).forEach((groupName) => {
                 let items = thematicTabs[groupName];
-                
-                let mustShowAlways = ['Ubicación', 'Personal / Contacto', 'Facility'].includes(groupName);
-                if (items.length === 0 && !mustShowAlways) return;
+                if (items.length === 0 && !['Ubicación', 'Personal / Contacto', 'Facility'].includes(groupName)) return;
                 
                 let safeGroupId = groupName.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
                 let iconClass = 'fa-link';
-                if (groupName === 'Ubicación') iconClass = 'fa-map-marker-alt';
-                else if (groupName === 'Personal / Contacto') iconClass = 'fa-users';
-                else if (groupName === 'Facility') iconClass = 'fa-building';
-                else if (groupName === 'Hardware / Infraestructura') iconClass = 'fa-laptop-house';
-                else if (groupName === 'Servicios / Software') iconClass = 'fa-code-branch';
-                
-                let activeClass = '';
-                if (!hasActiveTab) {
-                    activeClass = 'active';
-                    hasActiveTab = true;
-                }
-                
+                if (groupName === 'Ubicación') iconClass = 'fa-map-marker-alt text-danger';
+                else if (groupName === 'Personal / Contacto') iconClass = 'fa-users text-primary';
+                else if (groupName === 'Facility') iconClass = 'fa-building text-warning';
+                else if (groupName === 'Hardware / Infraestructura') iconClass = 'fa-server text-info';
+                else if (groupName === 'Servicios / Software') iconClass = 'fa-laptop-code text-success';
+
                 tabsHtml += `
                     <li class="nav-item mr-2">
-                        <a class="nav-link font-weight-bold ${activeClass} px-3 py-2" data-toggle="tab" href="#view-theme-${safeGroupId}" role="tab">
+                        <a class="nav-link font-weight-bold px-3 py-2" data-toggle="tab" href="#view-theme-${safeGroupId}" role="tab">
                             <i class="fas ${iconClass} mr-1.5"></i> ${groupName} (${items.length})
                         </a>
                     </li>`;
                 
-                contentHtml += `<div class="tab-pane fade show ${activeClass}" id="view-theme-${safeGroupId}" role="tabpanel">`;
-                contentHtml += `<div class="pt-3">`;
+                contentHtml += `<div class="tab-pane fade" id="view-theme-${safeGroupId}" role="tabpanel">`;
+                contentHtml += `<div class="row pt-2">`;
                 
                 if (items.length === 0) {
                     contentHtml += `
-                        <div class="row pt-2 px-3">
-                            <div class="col-12 text-center py-4 text-muted bg-light rounded border" style="border-style: dashed !important; border-width: 1px;">
-                                <i class="fas fa-exclamation-circle mr-1.5 text-warning"></i> N/A (No seleccionado / asociado)
-                            </div>
+                        <div class="col-12 text-center py-4 text-muted bg-light rounded border m-2" style="border-style: dashed !important;">
+                            <i class="fas fa-info-circle mr-1 text-warning"></i> N/A (No seleccionado / asociado)
                         </div>`;
                 } else {
-                    contentHtml += `<div class="row pt-2">`;
                     items.forEach((item) => {
-                        let relationInfo = item.type === 'relation' ? ` <span class="badge badge-light border text-monospace ml-1.5" style="font-size: 0.7rem;">${item.relation_type}</span>` : '';
-                        let valueHtml = `
-                            <div class="d-flex align-items-center justify-content-between">
-                                <span class="font-weight-bold text-primary" style="font-size: 0.95rem;">${item.hostname}${relationInfo}</span>
-                                <a href="javascript:void(0)" onclick="viewCIDetails(${item.id})" class="text-muted ml-2" title="Abrir Ficha Técnica" style="font-size: 0.95em;"><i class="fas fa-search-plus"></i></a>
-                            </div>
-                        `;
+                        let relBadge = item.type === 'relation' ? ` <span class="badge badge-light border text-monospace ml-1.5">${item.relation_type || 'Relación'}</span>` : '';
                         contentHtml += `
                             <div class="col-md-6 mb-3">
-                                <div class="p-3 detail-attr-box h-100">
-                                    <div class="detail-card-label">${item.category_name}</div>
-                                    <div class="detail-card-value mt-2">${valueHtml}</div>
+                                <div class="p-3 border rounded h-100 bg-white shadow-xs">
+                                    <div class="detail-card-label text-muted font-weight-bold mb-1.5" style="font-size:0.75rem; text-transform:uppercase;">${item.category_name}</div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="font-weight-bold text-primary" style="font-size: 0.95rem;">${item.hostname}${relBadge}</span>
+                                        <a href="javascript:void(0)" onclick="viewCIDetails(${item.id})" class="text-muted" title="Ver CI"><i class="fas fa-search-plus"></i></a>
+                                    </div>
                                 </div>
                             </div>`;
                     });
-                    contentHtml += `</div>`;
                 }
                 contentHtml += `</div></div>`;
             });
             
-            // Pestaña de Jerarquía de Categorías (Clase Lineage)
-            let hierarchyActive = !hasActiveTab ? 'active' : '';
+            // Class Hierarchy
             tabsHtml += `
-                <li class="nav-item">
-                    <a class="nav-link font-weight-bold ${hierarchyActive} px-3 py-2" data-toggle="tab" href="#view-hierarchy" role="tab">
-                        <i class="fas fa-sitemap mr-1.5"></i> Jerarquía de Clase
+                <li class="nav-item mr-2">
+                    <a class="nav-link font-weight-bold px-3 py-2" data-toggle="tab" href="#view-hierarchy" role="tab">
+                        <i class="fas fa-sitemap mr-1.5 text-secondary"></i> Jerarquía
                     </a>
                 </li>`;
             
-            contentHtml += `<div class="tab-pane fade show ${hierarchyActive}" id="view-hierarchy" role="tabpanel">`;
-            contentHtml += `<div class="pt-2">`;
-            
-            let lineageHtml = `
-                <div class="card border shadow-sm">
-                    <div class="card-body p-4">
-                        <h6 class="font-weight-bold text-secondary mb-4"><i class="fas fa-sitemap mr-2"></i>Árbol de Categoría del Activo</h6>
-                        <div class="d-flex flex-column text-left">
-            `;
+            contentHtml += `<div class="tab-pane fade" id="view-hierarchy" role="tabpanel"><div class="pt-2"><div class="card border p-4 shadow-xs">`;
             res.data.lineage.forEach((cat, idx) => {
                 let isLast = idx === res.data.lineage.length - 1;
-                let activeClass = isLast ? 'text-primary font-weight-bold' : 'text-muted';
-                lineageHtml += `
+                contentHtml += `
                     <div class="d-flex align-items-center mb-2">
-                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 32px; height: 32px; font-size: 0.9rem; font-weight: bold; background: ${isLast ? 'linear-gradient(135deg, #007bff, #0056b3)' : '#6c757d'}">
-                            ${idx + 1}
-                        </div>
+                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center shadow-sm font-weight-bold" style="width:32px; height:32px; min-width:32px;">${idx + 1}</div>
                         <div class="ml-3">
-                            <span class="${activeClass}" style="font-size: 1.05rem;">${cat.name}</span>
-                            ${cat.cat_unique ? `<span class="badge badge-light border ml-2 text-muted text-monospace small">${cat.cat_unique}</span>` : ''}
+                            <span class="${isLast ? 'text-primary font-weight-bold' : 'text-muted'}" style="font-size: 1.05rem;">${cat.name}</span>
                         </div>
                     </div>
-                    ${!isLast ? `
-                    <div class="border-left ml-3.5 my-1" style="height: 25px; border-width: 2px !important; border-color: #dee2e6 !important;"></div>
-                    ` : ''}
+                    ${!isLast ? '<div class="border-left ml-3 my-1" style="height: 20px; border-width: 2px !important; border-color: #dee2e6 !important;"></div>' : ''}
                 `;
             });
-            lineageHtml += `
-                        </div>
-                    </div>
-                </div>`;
+            contentHtml += `</div></div></div>`;
             
-            contentHtml += lineageHtml;
-            contentHtml += `</div></div>`;
-            
-            // Add Zabbix Monitoring tab if integrated
+            // Zabbix monitoring tab
             if (ci.zabbix_host_id) {
                 tabsHtml += `
                     <li class="nav-item mr-2">
                         <a class="nav-link font-weight-bold px-3 py-2" data-toggle="tab" href="#view-zabbix-monitoring" role="tab" id="tab-zabbix-monit">
-                            <i class="fas fa-heartbeat mr-1.5 text-danger animate__animated animate__pulse animate__infinite"></i> Monitoreo Real-time
+                            <i class="fas fa-heartbeat text-danger"></i> Monitoreo Real-time
                         </a>
                     </li>`;
                 
@@ -943,26 +967,12 @@ function viewCIDetails(id) {
                         <div class="pt-3">
                             <div id="zabbix-modal-loading" class="text-center py-5">
                                 <i class="fas fa-spinner fa-spin fa-3x text-primary mb-3"></i>
-                                <h5>Consultando métricas y alarmas en tiempo real...</h5>
+                                <h5>Consultando métricas en Zabbix...</h5>
                             </div>
                             <div id="zabbix-modal-content" style="display:none;">
-                                <div class="row mb-3">
-                                    <div class="col-md-6">
-                                        <div class="card bg-light border p-3">
-                                            <span class="text-uppercase text-muted font-weight-bold" style="font-size:0.75rem;">Host Zabbix ID</span>
-                                            <div class="h5 font-weight-bold text-dark mb-0">${ci.zabbix_host_id}</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="card bg-light border p-3">
-                                            <span class="text-uppercase text-muted font-weight-bold" style="font-size:0.75rem;">Estado de Conexión</span>
-                                            <div class="h5 font-weight-bold text-success mb-0"><i class="fas fa-check-circle mr-1"></i> Conectado</div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="row">
                                     <div class="col-lg-6 mb-3">
-                                        <h6 class="font-weight-bold text-dark mb-3"><i class="fas fa-exclamation-triangle text-danger mr-2"></i>Alarmas Activas en Zabbix</h6>
+                                        <h6 class="font-weight-bold text-dark mb-3"><i class="fas fa-exclamation-triangle text-danger mr-2"></i>Alarmas Activas</h6>
                                         <div class="table-responsive" style="max-height: 300px; overflow-y: auto;">
                                             <table class="table table-sm table-striped table-bordered mb-0" id="tbl-zabbix-modal-triggers" style="font-size: 0.8rem;">
                                                 <thead class="thead-dark">
@@ -978,7 +988,7 @@ function viewCIDetails(id) {
                                         </div>
                                     </div>
                                     <div class="col-lg-6 mb-3">
-                                        <h6 class="font-weight-bold text-dark mb-3"><i class="fas fa-chart-line text-info mr-2"></i>Métricas Monitoreadas (Últimos Valores)</h6>
+                                        <h6 class="font-weight-bold text-dark mb-3"><i class="fas fa-chart-line text-info mr-2"></i>Últimas Métricas</h6>
                                         <div class="table-responsive" style="max-height: 300px; overflow-y: auto;">
                                             <table class="table table-sm table-striped table-bordered mb-0" id="tbl-zabbix-modal-items" style="font-size: 0.8rem;">
                                                 <thead class="thead-dark">
@@ -1001,31 +1011,90 @@ function viewCIDetails(id) {
             
             tabsHtml += '</ul>';
             contentHtml += '</div>';
-            
-            // Assemble left and right cols in the modal body
+
+            let googlemapsLink = ci.googlemaps || attrs.googlemaps || attrs.google_maps || attrs.mapa || '';
+            let imagesHtml = '';
+            if (res.data.images && res.data.images.length > 0) {
+                imagesHtml = `
+                    <div class="gallery-container">
+                        ${res.data.images.map(img => `
+                            <div class="gallery-item" onclick="window.open('${img.filepath}', '_blank')">
+                                <img src="${img.filepath}" alt="Foto">
+                                <button class="btn btn-danger btn-xs btn-floating-delete delete-ci-image-btn" data-image-id="${img.id}" onclick="event.stopPropagation()">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            } else {
+                imagesHtml = `
+                    <div class="text-center py-4 text-muted w-100 opacity-50">
+                        <i class="fas fa-image fa-2x mb-2"></i>
+                        <p class="small mb-0">Sin fotos adjuntas</p>
+                    </div>
+                `;
+            }
+
+            let rightColHtml = `
+                <div class="card premium-card mb-4 border shadow-sm">
+                    <div class="card-header bg-white border-0 pt-4 px-4 d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0 font-weight-bold text-dark" style="font-size:1.05rem;"><i class="fas fa-camera mr-2 text-primary"></i> Galería de Fotos</h5>
+                        <button class="btn btn-xs btn-outline-primary" onclick="document.getElementById('ci-image-input').click()"><i class="fas fa-plus mr-1"></i>Subir</button>
+                    </div>
+                    <div class="card-body p-4">
+                        <div id="ci-image-gallery">${imagesHtml}</div>
+                        <form id="ci-image-upload-form" class="d-none">
+                            <input type="file" id="ci-image-input" name="image" accept="image/*">
+                        </form>
+                    </div>
+                </div>
+                <div id="ci-map-section" style="${googlemapsLink ? 'display:block;' : 'display:none;'}" class="card premium-card border mb-4 shadow-sm">
+                    <div class="card-header bg-white border-0 pt-4 px-4">
+                        <h5 class="mb-0 font-weight-bold text-dark" style="font-size:1.05rem;"><i class="fas fa-map-marker-alt mr-2 text-danger"></i> Geolocalización</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div id="ci-map-container" class="map-wrapper"></div>
+                    </div>
+                </div>
+            `;
+
             let mainHtml = `
                 <div class="container-fluid p-4 text-left">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            ${leftColHtml}
+                    <div class="row align-items-center mb-4 border-bottom pb-3">
+                        <div class="col">
+                            <h2 class="h3 mb-0 font-weight-bold text-primary"><i class="fas fa-microchip mr-2"></i> Expediente Técnico: ${ci.hostname}</h2>
+                            <p class="text-muted small mb-0">Detalles de CI en la categoría <strong>${ci.category_name}</strong></p>
                         </div>
-                        <div class="col-lg-8">
-                            <div class="card border-0 shadow-sm h-100" style="border-radius: 10px;">
+                        <div class="col-auto">
+                            <div class="btn-group shadow-sm">
+                                <a href="ci_builder.php?id=${ci.id}" class="btn btn-primary font-weight-bold px-3"><i class="fas fa-edit mr-1.5"></i> Editar CI</a>
+                                <button class="btn btn-danger font-weight-bold px-3" onclick="deleteCI(${ci.id})"><i class="fas fa-trash-alt mr-1.5"></i> Eliminar</button>
+                                <button class="btn btn-secondary font-weight-bold px-3" data-dismiss="modal"><i class="fas fa-times mr-1.5"></i> Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 mb-4">
+                            <div class="card border shadow-sm h-100" style="border-radius: 12px;">
                                 <div class="card-body">
                                     ${tabsHtml}
                                     ${contentHtml}
                                 </div>
                             </div>
                         </div>
+                        <div class="col-lg-4">
+                            ${rightColHtml}
+                        </div>
                     </div>
                 </div>
             `;
             
             $('#attrModalBody').html(mainHtml);
+            updateCIGoogleMapsView(googlemapsLink);
 
-            // Bind Zabbix monitoring tab fetch
+            // Fetch Zabbix details when monitoring tab is shown
             if (ci.zabbix_host_id) {
-                // Remove previous handlers first to avoid double calls
                 $(document).off('shown.bs.tab', '#tab-zabbix-monit');
                 $(document).on('shown.bs.tab', '#tab-zabbix-monit', function() {
                     $('#zabbix-modal-loading').show();
@@ -1034,13 +1103,12 @@ function viewCIDetails(id) {
                     $.getJSON('informes/process_alcance.php', { action: 'get_host_items_triggers', hostid: ci.zabbix_host_id }, function(resp) {
                         $('#zabbix-modal-loading').hide();
                         if (!resp.success) {
-                            $('#tbl-zabbix-modal-triggers tbody').html('<tr><td colspan="2" class="text-center text-danger">Error: ' + (resp.error || 'Desconocido') + '</td></tr>');
-                            $('#tbl-zabbix-modal-items tbody').html('<tr><td colspan="2" class="text-center text-danger">Error: ' + (resp.error || 'Desconocido') + '</td></tr>');
+                            $('#tbl-zabbix-modal-triggers tbody').html('<tr><td colspan="2" class="text-center text-danger">Error al consultar datos</td></tr>');
+                            $('#tbl-zabbix-modal-items tbody').html('<tr><td colspan="2" class="text-center text-danger">Error al consultar datos</td></tr>');
                             $('#zabbix-modal-content').show();
                             return;
                         }
-                        
-                        // Helpers inside closure
+
                         const getSeverityBadgeLocal = (priority) => {
                             const p = parseInt(priority);
                             const severities = {
@@ -1055,7 +1123,6 @@ function viewCIDetails(id) {
                             return `<span class="badge ${sev.class} px-2 py-1 font-weight-bold text-uppercase" style="font-size: 0.75rem">${sev.name}</span>`;
                         };
 
-                        // Triggers
                         let trigHtml = '';
                         if (resp.triggers && resp.triggers.length > 0) {
                             resp.triggers.forEach(t => {
@@ -1070,7 +1137,6 @@ function viewCIDetails(id) {
                         }
                         $('#tbl-zabbix-modal-triggers tbody').html(trigHtml);
                         
-                        // Items
                         let itemHtml = '';
                         if (resp.items && resp.items.length > 0) {
                             resp.items.slice(0, 30).forEach(it => {
@@ -1082,25 +1148,93 @@ function viewCIDetails(id) {
                                     </tr>`;
                             });
                         } else {
-                            itemHtml = '<tr><td colspan="2" class="text-center py-3 text-muted">No se encontraron métricas activas</td></tr>';
+                            itemHtml = '<tr><td colspan="2" class="text-center py-3 text-muted">Sin métricas registradas</td></tr>';
                         }
                         $('#tbl-zabbix-modal-items tbody').html(itemHtml);
                         
                         $('#zabbix-modal-content').fadeIn();
                     }).fail(function() {
                         $('#zabbix-modal-loading').hide();
-                        $('#tbl-zabbix-modal-triggers tbody').html('<tr><td colspan="2" class="text-center text-danger">Error de comunicación con el servidor</td></tr>');
-                        $('#tbl-zabbix-modal-items tbody').html('<tr><td colspan="2" class="text-center text-danger">Error de comunicación con el servidor</td></tr>');
+                        $('#tbl-zabbix-modal-triggers tbody').html('<tr><td colspan="2" class="text-center text-danger">Error de comunicación</td></tr>');
+                        $('#tbl-zabbix-modal-items tbody').html('<tr><td colspan="2" class="text-center text-danger">Error de comunicación</td></tr>');
                         $('#zabbix-modal-content').show();
                     });
                 });
             }
+
+            // Photo uploading
+            $(document).off('change', '#ci-image-input');
+            $(document).on('change', '#ci-image-input', function() {
+                if (!this.files.length) return;
+                const fd = new FormData();
+                fd.append('image', this.files[0]);
+                fd.append('table', 'ci_instances');
+                fd.append('id', ci.id);
+                
+                Swal.fire({ title: 'Subiendo imagen...', didOpen: () => Swal.showLoading() });
+                fetch('api_upload_image.php', { method: 'POST', body: fd })
+                    .then(r => r.json())
+                    .then(data => {
+                        if (data.success) {
+                            Swal.fire('Éxito', 'Imagen subida correctamente', 'success').then(() => {
+                                viewCIDetails(ci.id);
+                            });
+                        } else {
+                            Swal.fire('Error', data.error || 'Error al subir la imagen', 'error');
+                        }
+                    });
+            });
+
+            // Photo deletion
+            $(document).off('click', '.delete-ci-image-btn');
+            $(document).on('click', '.delete-ci-image-btn', function(e) {
+                e.stopPropagation();
+                const imageId = $(this).data('image-id');
+                Swal.fire({
+                    title: '¿Eliminar fotografía?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Eliminar',
+                    cancelButtonText: 'Cancelar'
+                }).then(res => {
+                    if (res.isConfirmed) {
+                        const fd = new FormData();
+                        fd.append('action', 'delete_image');
+                        fd.append('id', imageId);
+                        fetch('api_action.php', { method: 'POST', body: fd }).then(r => r.json()).then(js => {
+                            if (js.success) {
+                                Swal.fire('Éxito', 'Imagen eliminada', 'success').then(() => {
+                                    viewCIDetails(ci.id);
+                                });
+                            } else {
+                                Swal.fire('Error', js.error || 'No se pudo eliminar la imagen', 'error');
+                            }
+                        });
+                    }
+                });
+            });
+
         } else {
             $('#attrModalBody').html('<div class="alert alert-danger m-4"><i class="fas fa-exclamation-triangle mr-2"></i>' + res.message + '</div>');
         }
     }, 'json').fail(function() {
         $('#attrModalBody').html('<div class="alert alert-danger m-4"><i class="fas fa-exclamation-triangle mr-2"></i>Error al consultar el endpoint api_ci.php.</div>');
     });
+}
+
+function updateCIGoogleMapsView(link) {
+    const sec = document.getElementById('ci-map-section');
+    const cnt = document.getElementById('ci-map-container');
+    if (!sec || !cnt) return;
+    if (!link || link.trim() === "") { sec.style.display = 'none'; return; }
+    sec.style.display = 'block';
+    if (link.includes('<iframe')) {
+        cnt.innerHTML = link.replace(/width="\d+"/, 'width="100%"').replace(/height="\d+"/, 'height="350"');
+    } else if (link.includes('maps.app.goo.gl')) {
+        cnt.innerHTML = `<div class="p-4 text-center"><a href="${link}" target="_blank" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt mr-1"></i>Abrir Mapa</a></div>`;
+    } else {
+        cnt.innerHTML = `<iframe width="100%" height="350" frameborder="0" src="${link}" allowfullscreen></iframe>`;
+    }
 }
 
 function deleteCI(id) {
@@ -1215,8 +1349,8 @@ function filterCITable(term) {
 }
 
 $(document).ready(function() {
-    // Manejador para maximizar/restaurar modal
-    $('#btn-maximize-modal').click(function() {
+    // Manejador delegado para maximizar/restaurar modal
+    $(document).on('click', '#btn-maximize-modal', function() {
         $('#attrModal').toggleClass('modal-fullscreen');
         let icon = $(this).find('i');
         if ($('#attrModal').hasClass('modal-fullscreen')) {
@@ -1227,8 +1361,7 @@ $(document).ready(function() {
     });
 
     $('#attrModal').on('hidden.bs.modal', function () {
-        $(this).removeClass('modal-fullscreen');
-        $('#btn-maximize-modal').find('i').removeClass('fa-compress').addClass('fa-expand');
+        $(this).addClass('modal-fullscreen');
     });
 
     // Configurar búsqueda

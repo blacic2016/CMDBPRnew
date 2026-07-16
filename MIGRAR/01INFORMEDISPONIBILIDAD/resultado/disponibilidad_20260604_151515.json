@@ -1,0 +1,306 @@
+{
+    "resumen_general": {
+        "total_hosts_analizados": 1,
+        "promedio_ok": 100,
+        "promedio_problem": 0,
+        "fecha_inicio_analisis": "01-05-2026",
+        "fecha_fin_analisis": "31-05-2026",
+        "dias_analizados": 31,
+        "tiempo_total_periodo_segundos": 2678400,
+        "tiempo_total_periodo_formateado": "31d",
+        "tiempo_promedio_ok_estimado": "31d",
+        "tiempo_promedio_problem_estimado": "0s",
+        "por_host": [
+            {
+                "host": "2044-ECUIO-05",
+                "ip": "",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            }
+        ]
+    },
+    "detalle_diario_por_host": [
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "01-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "02-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "03-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "04-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "05-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "06-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "07-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "08-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "09-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "10-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "11-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "12-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "13-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "14-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "15-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "16-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "17-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "18-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "19-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "20-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "21-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "22-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "23-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "24-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "25-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "26-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "27-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "28-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "29-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "30-05-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11184,
+            "host": "2044-ECUIO-05",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "31-05-2026",
+            "problems": 0,
+            "ok": 100
+        }
+    ],
+    "eventos_de_problema": []
+}

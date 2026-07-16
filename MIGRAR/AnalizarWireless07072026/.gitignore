@@ -1,0 +1,34 @@
+# Archivos de configuración sensibles
+config.php
+.env
+.htpasswd
+
+# Logs
+logs/
+*.log
+
+# Archivos de backup
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+*.swp
+*.tmp
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+*.cache
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos temporales de PHP
+*.php~
+
+# Rate limiting
+logs/rate_limit.json

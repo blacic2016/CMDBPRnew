@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tab Test</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+.tab-content { display: none !important; }
+.tab-content.tab-active { display: block !important; }
+.tab-btn.active { color: blue; font-weight: bold; }
+</style>
+</head>
+<body>
+<button onclick="switchTab('tab1')" id="btn-tab1" class="tab-btn active">Tab 1</button>
+<button onclick="switchTab('tab2')" id="btn-tab2" class="tab-btn">Tab 2</button>
+<button onclick="switchTab('tab3')" id="btn-tab3" class="tab-btn">Tab 3</button>
+
+<div id="tab1" class="tab-content tab-active"><h2>CONTENIDO TAB 1</h2><p>Esto es la pestaña 1</p></div>
+<div id="tab2" class="tab-content"><h2>CONTENIDO TAB 2</h2><p>Esto es la pestaña 2</p></div>
+<div id="tab3" class="tab-content"><h2>CONTENIDO TAB 3</h2><p>Esto es la pestaña 3</p></div>
+
+<script>
+function switchTab(tabId) {
+    $('.tab-content').removeClass('tab-active');
+    $('#' + tabId).addClass('tab-active');
+    $('.tab-btn').removeClass('active');
+    $('#btn-' + tabId).addClass('active');
+    console.log('Switched to', tabId, 'display:', document.getElementById(tabId).style.display, 'computed:', window.getComputedStyle(document.getElementById(tabId)).display);
+}
+$(document).ready(function() {
+    console.log('jQuery ready. Tab1 display:', window.getComputedStyle(document.getElementById('tab1')).display);
+    console.log('Tab2 display:', window.getComputedStyle(document.getElementById('tab2')).display);
+});
+</script>
+</body>
+</html>

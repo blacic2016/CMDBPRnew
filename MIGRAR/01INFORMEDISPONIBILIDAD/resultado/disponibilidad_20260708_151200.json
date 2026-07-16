@@ -1,0 +1,575 @@
+{
+    "resumen_general": {
+        "total_hosts_analizados": 2,
+        "promedio_ok": 100,
+        "promedio_problem": 0,
+        "fecha_inicio_analisis": "01-06-2026",
+        "fecha_fin_analisis": "30-06-2026",
+        "dias_analizados": 30,
+        "tiempo_total_periodo_segundos": 2592000,
+        "tiempo_total_periodo_formateado": "30d",
+        "tiempo_promedio_ok_estimado": "30d",
+        "tiempo_promedio_problem_estimado": "0s",
+        "por_host": [
+            {
+                "host": "QNAP",
+                "ip": "172.32.2.119",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "powerstore",
+                "ip": "172.32.2.120",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "30d",
+                "tiempo_problem_estimado": "0s"
+            }
+        ]
+    },
+    "detalle_diario_por_host": [
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11114,
+            "host": "QNAP",
+            "ip": "172.32.2.119",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-06-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11115,
+            "host": "powerstore",
+            "ip": "172.32.2.120",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-06-2026",
+            "problems": 0,
+            "ok": 100
+        }
+    ],
+    "eventos_de_problema": []
+}

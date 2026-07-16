@@ -1,0 +1,941 @@
+{
+    "resumen_general": {
+        "total_hosts_analizados": 3,
+        "promedio_ok": 99.9119,
+        "promedio_problem": 0.0881,
+        "fecha_inicio_analisis": "01-01-2026",
+        "fecha_fin_analisis": "31-01-2026",
+        "dias_analizados": 31,
+        "tiempo_total_periodo_segundos": 2678400,
+        "tiempo_total_periodo_formateado": "31d",
+        "tiempo_promedio_ok_estimado": "30d 23h 20m 40s",
+        "tiempo_promedio_problem_estimado": "39m 20s",
+        "por_host": [
+            {
+                "host": "Cisco GYE WLC",
+                "ip": "172.32.2.62",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "AP01-GYE",
+                "ip": "172.32.2.69",
+                "porcentaje_ok_total": 99.7357,
+                "porcentaje_problem_total": 0.2643,
+                "tiempo_ok_estimado": "30d 22h 2m 1s",
+                "tiempo_problem_estimado": "1h 57m 59s"
+            },
+            {
+                "host": "AP02-GYE",
+                "ip": "172.32.2.70",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            }
+        ]
+    },
+    "detalle_diario_por_host": [
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10738,
+            "host": "Cisco GYE WLC",
+            "ip": "172.32.2.62",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-01-2026",
+            "problems": 6.6667,
+            "ok": 93.3333
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-01-2026",
+            "problems": 1.5266,
+            "ok": 98.4734
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11152,
+            "host": "AP01-GYE",
+            "ip": "172.32.2.69",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-01-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11153,
+            "host": "AP02-GYE",
+            "ip": "172.32.2.70",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-01-2026",
+            "problems": 0,
+            "ok": 100
+        }
+    ],
+    "eventos_de_problema": [
+        {
+            "eventid": "264048443",
+            "inicio": "2026-01-26 20:14:09",
+            "start_timestamp": 1769458449,
+            "valor_inicial": 1,
+            "fin": "2026-01-26 20:19:09",
+            "duracion": "5m",
+            "fecha": "26-01-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "AP01-GYE",
+            "hostid": 11152,
+            "triggerid": "55323",
+            "end_timestamp": 1769458749,
+            "valor_final": 0
+        },
+        {
+            "eventid": "264049822",
+            "inicio": "2026-01-26 20:33:08",
+            "start_timestamp": 1769459588,
+            "valor_inicial": 1,
+            "fin": "2026-01-26 21:06:08",
+            "duracion": "33m",
+            "fecha": "26-01-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "AP01-GYE",
+            "hostid": 11152,
+            "triggerid": "55323",
+            "end_timestamp": 1769461568,
+            "valor_final": 0
+        },
+        {
+            "eventid": "264054303",
+            "inicio": "2026-01-26 21:35:09",
+            "start_timestamp": 1769463309,
+            "valor_inicial": 1,
+            "fin": "2026-01-26 22:33:09",
+            "duracion": "58m",
+            "fecha": "26-01-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "AP01-GYE",
+            "hostid": 11152,
+            "triggerid": "55323",
+            "end_timestamp": 1769466789,
+            "valor_final": 0
+        },
+        {
+            "eventid": "264138588",
+            "inicio": "2026-01-27 18:47:09",
+            "start_timestamp": 1769539629,
+            "valor_inicial": 1,
+            "fin": "2026-01-27 19:09:08",
+            "duracion": "21m 59s",
+            "fecha": "27-01-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "AP01-GYE",
+            "hostid": 11152,
+            "triggerid": "55323",
+            "end_timestamp": 1769540948,
+            "valor_final": 0
+        }
+    ]
+}

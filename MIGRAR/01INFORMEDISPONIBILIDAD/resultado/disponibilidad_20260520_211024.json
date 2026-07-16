@@ -1,0 +1,3479 @@
+{
+    "resumen_general": {
+        "total_hosts_analizados": 12,
+        "promedio_ok": 99.9714,
+        "promedio_problem": 0.0286,
+        "fecha_inicio_analisis": "01-03-2026",
+        "fecha_fin_analisis": "31-03-2026",
+        "dias_analizados": 31,
+        "tiempo_total_periodo_segundos": 2678400,
+        "tiempo_total_periodo_formateado": "31d",
+        "tiempo_promedio_ok_estimado": "30d 23h 47m 15s",
+        "tiempo_promedio_problem_estimado": "12m 45s",
+        "por_host": [
+            {
+                "host": "SW-GPF-01",
+                "ip": "172.32.2.32",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "SW-GPF-02",
+                "ip": "172.32.2.17",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "SW-MGMT-01",
+                "ip": "172.32.2.1",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "SW-NEXUS5k-01",
+                "ip": "172.32.2.35",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "SW-PISO5-01",
+                "ip": "172.32.2.12",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "SW-PISO5-02",
+                "ip": "172.32.2.15",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "SW-PISO6-02",
+                "ip": "172.32.2.31",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "SW-PISO7-01",
+                "ip": "172.32.2.33",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "SW-PROVEEDORES-01",
+                "ip": "172.32.2.18",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "SW-CORE-01",
+                "ip": "172.32.2.10",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "SW_MGMT_GYE.sonda.com",
+                "ip": "172.32.2.11",
+                "porcentaje_ok_total": 99.6573,
+                "porcentaje_problem_total": 0.3427,
+                "tiempo_ok_estimado": "30d 21h 27m 1s",
+                "tiempo_problem_estimado": "2h 32m 59s"
+            },
+            {
+                "host": "SW_PETROAMAZONAS",
+                "ip": "172.32.2.16",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            }
+        ]
+    },
+    "detalle_diario_por_host": [
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11067,
+            "host": "SW-GPF-01",
+            "ip": "172.32.2.32",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10724,
+            "host": "SW-GPF-02",
+            "ip": "172.32.2.17",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10737,
+            "host": "SW-MGMT-01",
+            "ip": "172.32.2.1",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "01-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "02-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "03-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "04-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "05-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "06-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "07-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "08-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "09-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "10-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "11-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "12-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "13-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "14-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "15-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "16-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "17-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "18-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "19-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "20-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "21-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "22-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "23-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "24-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "25-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "26-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "27-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "28-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "29-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "30-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11041,
+            "host": "SW-NEXUS5k-01",
+            "ip": "172.32.2.35",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "31-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11002,
+            "host": "SW-PISO5-01",
+            "ip": "172.32.2.12",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10721,
+            "host": "SW-PISO5-02",
+            "ip": "172.32.2.15",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11039,
+            "host": "SW-PISO6-02",
+            "ip": "172.32.2.31",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11040,
+            "host": "SW-PISO7-01",
+            "ip": "172.32.2.33",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10723,
+            "host": "SW-PROVEEDORES-01",
+            "ip": "172.32.2.18",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "01-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "02-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "03-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "04-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "05-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "06-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "07-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "08-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "09-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "10-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "11-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "12-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "13-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "14-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "15-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "16-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "17-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "18-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "19-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "20-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "21-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "22-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "23-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "24-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "25-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "26-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "27-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "28-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "29-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "30-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11049,
+            "host": "SW-CORE-01",
+            "ip": "172.32.2.10",
+            "trigger": "Cisco Nexus 9000 Series: Unavailable by ICMP ping",
+            "date": "31-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-03-2026",
+            "problems": 10.6251,
+            "ok": 89.3749
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10745,
+            "host": "SW_MGMT_GYE.sonda.com",
+            "ip": "172.32.2.11",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "01-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "02-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "03-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "04-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "05-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "06-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "07-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "08-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "09-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "10-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "11-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "12-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "13-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "14-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "15-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "16-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "17-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "18-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "19-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "20-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "21-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "22-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "23-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "24-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "25-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "26-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "27-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "28-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "29-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "30-03-2026",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 11061,
+            "host": "SW_PETROAMAZONAS",
+            "ip": "172.32.2.16",
+            "trigger": "Unavailable by ICMP ping",
+            "date": "31-03-2026",
+            "problems": 0,
+            "ok": 100
+        }
+    ],
+    "eventos_de_problema": [
+        {
+            "eventid": "269734618",
+            "inicio": "2026-03-19 08:42:47",
+            "start_timestamp": 1773909767,
+            "valor_inicial": 1,
+            "fin": "2026-03-19 11:15:47",
+            "duracion": "2h 33m",
+            "fecha": "19-03-2026",
+            "trigger": "Unavailable by ICMP ping",
+            "host": "SW_MGMT_GYE.sonda.com",
+            "hostid": 10745,
+            "triggerid": "52228",
+            "end_timestamp": 1773918947,
+            "valor_final": 0
+        }
+    ]
+}

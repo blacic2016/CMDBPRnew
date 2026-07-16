@@ -1,0 +1,2315 @@
+{
+    "resumen_general": {
+        "total_hosts_analizados": 8,
+        "promedio_ok": 100,
+        "promedio_problem": 0,
+        "fecha_inicio_analisis": "01-12-2025",
+        "fecha_fin_analisis": "31-12-2025",
+        "dias_analizados": 31,
+        "tiempo_total_periodo_segundos": 2678400,
+        "tiempo_total_periodo_formateado": "31d",
+        "tiempo_promedio_ok_estimado": "31d",
+        "tiempo_promedio_problem_estimado": "0s",
+        "por_host": [
+            {
+                "host": "CUCM_SONDA_SUS",
+                "ip": "",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "CUCM_SONDA_PRE",
+                "ip": "",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "CUCM_SONDA_PREBCK_replica",
+                "ip": "",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "UCCX_SONDA_BCK",
+                "ip": "",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "CUCM_SONDA_PUB",
+                "ip": "",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "UCCX_SONDA_PRI",
+                "ip": "",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "CUC_SONDA_PRIN",
+                "ip": "",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            },
+            {
+                "host": "SRVIVRSonda",
+                "ip": "",
+                "porcentaje_ok_total": 100,
+                "porcentaje_problem_total": 0,
+                "tiempo_ok_estimado": "31d",
+                "tiempo_problem_estimado": "0s"
+            }
+        ]
+    },
+    "detalle_diario_por_host": [
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "01-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "02-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "03-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "04-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "05-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "06-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "07-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "08-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "09-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "10-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "11-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "12-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "13-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "14-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "15-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "16-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "17-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "18-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "19-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "20-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "21-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "22-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "23-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "24-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "25-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "26-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "27-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "28-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "29-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "30-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10667,
+            "host": "CUCM_SONDA_SUS",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "31-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "01-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "02-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "03-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "04-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "05-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "06-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "07-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "08-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "09-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "10-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "11-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "12-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "13-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "14-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "15-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "16-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "17-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "18-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "19-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "20-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "21-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "22-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "23-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "24-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "25-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "26-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "27-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "28-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "29-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "30-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10994,
+            "host": "CUCM_SONDA_PRE",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "31-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "01-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "02-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "03-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "04-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "05-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "06-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "07-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "08-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "09-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "10-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "11-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "12-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "13-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "14-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "15-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "16-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "17-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "18-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "19-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "20-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "21-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "22-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "23-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "24-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "25-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "26-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "27-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "28-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "29-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "30-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10995,
+            "host": "CUCM_SONDA_PREBCK_replica",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "31-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "01-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "02-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "03-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "04-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "05-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "06-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "07-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "08-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "09-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "10-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "11-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "12-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "13-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "14-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "15-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "16-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "17-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "18-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "19-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "20-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "21-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "22-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "23-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "24-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "25-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "26-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "27-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "28-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "29-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "30-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10661,
+            "host": "UCCX_SONDA_BCK",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "31-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "01-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "02-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "03-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "04-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "05-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "06-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "07-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "08-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "09-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "10-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "11-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "12-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "13-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "14-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "15-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "16-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "17-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "18-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "19-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "20-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "21-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "22-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "23-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "24-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "25-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "26-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "27-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "28-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "29-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "30-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10694,
+            "host": "CUCM_SONDA_PUB",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "31-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "01-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "02-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "03-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "04-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "05-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "06-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "07-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "08-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "09-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "10-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "11-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "12-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "13-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "14-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "15-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "16-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "17-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "18-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "19-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "20-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "21-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "22-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "23-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "24-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "25-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "26-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "27-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "28-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "29-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "30-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10696,
+            "host": "UCCX_SONDA_PRI",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "31-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "01-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "02-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "03-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "04-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "05-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "06-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "07-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "08-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "09-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "10-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "11-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "12-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "13-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "14-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "15-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "16-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "17-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "18-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "19-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "20-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "21-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "22-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "23-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "24-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "25-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "26-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "27-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "28-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "29-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "30-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10697,
+            "host": "CUC_SONDA_PRIN",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "31-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "01-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "02-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "03-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "04-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "05-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "06-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "07-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "08-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "09-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "10-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "11-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "12-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "13-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "14-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "15-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "16-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "17-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "18-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "19-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "20-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "21-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "22-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "23-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "24-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "25-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "26-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "27-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "28-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "29-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "30-12-2025",
+            "problems": 0,
+            "ok": 100
+        },
+        {
+            "hostid": 10656,
+            "host": "SRVIVRSonda",
+            "ip": "",
+            "trigger": "Sin trigger ICMP",
+            "date": "31-12-2025",
+            "problems": 0,
+            "ok": 100
+        }
+    ],
+    "eventos_de_problema": []
+}

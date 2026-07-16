@@ -36,6 +36,7 @@ foreach ($all_sheets as $s) {
 
 $all_modules = [
     'dashboard' => 'Dashboard Principal',
+    'novaiops_dashboard' => 'NovaIOPS Dashboard',
     'ci_list' => 'CMDB (Gestión de CIs)',
     'import' => 'Importar Excel',
     'distribrack' => 'Galería de Imágenes',

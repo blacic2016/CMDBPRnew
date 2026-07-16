@@ -124,6 +124,9 @@ $page_title = $page_title ?? 'CMDB Vilaseca';
 
     <?php if (!empty($page_title)): ?>
       <span class="navbar-nav-text font-weight-bold ml-2" style="font-size: 1.25rem; align-self: center; color: inherit;">
+        <?php if (!empty($page_icon)): ?>
+          <i class="<?php echo htmlspecialchars($page_icon); ?> mr-2"></i>
+        <?php endif; ?>
         <?php echo htmlspecialchars($page_title); ?>
       </span>
     <?php endif; ?>
